@@ -121,9 +121,16 @@
             .discount-badge { font-size: 0.7rem; padding: 3px 8px; top: 8px; right: 8px; }
             body { padding-bottom: 70px; }
         }
-        footer { background: #1e3a5f; color: white; text-align: center; padding: 12px 16px; margin-top: 40px; font-size: 0.8rem; border-radius: 30px; width: 90%; margin-left: auto; margin-right: auto; margin-bottom: 10px; }
+        /* Footer mới với địa chỉ */
+        footer { background: #1e3a5f; color: white; text-align: center; padding: 20px 16px; margin-top: 40px; font-size: 0.85rem; border-radius: 30px; width: 90%; margin-left: auto; margin-right: auto; margin-bottom: 10px; }
+        footer .footer-line { margin: 8px 0; display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
+        footer .footer-line i { width: 24px; color: #ff69b4; font-size: 1rem; }
         footer .pink { color: #ff69b4; font-weight: 600; }
-        @media (max-width: 768px) { footer { font-size: 0.7rem; padding: 10px 12px; width: 95%; } }
+        @media (max-width: 768px) { 
+            footer { font-size: 0.7rem; padding: 15px 12px; width: 95%; }
+            footer .footer-line { gap: 6px; }
+            footer .footer-line i { width: 20px; font-size: 0.8rem; }
+        }
         .review-mini { background: #f8fafc; border-radius: 28px; padding: 20px; margin: 24px 0; }
         .review-mini .review-item { margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 12px; }
         .review-mini .review-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
@@ -145,7 +152,7 @@
                     <div class="mega-dropdown">
                         <div class="mega-col"><h4>Cao Su Thiên Nhiên</h4><ul><li><a data-product="van-thanh">Vạn Thành</a></li><li><a data-product="dong-phu">Đồng Phú</a></li><li><a data-product="lien-a">Liên Á</a></li><li><a data-product="thang-loi">Thắng Lợi</a></li><li><a data-product="png">PNG</a></li></ul></div>
                         <div class="mega-col"><h4>Cao Su Tổng Hợp</h4><ul><li><a data-product="csn-thang-loi">CSN Thắng Lợi</a></li><li><a data-product="diamond">Diamond</a></li></ul><h4>Bông Ép</h4><ul><li><a data-product="everon">Everon</a></li><li><a data-product="seoul">Seoul</a></li></ul></div>
-                        <div class="mega-col"><h4>Lò Xo Túi</h4><ul><li><a data-product="uu-viet">Ưu Việt</a></li><li><a data-product="elan">Elan</a></li><li><a data-product="celina">Celina</a></li></ul><h4>PE / Foam</h4><ul><li><a data-product="pe-korea">Nệm PE Korea</a></li><li><a data-product="foam-korea">Nệm Foam Korea</a></li></ul></div>
+                        <div class="mega-col"><h4>Lò Xo Túi</h4><ul><li><a data-product="uu-viet">Ưu Việt</a></li><li><a data-product="elan">Elan</a></li><li><a data-product="celina">Celina</a></li></ul></div>
                     </div>
                 </div>
             </div>
@@ -168,7 +175,6 @@
                 <div class="mobile-category-group"><h4>Cao Su Tổng Hợp</h4><div class="mobile-category-items"><a data-product="csn-thang-loi">CSN Thắng Lợi</a><a data-product="diamond">Diamond</a></div></div>
                 <div class="mobile-category-group"><h4>Bông Ép</h4><div class="mobile-category-items"><a data-product="everon">Everon</a><a data-product="seoul">Seoul</a></div></div>
                 <div class="mobile-category-group"><h4>Lò Xo Túi</h4><div class="mobile-category-items"><a data-product="uu-viet">Ưu Việt</a><a data-product="elan">Elan</a><a data-product="celina">Celina</a></div></div>
-                <div class="mobile-category-group"><h4>PE / Foam</h4><div class="mobile-category-items"><a data-product="pe-korea">Nệm PE Korea</a><a data-product="foam-korea">Nệm Foam Korea</a></div></div>
             </div>
         </div>
     </div>
@@ -224,7 +230,15 @@
     </div>
 </main>
 <footer>
-    Nệm <span class="pink">Lê Gia</span> - Hạnh phúc mọi nhà. Hotline: 0905 513 984
+    <div class="footer-line">
+        <i class="fas fa-store"></i> <span>Nệm <span class="pink">Lê Gia</span> - Hạnh phúc mọi nhà</span>
+    </div>
+    <div class="footer-line">
+        <i class="fas fa-map-marker-alt"></i> <span>123 Bùi Trang Chước - Đà Nẵng</span>
+    </div>
+    <div class="footer-line">
+        <i class="fas fa-phone-alt"></i> <span>Hotline: 0905 513 984</span>
+    </div>
 </footer>
 <div class="sticky-buttons">
     <div class="btn-sticky btn-cart" id="stickyCartBtn"><i class="fas fa-shopping-cart"></i> GIỎ HÀNG</div>
@@ -252,11 +266,9 @@
         "diamond": { name: "NỆM CAO SU TỔNG HỢP DIAMOND", desc: "Cao su tổng hợp chất lượng cao, độ cứng vừa phải, đàn hồi tốt, giảm 50%.", img: "https://i.ibb.co/nqHhmggT/diamond.jpg", oldPrices: { "1m6 x 2m x 10cm":4160000, "1m8 x 2m x 10cm":4360000 }, discountPercent: 50 },
         "everon": { name: "NỆM BÔNG ÉP EVERON", desc: "Bông ép cao cấp, thoáng khí, độ cứng vừa phải.", img: "https://i.ibb.co/Pz5WQb8J/everon.jpg", oldPrices: { "1m6 x 2m x 9cm":4290000, "1m8 x 2m x 9cm":4690000 }, discountPercent: 21 },
         "seoul": { name: "NỆM BÔNG ÉP SEOUL", desc: "Bông ép cao cấp nhập khẩu Hàn Quốc, chống xẹp lún.", img: "https://i.ibb.co/kggPmS4T/korea.jpg", oldPrices: { "1m6 x 2m x 9cm":4400000, "1m8 x 2m x 9cm":4800000 }, discountPercent: 48 },
-        "uu-viet": { name: "NỆM LÒ XO TÚI ƯU VIỆT", desc: "Lò xo túi độc lập, không gây tiếng ồn, nâng đỡ tốt, bảo hành 10 năm.", img: "https://i.ibb.co/pYGDPv4/nem-lo-xo-tui-platinum-4.jpg", oldPrices: { "1m6 x 2m x 22cm":7523000, "1m8 x 2m x 10cm":8432000 }, discountPercent: 18 },
+        "uu-viet": { name: "NỆM LÒ XO TÚI ƯU VIỆT", desc: "Lò xo túi độc lập, không gây tiếng ồn, nâng đỡ tốt, bảo hành 10 năm.", img: "https://i.ibb.co/pjgp9Wbt/Untitled.png", oldPrices: { "1m6 x 2m x 22cm":7523000, "1m8 x 2m x 10cm":8432000 }, discountPercent: 18 },
         "elan": { name: "NỆM LÒ XO TÚI ELAN", desc: "Lò xo túi cao cấp, cuộn hộp dễ vận chuyển, êm ái tuyệt đối.", img: "https://i.ibb.co/FbfcrSsH/7269-dem-lo-xo-tui-cuon-vimatt-elan-1.png", oldPrices: { "1m6 x 2m x 10cm":7210000, "1m8 x 2m x 10cm":7780000 }, discountPercent: 30 },
-        "celina": { name: "NỆM LÒ XO TÚI CELINA", desc: "Lò xo túi nhập khẩu, độc lập cao cấp, mang lại giấc ngủ ngon.", img: "https://i.ibb.co/FqjRZ6YZ/370000058-1595229164781gqyc.jpg", oldPrices: { "1m6 x 2m x 10cm":7500000, "1m8 x 2m x 10cm":7800000 }, discountPercent: 40 },
-        "pe-korea": { name: "NỆM PE KOREA", desc: "Nhẹ, gấp gọn, thoáng khí, chống ẩm.", img: "https://picsum.photos/id/127/600/600", oldPrices: {"1m0 x 2m x 8cm":2600000,"1m2 x 2m x 8cm":3000000,"1m4 x 2m x 8cm":3500000,"1m6 x 2m x 8cm":4100000,"1m8 x 2m x 8cm":4700000}, discountPercent: 27 },
-        "foam-korea": { name: "NỆM FOAM KOREA", desc: "Đàn hồi tốt, ôm sát cơ thể, giảm áp lực.", img: "https://picsum.photos/id/84/600/600", oldPrices: {"1m0 x 2m x 10cm":3600000,"1m2 x 2m x 10cm":4200000,"1m4 x 2m x 10cm":4900000,"1m6 x 2m x 10cm":5600000,"1m8 x 2m x 10cm":6400000}, discountPercent: 22 }
+        "celina": { name: "NỆM LÒ XO TÚI CELINA", desc: "Lò xo túi nhập khẩu, độc lập cao cấp, mang lại giấc ngủ ngon.", img: "https://i.ibb.co/FqjRZ6YZ/370000058-1595229164781gqyc.jpg", oldPrices: { "1m6 x 2m x 10cm":7500000, "1m8 x 2m x 10cm":7800000 }, discountPercent: 40 }
     };
 
     for (let key in productsDB) {
@@ -437,9 +449,7 @@
         "everon": [{ stars: 5, name: "Chị Bích (Hà Nội)", content: "Nệm Everon gấp gọn tiện lợi, thoáng khí." }, { stars: 5, name: "Anh Sơn (Thanh Hóa)", content: "Giá rẻ, chất lượng tốt, đáng đồng tiền." }],
         "seoul": [{ stars: 5, name: "Chị Linh (HCM)", content: "Nệm Seoul êm ái, không bị xẹp sau thời gian dài." }, { stars: 5, name: "Anh Khang (Cần Thơ)", content: "Mua cho phòng trọ, rất ưng." }],
         "elan": [{ stars: 5, name: "Chị Hằng (Đà Nẵng)", content: "Nệm Elan cuộn hộp tiện lợi, êm ái không thua kém các loại đắt tiền." }, { stars: 5, name: "Anh Vũ (Hải Phòng)", content: "Lò xo túi êm, không bị lún, rất hài lòng." }],
-        "celina": [{ stars: 5, name: "Chị Nga (HCM)", content: "Celina cao cấp, nâng đỡ cột sống tốt, sau khi dùng hết đau lưng." }, { stars: 5, name: "Anh Phong (Bình Định)", content: "Giao hàng tận nơi, nhân viên nhiệt tình, nệm tốt." }],
-        "pe-korea": [{ stars: 5, name: "Chị Thủy (Hà Nội)", content: "Nệm PE nhẹ, gấp gọn, rất phù hợp cho thuê trọ." }, { stars: 5, name: "Anh Đạt (HCM)", content: "Chống ẩm tốt, không bị mốc." }],
-        "foam-korea": [{ stars: 5, name: "Chị Hạnh (Hải Dương)", content: "Foam Korea êm, ôm cơ thể, ngủ rất sâu." }, { stars: 5, name: "Anh Trung (Thái Nguyên)", content: "Giá tốt, chất lượng ổn, đáng mua." }]
+        "celina": [{ stars: 5, name: "Chị Nga (HCM)", content: "Celina cao cấp, nâng đỡ cột sống tốt, sau khi dùng hết đau lưng." }, { stars: 5, name: "Anh Phong (Bình Định)", content: "Giao hàng tận nơi, nhân viên nhiệt tình, nệm tốt." }]
     };
 
     function renderReviews(productId) {
