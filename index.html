@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Nệm Lê Gia - Lò Xo Túi Cao Cấp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background: #fff; color: #1A2C3E; line-height: 1.5; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        .header { background: white; box-shadow: 0 4px 20px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--gray-border); }
+        .header-top { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; gap: 24px; flex-wrap: wrap; }
+        .nav-left { display: flex; align-items: center; gap: 32px; }
+        .logo { cursor: pointer; }
+        .logo h1 { font-size: 1.8rem; font-weight: 800; color: #1e3a5f; }
+        .logo span { color: #ff69b4; }
+        .cart-icon { position: relative; cursor: pointer; margin-left: 10px; }
+        .cart-icon i { font-size: 1.5rem; color: #1e3a5f; }
+        .cart-count { position: absolute; top: -8px; right: -12px; background: #ff5722; color: white; border-radius: 50%; width: 20px; height: 20px; font-size: 0.7rem; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+        .mega-menu { position: relative; }
+        .mega-trigger { font-weight: 700; font-size: 1rem; padding: 10px 0; cursor: pointer; background: none; border: none; color: #1e3a5f; display: flex; gap: 6px; align-items: center; }
+        .mega-dropdown { position: absolute; top: calc(100% - 5px); left: -20px; width: 780px; background: white; border-radius: 24px; box-shadow: 0 20px 35px rgba(0,0,0,0.12); padding: 28px; display: none; grid-template-columns: repeat(3, 1fr); gap: 24px; z-index: 1001; border: 1px solid #e2e8f0; }
+        .mega-menu:hover .mega-dropdown, .mega-dropdown:hover { display: grid; }
+        .mega-col h4 { color: #e6b422; margin-bottom: 12px; border-left: 3px solid #e6b422; padding-left: 12px; font-size: 0.95rem; }
+        .mega-col ul { list-style: none; }
+        .mega-col li { margin-bottom: 8px; }
+        .mega-col a { text-decoration: none; color: #2c3e50; font-size: 0.9rem; cursor: pointer; transition: 0.2s; display: inline-block; }
+        .mega-col a:hover { color: #e6b422; transform: translateX(4px); }
+
+        .search-wrapper { flex: 1; max-width: 340px; position: relative; }
+        .search-box { background: #f5f7fa; border-radius: 40px; padding: 8px 16px; display: flex; border: 1px solid #e2e8f0; }
+        .search-box input { flex: 1; border: none; background: transparent; outline: none; }
+        .search-suggestions { position: absolute; top: 100%; background: white; width: 100%; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); display: none; z-index: 1100; }
+        .search-suggestions.active { display: block; }
+        .suggestion-item { padding: 10px 16px; cursor: pointer; }
+
+        .mobile-menu-btn { display: none; font-size: 1.8rem; background: none; border: none; cursor: pointer; }
+        .mobile-nav { display: none; background: white; position: absolute; top: 100%; left: 0; right: 0; border-top: 1px solid #e2e8f0; max-height: 70vh; overflow-y: auto; z-index: 1000; }
+        .mobile-nav.open { display: block; }
+        .accordion-item { border-bottom: 1px solid #e2e8f0; }
+        .accordion-header { padding: 16px 20px; font-weight: 700; display: flex; justify-content: space-between; cursor: pointer; background: #fff; }
+        .accordion-content { display: none; padding: 12px 16px 20px; background: #fafafc; }
+        .accordion-content.show { display: block; }
+        .mobile-category-group { margin-bottom: 20px; }
+        .mobile-category-group h4 { font-size: 1rem; font-weight: 700; color: #e6b422; margin-bottom: 10px; border-left: 3px solid #e6b422; padding-left: 10px; }
+        .mobile-category-items { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .mobile-category-items a { display: block; background: white; padding: 10px 12px; border-radius: 12px; text-decoration: none; color: #2c3e50; font-size: 0.85rem; font-weight: 500; border: 1px solid #e2e8f0; text-align: center; transition: 0.2s; }
+        .mobile-category-items a:hover, .mobile-category-items a:active { background: #e6b422; color: white; border-color: #e6b422; }
+        @media (max-width: 480px) { .mobile-category-items { grid-template-columns: 1fr; } }
+        @media (max-width: 992px) { .nav-desktop { display: none; } .mobile-menu-btn { display: block; } .search-wrapper { width: 100%; max-width: 100%; order: 3; margin-top: 12px; } }
+
+        .hero { background: linear-gradient(120deg, #eef5f2, #fff); padding: 60px 0; border-radius: 0 0 48px 48px; margin-bottom: 40px; text-align: center; }
+        .hero-content h2 { font-size: 2.5rem; font-weight: 800; color: #1e3a5f; }
+        .hero-content p { font-size: 1.1rem; margin-top: 10px; }
+        .btn-hero { background: #e6b422; border: none; padding: 12px 28px; border-radius: 40px; font-weight: 700; cursor: pointer; margin-top: 16px; }
+        @media (max-width: 768px) { .hero-content h2 { font-size: 1.8rem; } .hero-content p { font-size: 1rem; } }
+
+        .section-title { font-size: 1.8rem; font-weight: 700; margin: 48px 0 24px; border-left: 5px solid #e6b422; padding-left: 20px; }
+        @media (max-width: 768px) { .section-title { font-size: 1.4rem; } }
+        .product-grid-home { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 30px; margin-bottom: 40px; }
+        @media (max-width: 768px) { .product-grid-home { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
+        @media (max-width: 480px) { .product-grid-home { grid-template-columns: 1fr; gap: 20px; } }
+        .product-card { background: white; border-radius: 28px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.05); cursor: pointer; transition: 0.2s; border: 1px solid #e2e8f0; position: relative; }
+        .product-card:hover { transform: translateY(-6px); box-shadow: 0 16px 28px rgba(0,0,0,0.1); }
+        .card-img { height: 220px; width: 100%; object-fit: cover; }
+        .card-info { padding: 20px; }
+        .card-title { font-weight: 800; font-size: 1.1rem; }
+        .card-price { color: #d9534f; font-weight: 700; margin: 10px 0; }
+        .discount-badge { position: absolute; top: 12px; right: 12px; background: #ff5722; color: white; font-weight: 800; font-size: 0.85rem; padding: 6px 12px; border-radius: 30px; z-index: 2; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+
+        .product-detail-section { background: #fefcf8; border-radius: 36px; padding: 32px; margin: 40px 0; box-shadow: 0 8px 24px rgba(0,0,0,0.04); }
+        .product-grid-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+        .detail-img { width: 100%; border-radius: 28px; aspect-ratio: 1/1; object-fit: cover; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        .size-chips { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0; }
+        .chip { background: #f5f7fa; padding: 10px 18px; border-radius: 40px; cursor: pointer; transition: 0.2s; }
+        .chip.selected { background: #1e3a5f; color: white; }
+        .quantity-selector { display: flex; align-items: center; gap: 15px; margin: 20px 0; }
+        .quantity-selector button { width: 36px; height: 36px; border-radius: 50%; border: 1px solid #e2e8f0; background: white; font-size: 1.2rem; cursor: pointer; }
+        .quantity-selector span { font-size: 1.2rem; font-weight: 600; min-width: 40px; text-align: center; }
+        .old-price { text-decoration: line-through; color: #8e9eae; margin-right: 12px; font-size: 1rem; }
+        .discount-price { font-weight: 800; color: #d9534f; font-size: 1.6rem; }
+        .saving-badge { background: #ff8c42; color: white; border-radius: 40px; padding: 4px 12px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+        .price-wrapper { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; margin: 20px 0; }
+        .btn-primary, .btn-add-to-cart { background: #e6b422; width: 100%; padding: 14px; border-radius: 60px; font-weight: 700; border: none; margin-top: 24px; cursor: pointer; }
+        .btn-add-to-cart { background: #1e3a5f; color: white; margin-top: 12px; }
+        .btn-back-home { background: #1e3a5f; color: white; border: none; padding: 10px 20px; border-radius: 40px; font-weight: 600; cursor: pointer; margin-bottom: 20px; display: inline-block; }
+
+        .cart-view { background: white; border-radius: 32px; padding: 32px; margin: 40px 0; border: 1px solid #e2e8f0; }
+        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #e2e8f0; flex-wrap: wrap; gap: 10px; }
+        .cart-item-info { flex: 2; }
+        .cart-item-price { flex: 1; text-align: right; }
+        .cart-item-actions { display: flex; gap: 10px; align-items: center; }
+        .cart-total { text-align: right; font-size: 1.3rem; font-weight: 700; margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0; }
+        .btn-checkout { background: #1e3a5f; color: white; width: 100%; padding: 16px; border-radius: 60px; font-weight: bold; border: none; cursor: pointer; margin-top: 20px; }
+        .empty-cart { text-align: center; padding: 40px; color: #8e9eae; }
+
+        .checkout-section { background: white; border-radius: 32px; padding: 32px; margin: 40px 0; border: 1px solid #e2e8f0; }
+        .form-group { margin-bottom: 20px; }
+        .form-group input { width: 100%; padding: 14px 18px; border-radius: 60px; border: 1px solid #e2e8f0; font-family: inherit; }
+        .sticky-buttons { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: white; padding: 10px 16px; gap: 10px; box-shadow: 0 -4px 12px rgba(0,0,0,0.1); z-index: 1000; border-top: 1px solid #e2e8f0; }
+        .btn-sticky { flex: 1; text-align: center; padding: 12px 0; border-radius: 40px; font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: 0.2s; }
+        .btn-cart { background: #e6b422; color: #1e2f3e; }
+        .btn-zalo { background: #0068ff; color: white; }
+        .btn-call { background: #1e3a5f; color: white; }
+        @media (max-width: 768px) { 
+            .product-grid-detail { grid-template-columns: 1fr; } 
+            .sticky-buttons { display: flex; }
+            .btn-sticky { padding: 10px 0; font-size: 0.85rem; }
+            .discount-price { font-size: 1.4rem; }
+            .old-price { font-size: 0.85rem; }
+            .saving-badge { font-size: 0.7rem; padding: 2px 8px; }
+            .price-wrapper { gap: 8px; margin: 16px 0; }
+            .card-img { height: 180px; }
+            .card-info { padding: 12px; }
+            .card-title { font-size: 0.9rem; }
+            .card-price { font-size: 0.9rem; }
+            .discount-badge { font-size: 0.7rem; padding: 3px 8px; top: 8px; right: 8px; }
+            body { padding-bottom: 70px; }
+        }
+        footer { background: #1e3a5f; color: white; text-align: center; padding: 12px 16px; margin-top: 40px; font-size: 0.8rem; border-radius: 30px; width: 90%; margin-left: auto; margin-right: auto; margin-bottom: 10px; }
+        footer .pink { color: #ff69b4; font-weight: 600; }
+        @media (max-width: 768px) { footer { font-size: 0.7rem; padding: 10px 12px; width: 95%; } }
+        .review-mini { background: #f8fafc; border-radius: 28px; padding: 20px; margin: 24px 0; }
+        .review-mini .review-item { margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 12px; }
+        .review-mini .review-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .home-view, .detail-view, .cart-view { transition: all 0.2s; }
+        .detail-view, .cart-view { display: none; }
+        :root { --navy-light: #1e3a5f; --gold-soft: #e6b422; --gray-light: #f5f7fa; --gray-border: #e2e8f0; --price-red: #d9534f; }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="container header-top">
+        <div class="nav-left">
+            <div class="logo" id="logoHome">
+                <h1>Nệm<span>LÊ GIA</span></h1>
+            </div>
+            <div class="nav-desktop">
+                <div class="mega-menu">
+                    <button class="mega-trigger">NỆM <i class="fas fa-chevron-down"></i></button>
+                    <div class="mega-dropdown">
+                        <div class="mega-col"><h4>Cao Su Thiên Nhiên</h4><ul><li><a data-product="van-thanh">Vạn Thành</a></li><li><a data-product="dong-phu">Đồng Phú</a></li><li><a data-product="lien-a">Liên Á</a></li><li><a data-product="thang-loi">Thắng Lợi</a></li><li><a data-product="png">PNG</a></li></ul></div>
+                        <div class="mega-col"><h4>Cao Su Tổng Hợp</h4><ul><li><a data-product="csn-thang-loi">CSN Thắng Lợi</a></li><li><a data-product="diamond">Diamond</a></li></ul><h4>Bông Ép</h4><ul><li><a data-product="everon">Everon</a></li><li><a data-product="seoul">Seoul</a></li></ul></div>
+                        <div class="mega-col"><h4>Lò Xo Túi</h4><ul><li><a data-product="uu-viet">Ưu Việt</a></li><li><a data-product="elan">Elan</a></li><li><a data-product="celina">Celina</a></li></ul><h4>PE / Foam</h4><ul><li><a data-product="pe-korea">Nệm PE Korea</a></li><li><a data-product="foam-korea">Nệm Foam Korea</a></li></ul></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search-wrapper">
+            <div class="search-box"><input type="text" id="smartSearch" placeholder="Tìm nệm..."><button id="searchBtn"><i class="fas fa-search"></i></button></div>
+            <div id="suggestionsBox" class="search-suggestions"></div>
+        </div>
+        <div class="cart-icon" id="cartIcon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cartCount">0</span>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+        <div class="accordion-item">
+            <div class="accordion-header">NỆM <i class="fas fa-angle-down"></i></div>
+            <div class="accordion-content">
+                <div class="mobile-category-group"><h4>Cao Su Thiên Nhiên</h4><div class="mobile-category-items"><a data-product="van-thanh">Vạn Thành</a><a data-product="dong-phu">Đồng Phú</a><a data-product="lien-a">Liên Á</a><a data-product="thang-loi">Thắng Lợi</a><a data-product="png">PNG</a></div></div>
+                <div class="mobile-category-group"><h4>Cao Su Tổng Hợp</h4><div class="mobile-category-items"><a data-product="csn-thang-loi">CSN Thắng Lợi</a><a data-product="diamond">Diamond</a></div></div>
+                <div class="mobile-category-group"><h4>Bông Ép</h4><div class="mobile-category-items"><a data-product="everon">Everon</a><a data-product="seoul">Seoul</a></div></div>
+                <div class="mobile-category-group"><h4>Lò Xo Túi</h4><div class="mobile-category-items"><a data-product="uu-viet">Ưu Việt</a><a data-product="elan">Elan</a><a data-product="celina">Celina</a></div></div>
+                <div class="mobile-category-group"><h4>PE / Foam</h4><div class="mobile-category-items"><a data-product="pe-korea">Nệm PE Korea</a><a data-product="foam-korea">Nệm Foam Korea</a></div></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- View trang chủ -->
+    <div id="homeView" class="home-view">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Ngủ ngon mỗi ngày<br>cùng <span style="color:#e6b422;">Nệm Lê Gia</span></h2>
+                    <p>Giảm sốc đến 55% – Giao tận nơi</p>
+                    <button class="btn-hero" id="heroCta">Xem ưu đãi ngay</button>
+                </div>
+            </div>
+        </section>
+        <div class="container">
+            <h2 class="section-title">Sản phẩm nổi bật</h2>
+            <div class="product-grid-home" id="productGrid"></div>
+        </div>
+    </div>
+
+    <!-- View chi tiết sản phẩm -->
+    <div id="detailView" class="detail-view">
+        <div class="container">
+            <button class="btn-back-home" id="backToHomeBtn"><i class="fas fa-arrow-left"></i> Quay lại trang chủ</button>
+            <div id="productDetailSection" class="product-detail-section"></div>
+            <div id="reviewContainer" class="review-mini" style="margin-top: 20px;"></div>
+        </div>
+    </div>
+
+    <!-- View giỏ hàng -->
+    <div id="cartView" class="cart-view">
+        <div class="container">
+            <button class="btn-back-home" id="backToHomeFromCart"><i class="fas fa-arrow-left"></i> Tiếp tục mua sắm</button>
+            <h2 style="margin: 20px 0;">🛒 Giỏ hàng của bạn</h2>
+            <div id="cartItemsList"></div>
+            <div id="cartTotal" class="cart-total"></div>
+            <button id="proceedToCheckoutBtn" class="btn-checkout">Tiến hành đặt hàng</button>
+            <div id="checkoutFormContainer" style="display: none; margin-top: 30px;">
+                <div class="checkout-section">
+                    <h3>Thông tin giao hàng</h3>
+                    <form id="orderForm">
+                        <div class="form-group"><input type="text" id="fullName" placeholder="Họ và tên *" required></div>
+                        <div class="form-group"><input type="tel" id="phone" placeholder="Số điện thoại *" required></div>
+                        <div class="form-group"><input type="text" id="address" placeholder="Địa chỉ giao hàng *" required></div>
+                        <button type="submit" class="btn-checkout">XÁC NHẬN ĐẶT HÀNG</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    Nệm <span class="pink">Lê Gia</span> - Hạnh phúc mọi nhà. Hotline: 0905 513 984
+</footer>
+<div class="sticky-buttons">
+    <div class="btn-sticky btn-cart" id="stickyCartBtn"><i class="fas fa-shopping-cart"></i> GIỎ HÀNG</div>
+    <div class="btn-sticky btn-zalo" id="stickyZaloBtn"><i class="fab fa-zalo"></i> ZALO</div>
+    <div class="btn-sticky btn-call" id="stickyCallBtn"><i class="fas fa-phone-alt"></i> GỌI</div>
+</div>
+
+<script>
+    // ====================== CẤU HÌNH GỬI EMAIL ======================
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xwvwzorl';
+    // ================================================================
+
+    const PHONE_NUMBER = "0905513984";
+    function discountedPrice(original, percent) {
+        return Math.round(original * (100 - percent) / 100 / 1000) * 1000;
+    }
+
+    const productsDB = {
+        "van-thanh": { name: "NỆM CAO SU VẠN THÀNH", desc: "Kháng khuẩn tự nhiên, nâng đỡ cột sống, thoáng khí.", img: "https://i.ibb.co/dJ7JD98q/nem-cao-su-unique-5-1.jpg", oldPrices: { "1m x 2m x 10cm":9910000,"1m2 x 2m x 10cm":11300000,"1m4 x 2m x 10cm":13070000,"1m6 x 2m x 10cm":14340000,"1m8 x 2m x 10cm":16150000,"2m x 2m x 10cm":18530000 }, discountPercent: 22 },
+        "dong-phu": { name: "NỆM CAO SU ĐỒNG PHÚ", desc: "Cao su thiên nhiên Friendly, êm ái, bền bỉ, giảm 32%.", img: "https://i.ibb.co/Q7sZgRNQ/nem-cao-su-thien-nhien-friendly-dong-phu-1-1.jpg", oldPrices: { "1m x 2m x 10cm":8700000,"1m2 x 2m x 10cm":9700000,"1m4 x 2m x 10cm":11250000,"1m6 x 2m x 10cm":12750000,"1m8 x 2m x 10cm":14450000,"2m x 2m x 10cm":16450000,"2m2 x 2m x 10cm":17950000 }, discountPercent: 32 },
+        "lien-a": { name: "NỆM CAO SU LIÊN Á", desc: "Cao su thiên nhiên nguyên chất, độ đàn hồi tốt, không gây dị ứng.", img: "https://i.ibb.co/zW9TWT9v/Nem-CSTN-Lien-A-Classic-1.jpg", oldPrices: { "1m6 x 2m x 10cm":13690000, "1m8 x 2m x 10cm":15690000 }, discountPercent: 16 },
+        "thang-loi": { name: "NỆM CAO SU THIÊN NHIÊN THẮNG LỢI", desc: "Cao su thiên nhiên cao cấp, siêu bền, giảm sốc 40%.", img: "https://i.ibb.co/4ZP1M9Hy/nemthangloichinhhang-vn-cstn-susu-original-cao-su-thien-nhien-1.png", oldPrices: { "1m6 x 2m x 10cm":15000000, "1m8 x 2m x 10cm":17083000 }, discountPercent: 40 },
+        "png": { name: "NỆM CAO SU PNG", desc: "Nhập khẩu nguyên liệu từ rừng cao su PNG, độ bền vượt trội.", img: "https://i.ibb.co/DjmcrVB/3-18-1.jpg", oldPrices: { "1m6 x 2m x 10cm":9888000, "1m8 x 2m x 10cm":10900000 }, discountPercent: 40 },
+        "csn-thang-loi": { name: "CSN THẮNG LỢI (Cao su tổng hợp)", desc: "Cao su tổng hợp chất lượng cao, độ bền tốt, giá hợp lý, giảm sốc 55%.", img: "https://i.ibb.co/pvR7j6Jt/csn-thangloi.jpg", oldPrices: { "1m6 x 2m x 10cm":4167000, "1m8 x 2m x 10cm":4611000 }, discountPercent: 55 },
+        "diamond": { name: "NỆM CAO SU TỔNG HỢP DIAMOND", desc: "Cao su tổng hợp chất lượng cao, độ cứng vừa phải, đàn hồi tốt, giảm 50%.", img: "https://i.ibb.co/nqHhmggT/diamond.jpg", oldPrices: { "1m6 x 2m x 10cm":4160000, "1m8 x 2m x 10cm":4360000 }, discountPercent: 50 },
+        "everon": { name: "NỆM BÔNG ÉP EVERON", desc: "Bông ép cao cấp, thoáng khí, độ cứng vừa phải.", img: "https://i.ibb.co/Pz5WQb8J/everon.jpg", oldPrices: { "1m6 x 2m x 9cm":4290000, "1m8 x 2m x 9cm":4690000 }, discountPercent: 21 },
+        "seoul": { name: "NỆM BÔNG ÉP SEOUL", desc: "Bông ép cao cấp nhập khẩu Hàn Quốc, chống xẹp lún.", img: "https://i.ibb.co/kggPmS4T/korea.jpg", oldPrices: { "1m6 x 2m x 9cm":4400000, "1m8 x 2m x 9cm":4800000 }, discountPercent: 48 },
+        "uu-viet": { name: "NỆM LÒ XO TÚI ƯU VIỆT", desc: "Lò xo túi độc lập, không gây tiếng ồn, nâng đỡ tốt, bảo hành 10 năm.", img: "https://i.ibb.co/pYGDPv4/nem-lo-xo-tui-platinum-4.jpg", oldPrices: { "1m6 x 2m x 22cm":7523000, "1m8 x 2m x 10cm":8432000 }, discountPercent: 18 },
+        "elan": { name: "NỆM LÒ XO TÚI ELAN", desc: "Lò xo túi cao cấp, cuộn hộp dễ vận chuyển, êm ái tuyệt đối.", img: "https://i.ibb.co/FbfcrSsH/7269-dem-lo-xo-tui-cuon-vimatt-elan-1.png", oldPrices: { "1m6 x 2m x 10cm":7210000, "1m8 x 2m x 10cm":7780000 }, discountPercent: 30 },
+        "celina": { name: "NỆM LÒ XO TÚI CELINA", desc: "Lò xo túi nhập khẩu, độc lập cao cấp, mang lại giấc ngủ ngon.", img: "https://i.ibb.co/FqjRZ6YZ/370000058-1595229164781gqyc.jpg", oldPrices: { "1m6 x 2m x 10cm":7500000, "1m8 x 2m x 10cm":7800000 }, discountPercent: 40 },
+        "pe-korea": { name: "NỆM PE KOREA", desc: "Nhẹ, gấp gọn, thoáng khí, chống ẩm.", img: "https://picsum.photos/id/127/600/600", oldPrices: {"1m0 x 2m x 8cm":2600000,"1m2 x 2m x 8cm":3000000,"1m4 x 2m x 8cm":3500000,"1m6 x 2m x 8cm":4100000,"1m8 x 2m x 8cm":4700000}, discountPercent: 27 },
+        "foam-korea": { name: "NỆM FOAM KOREA", desc: "Đàn hồi tốt, ôm sát cơ thể, giảm áp lực.", img: "https://picsum.photos/id/84/600/600", oldPrices: {"1m0 x 2m x 10cm":3600000,"1m2 x 2m x 10cm":4200000,"1m4 x 2m x 10cm":4900000,"1m6 x 2m x 10cm":5600000,"1m8 x 2m x 10cm":6400000}, discountPercent: 22 }
+    };
+
+    for (let key in productsDB) {
+        const prod = productsDB[key];
+        if (prod.oldPrices && prod.discountPercent) {
+            prod.prices = {};
+            for (let sz in prod.oldPrices) {
+                prod.prices[sz] = discountedPrice(prod.oldPrices[sz], prod.discountPercent);
+            }
+        }
+    }
+
+    // Giỏ hàng: lưu các mục { id, size, quantity, price, name, img }
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function saveCart() {
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+    }
+
+    function updateCartCount() {
+        const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
+        document.getElementById('cartCount').innerText = totalQty;
+    }
+
+    function addToCart(productId, size, quantity) {
+        const prod = productsDB[productId];
+        const price = prod.prices[size];
+        const existing = cart.find(item => item.id === productId && item.size === size);
+        if (existing) {
+            existing.quantity += quantity;
+        } else {
+            cart.push({
+                id: productId,
+                size: size,
+                quantity: quantity,
+                price: price,
+                name: prod.name,
+                img: prod.img
+            });
+        }
+        saveCart();
+        alert(`Đã thêm ${quantity} ${prod.name} (${size}) vào giỏ hàng!`);
+    }
+
+    function renderCartView() {
+        const container = document.getElementById('cartItemsList');
+        const totalContainer = document.getElementById('cartTotal');
+        if (!cart.length) {
+            container.innerHTML = '<div class="empty-cart">🛒 Giỏ hàng của bạn đang trống. Hãy tiếp tục mua sắm!</div>';
+            totalContainer.innerHTML = '';
+            return;
+        }
+        let html = '';
+        let total = 0;
+        cart.forEach((item, index) => {
+            const itemTotal = item.price * item.quantity;
+            total += itemTotal;
+            html += `
+                <div class="cart-item">
+                    <div class="cart-item-info">
+                        <strong>${item.name}</strong><br>
+                        Kích thước: ${item.size}<br>
+                        Đơn giá: ${formatPrice(item.price)}
+                    </div>
+                    <div class="cart-item-actions">
+                        <button class="qty-down" data-index="${index}">-</button>
+                        <span>${item.quantity}</span>
+                        <button class="qty-up" data-index="${index}">+</button>
+                        <button class="remove-item" data-index="${index}" style="background:#ff5722; color:white; border:none; border-radius:20px; padding:5px 12px;">Xóa</button>
+                    </div>
+                    <div class="cart-item-price">${formatPrice(itemTotal)}</div>
+                </div>
+            `;
+        });
+        container.innerHTML = html;
+        totalContainer.innerHTML = `Tổng cộng: ${formatPrice(total)}`;
+
+        // Gán sự kiện cho các nút trong giỏ
+        document.querySelectorAll('.qty-down').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const idx = parseInt(btn.dataset.index);
+                if (cart[idx].quantity > 1) {
+                    cart[idx].quantity--;
+                } else {
+                    cart.splice(idx, 1);
+                }
+                saveCart();
+                renderCartView();
+            });
+        });
+        document.querySelectorAll('.qty-up').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const idx = parseInt(btn.dataset.index);
+                cart[idx].quantity++;
+                saveCart();
+                renderCartView();
+            });
+        });
+        document.querySelectorAll('.remove-item').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const idx = parseInt(btn.dataset.index);
+                cart.splice(idx, 1);
+                saveCart();
+                renderCartView();
+            });
+        });
+    }
+
+    function formatPrice(p) { return p.toLocaleString('vi-VN') + 'đ'; }
+
+    // Hiển thị trang chi tiết sản phẩm
+    let currentProductId = "uu-viet";
+    let currentSize = "1m6 x 2m x 22cm";
+    let currentQuantity = 1;
+
+    function renderProductDetail() {
+        const prod = productsDB[currentProductId];
+        const price = prod.prices[currentSize];
+        const oldPrice = prod.oldPrices[currentSize];
+        const savePercent = prod.discountPercent;
+        const sizeOptions = Object.keys(prod.prices);
+        const html = `
+            <div class="product-grid-detail">
+                <div><img class="detail-img" src="${prod.img}" alt="${prod.name}" loading="lazy"></div>
+                <div>
+                    <h2 style="font-size:1.8rem; font-weight:800;">${prod.name}</h2>
+                    <p style="margin:16px 0;">${prod.desc}</p>
+                    <div><strong>Chọn kích thước:</strong><div class="size-chips" id="detailSizeChips">${sizeOptions.map(sz => `<div class="chip ${sz === currentSize ? 'selected' : ''}" data-size="${sz}">${sz}</div>`).join('')}</div></div>
+                    <div class="price-wrapper"><span class="old-price">${formatPrice(oldPrice)}</span><span class="discount-price">${formatPrice(price)}</span><span class="saving-badge">Tiết kiệm ${savePercent}%</span></div>
+                    <div class="quantity-selector">
+                        <button id="qtyMinus">-</button>
+                        <span id="qtyValue">${currentQuantity}</span>
+                        <button id="qtyPlus">+</button>
+                    </div>
+                    <button class="btn-add-to-cart" id="addToCartBtn"><i class="fas fa-cart-plus"></i> Thêm vào giỏ</button>
+                    <button class="btn-primary" id="buyNowBtn">Mua ngay</button>
+                </div>
+            </div>
+        `;
+        document.getElementById("productDetailSection").innerHTML = html;
+        // Sự kiện chọn size
+        document.querySelectorAll("#detailSizeChips .chip").forEach(chip => {
+            chip.addEventListener("click", () => {
+                currentSize = chip.dataset.size;
+                renderProductDetail();
+                renderReviews(currentProductId);
+            });
+        });
+        // Sự kiện số lượng
+        document.getElementById("qtyMinus").addEventListener("click", () => {
+            if (currentQuantity > 1) currentQuantity--;
+            document.getElementById("qtyValue").innerText = currentQuantity;
+        });
+        document.getElementById("qtyPlus").addEventListener("click", () => {
+            currentQuantity++;
+            document.getElementById("qtyValue").innerText = currentQuantity;
+        });
+        document.getElementById("addToCartBtn").addEventListener("click", () => {
+            addToCart(currentProductId, currentSize, currentQuantity);
+        });
+        document.getElementById("buyNowBtn").addEventListener("click", () => {
+            addToCart(currentProductId, currentSize, currentQuantity);
+            showCartView();
+        });
+        renderReviews(currentProductId);
+    }
+
+    const reviewsDB = {
+        "uu-viet": [{ stars: 5, name: "Anh Minh (TP.HCM)", content: "Nệm lò xo túi Ưu Việt chất lượng tốt, không rung lắc, giao hàng nhanh." }, { stars: 5, name: "Chị Lan (Hà Nội)", content: "Ngủ rất êm, không bị ồn khi trở mình." }],
+        "thang-loi": [{ stars: 5, name: "Chị Thảo (HCM)", content: "Nệm cao su thiên nhiên Thắng Lợi siêu bền, sau 2 năm vẫn như mới, giảm 40% quá hời." }, { stars: 5, name: "Anh Đức (Hà Nội)", content: "Chất lượng vượt trội, ngủ rất êm, không bị xẹp lún." }],
+        "van-thanh": [{ stars: 5, name: "Chị Lan (Hà Nội)", content: "Nệm cao su Vạn Thành rất êm, đỡ đau lưng rõ rệt sau 2 tuần." }, { stars: 5, name: "Anh Tuấn (Hải Phòng)", content: "Mua nệm Vạn Thành cho bố mẹ, cả nhà đều hài lòng, thoáng khí tốt." }],
+        "dong-phu": [{ stars: 5, name: "Chị Hoa (TP.HCM)", content: "Nệm Đồng Phú chất lượng cao, không bị xẹp lún, ngủ rất ngon." }, { stars: 5, name: "Anh Quân (Đà Nẵng)", content: "Giao hàng nhanh, nệm thơm mùi cao su tự nhiên, êm ái." }],
+        "lien-a": [{ stars: 5, name: "Chị Ngọc (Bắc Ninh)", content: "Nệm Liên Á mềm mại, phù hợp với người lớn tuổi." }, { stars: 5, name: "Anh Cường (Hà Nội)", content: "Độ đàn hồi tốt, giá cả hợp lý, rất đáng mua." }],
+        "png": [{ stars: 5, name: "Chị Hương (Hải Dương)", content: "Nệm PNG nhập khẩu, êm và thoáng, không gây dị ứng." }, { stars: 5, name: "Anh Phát (Đồng Nai)", content: "Tôi đã mua 2 chiếc cho gia đình, chất lượng tuyệt vời." }],
+        "csn-thang-loi": [{ stars: 5, name: "Chị Mai (Hà Nội)", content: "CSN Thắng Lợi giá tốt, êm như cao su thiên nhiên, giảm 55% siêu hời." }, { stars: 5, name: "Anh Lợi (Bình Dương)", content: "Mua cho con nhỏ, nệm êm và an toàn, đáng tiền." }],
+        "diamond": [{ stars: 5, name: "Chị Thu (HCM)", content: "Nệm Diamond cứng vừa phải, tốt cho cột sống." }, { stars: 5, name: "Anh Hùng (Quảng Ninh)", content: "Giảm 50% quá hời, chất lượng không thua kém cao su tự nhiên." }],
+        "everon": [{ stars: 5, name: "Chị Bích (Hà Nội)", content: "Nệm Everon gấp gọn tiện lợi, thoáng khí." }, { stars: 5, name: "Anh Sơn (Thanh Hóa)", content: "Giá rẻ, chất lượng tốt, đáng đồng tiền." }],
+        "seoul": [{ stars: 5, name: "Chị Linh (HCM)", content: "Nệm Seoul êm ái, không bị xẹp sau thời gian dài." }, { stars: 5, name: "Anh Khang (Cần Thơ)", content: "Mua cho phòng trọ, rất ưng." }],
+        "elan": [{ stars: 5, name: "Chị Hằng (Đà Nẵng)", content: "Nệm Elan cuộn hộp tiện lợi, êm ái không thua kém các loại đắt tiền." }, { stars: 5, name: "Anh Vũ (Hải Phòng)", content: "Lò xo túi êm, không bị lún, rất hài lòng." }],
+        "celina": [{ stars: 5, name: "Chị Nga (HCM)", content: "Celina cao cấp, nâng đỡ cột sống tốt, sau khi dùng hết đau lưng." }, { stars: 5, name: "Anh Phong (Bình Định)", content: "Giao hàng tận nơi, nhân viên nhiệt tình, nệm tốt." }],
+        "pe-korea": [{ stars: 5, name: "Chị Thủy (Hà Nội)", content: "Nệm PE nhẹ, gấp gọn, rất phù hợp cho thuê trọ." }, { stars: 5, name: "Anh Đạt (HCM)", content: "Chống ẩm tốt, không bị mốc." }],
+        "foam-korea": [{ stars: 5, name: "Chị Hạnh (Hải Dương)", content: "Foam Korea êm, ôm cơ thể, ngủ rất sâu." }, { stars: 5, name: "Anh Trung (Thái Nguyên)", content: "Giá tốt, chất lượng ổn, đáng mua." }]
+    };
+
+    function renderReviews(productId) {
+        const reviews = reviewsDB[productId] || [{ stars: 5, name: "Khách hàng A", content: "Sản phẩm chất lượng, đáng mua." }, { stars: 5, name: "Khách hàng B", content: "Giao hàng nhanh, nhân viên tư vấn nhiệt tình." }];
+        const reviewHtml = `<h3>📸 Khách hàng tin dùng</h3>${reviews.map(r => `<div class="review-item"><div>${'⭐️'.repeat(r.stars)}</div><p><strong>“${r.content}”</strong> - ${r.name}</p></div>`).join('')}`;
+        document.getElementById("reviewContainer").innerHTML = reviewHtml;
+    }
+
+    function showProductDetail(id) {
+        currentProductId = id;
+        currentSize = Object.keys(productsDB[id].prices)[0];
+        currentQuantity = 1;
+        renderProductDetail();
+        document.getElementById("homeView").style.display = "none";
+        document.getElementById("detailView").style.display = "block";
+        document.getElementById("cartView").style.display = "none";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function showHomeView() {
+        document.getElementById("homeView").style.display = "block";
+        document.getElementById("detailView").style.display = "none";
+        document.getElementById("cartView").style.display = "none";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function showCartView() {
+        renderCartView();
+        document.getElementById("homeView").style.display = "none";
+        document.getElementById("detailView").style.display = "none";
+        document.getElementById("cartView").style.display = "block";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        document.getElementById("checkoutFormContainer").style.display = "none";
+    }
+
+    // Xử lý đặt hàng từ giỏ
+    document.getElementById("proceedToCheckoutBtn").addEventListener("click", () => {
+        if (cart.length === 0) {
+            alert("Giỏ hàng trống, vui lòng thêm sản phẩm.");
+            return;
+        }
+        document.getElementById("checkoutFormContainer").style.display = "block";
+    });
+
+    document.getElementById("orderForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const name = document.getElementById("fullName").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const addr = document.getElementById("address").value.trim();
+        if (!name || !phone || !addr) {
+            alert("Vui lòng nhập đầy đủ thông tin.");
+            return;
+        }
+        if (!/^\d{10,11}$/.test(phone)) {
+            alert("Số điện thoại không hợp lệ (10-11 số).");
+            return;
+        }
+        // Tạo nội dung đơn hàng
+        let orderDetails = cart.map(item => `${item.name} (${item.size}) x ${item.quantity} = ${formatPrice(item.price * item.quantity)}`).join('\n');
+        const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+        const orderData = {
+            name: name,
+            phone: phone,
+            address: addr,
+            items: orderDetails,
+            total: formatPrice(total),
+            _subject: `Đơn hàng mới từ ${name}`
+        };
+        try {
+            const response = await fetch(FORMSPREE_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(orderData)
+            });
+            if (response.ok) {
+                alert(`✅ Đặt hàng thành công!\nKhách: ${name}\nĐịa chỉ: ${addr}\nChúng tôi sẽ liên hệ xác nhận trong ít phút.`);
+                cart = [];
+                saveCart();
+                renderCartView();
+                document.getElementById("orderForm").reset();
+                document.getElementById("checkoutFormContainer").style.display = "none";
+                showHomeView();
+            } else {
+                alert("Có lỗi xảy ra khi gửi đơn hàng. Vui lòng thử lại hoặc liên hệ hotline.");
+            }
+        } catch (error) {
+            console.error("Lỗi gửi đơn:", error);
+            alert("Không thể gửi đơn hàng. Vui lòng kiểm tra kết nối hoặc liên hệ hotline.");
+        }
+    });
+
+    // Các sự kiện điều hướng
+    const featuredIds = ["uu-viet", "elan", "celina", "thang-loi", "van-thanh", "dong-phu", "csn-thang-loi", "diamond"];
+    document.getElementById("heroCta")?.addEventListener("click", () => {
+        const randomIndex = Math.floor(Math.random() * featuredIds.length);
+        showProductDetail(featuredIds[randomIndex]);
+    });
+    function loadProductGrid() {
+        const grid = document.getElementById("productGrid");
+        grid.innerHTML = featuredIds.map(id => {
+            const p = productsDB[id];
+            const demoPrice = p.prices[Object.keys(p.prices)[0]];
+            return `<div class="product-card" data-prodid="${id}"><div class="discount-badge">-${p.discountPercent}%</div><img class="card-img" src="${p.img}" loading="lazy"><div class="card-info"><div class="card-title">${p.name}</div><div class="card-price">${formatPrice(demoPrice)}</div><button class="btn-hero" style="background:#e6b422; width:100%;">Xem chi tiết</button></div></div>`;
+        }).join('');
+        document.querySelectorAll(".product-card").forEach(card => card.addEventListener("click", () => showProductDetail(card.dataset.prodid)));
+    }
+
+    // Tìm kiếm
+    const searchInput = document.getElementById("smartSearch"), suggestions = document.getElementById("suggestionsBox");
+    const allNames = Object.values(productsDB).map(p => p.name);
+    searchInput.addEventListener("input", () => {
+        const val = searchInput.value.trim().toLowerCase();
+        if (val.length < 2) { suggestions.classList.remove("active"); return; }
+        const filtered = allNames.filter(n => n.toLowerCase().includes(val));
+        if (filtered.length) {
+            suggestions.innerHTML = filtered.map(n => `<div class="suggestion-item">${n}</div>`).join('');
+            suggestions.classList.add("active");
+            document.querySelectorAll(".suggestion-item").forEach(el => el.addEventListener("click", () => {
+                searchInput.value = el.innerText;
+                suggestions.classList.remove("active");
+                const found = Object.keys(productsDB).find(k => productsDB[k].name === el.innerText);
+                if (found) showProductDetail(found);
+            }));
+        } else suggestions.classList.remove("active");
+    });
+    document.addEventListener("click", (e) => { if (!searchInput.contains(e.target)) suggestions.classList.remove("active"); });
+
+    // Menu events
+    document.querySelectorAll(".mega-col a, .mobile-category-items a").forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const id = link.getAttribute("data-product");
+            if (id && productsDB[id]) showProductDetail(id);
+            if (window.innerWidth < 992) document.getElementById("mobileNav").classList.remove("open");
+        });
+    });
+    document.getElementById("stickyCartBtn")?.addEventListener("click", showCartView);
+    document.getElementById("cartIcon")?.addEventListener("click", showCartView);
+    document.getElementById("stickyZaloBtn")?.addEventListener("click", () => window.open(`https://zalo.me/${PHONE_NUMBER}`, '_blank'));
+    document.getElementById("stickyCallBtn")?.addEventListener("click", () => window.location.href = `tel:${PHONE_NUMBER}`);
+    document.getElementById("mobileMenuBtn")?.addEventListener("click", () => document.getElementById("mobileNav").classList.toggle("open"));
+    document.querySelectorAll(".accordion-header").forEach(h => h.addEventListener("click", function() { this.nextElementSibling.classList.toggle("show"); const icon = this.querySelector("i"); if(icon) icon.classList.toggle("fa-angle-down"); if(icon) icon.classList.toggle("fa-angle-up"); }));
+    document.getElementById("logoHome").addEventListener("click", showHomeView);
+    document.getElementById("backToHomeBtn").addEventListener("click", showHomeView);
+    document.getElementById("backToHomeFromCart").addEventListener("click", showHomeView);
+
+    loadProductGrid();
+    showHomeView();
+    updateCartCount();
+</script>
+</body>
+</html>
