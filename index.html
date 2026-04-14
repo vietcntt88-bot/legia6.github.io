@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* Toàn bộ CSS giữ nguyên từ phiên bản cuối (đã tối ưu UI/UX) */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Montserrat', sans-serif; background: #fff; color: #1A2C3E; line-height: 1.5; }
         .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
@@ -73,7 +74,7 @@
         .btn-hero { background: #e6b422; border: none; padding: 14px 32px; border-radius: 50px; font-weight: 700; cursor: pointer; margin-top: 8px; font-size: 1rem; transition: 0.2s; }
         .btn-hero:hover { background: #d4a017; transform: translateY(-2px); }
 
-        /* Slideshow cải tiến */
+        /* Slideshow */
         .hero-slideshow-container {
             flex: 1;
             position: relative;
@@ -147,7 +148,7 @@
             .slideshow-prev, .slideshow-next { width: 32px; height: 32px; font-size: 1rem; }
         }
 
-        /* Bộ lọc cải tiến */
+        /* Bộ lọc */
         .filter-section { margin-bottom: 30px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
         .filter-btn {
             background: white;
@@ -197,7 +198,6 @@
             }
         }
 
-        /* Thẻ sản phẩm */
         .product-card { background: white; border-radius: 28px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.05); cursor: pointer; transition: 0.2s; border: 1px solid #e2e8f0; position: relative; }
         .product-card:hover { transform: translateY(-6px); box-shadow: 0 16px 28px rgba(0,0,0,0.1); }
         .card-img { height: 220px; width: 100%; object-fit: cover; }
@@ -227,7 +227,7 @@
             .discount-badge { font-size: 0.7rem; padding: 3px 8px; top: 8px; right: 8px; }
         }
 
-        /* Flash sale (giữ nguyên) */
+        /* Flash sale */
         .flash-sale { background: linear-gradient(135deg, #fff5e6, #fff); border-radius: 32px; padding: 24px; margin: 40px 0; border: 1px solid #ffe0b3; }
         .flash-title { display: flex; align-items: center; gap: 10px; font-size: 1.5rem; font-weight: 800; color: #ff5722; margin-bottom: 20px; flex-wrap: wrap; }
         .flash-countdown { background: #ff5722; color: white; padding: 6px 14px; border-radius: 60px; font-size: 1rem; font-weight: 700; margin-left: 8px; }
@@ -251,7 +251,7 @@
             .flash-price { font-size: 0.9rem; }
         }
 
-        /* Why us, reviews, detail, cart, modal... (giữ nguyên từ bản trước) */
+        /* Why us, reviews, detail, cart, modal... (giữ nguyên) */
         .why-us { background: #f8fafc; border-radius: 48px; padding: 40px 20px; margin: 40px 0; text-align: center; }
         .why-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 30px; color: #1e3a5f; }
         .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
@@ -270,7 +270,7 @@
         .home-review-author { font-weight: 600; color: #1e3a5f; }
         @media (max-width: 768px) { .home-reviews-grid { grid-template-columns: 1fr; } }
 
-        /* Các style cho detail, cart, modal... (giữ nguyên) */
+        /* Detail, cart, modal... */
         .product-detail-section { background: #fefcf8; border-radius: 36px; padding: 32px; margin: 40px 0; box-shadow: 0 8px 24px rgba(0,0,0,0.04); }
         .product-grid-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
         .detail-img { width: 100%; border-radius: 28px; aspect-ratio: 1/1; object-fit: cover; }
@@ -510,24 +510,24 @@
 <div class="sticky-buttons"><div class="btn-sticky btn-cart" id="stickyCartBtn"><i class="fas fa-shopping-cart"></i> GIỎ HÀNG</div><div class="btn-sticky btn-zalo" id="stickyZaloBtn"><i class="fab fa-zalo"></i> ZALO</div><div class="btn-sticky btn-call" id="stickyCallBtn"><i class="fas fa-phone-alt"></i> GỌI</div></div>
 
 <script>
-    // Toàn bộ script giữ nguyên từ bản cuối (đã có flash sale 4 sản phẩm, giỏ hàng, slideshow...)
+    // ======================== DỮ LIỆU SẢN PHẨM (giữ nguyên) ========================
     const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xwvwzorl';
     const PHONE_NUMBER = "0905513984";
     function discountedPrice(original, percent) { return Math.round(original * (100 - percent) / 100 / 1000) * 1000; }
 
     const productsDB = {
-        "van-thanh": { name: "NỆM CSTN VẠN THÀNH", desc: "Kháng khuẩn tự nhiên, nâng đỡ cột sống, thoáng khí.", img: "https://i.ibb.co/dJ7JD98q/nem-cao-su-unique-5-1.jpg", oldPrices: { "1m x 2m x 10cm":9910000,"1m2 x 2m x 10cm":11300000,"1m4 x 2m x 10cm":13070000,"1m6 x 2m x 10cm":14340000,"1m8 x 2m x 10cm":16150000,"2m x 2m x 10cm":18530000 }, discountPercent: 22, category: "cao-su-thien-nhien" },
-        "dong-phu": { name: "NỆM CSTN ĐỒNG PHÚ", desc: "Cao su thiên nhiên Friendly, êm ái, bền bỉ, giảm 32%.", img: "https://i.ibb.co/Q7sZgRNQ/nem-cao-su-thien-nhien-friendly-dong-phu-1-1.jpg", oldPrices: { "1m x 2m x 10cm":8700000,"1m2 x 2m x 10cm":9700000,"1m4 x 2m x 10cm":11250000,"1m6 x 2m x 10cm":12750000,"1m8 x 2m x 10cm":14450000,"2m x 2m x 10cm":16450000,"2m2 x 2m x 10cm":17950000 }, discountPercent: 32, category: "cao-su-thien-nhien" },
-        "lien-a": { name: "NỆM CSTN LIÊN Á", desc: "Cao su thiên nhiên nguyên chất, độ đàn hồi tốt, không gây dị ứng, giảm 16%.", img: "https://i.ibb.co/zW9TWT9v/Nem-CSTN-Lien-A-Classic-1.jpg", oldPrices: { "1m0 x 2m x 10cm":9490000,"1m2 x 2m x 10cm":10690000,"1m4 x 2m x 10cm":12290000,"1m6 x 2m x 10cm":13690000,"1m8 x 2m x 10cm":15690000 }, discountPercent: 16, category: "cao-su-thien-nhien" },
-        "thang-loi": { name: "NỆM CSTN THẮNG LỢI", desc: "Cao su thiên nhiên cao cấp, siêu bền, giảm sốc 40%.", img: "https://i.ibb.co/4ZP1M9Hy/nemthangloichinhhang-vn-cstn-susu-original-cao-su-thien-nhien-1.png", oldPrices: { "1m0 x 2m x 10cm":12333000,"1m2 x 2m x 10cm":12833000,"1m4 x 2m x 10cm":13917000,"1m6 x 2m x 10cm":15000000,"1m8 x 2m x 10cm":17083000 }, discountPercent: 40, category: "cao-su-thien-nhien" },
-        "png": { name: "NỆM CSTN PNG", desc: "Nhập khẩu nguyên liệu từ rừng cao su PNG, độ bền vượt trội.", img: "https://i.ibb.co/DjmcrVB/3-18-1.jpg", oldPrices: { "1m6 x 2m x 10cm":9888000, "1m8 x 2m x 10cm":10900000 }, discountPercent: 40, category: "cao-su-thien-nhien" },
-        "csn-thang-loi": { name: "CSN THẮNG LỢI (Cao su tổng hợp)", desc: "Cao su tổng hợp chất lượng cao, độ bền tốt, nhiều độ dày, giảm 55%.", img: "https://i.ibb.co/pvR7j6Jt/csn-thangloi.jpg", oldPrices: { "1m0 x 2m x 10cm":3500000,"1m2 x 2m x 10cm":3722000,"1m4 x 2m x 10cm":3944000,"1m6 x 2m x 10cm":4167000,"1m8 x 2m x 10cm":4611000, "1m0 x 2m x 15cm":4944000,"1m2 x 2m x 15cm":5167000,"1m4 x 2m x 15cm":5389000,"1m6 x 2m x 15cm":5611000,"1m8 x 2m x 15cm":6056000, "1m0 x 2m x 20cm":6167000,"1m2 x 2m x 20cm":6389000,"1m4 x 2m x 20cm":6611000,"1m6 x 2m x 20cm":6833000,"1m8 x 2m x 20cm":7278000 }, discountPercent: 55, category: "cao-su-tong-hop" },
-        "diamond": { name: "NỆM CAO SU TỔNG HỢP DIAMOND", desc: "Cao su tổng hợp chất lượng cao, độ cứng vừa phải, đàn hồi tốt, giảm 50%.", img: "https://i.ibb.co/nqHhmggT/diamond.jpg", oldPrices: { "1m0 x 2m x 10cm":3560000,"1m2 x 2m x 10cm":3760000,"1m4 x 2m x 10cm":3960000,"1m6 x 2m x 10cm":4160000,"1m8 x 2m x 10cm":4360000, "1m0 x 2m x 15cm":4140000,"1m2 x 2m x 15cm":4480000,"1m4 x 2m x 15cm":4820000,"1m6 x 2m x 15cm":5160000,"1m8 x 2m x 15cm":5640000, "1m0 x 2m x 20cm":5160000,"1m2 x 2m x 20cm":5560000,"1m4 x 2m x 20cm":5960000,"1m6 x 2m x 20cm":6360000,"1m8 x 2m x 20cm":6900000 }, discountPercent: 50, category: "cao-su-tong-hop" },
-        "everon": { name: "NỆM BÔNG ÉP EVERON", desc: "Bông ép cao cấp, thoáng khí, độ cứng vừa phải, giảm 21%.", img: "https://i.ibb.co/Pz5WQb8J/everon.jpg", oldPrices: { "1m0 x 2m x 9cm":2990000,"1m2 x 2m x 9cm":3590000,"1m4 x 2m x 9cm":4190000,"1m6 x 2m x 9cm":4290000,"1m8 x 2m x 9cm":4690000 }, discountPercent: 21, category: "bong-ep" },
-        "seoul": { name: "NỆM BÔNG ÉP SEOUL", desc: "Bông ép cao cấp nhập khẩu Hàn Quốc, chống xẹp lún, giảm 44%.", img: "https://i.ibb.co/kggPmS4T/korea.jpg", oldPrices: { "1m0 x 2m x 9cm":3200000,"1m2 x 2m x 9cm":3600000,"1m4 x 2m x 9cm":4000000,"1m6 x 2m x 9cm":4400000,"1m8 x 2m x 9cm":4800000 }, discountPercent: 44, category: "bong-ep" },
-        "platinum": { name: "NỆM LÒ XO TÚI PLATINUM", desc: "Lò xo túi độc lập, không gây tiếng ồn, nâng đỡ tốt, bảo hành 10 năm, giảm 18%.", img: "https://i.ibb.co/pjgp9Wbt/Untitled.png", oldPrices: { "1m0 x 2m x 22cm":5137000,"1m2 x 2m x 22cm":5916000,"1m4 x 2m x 22cm":6711000,"1m6 x 2m x 22cm":7523000,"1m8 x 2m x 22cm":8432000 }, discountPercent: 18, category: "lo-xo-tui" },
-        "elan": { name: "NỆM LÒ XO TÚI ELAN", desc: "Lò xo túi cao cấp, cuộn hộp dễ vận chuyển, êm ái tuyệt đối, giảm 30%.", img: "https://i.ibb.co/FbfcrSsH/7269-dem-lo-xo-tui-cuon-vimatt-elan-1.png", oldPrices: { "1m0 x 2m x 22cm":6260000,"1m2 x 2m x 22cm":6520000,"1m4 x 2m x 22cm":6860000,"1m6 x 2m x 22cm":7210000,"1m8 x 2m x 22cm":7780000 }, discountPercent: 30, category: "lo-xo-tui" },
-        "celina": { name: "NỆM LÒ XO TÚI CELINA", desc: "Lò xo túi nhập khẩu, độc lập cao cấp, mang lại giấc ngủ ngon, giảm 40%.", img: "https://i.ibb.co/FqjRZ6YZ/370000058-1595229164781gqyc.jpg", oldPrices: { "1m0 x 2m x 22cm":6260000,"1m2 x 2m x 22cm":6520000,"1m4 x 2m x 22cm":6860000,"1m6 x 2m x 22cm":7210000,"1m8 x 2m x 22cm":7780000 }, discountPercent: 40, category: "lo-xo-tui" }
+        "van-thanh": { name: "NỆM CSTN VẠN THÀNH", desc: "Kháng khuẩn tự nhiên, nâng đỡ cột sống, thoáng khí.", img: "https://i.ibb.co/dJ7JD98q/nem-cao-su-unique-5-1.jpg", oldPrices: { "1m x 2m x 10cm":9910000,"1m2 x 2m x 10cm":11300000,"1m4 x 2m x 10cm":13070000,"1m6 x 2m x 10cm":14340000,"1m8 x 2m x 10cm":16150000,"2m x 2m x 10cm":18530000 }, discountPercent: 22, category: "cao-su-thien-nhien", slug: "van-thanh" },
+        "dong-phu": { name: "NỆM CSTN ĐỒNG PHÚ", desc: "Cao su thiên nhiên Friendly, êm ái, bền bỉ, giảm 32%.", img: "https://i.ibb.co/Q7sZgRNQ/nem-cao-su-thien-nhien-friendly-dong-phu-1-1.jpg", oldPrices: { "1m x 2m x 10cm":8700000,"1m2 x 2m x 10cm":9700000,"1m4 x 2m x 10cm":11250000,"1m6 x 2m x 10cm":12750000,"1m8 x 2m x 10cm":14450000,"2m x 2m x 10cm":16450000,"2m2 x 2m x 10cm":17950000 }, discountPercent: 32, category: "cao-su-thien-nhien", slug: "dong-phu" },
+        "lien-a": { name: "NỆM CSTN LIÊN Á", desc: "Cao su thiên nhiên nguyên chất, độ đàn hồi tốt, không gây dị ứng, giảm 16%.", img: "https://i.ibb.co/zW9TWT9v/Nem-CSTN-Lien-A-Classic-1.jpg", oldPrices: { "1m0 x 2m x 10cm":9490000,"1m2 x 2m x 10cm":10690000,"1m4 x 2m x 10cm":12290000,"1m6 x 2m x 10cm":13690000,"1m8 x 2m x 10cm":15690000 }, discountPercent: 16, category: "cao-su-thien-nhien", slug: "lien-a" },
+        "thang-loi": { name: "NỆM CSTN THẮNG LỢI", desc: "Cao su thiên nhiên cao cấp, siêu bền, giảm sốc 40%.", img: "https://i.ibb.co/4ZP1M9Hy/nemthangloichinhhang-vn-cstn-susu-original-cao-su-thien-nhien-1.png", oldPrices: { "1m0 x 2m x 10cm":12333000,"1m2 x 2m x 10cm":12833000,"1m4 x 2m x 10cm":13917000,"1m6 x 2m x 10cm":15000000,"1m8 x 2m x 10cm":17083000 }, discountPercent: 40, category: "cao-su-thien-nhien", slug: "thang-loi" },
+        "png": { name: "NỆM CSTN PNG", desc: "Nhập khẩu nguyên liệu từ rừng cao su PNG, độ bền vượt trội.", img: "https://i.ibb.co/DjmcrVB/3-18-1.jpg", oldPrices: { "1m6 x 2m x 10cm":9888000, "1m8 x 2m x 10cm":10900000 }, discountPercent: 40, category: "cao-su-thien-nhien", slug: "png" },
+        "csn-thang-loi": { name: "CSN THẮNG LỢI (Cao su tổng hợp)", desc: "Cao su tổng hợp chất lượng cao, độ bền tốt, nhiều độ dày, giảm 55%.", img: "https://i.ibb.co/pvR7j6Jt/csn-thangloi.jpg", oldPrices: { "1m0 x 2m x 10cm":3500000,"1m2 x 2m x 10cm":3722000,"1m4 x 2m x 10cm":3944000,"1m6 x 2m x 10cm":4167000,"1m8 x 2m x 10cm":4611000, "1m0 x 2m x 15cm":4944000,"1m2 x 2m x 15cm":5167000,"1m4 x 2m x 15cm":5389000,"1m6 x 2m x 15cm":5611000,"1m8 x 2m x 15cm":6056000, "1m0 x 2m x 20cm":6167000,"1m2 x 2m x 20cm":6389000,"1m4 x 2m x 20cm":6611000,"1m6 x 2m x 20cm":6833000,"1m8 x 2m x 20cm":7278000 }, discountPercent: 55, category: "cao-su-tong-hop", slug: "csn-thang-loi" },
+        "diamond": { name: "NỆM CAO SU TỔNG HỢP DIAMOND", desc: "Cao su tổng hợp chất lượng cao, độ cứng vừa phải, đàn hồi tốt, giảm 50%.", img: "https://i.ibb.co/nqHhmggT/diamond.jpg", oldPrices: { "1m0 x 2m x 10cm":3560000,"1m2 x 2m x 10cm":3760000,"1m4 x 2m x 10cm":3960000,"1m6 x 2m x 10cm":4160000,"1m8 x 2m x 10cm":4360000, "1m0 x 2m x 15cm":4140000,"1m2 x 2m x 15cm":4480000,"1m4 x 2m x 15cm":4820000,"1m6 x 2m x 15cm":5160000,"1m8 x 2m x 15cm":5640000, "1m0 x 2m x 20cm":5160000,"1m2 x 2m x 20cm":5560000,"1m4 x 2m x 20cm":5960000,"1m6 x 2m x 20cm":6360000,"1m8 x 2m x 20cm":6900000 }, discountPercent: 50, category: "cao-su-tong-hop", slug: "diamond" },
+        "everon": { name: "NỆM BÔNG ÉP EVERON", desc: "Bông ép cao cấp, thoáng khí, độ cứng vừa phải, giảm 21%.", img: "https://i.ibb.co/Pz5WQb8J/everon.jpg", oldPrices: { "1m0 x 2m x 9cm":2990000,"1m2 x 2m x 9cm":3590000,"1m4 x 2m x 9cm":4190000,"1m6 x 2m x 9cm":4290000,"1m8 x 2m x 9cm":4690000 }, discountPercent: 21, category: "bong-ep", slug: "everon" },
+        "seoul": { name: "NỆM BÔNG ÉP SEOUL", desc: "Bông ép cao cấp nhập khẩu Hàn Quốc, chống xẹp lún, giảm 44%.", img: "https://i.ibb.co/kggPmS4T/korea.jpg", oldPrices: { "1m0 x 2m x 9cm":3200000,"1m2 x 2m x 9cm":3600000,"1m4 x 2m x 9cm":4000000,"1m6 x 2m x 9cm":4400000,"1m8 x 2m x 9cm":4800000 }, discountPercent: 44, category: "bong-ep", slug: "seoul" },
+        "platinum": { name: "NỆM LÒ XO TÚI PLATINUM", desc: "Lò xo túi độc lập, không gây tiếng ồn, nâng đỡ tốt, bảo hành 10 năm, giảm 18%.", img: "https://i.ibb.co/pjgp9Wbt/Untitled.png", oldPrices: { "1m0 x 2m x 22cm":5137000,"1m2 x 2m x 22cm":5916000,"1m4 x 2m x 22cm":6711000,"1m6 x 2m x 22cm":7523000,"1m8 x 2m x 22cm":8432000 }, discountPercent: 18, category: "lo-xo-tui", slug: "platinum" },
+        "elan": { name: "NỆM LÒ XO TÚI ELAN", desc: "Lò xo túi cao cấp, cuộn hộp dễ vận chuyển, êm ái tuyệt đối, giảm 30%.", img: "https://i.ibb.co/FbfcrSsH/7269-dem-lo-xo-tui-cuon-vimatt-elan-1.png", oldPrices: { "1m0 x 2m x 22cm":6260000,"1m2 x 2m x 22cm":6520000,"1m4 x 2m x 22cm":6860000,"1m6 x 2m x 22cm":7210000,"1m8 x 2m x 22cm":7780000 }, discountPercent: 30, category: "lo-xo-tui", slug: "elan" },
+        "celina": { name: "NỆM LÒ XO TÚI CELINA", desc: "Lò xo túi nhập khẩu, độc lập cao cấp, mang lại giấc ngủ ngon, giảm 40%.", img: "https://i.ibb.co/FqjRZ6YZ/370000058-1595229164781gqyc.jpg", oldPrices: { "1m0 x 2m x 22cm":6260000,"1m2 x 2m x 22cm":6520000,"1m4 x 2m x 22cm":6860000,"1m6 x 2m x 22cm":7210000,"1m8 x 2m x 22cm":7780000 }, discountPercent: 40, category: "lo-xo-tui", slug: "celina" }
     };
 
     for (let key in productsDB) {
@@ -538,51 +538,76 @@
         }
     }
 
-    // Slideshow
-    let slideIndex = 0;
-    const slides = document.querySelectorAll('.slideshow-slide');
-    const dotsContainer = document.getElementById('slideDots');
-    function showSlide(n) {
-        if (!slides.length) return;
-        slideIndex = (n + slides.length) % slides.length;
-        slides.forEach((slide, i) => { slide.classList.toggle('active', i === slideIndex); });
-        if (dotsContainer) {
-            const dots = document.querySelectorAll('.dot');
-            dots.forEach((dot, i) => { dot.classList.toggle('active', i === slideIndex); });
+    // Tạo mapping slug -> productId
+    const slugToId = {};
+    for (let id in productsDB) {
+        slugToId[productsDB[id].slug] = id;
+    }
+
+    // ======================== ROUTER (History API) ========================
+    let currentProductId = "platinum";
+    let currentSize = "1m6 x 2m x 22cm";
+    let currentQuantity = 1;
+
+    function renderHomeView() {
+        document.getElementById("homeView").style.display = "block";
+        document.getElementById("detailView").style.display = "none";
+        document.getElementById("cartView").style.display = "none";
+        // Cập nhật active filter (giữ nguyên bộ lọc)
+        // Không cần reload lại grid nếu đã có
+    }
+
+    function renderProductDetailView(productId, size = null) {
+        currentProductId = productId;
+        if (size && productsDB[productId].prices[size]) currentSize = size;
+        else currentSize = Object.keys(productsDB[productId].prices)[0];
+        currentQuantity = 1;
+        renderProductDetail(); // Hàm này sẽ cập nhật giao diện chi tiết, reviews, related
+        document.getElementById("homeView").style.display = "none";
+        document.getElementById("detailView").style.display = "block";
+        document.getElementById("cartView").style.display = "none";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function renderCartView() {
+        renderCartViewFunc(); // Hàm renderCartView cũ đã được đổi tên thành renderCartViewFunc để tránh trùng
+        document.getElementById("homeView").style.display = "none";
+        document.getElementById("detailView").style.display = "none";
+        document.getElementById("cartView").style.display = "block";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        document.getElementById("checkoutFormContainer").style.display = "none";
+    }
+
+    // Hàm chuyển trang với pushState
+    function navigateTo(url, title, state) {
+        history.pushState(state, title, url);
+        if (state.type === 'home') {
+            renderHomeView();
+        } else if (state.type === 'product') {
+            renderProductDetailView(state.productId, state.size);
+        } else if (state.type === 'cart') {
+            renderCartView();
         }
     }
-    function nextSlide() { showSlide(slideIndex + 1); }
-    function prevSlide() { showSlide(slideIndex - 1); }
-    function createDots() {
-        if (!dotsContainer) return;
-        dotsContainer.innerHTML = '';
-        slides.forEach((_, i) => {
-            const dot = document.createElement('span');
-            dot.classList.add('dot');
-            if (i === slideIndex) dot.classList.add('active');
-            dot.addEventListener('click', () => showSlide(i));
-            dotsContainer.appendChild(dot);
-        });
-    }
-    document.getElementById('slidePrev')?.addEventListener('click', prevSlide);
-    document.getElementById('slideNext')?.addEventListener('click', nextSlide);
-    createDots();
-    let slideInterval = setInterval(nextSlide, 3000);
 
-    // Countdown
-    let countdownEnd = new Date().getTime() + 24 * 60 * 60 * 1000;
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = countdownEnd - now;
-        if (distance < 0) { document.getElementById('countdownTimer').innerText = "00:00:00"; return; }
-        const hours = Math.floor((distance % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
-        const minutes = Math.floor((distance % (60 * 60 * 1000)) / (60 * 1000));
-        const seconds = Math.floor((distance % (60 * 1000)) / 1000);
-        document.getElementById('countdownTimer').innerText = `${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
-    }
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
+    // Xử lý khi người dùng bấm nút back/forward
+    window.addEventListener('popstate', (event) => {
+        const state = event.state;
+        if (!state) {
+            // Nếu không có state, mặc định về home
+            renderHomeView();
+            return;
+        }
+        if (state.type === 'home') {
+            renderHomeView();
+        } else if (state.type === 'product') {
+            renderProductDetailView(state.productId, state.size);
+        } else if (state.type === 'cart') {
+            renderCartView();
+        }
+    });
 
+    // ======================== CÁC HÀM HỖ TRỢ (Giữ nguyên) ========================
     function showToast(msg, isErr = false) { let t = document.getElementById('toast'); t.textContent = msg; t.style.backgroundColor = isErr ? '#d9534f' : '#28a745'; t.style.opacity = '1'; setTimeout(() => t.style.opacity = '0', 2000); }
 
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -596,7 +621,7 @@
         saveCart(); showToast(`Đã thêm ${quantity} ${prod.name} (${size}) vào giỏ!`);
     }
 
-    function renderCartView() {
+    function renderCartViewFunc() {
         const container = document.getElementById('cartItemsList'), totalContainer = document.getElementById('cartTotal');
         if (!cart.length) { container.innerHTML = '<div class="empty-cart">🛒 Giỏ hàng trống!</div>'; totalContainer.innerHTML = ''; return; }
         let html = '', total = 0;
@@ -604,15 +629,13 @@
             html += `<div class="cart-item"><div class="cart-item-info"><img src="${item.img}"><div class="cart-item-details"><strong>${item.name}</strong><br>${item.size}<br>${formatPrice(item.price)}</div></div><div class="cart-item-actions"><button class="qty-down" data-index="${idx}">-</button><span>${item.quantity}</span><button class="qty-up" data-index="${idx}">+</button><button class="remove-item" data-index="${idx}">Xóa</button></div><div class="cart-item-price">${formatPrice(it)}</div></div>`;
         });
         container.innerHTML = html; totalContainer.innerHTML = `<span>Tổng: ${formatPrice(total)}</span><button id="clearCartBtn" class="btn-clear-cart">Xóa tất cả</button>`;
-        document.querySelectorAll('.qty-down').forEach(btn => btn.addEventListener('click', (e) => { let idx = parseInt(btn.dataset.index); if (cart[idx].quantity > 1) cart[idx].quantity--; else { if (confirm('Xóa sản phẩm này?')) cart.splice(idx,1); else return; } saveCart(); renderCartView(); }));
-        document.querySelectorAll('.qty-up').forEach(btn => btn.addEventListener('click', (e) => { let idx = parseInt(btn.dataset.index); cart[idx].quantity++; saveCart(); renderCartView(); }));
-        document.querySelectorAll('.remove-item').forEach(btn => btn.addEventListener('click', (e) => { let idx = parseInt(btn.dataset.index); if (confirm('Xóa sản phẩm này?')) { cart.splice(idx,1); saveCart(); renderCartView(); } }));
-        document.getElementById('clearCartBtn').addEventListener('click', () => { if (cart.length && confirm('Xóa toàn bộ giỏ?')) { cart = []; saveCart(); renderCartView(); showToast('Đã xóa giỏ hàng.'); } });
+        document.querySelectorAll('.qty-down').forEach(btn => btn.addEventListener('click', (e) => { let idx = parseInt(btn.dataset.index); if (cart[idx].quantity > 1) cart[idx].quantity--; else { if (confirm('Xóa sản phẩm này?')) cart.splice(idx,1); else return; } saveCart(); renderCartViewFunc(); }));
+        document.querySelectorAll('.qty-up').forEach(btn => btn.addEventListener('click', (e) => { let idx = parseInt(btn.dataset.index); cart[idx].quantity++; saveCart(); renderCartViewFunc(); }));
+        document.querySelectorAll('.remove-item').forEach(btn => btn.addEventListener('click', (e) => { let idx = parseInt(btn.dataset.index); if (confirm('Xóa sản phẩm này?')) { cart.splice(idx,1); saveCart(); renderCartViewFunc(); } }));
+        document.getElementById('clearCartBtn').addEventListener('click', () => { if (cart.length && confirm('Xóa toàn bộ giỏ?')) { cart = []; saveCart(); renderCartViewFunc(); showToast('Đã xóa giỏ hàng.'); } });
     }
 
     function formatPrice(p) { return p.toLocaleString('vi-VN') + 'đ'; }
-
-    let currentProductId = "platinum", currentSize = "1m6 x 2m x 22cm", currentQuantity = 1;
 
     function renderRelatedProducts(category, currentId) {
         const related = Object.keys(productsDB).filter(id => productsDB[id].category === category && id !== currentId).slice(0,4);
@@ -621,11 +644,19 @@
         related.forEach(id => {
             const p = productsDB[id];
             const demoPrice = p.prices[Object.keys(p.prices)[0]];
-            html += `<div class="related-card" data-id="${id}"><img class="related-img" src="${p.img}" loading="lazy"><div class="related-info"><div class="related-name">${p.name}</div><div class="related-price">${formatPrice(demoPrice)}</div></div></div>`;
+            html += `<div class="related-card" data-id="${id}" data-slug="${p.slug}" data-category="${p.category}"><img class="related-img" src="${p.img}" loading="lazy"><div class="related-info"><div class="related-name">${p.name}</div><div class="related-price">${formatPrice(demoPrice)}</div></div></div>`;
         });
         html += `</div>`;
         document.getElementById('relatedContainer').innerHTML = html;
-        document.querySelectorAll('.related-card').forEach(card => card.addEventListener('click', () => showProductDetail(card.dataset.id)));
+        document.querySelectorAll('.related-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const id = card.dataset.id;
+                const slug = card.dataset.slug;
+                const category = card.dataset.category;
+                const newUrl = `/${category}/${slug}`;
+                navigateTo(newUrl, `Nệm Lê Gia - ${productsDB[id].name}`, { type: 'product', productId: id });
+            });
+        });
     }
 
     function renderProductDetail() {
@@ -659,10 +690,128 @@
 
     function renderReviews(productId) { const reviews = reviewsDB[productId] || [{ stars: 5, name: "KH A", content: "Sản phẩm tốt." }, { stars: 5, name: "KH B", content: "Giao hàng nhanh." }]; document.getElementById("reviewContainer").innerHTML = `<h3>📸 Khách hàng tin dùng</h3>${reviews.map(r => `<div class="review-item"><div>${'⭐️'.repeat(r.stars)}</div><p><strong>“${r.content}”</strong> - ${r.name}</p></div>`).join('')}`; }
 
-    function showProductDetail(id) { currentProductId = id; currentSize = Object.keys(productsDB[id].prices)[0]; currentQuantity = 1; renderProductDetail(); document.getElementById("homeView").style.display = "none"; document.getElementById("detailView").style.display = "block"; document.getElementById("cartView").style.display = "none"; window.scrollTo({ top: 0, behavior: "smooth" }); }
-    function showHomeView() { document.getElementById("homeView").style.display = "block"; document.getElementById("detailView").style.display = "none"; document.getElementById("cartView").style.display = "none"; window.scrollTo({ top: 0, behavior: "smooth" }); }
-    function showCartView() { renderCartView(); document.getElementById("homeView").style.display = "none"; document.getElementById("detailView").style.display = "none"; document.getElementById("cartView").style.display = "block"; document.getElementById("checkoutFormContainer").style.display = "none"; window.scrollTo({ top: 0, behavior: "smooth" }); }
+    // Các hàm mở modal, xử lý form, filter, slideshow, countdown giữ nguyên (đã có)
+    // ... (các hàm còn lại không thay đổi, tôi chỉ giữ phần quan trọng)
 
+    // Hàm xử lý sự kiện click vào sản phẩm từ grid, flash sale, menu
+    function handleProductClick(productId, event) {
+        event.preventDefault();
+        const prod = productsDB[productId];
+        const newUrl = `/${prod.category}/${prod.slug}`;
+        navigateTo(newUrl, `Nệm Lê Gia - ${prod.name}`, { type: 'product', productId: productId });
+    }
+
+    // Sửa lại các sự kiện click của thẻ sản phẩm, flash card, mega menu, mobile menu
+    // (Tôi sẽ viết lại các hàm gắn sự kiện sau khi load trang)
+
+    // ======================== KHỞI TẠO TRANG ========================
+    // Slideshow, countdown, filter, flash sale, product grid
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slideshow-slide');
+    const dotsContainer = document.getElementById('slideDots');
+    function showSlide(n) { if (!slides.length) return; slideIndex = (n + slides.length) % slides.length; slides.forEach((slide, i) => { slide.classList.toggle('active', i === slideIndex); }); if (dotsContainer) { const dots = document.querySelectorAll('.dot'); dots.forEach((dot, i) => { dot.classList.toggle('active', i === slideIndex); }); } }
+    function nextSlide() { showSlide(slideIndex + 1); }
+    function prevSlide() { showSlide(slideIndex - 1); }
+    function createDots() { if (!dotsContainer) return; dotsContainer.innerHTML = ''; slides.forEach((_, i) => { const dot = document.createElement('span'); dot.classList.add('dot'); if (i === slideIndex) dot.classList.add('active'); dot.addEventListener('click', () => showSlide(i)); dotsContainer.appendChild(dot); }); }
+    document.getElementById('slidePrev')?.addEventListener('click', prevSlide);
+    document.getElementById('slideNext')?.addEventListener('click', nextSlide);
+    createDots();
+    let slideInterval = setInterval(nextSlide, 3000);
+
+    let countdownEnd = new Date().getTime() + 24 * 60 * 60 * 1000;
+    function updateCountdown() { const now = new Date().getTime(); const distance = countdownEnd - now; if (distance < 0) { document.getElementById('countdownTimer').innerText = "00:00:00"; return; } const hours = Math.floor((distance % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000)); const minutes = Math.floor((distance % (60 * 60 * 1000)) / (60 * 1000)); const seconds = Math.floor((distance % (60 * 1000)) / 1000); document.getElementById('countdownTimer').innerText = `${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`; }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    let currentFilter = "all";
+    function renderFilteredProducts() {
+        const grid = document.getElementById("productGrid");
+        const filteredIds = Object.keys(productsDB).filter(id => { if (currentFilter === "all") return true; return productsDB[id].category === currentFilter; });
+        if (filteredIds.length === 0) { grid.innerHTML = '<div style="text-align:center; padding:40px;">Không có sản phẩm nào trong danh mục này.</div>'; return; }
+        grid.innerHTML = filteredIds.map(id => {
+            const p = productsDB[id];
+            const demoPrice = p.prices[Object.keys(p.prices)[0]];
+            return `<div class="product-card" data-id="${id}" data-slug="${p.slug}" data-category="${p.category}"><div class="discount-badge">-${p.discountPercent}%</div><img class="card-img" src="${p.img}" loading="lazy"><div class="card-info"><div class="card-title">${p.name}</div><div class="card-price">${formatPrice(demoPrice)}</div><button class="btn-hero" style="background:#e6b422; width:100%;">Xem chi tiết</button></div></div>`;
+        }).join('');
+        document.querySelectorAll(".product-card").forEach(card => {
+            card.addEventListener("click", (e) => {
+                const id = card.dataset.id;
+                if (id) handleProductClick(id, e);
+            });
+        });
+    }
+
+    function renderFlashSale() {
+        const allIds = Object.keys(productsDB);
+        const sorted = allIds.sort((a,b) => productsDB[b].discountPercent - productsDB[a].discountPercent);
+        const flashIds = sorted.slice(0, 4);
+        const grid = document.getElementById("flashGrid");
+        grid.innerHTML = flashIds.map(id => {
+            const p = productsDB[id];
+            const demoPrice = p.prices[Object.keys(p.prices)[0]];
+            const oldPrice = p.oldPrices[Object.keys(p.oldPrices)[0]];
+            return `<div class="flash-card" data-id="${id}" data-slug="${p.slug}" data-category="${p.category}"><div class="flash-badge">🔥 -${p.discountPercent}%</div><img class="flash-img" src="${p.img}" loading="lazy"><div class="flash-info"><div class="flash-name">${p.name}</div><div class="flash-price">${formatPrice(demoPrice)} <span class="flash-old-price">${formatPrice(oldPrice)}</span></div></div></div>`;
+        }).join('');
+        document.querySelectorAll('.flash-card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                const id = card.dataset.id;
+                if (id) handleProductClick(id, e);
+            });
+        });
+    }
+
+    // Gán sự kiện cho menu
+    document.querySelectorAll(".mega-col a, .mobile-category-items a").forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const id = link.getAttribute("data-product");
+            if (id && productsDB[id]) {
+                handleProductClick(id, e);
+            }
+            if (window.innerWidth < 992) document.getElementById("mobileNav").classList.remove("open");
+        });
+    });
+
+    // Nút hero
+    document.getElementById("heroCta")?.addEventListener("click", () => {
+        const randomId = featuredIds[Math.floor(Math.random() * featuredIds.length)];
+        handleProductClick(randomId, new Event('click'));
+    });
+
+    const featuredIds = ["platinum", "elan", "celina", "thang-loi", "csn-thang-loi", "diamond", "everon", "seoul"];
+
+    // Lọc
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentFilter = btn.dataset.filter;
+            renderFilteredProducts();
+        });
+    });
+
+    // Tìm kiếm (giữ nguyên)
+    const searchInput = document.getElementById("smartSearch"), suggestions = document.getElementById("suggestionsBox");
+    const allNames = Object.values(productsDB).map(p => p.name);
+    searchInput.addEventListener("input", () => { const val = searchInput.value.trim().toLowerCase(); if (val.length < 2) { suggestions.classList.remove("active"); return; } const filtered = allNames.filter(n => n.toLowerCase().includes(val)); if (filtered.length) { suggestions.innerHTML = filtered.map(n => `<div class="suggestion-item">${n}</div>`).join(''); suggestions.classList.add("active"); document.querySelectorAll(".suggestion-item").forEach(el => el.addEventListener("click", () => { searchInput.value = el.innerText; suggestions.classList.remove("active"); const found = Object.keys(productsDB).find(k => productsDB[k].name === el.innerText); if (found) handleProductClick(found, new Event('click')); })); } else suggestions.classList.remove("active"); });
+    document.addEventListener("click", (e) => { if (!searchInput.contains(e.target)) suggestions.classList.remove("active"); });
+
+    // Sticky buttons, back to top
+    document.getElementById("stickyCartBtn")?.addEventListener("click", () => {
+        navigateTo('/gio-hang', 'Giỏ hàng - Nệm Lê Gia', { type: 'cart' });
+    });
+    document.getElementById("cartIcon")?.addEventListener("click", () => {
+        navigateTo('/gio-hang', 'Giỏ hàng - Nệm Lê Gia', { type: 'cart' });
+    });
+    document.getElementById("stickyZaloBtn")?.addEventListener("click", () => window.open(`https://zalo.me/${PHONE_NUMBER}`, '_blank'));
+    document.getElementById("stickyCallBtn")?.addEventListener("click", () => window.location.href = `tel:${PHONE_NUMBER}`);
+    document.getElementById("mobileMenuBtn")?.addEventListener("click", () => document.getElementById("mobileNav").classList.toggle("open"));
+    document.querySelectorAll(".accordion-header").forEach(h => h.addEventListener("click", function() { this.nextElementSibling.classList.toggle("show"); const icon = this.querySelector("i"); if(icon) icon.classList.toggle("fa-angle-down"); if(icon) icon.classList.toggle("fa-angle-up"); }));
+    document.getElementById("logoHome").addEventListener("click", () => navigateTo('/', 'Trang chủ - Nệm Lê Gia', { type: 'home' }));
+    document.getElementById("backToHomeBtn").addEventListener("click", () => navigateTo('/', 'Trang chủ - Nệm Lê Gia', { type: 'home' }));
+    document.getElementById("backToHomeFromCart").addEventListener("click", () => navigateTo('/', 'Trang chủ - Nệm Lê Gia', { type: 'home' }));
+
+    // Quick buy modal (giữ nguyên)
     let quickBuyProduct = null, quickBuySize = null, quickBuyQuantity = 1;
     function openQuickBuyModal() {
         quickBuyProduct = currentProductId; quickBuySize = currentSize; quickBuyQuantity = currentQuantity;
@@ -696,6 +845,7 @@
     }
     document.getElementById('quickOrderForm').addEventListener('submit', submitQuickOrder);
 
+    // Form đặt hàng bình thường (giữ nguyên)
     document.getElementById("orderForm").addEventListener("submit", async (e) => {
         e.preventDefault();
         const name = document.getElementById("fullName").value.trim(), phone = document.getElementById("phone").value.trim(), addr = document.getElementById("address").value.trim();
@@ -711,7 +861,7 @@
             const res = await fetch(FORMSPREE_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(orderData) });
             if (res.ok) {
                 showToast(`✅ Đặt hàng thành công! Cảm ơn ${name}.`);
-                cart = []; saveCart(); renderCartView(); document.getElementById("orderForm").reset(); document.getElementById("checkoutFormContainer").style.display = "none"; showHomeView();
+                cart = []; saveCart(); renderCartViewFunc(); document.getElementById("orderForm").reset(); document.getElementById("checkoutFormContainer").style.display = "none"; navigateTo('/', 'Trang chủ - Nệm Lê Gia', { type: 'home' });
             } else showToast("Có lỗi xảy ra, thử lại.", true);
         } catch (err) { showToast("Lỗi kết nối.", true); }
         finally { btn.disabled = false; btn.innerHTML = 'XÁC NHẬN ĐẶT HÀNG'; }
@@ -721,66 +871,35 @@
     window.addEventListener('scroll', function() { document.getElementById('backToTopBtn').classList.toggle('show', window.scrollY > 300); });
     document.getElementById('backToTopBtn').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    let currentFilter = "all";
-    function renderFilteredProducts() {
-        const grid = document.getElementById("productGrid");
-        const filteredIds = Object.keys(productsDB).filter(id => {
-            if (currentFilter === "all") return true;
-            return productsDB[id].category === currentFilter;
-        });
-        if (filteredIds.length === 0) { grid.innerHTML = '<div style="text-align:center; padding:40px;">Không có sản phẩm nào trong danh mục này.</div>'; return; }
-        grid.innerHTML = filteredIds.map(id => {
-            const p = productsDB[id];
-            const demoPrice = p.prices[Object.keys(p.prices)[0]];
-            return `<div class="product-card" data-prodid="${id}"><div class="discount-badge">-${p.discountPercent}%</div><img class="card-img" src="${p.img}" loading="lazy"><div class="card-info"><div class="card-title">${p.name}</div><div class="card-price">${formatPrice(demoPrice)}</div><button class="btn-hero" style="background:#e6b422; width:100%;">Xem chi tiết</button></div></div>`;
-        }).join('');
-        document.querySelectorAll(".product-card").forEach(card => card.addEventListener("click", () => showProductDetail(card.dataset.prodid)));
+    // Khởi tạo lần đầu: kiểm tra URL
+    function initRouter() {
+        const path = window.location.pathname; // ví dụ: /cao-su-thien-nhien/dong-phu
+        if (path === '/' || path === '') {
+            navigateTo('/', 'Trang chủ - Nệm Lê Gia', { type: 'home' });
+        } else if (path === '/gio-hang') {
+            navigateTo('/gio-hang', 'Giỏ hàng - Nệm Lê Gia', { type: 'cart' });
+        } else {
+            const parts = path.split('/').filter(p => p);
+            if (parts.length === 2) {
+                const category = parts[0];
+                const slug = parts[1];
+                const productId = slugToId[slug];
+                if (productId && productsDB[productId].category === category) {
+                    navigateTo(path, `Nệm Lê Gia - ${productsDB[productId].name}`, { type: 'product', productId: productId });
+                } else {
+                    // Không tìm thấy sản phẩm, về trang chủ
+                    navigateTo('/', 'Trang chủ - Nệm Lê Gia', { type: 'home' });
+                }
+            } else {
+                navigateTo('/', 'Trang chủ - Nệm Lê Gia', { type: 'home' });
+            }
+        }
     }
 
-    function renderFlashSale() {
-        const allIds = Object.keys(productsDB);
-        const sorted = allIds.sort((a,b) => productsDB[b].discountPercent - productsDB[a].discountPercent);
-        const flashIds = sorted.slice(0, 4);
-        const grid = document.getElementById("flashGrid");
-        grid.innerHTML = flashIds.map(id => {
-            const p = productsDB[id];
-            const demoPrice = p.prices[Object.keys(p.prices)[0]];
-            const oldPrice = p.oldPrices[Object.keys(p.oldPrices)[0]];
-            return `<div class="flash-card" data-id="${id}"><div class="flash-badge">🔥 -${p.discountPercent}%</div><img class="flash-img" src="${p.img}" loading="lazy"><div class="flash-info"><div class="flash-name">${p.name}</div><div class="flash-price">${formatPrice(demoPrice)} <span class="flash-old-price">${formatPrice(oldPrice)}</span></div></div></div>`;
-        }).join('');
-        document.querySelectorAll('.flash-card').forEach(card => card.addEventListener('click', () => showProductDetail(card.dataset.id)));
-    }
-
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            currentFilter = btn.dataset.filter;
-            renderFilteredProducts();
-        });
-    });
-
-    const featuredIds = ["platinum", "elan", "celina", "thang-loi", "csn-thang-loi", "diamond", "everon", "seoul"];
-    document.getElementById("heroCta")?.addEventListener("click", () => showProductDetail(featuredIds[Math.floor(Math.random() * featuredIds.length)]));
-
-    const searchInput = document.getElementById("smartSearch"), suggestions = document.getElementById("suggestionsBox");
-    const allNames = Object.values(productsDB).map(p => p.name);
-    searchInput.addEventListener("input", () => { const val = searchInput.value.trim().toLowerCase(); if (val.length < 2) { suggestions.classList.remove("active"); return; } const filtered = allNames.filter(n => n.toLowerCase().includes(val)); if (filtered.length) { suggestions.innerHTML = filtered.map(n => `<div class="suggestion-item">${n}</div>`).join(''); suggestions.classList.add("active"); document.querySelectorAll(".suggestion-item").forEach(el => el.addEventListener("click", () => { searchInput.value = el.innerText; suggestions.classList.remove("active"); const found = Object.keys(productsDB).find(k => productsDB[k].name === el.innerText); if (found) showProductDetail(found); })); } else suggestions.classList.remove("active"); });
-    document.addEventListener("click", (e) => { if (!searchInput.contains(e.target)) suggestions.classList.remove("active"); });
-    document.querySelectorAll(".mega-col a, .mobile-category-items a").forEach(link => link.addEventListener("click", (e) => { e.preventDefault(); const id = link.getAttribute("data-product"); if (id && productsDB[id]) showProductDetail(id); if (window.innerWidth < 992) document.getElementById("mobileNav").classList.remove("open"); }));
-    document.getElementById("stickyCartBtn")?.addEventListener("click", showCartView);
-    document.getElementById("cartIcon")?.addEventListener("click", showCartView);
-    document.getElementById("stickyZaloBtn")?.addEventListener("click", () => window.open(`https://zalo.me/${PHONE_NUMBER}`, '_blank'));
-    document.getElementById("stickyCallBtn")?.addEventListener("click", () => window.location.href = `tel:${PHONE_NUMBER}`);
-    document.getElementById("mobileMenuBtn")?.addEventListener("click", () => document.getElementById("mobileNav").classList.toggle("open"));
-    document.querySelectorAll(".accordion-header").forEach(h => h.addEventListener("click", function() { this.nextElementSibling.classList.toggle("show"); const icon = this.querySelector("i"); if(icon) icon.classList.toggle("fa-angle-down"); if(icon) icon.classList.toggle("fa-angle-up"); }));
-    document.getElementById("logoHome").addEventListener("click", showHomeView);
-    document.getElementById("backToHomeBtn").addEventListener("click", showHomeView);
-    document.getElementById("backToHomeFromCart").addEventListener("click", showHomeView);
-
+    // Render lần đầu
     renderFilteredProducts();
     renderFlashSale();
-    showHomeView();
+    initRouter();
     updateCartCount();
 </script>
 </body>
