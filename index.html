@@ -15,15 +15,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Toàn bộ CSS giữ nguyên từ bản trước (tôi sẽ đặt lại ngắn gọn nhưng đầy đủ) */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Montserrat', sans-serif; background: #fff; color: #1A2C3E; line-height: 1.5; }
         .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
         img { max-width: 100%; height: auto; display: block; }
-        /* Header, hero, filter, product grid, flash sale, why us, reviews, detail, cart, modal, footer... */
-        /* Tôi sẽ giữ nguyên cấu trúc nhưng vì khuôn khổ, tôi đặt lại phần quan trọng. */
-        /* (Thực tế bạn đã có CSS, tôi chỉ cần đảm bảo không bị thiếu) */
-        /* Dưới đây là phần CSS tối giản nhưng đủ để chạy. Bạn có thể thay bằng CSS cũ của mình. */
         .header { background: white; box-shadow: 0 4px 20px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #e2e8f0; }
         .header-top { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; gap: 24px; flex-wrap: wrap; }
         .nav-left { display: flex; align-items: center; gap: 32px; }
@@ -366,7 +361,8 @@
         "seoul": { name: "NỆM BÔNG ÉP SEOUL", desc: "Bông ép cao cấp nhập khẩu Hàn Quốc, chống xẹp lún, giảm 44%.", img: "https://i.ibb.co/kggPmS4T/korea.jpg", oldPrices: { "1m0 x 2m x 9cm":3200000,"1m2 x 2m x 9cm":3600000,"1m4 x 2m x 9cm":4000000,"1m6 x 2m x 9cm":4400000,"1m8 x 2m x 9cm":4800000 }, discountPercent: 44, category: "bong-ep", slug: "seoul" },
         "platinum": { name: "NỆM LÒ XO TÚI PLATINUM", desc: "Lò xo túi độc lập, không gây tiếng ồn, nâng đỡ tốt, bảo hành 10 năm, giảm 18%.", img: "https://i.ibb.co/pjgp9Wbt/Untitled.png", oldPrices: { "1m0 x 2m x 22cm":5137000,"1m2 x 2m x 22cm":5916000,"1m4 x 2m x 22cm":6711000,"1m6 x 2m x 22cm":7523000,"1m8 x 2m x 22cm":8432000 }, discountPercent: 18, category: "lo-xo-tui", slug: "platinum" },
         "elan": { name: "NỆM LÒ XO TÚI ELAN", desc: "Lò xo túi cao cấp, cuộn hộp dễ vận chuyển, êm ái tuyệt đối, giảm 30%.", img: "https://i.ibb.co/FbfcrSsH/7269-dem-lo-xo-tui-cuon-vimatt-elan-1.png", oldPrices: { "1m0 x 2m x 22cm":6260000,"1m2 x 2m x 22cm":6520000,"1m4 x 2m x 22cm":6860000,"1m6 x 2m x 22cm":7210000,"1m8 x 2m x 22cm":7780000 }, discountPercent: 30, category: "lo-xo-tui", slug: "elan" },
-        "celina": { name: "NỆM LÒ XO TÚI CELINA", desc: "Lò xo túi nhập khẩu, độc lập cao cấp, mang lại giấc ngủ ngon, giảm 40%.", img: "https://i.ibb.co/FqjRZ6YZ/370000058-1595229164781gqyc.jpg", oldPrices: { "1m0 x 2m x 22cm":6260000,"1m2 x 2m x 22cm":6520000,"1m4 x 2m x 22cm":6860000,"1m6 x 2m x 22cm":7210000,"1m8 x 2m x 22cm":7780000 }, discountPercent: 40, category: "lo-xo-tui", slug: "celina" }
+        // Celina: cập nhật ảnh mới, kích thước từ 22cm -> 24cm, chiết khấu 35%
+        "celina": { name: "NỆM LÒ XO TÚI CELINA", desc: "Lò xo túi nhập khẩu, độc lập cao cấp, mang lại giấc ngủ ngon, giảm 35%.", img: "https://i.ibb.co/gZfzzK6f/a0ec5640-609d-436a-a21c-0b5cb53742b2.jpg", oldPrices: { "1m0 x 2m x 24cm":6260000,"1m2 x 2m x 24cm":6520000,"1m4 x 2m x 24cm":6860000,"1m6 x 2m x 24cm":7210000,"1m8 x 2m x 24cm":7780000 }, discountPercent: 35, category: "lo-xo-tui", slug: "celina" }
     };
 
     for (let key in productsDB) {
@@ -381,7 +377,7 @@
     for (let id in productsDB) { slugToId[productsDB[id].slug] = id; }
 
     // ======================== ROUTER (FIX REFRESH VỚI BASE PATH) ========================
-    const basePath = '/legia6.github.io';  // Đây là tên repository của bạn
+    const basePath = '/legia6.github.io';
     function getCleanPath() {
         let fullPath = window.location.pathname;
         if (fullPath.startsWith(basePath)) {
@@ -457,7 +453,7 @@
         loadRouteFromPath();
     });
 
-    // ======================== CÁC HÀM HỖ TRỢ (giữ nguyên) ========================
+    // ======================== CÁC HÀM HỖ TRỢ ========================
     function showToast(msg, isErr = false) { let t = document.getElementById('toast'); t.textContent = msg; t.style.backgroundColor = isErr ? '#d9534f' : '#28a745'; t.style.opacity = '1'; setTimeout(() => t.style.opacity = '0', 2000); }
 
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -526,7 +522,7 @@
     const reviewsDB = {
         "platinum": [{ stars: 5, name: "Anh Minh (TP.HCM)", content: "Nệm lò xo túi Platinum chất lượng tốt, không rung lắc." }, { stars: 5, name: "Chị Lan (Hà Nội)", content: "Ngủ rất êm." }],
         "elan": [{ stars: 5, name: "Chị Hằng (Đà Nẵng)", content: "Nệm Elan cuộn hộp tiện lợi, êm ái." }, { stars: 5, name: "Anh Vũ (Hải Phòng)", content: "Lò xo túi êm." }],
-        "celina": [{ stars: 5, name: "Chị Nga (HCM)", content: "Celina cao cấp, nâng đỡ cột sống tốt." }, { stars: 5, name: "Anh Phong (Bình Định)", content: "Giao hàng nhanh." }],
+        "celina": [{ stars: 5, name: "Chị Nga (HCM)", content: "Celina cao cấp, nâng đỡ cột sống tốt, giảm 35% quá hời." }, { stars: 5, name: "Anh Phong (Bình Định)", content: "Giao hàng nhanh, nệm êm, rất hài lòng." }],
         "thang-loi": [{ stars: 5, name: "Chị Thảo (HCM)", content: "Nệm CSTN Thắng Lợi siêu bền." }, { stars: 5, name: "Anh Đức (Hà Nội)", content: "Chất lượng vượt trội." }],
         "van-thanh": [{ stars: 5, name: "Chị Lan (Hà Nội)", content: "Nệm CSTN Vạn Thành êm, đỡ đau lưng." }, { stars: 5, name: "Anh Tuấn (Hải Phòng)", content: "Mua cho bố mẹ hài lòng." }],
         "dong-phu": [{ stars: 5, name: "Chị Hoa (TP.HCM)", content: "Nệm CSTN Đồng Phú chất lượng cao, giảm 28% quá tốt." }, { stars: 5, name: "Anh Quân (Đà Nẵng)", content: "Giao hàng nhanh, nệm thơm mùi cao su tự nhiên, êm ái." }],
