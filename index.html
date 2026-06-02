@@ -14,6 +14,23 @@
     <meta property="og:type" content="website">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2046389759421110');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=2046389759421110&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Montserrat', sans-serif; background: #fff; color: #1A2C3E; line-height: 1.5; }
@@ -361,7 +378,6 @@
         "seoul": { name: "NỆM BÔNG ÉP SEOUL", desc: "Bông ép cao cấp nhập khẩu Hàn Quốc, chống xẹp lún, giảm 44%.", img: "https://i.ibb.co/kggPmS4T/korea.jpg", oldPrices: { "1m0 x 2m x 9cm":3200000,"1m2 x 2m x 9cm":3600000,"1m4 x 2m x 9cm":4000000,"1m6 x 2m x 9cm":4400000,"1m8 x 2m x 9cm":4800000 }, discountPercent: 44, category: "bong-ep", slug: "seoul" },
         "platinum": { name: "NỆM LÒ XO TÚI PLATINUM", desc: "Lò xo túi độc lập, không gây tiếng ồn, nâng đỡ tốt, bảo hành 10 năm, giảm 18%.", img: "https://i.ibb.co/pjgp9Wbt/Untitled.png", oldPrices: { "1m0 x 2m x 22cm":5137000,"1m2 x 2m x 22cm":5916000,"1m4 x 2m x 22cm":6711000,"1m6 x 2m x 22cm":7523000,"1m8 x 2m x 22cm":8432000 }, discountPercent: 18, category: "lo-xo-tui", slug: "platinum" },
         "elan": { name: "NỆM LÒ XO TÚI ELAN", desc: "Lò xo túi cao cấp, cuộn hộp dễ vận chuyển, êm ái tuyệt đối, giảm 30%.", img: "https://i.ibb.co/FbfcrSsH/7269-dem-lo-xo-tui-cuon-vimatt-elan-1.png", oldPrices: { "1m0 x 2m x 22cm":6260000,"1m2 x 2m x 22cm":6520000,"1m4 x 2m x 22cm":6860000,"1m6 x 2m x 22cm":7210000,"1m8 x 2m x 22cm":7780000 }, discountPercent: 30, category: "lo-xo-tui", slug: "elan" },
-        // Celina: cập nhật ảnh mới, kích thước từ 22cm -> 24cm, chiết khấu 35%
         "celina": { name: "NỆM LÒ XO TÚI CELINA", desc: "Lò xo túi nhập khẩu, độc lập cao cấp, mang lại giấc ngủ ngon, giảm 35%.", img: "https://i.ibb.co/gZfzzK6f/a0ec5640-609d-436a-a21c-0b5cb53742b2.jpg", oldPrices: { "1m0 x 2m x 24cm":6260000,"1m2 x 2m x 24cm":6520000,"1m4 x 2m x 24cm":6860000,"1m6 x 2m x 24cm":7210000,"1m8 x 2m x 24cm":7780000 }, discountPercent: 35, category: "lo-xo-tui", slug: "celina" }
     };
 
@@ -376,7 +392,7 @@
     const slugToId = {};
     for (let id in productsDB) { slugToId[productsDB[id].slug] = id; }
 
-    // ======================== ROUTER (FIX REFRESH VỚI BASE PATH) ========================
+    // ======================== ROUTER VÀ PIXEL ========================
     const basePath = '/legia6.github.io';
     function getCleanPath() {
         let fullPath = window.location.pathname;
@@ -391,6 +407,59 @@
     let currentSize = "1m6 x 2m x 22cm";
     let currentQuantity = 1;
 
+    // ======================== PIXEL TRACKING FUNCTIONS ========================
+    function trackViewContent(productId) {
+        const prod = productsDB[productId];
+        if (prod && typeof fbq !== 'undefined') {
+            fbq('track', 'ViewContent', {
+                content_name: prod.name,
+                content_category: prod.category,
+                content_ids: [productId],
+                content_type: 'product',
+                value: prod.prices[Object.keys(prod.prices)[0]],
+                currency: 'VND'
+            });
+        }
+    }
+
+    function trackAddToCart(productId, size, quantity, price) {
+        const prod = productsDB[productId];
+        if (prod && typeof fbq !== 'undefined') {
+            fbq('track', 'AddToCart', {
+                content_name: prod.name,
+                content_category: prod.category,
+                content_ids: [productId],
+                content_type: 'product',
+                value: price * quantity,
+                currency: 'VND'
+            });
+        }
+    }
+
+    function trackInitiateCheckout(cartItems, total) {
+        if (typeof fbq !== 'undefined') {
+            fbq('track', 'InitiateCheckout', {
+                value: total,
+                currency: 'VND',
+                num_items: cartItems.length
+            });
+        }
+    }
+
+    function trackPurchase(orderId, total, cartItems) {
+        if (typeof fbq !== 'undefined') {
+            fbq('track', 'Purchase', {
+                value: total,
+                currency: 'VND',
+                content_ids: cartItems.map(item => item.id),
+                content_type: 'product',
+                num_items: cartItems.length,
+                order_id: orderId
+            });
+        }
+    }
+
+    // ======================== RENDER FUNCTIONS (giữ nguyên, thêm pixel) ========================
     function renderHomeView() {
         document.getElementById("homeView").style.display = "block";
         document.getElementById("detailView").style.display = "none";
@@ -407,6 +476,8 @@
         document.getElementById("detailView").style.display = "block";
         document.getElementById("cartView").style.display = "none";
         window.scrollTo({ top: 0, behavior: "smooth" });
+        // Gửi sự kiện ViewContent
+        trackViewContent(productId);
     }
 
     function renderCartView() {
@@ -416,6 +487,11 @@
         document.getElementById("cartView").style.display = "block";
         document.getElementById("checkoutFormContainer").style.display = "none";
         window.scrollTo({ top: 0, behavior: "smooth" });
+        // Gửi sự kiện InitiateCheckout nếu giỏ có hàng
+        if (cart.length > 0) {
+            const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            trackInitiateCheckout(cart, total);
+        }
     }
 
     function navigateTo(url, title, state) {
@@ -453,7 +529,7 @@
         loadRouteFromPath();
     });
 
-    // ======================== CÁC HÀM HỖ TRỢ ========================
+    // ======================== CÁC HÀM HỖ TRỢ (giữ nguyên, thêm pixel vào addToCart và purchase) ========================
     function showToast(msg, isErr = false) { let t = document.getElementById('toast'); t.textContent = msg; t.style.backgroundColor = isErr ? '#d9534f' : '#28a745'; t.style.opacity = '1'; setTimeout(() => t.style.opacity = '0', 2000); }
 
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -464,7 +540,10 @@
         const existing = cart.find(item => item.id === productId && item.size === size);
         if (existing) existing.quantity += quantity;
         else cart.push({ id: productId, size, quantity, price, name: prod.name, img: prod.img });
-        saveCart(); showToast(`Đã thêm ${quantity} ${prod.name} (${size}) vào giỏ!`);
+        saveCart();
+        showToast(`Đã thêm ${quantity} ${prod.name} (${size}) vào giỏ!`);
+        // Gửi sự kiện AddToCart
+        trackAddToCart(productId, size, quantity, price);
     }
 
     function renderCartViewFunc() {
@@ -645,6 +724,7 @@
     document.getElementById("backToHomeBtn").addEventListener("click", () => navigateTo('/', 'Trang chủ - Nệm Lê Gia', { type: 'home' }));
     document.getElementById("backToHomeFromCart").addEventListener("click", () => navigateTo('/', 'Trang chủ - Nệm Lê Gia', { type: 'home' }));
 
+    // Quick buy modal
     let quickBuyProduct = null, quickBuySize = null, quickBuyQuantity = 1;
     function openQuickBuyModal() {
         quickBuyProduct = currentProductId; quickBuySize = currentSize; quickBuyQuantity = currentQuantity;
@@ -671,8 +751,12 @@
         btn.disabled = true; btn.innerHTML = '<span class="spinner"></span> Đang xử lý...';
         try {
             const res = await fetch(FORMSPREE_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(orderData) });
-            if (res.ok) { showToast(`✅ Đặt hàng thành công! Cảm ơn ${name}.`); document.getElementById('quickBuyModal').style.display = 'none'; }
-            else showToast("Lỗi gửi đơn, thử lại.", true);
+            if (res.ok) {
+                showToast(`✅ Đặt hàng thành công! Cảm ơn ${name}.`);
+                document.getElementById('quickBuyModal').style.display = 'none';
+                // Gửi sự kiện Purchase cho quick buy
+                trackPurchase(Date.now().toString(), total, [{ id: quickBuyProduct, name: prod.name, price: price, quantity: quickBuyQuantity }]);
+            } else showToast("Lỗi gửi đơn, thử lại.", true);
         } catch (err) { showToast("Lỗi kết nối.", true); }
         finally { btn.disabled = false; btn.innerHTML = 'Xác nhận đặt hàng'; }
     }
@@ -693,7 +777,10 @@
             const res = await fetch(FORMSPREE_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(orderData) });
             if (res.ok) {
                 showToast(`✅ Đặt hàng thành công! Cảm ơn ${name}.`);
-                cart = []; saveCart(); renderCartViewFunc(); document.getElementById("orderForm").reset(); document.getElementById("checkoutFormContainer").style.display = "none"; navigateTo('/', 'Trang chủ - Nệm Lê Gia', { type: 'home' });
+                cart = []; saveCart(); renderCartViewFunc(); document.getElementById("orderForm").reset(); document.getElementById("checkoutFormContainer").style.display = "none";
+                navigateTo('/', 'Trang chủ - Nệm Lê Gia', { type: 'home' });
+                // Gửi sự kiện Purchase cho giỏ hàng
+                trackPurchase(Date.now().toString(), total, cart);
             } else showToast("Có lỗi xảy ra, thử lại.", true);
         } catch (err) { showToast("Lỗi kết nối.", true); }
         finally { btn.disabled = false; btn.innerHTML = 'XÁC NHẬN ĐẶT HÀNG'; }
