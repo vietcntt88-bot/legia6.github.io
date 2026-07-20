@@ -10,9 +10,10 @@
     <meta property="og:title" content="Nệm Lê Gia - Giấc ngủ trọn vẹn">
     <meta property="og:description" content="Nệm chính hãng, giá tốt, giao tận nơi. Giảm đến 55%">
     <meta property="og:image" content="https://i.ibb.co/pjgp9Wbt/Untitled.png">
-    <meta property="og:url" content="https://vietcntt88-bot.github.io/legia6.github.io/">
+    <meta property="og:url" content="https://legia.pro.vn/">
     <meta property="og:type" content="website">
-    
+    <link rel="canonical" href="https://legia.pro.vn/">
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
@@ -589,10 +590,15 @@
     for (let id in productsDB) { slugToId[productsDB[id].slug] = id; }
 
     // ======================== ROUTER ========================
-    const basePath = '/legia6.github.io';
+    // FIX QUAN TRỌNG: site chạy ở gốc domain legia.pro.vn (không còn ở path con
+    // /legia6.github.io/ như repo GitHub cũ), nên basePath phải để rỗng.
+    // Nếu để basePath = '/legia6.github.io' thì mọi link nội bộ (sản phẩm,
+    // giỏ hàng, mega menu, flash sale...) sẽ bị chèn nhầm tiền tố và điều
+    // hướng sai trên domain thật.
+    const basePath = '';
     function getCleanPath() {
         let fullPath = window.location.pathname;
-        if (fullPath.startsWith(basePath)) {
+        if (basePath && fullPath.startsWith(basePath)) {
             fullPath = fullPath.substring(basePath.length);
         }
         if (fullPath === '' || fullPath === '/') return '/';
@@ -978,7 +984,7 @@
             "cao su tổng hợp", "nệm cao su tổng hợp", "cao su tổng", "tổng hợp"
         ],
         "bong-ep": [
-            "bông ép", "nệm bông ép", "bông ep", "bông ép", "bong ep"
+            "bông ép", "nệm bông ép", "bong ep"
         ],
         "lo-xo-tui": [
             "lò xo túi", "nệm lò xo túi", "lò xo", "nệm lò xo", "lò xo tui"
