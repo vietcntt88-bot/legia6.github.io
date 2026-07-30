@@ -25,7 +25,7 @@
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2046389759421110&ev=PageView&noscript=1" /></noscript>
 
     <style>
-        /* ===== CSS GIỮ NGUYÊN (đã có trong file gốc) ===== */
+        /* ===== GIỮ NGUYÊN CSS CŨ (đã có) ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Montserrat', sans-serif; background: #fff; color: #1A2C3E; line-height: 1.5; }
         .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
@@ -134,6 +134,49 @@
         .mega-du-an:hover .du-an-mega-dropdown,
         .du-an-mega-dropdown:hover { display: block; }
 
+        /* ===== MEGA MENU PHỤ KIỆN ===== */
+        .phu-kien-mega-dropdown {
+            position: absolute;
+            top: calc(100% - 5px);
+            left: -20px;
+            min-width: 220px;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 35px rgba(0,0,0,0.12);
+            padding: 16px 0;
+            display: none;
+            z-index: 1001;
+            border: 1px solid #e2e8f0;
+        }
+        .phu-kien-mega-dropdown a {
+            display: block;
+            padding: 12px 24px;
+            color: #1e3a5f;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .phu-kien-mega-dropdown a:hover {
+            background: #f8f9fc;
+            color: #d63384;
+        }
+        .mega-phu-kien-trigger {
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 10px 0;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #0d1b2a;
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            transition: 0.2s;
+        }
+        .mega-phu-kien-trigger:hover { color: #d63384; }
+        .mega-phu-kien:hover .phu-kien-mega-dropdown,
+        .phu-kien-mega-dropdown:hover { display: block; }
+
         .search-wrapper { flex: 1; max-width: 340px; position: relative; }
         .search-box { background: #f5f7fa; border-radius: 40px; padding: 4px 16px; display: flex; border: 1px solid #b0c4de; align-items: center; }
         .search-box input { flex: 1; border: none; background: transparent; outline: none; padding: 12px 8px; font-size: 16px; min-height: 48px; }
@@ -160,17 +203,66 @@
         .mobile-category-items { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
         .mobile-category-items a { display: block; background: white; padding: 12px 12px; border-radius: 16px; text-decoration: none; color: #1e3a5f; font-size: 0.9rem; font-weight: 500; border: 1px solid #e2e8f0; text-align: center; transition: 0.2s; }
         .mobile-category-items a:hover, .mobile-category-items a:active { background: #d63384; color: white; border-color: #d63384; }
-        .mobile-promo-group { padding: 12px 16px 20px; background: #fafafc; border-bottom: 1px solid #e2e8f0; }
-        .mobile-promo-group h4 { font-size: 1rem; font-weight: 700; color: #d63384; margin-bottom: 10px; border-left: 3px solid #d63384; padding-left: 10px; }
-        .mobile-promo-items { display: flex; flex-direction: column; gap: 8px; }
-        .mobile-promo-items a { display: block; padding: 12px 16px; background: white; border-radius: 16px; text-decoration: none; color: #1e3a5f; font-weight: 500; border: 1px solid #e2e8f0; transition: 0.2s; }
-        .mobile-promo-items a:hover { background: #d63384; color: white; border-color: #d63384; }
-        /* Mobile Dự Án */
-        .mobile-du-an-group { padding: 12px 16px 20px; background: #fafafc; border-bottom: 1px solid #e2e8f0; }
-        .mobile-du-an-group h4 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin-bottom: 10px; border-left: 3px solid #1e3a5f; padding-left: 10px; }
-        .mobile-du-an-items { display: flex; flex-direction: column; gap: 8px; }
-        .mobile-du-an-items a { display: block; padding: 12px 16px; background: white; border-radius: 16px; text-decoration: none; color: #1e3a5f; font-weight: 500; border: 1px solid #e2e8f0; transition: 0.2s; }
-        .mobile-du-an-items a:hover { background: #1e3a5f; color: white; border-color: #1e3a5f; }
+
+        /* Mobile Accordion cho các mục */
+        .mobile-accordion-item {
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .mobile-accordion-item .accordion-header {
+            padding: 16px 20px;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            background: #fff;
+            font-size: 1rem;
+            color: #0d1b2a;
+        }
+        .mobile-accordion-item .accordion-header i {
+            transition: transform 0.2s;
+        }
+        .mobile-accordion-item .accordion-header .fa-angle-down {
+            transform: rotate(0deg);
+        }
+        .mobile-accordion-item .accordion-header .fa-angle-up {
+            transform: rotate(180deg);
+        }
+        .mobile-accordion-item .accordion-content {
+            display: none;
+            padding: 12px 16px 20px;
+            background: #fafafc;
+        }
+        .mobile-accordion-item .accordion-content.show {
+            display: block;
+        }
+        .mobile-accordion-item .accordion-content a {
+            display: block;
+            padding: 10px 16px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #1e3a5f;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 8px;
+            transition: 0.2s;
+            text-align: center;
+        }
+        .mobile-accordion-item .accordion-content a:hover,
+        .mobile-accordion-item .accordion-content a:active {
+            background: #d63384;
+            color: white;
+            border-color: #d63384;
+        }
+        .mobile-accordion-item .accordion-content a:last-child {
+            margin-bottom: 0;
+        }
+
+        .mobile-category-group { margin-bottom: 20px; }
+        .mobile-category-group h4 { font-size: 1rem; font-weight: 700; color: #d63384; margin-bottom: 10px; border-left: 3px solid #d63384; padding-left: 10px; }
+        .mobile-category-items { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .mobile-category-items a { display: block; background: white; padding: 12px 12px; border-radius: 16px; text-decoration: none; color: #1e3a5f; font-size: 0.9rem; font-weight: 500; border: 1px solid #e2e8f0; text-align: center; transition: 0.2s; }
+        .mobile-category-items a:hover, .mobile-category-items a:active { background: #d63384; color: white; border-color: #d63384; }
 
         @media (max-width: 480px) { .mobile-category-items { grid-template-columns: 1fr; } }
         @media (max-width: 992px) { .nav-desktop { display: none; } .mobile-menu-btn { display: block; } .search-wrapper { width: 100%; max-width: 100%; order: 3; margin-top: 12px; } }
@@ -543,7 +635,7 @@
                 </div>
                 <!-- Menu KHUYẾN MÃI -->
                 <div class="mega-menu mega-promo">
-                    <button class="mega-promo-trigger" aria-expanded="false" aria-haspopup="true">🔥 KHUYẾN MÃI <i class="fas fa-chevron-down"></i></button>
+                    <button class="mega-promo-trigger" aria-expanded="false" aria-haspopup="true">KHUYẾN MÃI <i class="fas fa-chevron-down"></i></button>
                     <div class="promo-mega-dropdown" role="menu">
                         <a role="menuitem" href="#" data-product="lotus">Nệm CSTH Lotus</a>
                         <a role="menuitem" href="#" data-product="premium">Nệm Lò Xo Túi Cao Cấp Premium</a>
@@ -551,10 +643,19 @@
                 </div>
                 <!-- Menu DỰ ÁN -->
                 <div class="mega-menu mega-du-an">
-                    <button class="mega-du-an-trigger" aria-expanded="false" aria-haspopup="true">📐 DỰ ÁN <i class="fas fa-chevron-down"></i></button>
+                    <button class="mega-du-an-trigger" aria-expanded="false" aria-haspopup="true">DỰ ÁN <i class="fas fa-chevron-down"></i></button>
                     <div class="du-an-mega-dropdown" role="menu">
                         <a role="menuitem" href="#" data-product="du-an-nem">Nệm dự án</a>
                         <a role="menuitem" href="#" data-product="du-an-changagoi">Chăn ga gối dự án</a>
+                    </div>
+                </div>
+                <!-- Menu PHỤ KIỆN -->
+                <div class="mega-menu mega-phu-kien">
+                    <button class="mega-phu-kien-trigger" aria-expanded="false" aria-haspopup="true">PHỤ KIỆN <i class="fas fa-chevron-down"></i></button>
+                    <div class="phu-kien-mega-dropdown" role="menu">
+                        <a role="menuitem" href="#" data-product="bao-ve-nem">Bảo vệ nệm</a>
+                        <a role="menuitem" href="#" data-product="bao-ve-nem-chong-tham">Bảo vệ nệm chống thấm</a>
+                        <a role="menuitem" href="#" data-product="topper">Topper nệm cao cấp</a>
                     </div>
                 </div>
             </div>
@@ -570,23 +671,33 @@
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Mở menu điều hướng"><i class="fas fa-bars"></i></button>
     </div>
     <div class="mobile-nav" id="mobileNav" role="navigation">
-        <!-- KHUYẾN MÃI trên mobile -->
-        <div class="mobile-promo-group">
-            <h4>🔥 KHUYẾN MÃI</h4>
-            <div class="mobile-promo-items">
+        <!-- KHUYẾN MÃI (Accordion) -->
+        <div class="mobile-accordion-item">
+            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">KHUYẾN MÃI <i class="fas fa-angle-down"></i></div>
+            <div class="accordion-content">
                 <a href="#" data-product="lotus">Nệm CSTH Lotus</a>
                 <a href="#" data-product="premium">Nệm Lò Xo Túi Cao Cấp Premium</a>
             </div>
         </div>
-        <!-- DỰ ÁN trên mobile -->
-        <div class="mobile-du-an-group">
-            <h4>📐 DỰ ÁN</h4>
-            <div class="mobile-du-an-items">
+        <!-- DỰ ÁN (Accordion) -->
+        <div class="mobile-accordion-item">
+            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">DỰ ÁN <i class="fas fa-angle-down"></i></div>
+            <div class="accordion-content">
                 <a href="#" data-product="du-an-nem">Nệm dự án</a>
                 <a href="#" data-product="du-an-changagoi">Chăn ga gối dự án</a>
             </div>
         </div>
-        <div class="accordion-item">
+        <!-- PHỤ KIỆN (Accordion) -->
+        <div class="mobile-accordion-item">
+            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">PHỤ KIỆN <i class="fas fa-angle-down"></i></div>
+            <div class="accordion-content">
+                <a href="#" data-product="bao-ve-nem">Bảo vệ nệm</a>
+                <a href="#" data-product="bao-ve-nem-chong-tham">Bảo vệ nệm chống thấm</a>
+                <a href="#" data-product="topper">Topper nệm cao cấp</a>
+            </div>
+        </div>
+        <!-- NỆM (Accordion) -->
+        <div class="mobile-accordion-item">
             <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">NỆM <i class="fas fa-angle-down"></i></div>
             <div class="accordion-content">
                 <div class="mobile-category-group"><h4>Cao Su Thiên Nhiên</h4><div class="mobile-category-items"><a data-product="van-thanh">Vạn Thành</a><a data-product="dong-phu">Đồng Phú</a><a data-product="lien-a">Liên Á</a><a data-product="thang-loi">Thắng Lợi</a><a data-product="png">PNG</a></div></div>
@@ -681,7 +792,7 @@
         </div>
     </div>
 
-    <!-- Detail View (dùng chung cho sản phẩm và trang dự án) -->
+    <!-- Detail View -->
     <div id="detailView" class="detail-view">
         <div class="container">
             <button class="btn-back-home" id="backToHomeBtn"><i class="fas fa-arrow-left" aria-hidden="true"></i> Quay lại trang chủ</button>
@@ -923,9 +1034,9 @@
             keywords: ["lò xo túi", "cao cấp", "premium", "bảo hành 10 năm", "30 ngày đổi trả", "giảm 70%"]
         },
 
-        // ===== TRANG DỰ ÁN (CẢI TIẾN) =====
+        // ===== TRANG DỰ ÁN =====
         "du-an-nem": {
-            name: "📐 NỆM DỰ ÁN – CHẤT LƯỢNG CHO MỌI CÔNG TRÌNH",
+            name: "NỆM DỰ ÁN – CHẤT LƯỢNG CHO MỌI CÔNG TRÌNH",
             desc: `<div class="project-content">
                 <div class="project-intro">
                     <i class="fas fa-quote-left" style="color:#d63384; margin-right:8px;"></i> 
@@ -985,7 +1096,7 @@
             keywords: ["dự án", "nệm dự án", "khách sạn", "căn hộ", "chung cư"]
         },
         "du-an-changagoi": {
-            name: "📐 CHĂN GA GỐI DỰ ÁN – TINH TẾ CHO KHÔNG GIAN NGHỈ DƯỠNG",
+            name: "CHĂN GA GỐI DỰ ÁN – TINH TẾ CHO KHÔNG GIAN NGHỈ DƯỠNG",
             desc: `<div class="project-content">
                 <div class="project-intro">
                     <i class="fas fa-quote-left" style="color:#d63384; margin-right:8px;"></i> 
@@ -1042,10 +1153,65 @@
             category: "du-an",
             slug: "du-an-changagoi",
             keywords: ["chăn ga gối", "dự án", "khách sạn", "bộ sưu tập"]
+        },
+
+        // ===== SẢN PHẨM PHỤ KIỆN =====
+        "bao-ve-nem": {
+            name: "BẢO VỆ NỆM",
+            desc: "Bảo vệ nệm là lớp phủ bảo vệ bề mặt nệm khỏi bụi bẩn, mồ hôi, vết bẩn. Sản phẩm mềm mại, thoáng khí, thấm hút tốt, dễ dàng tháo giặt và vệ sinh. Giúp kéo dài tuổi thọ nệm, giữ cho nệm luôn sạch sẽ và bền đẹp như mới. Phù hợp với mọi loại nệm, thiết kế ôm sát 4 góc, không bị xô lệch.",
+            img: "https://i.ibb.co/QvRr3RVS/5-3.jpg",
+            oldPrices: {
+                "1m0 x 2m": 296000,
+                "1m2 x 2m": 312000,
+                "1m4 x 2m": 327000,
+                "1m6 x 2m": 341000,
+                "1m8 x 2m": 356000,
+                "2m0 x 2m": 385000,
+                "2m2 x 2m": 400000
+            },
+            discountPercent: 25,
+            category: "phu-kien",
+            slug: "bao-ve-nem",
+            keywords: ["bảo vệ nệm", "phụ kiện", "bảo vệ nệm", "chống bẩn", "thoáng khí"]
+        },
+        "bao-ve-nem-chong-tham": {
+            name: "BẢO VỆ NỆM CHỐNG THẤM",
+            desc: "Bảo vệ nệm chống thấm cấu tạo 3 lớp cao cấp với lớp màng chống thấm tiên tiến, bảo vệ nệm khỏi nước, chất lỏng và vết bẩn cứng đầu. Bề mặt vải cotton mềm mại, thoáng khí, không gây bí nhiệt. Lớp chống thấm giúp ngăn ngừa ẩm mốc và vi khuẩn phát triển, bảo vệ sức khỏe gia đình bạn. Dễ dàng tháo giặt và tái sử dụng nhiều lần.",
+            img: "https://i.ibb.co/sp3gDy4v/62-bao-ve-nem-chong-tham-da-nang.jpg",
+            oldPrices: {
+                "1m0 x 2m": 443000,
+                "1m2 x 2m": 457000,
+                "1m4 x 2m": 472000,
+                "1m6 x 2m": 487000,
+                "1m8 x 2m": 501000,
+                "2m0 x 2m": 531000
+            },
+            discountPercent: 25,
+            category: "phu-kien",
+            slug: "bao-ve-nem-chong-tham",
+            keywords: ["bảo vệ nệm chống thấm", "chống thấm", "phụ kiện", "chống nước", "chống ẩm mốc"]
+        },
+        "topper": {
+            name: "TOPPER NỆM CAO CẤP",
+            desc: "Topper nệm cao cấp là lớp đệm bổ sung êm ái, nâng cao trải nghiệm giấc ngủ của bạn. Bên trong là gòn microfiber, mang lại cảm giác êm mềm, hỗ trợ giảm đau lưng và cải thiện tư thế ngủ. Độ dày tiêu chuẩn giúp cải thiện độ êm cho nệm cũ hoặc nệm quá cứng. Dễ dàng lắp đặt và vệ sinh, lý tưởng cho phòng ngủ khách sạn, căn hộ và gia đình.",
+            img: "https://i.ibb.co/NgNB0tnR/1126-topper-nem-da-nang.jpg",
+            oldPrices: {
+                "1m0 x 2m": 756000,
+                "1m2 x 2m": 771000,
+                "1m4 x 2m": 801000,
+                "1m6 x 2m": 853000,
+                "1m8 x 2m": 935000,
+                "2m0 x 2m": 987000,
+                "2m2 x 2m": 1016000
+            },
+            discountPercent: 25,
+            category: "phu-kien",
+            slug: "topper",
+            keywords: ["topper nệm", "đệm bổ sung", "êm ái", "phụ kiện", "nệm cao cấp"]
         }
     };
 
-    // Tính giá bán cho các sản phẩm (trừ dự án)
+    // Tính giá bán cho các sản phẩm
     for (let key in productsDB) {
         const prod = productsDB[key];
         if (prod.oldPrices && prod.discountPercent !== undefined && !prod.prices) {
@@ -1264,7 +1430,8 @@
 
     // ======================== RELATED & REVIEWS ========================
     function renderRelatedProducts(category, currentId) {
-        if (category === 'khuyen-mai' || category === 'du-an') {
+        // Ẩn related cho các danh mục đặc biệt
+        if (category === 'khuyen-mai' || category === 'du-an' || category === 'phu-kien') {
             document.getElementById('relatedContainer').innerHTML = '';
             return;
         }
@@ -1312,7 +1479,6 @@
         "seoul": [{ stars: 5, name: "Chị Linh (HCM)", content: "Nệm Seoul êm ái, chất lượng cao." }, { stars: 5, name: "Anh Khang (Cần Thơ)", content: "Mua cho phòng trọ, rất ưng." }],
         "lotus": [{ stars: 5, name: "Chị Mai (Đà Nẵng)", content: "Nệm Lotus êm ái, bảo hành 10 năm yên tâm." }, { stars: 5, name: "Anh Tuấn (HCM)", content: "Giá siêu rẻ, chất lượng bất ngờ." }],
         "premium": [{ stars: 5, name: "Anh Hoàng (Đà Nẵng)", content: "Nệm Premium chắc chắn, không ồn, ngủ ngon." }, { stars: 5, name: "Chị Thanh (Hà Nội)", content: "Giao hàng nhanh, đóng gói cẩn thận, rất hài lòng." }],
-        // ===== REVIEW CHO DỰ ÁN =====
         "du-an-nem": [
             { stars: 5, name: "Anh Tuấn (Chủ khách sạn Hà Nội)", content: "Nệm Lê Gia cung cấp cho khách sạn của tôi số lượng lớn, chất lượng ổn định, giá tốt, giao hàng đúng hẹn. Khách hàng phản hồi rất tích cực về giấc ngủ." },
             { stars: 5, name: "Chị Lan (Quản lý căn hộ dịch vụ Đà Nẵng)", content: "Chúng tôi đã hợp tác nhiều dự án với Nệm Lê Gia, sản phẩm bền đẹp, phù hợp với phân khúc cao cấp. Rất hài lòng!" }
@@ -1320,6 +1486,19 @@
         "du-an-changagoi": [
             { stars: 5, name: "Anh Minh (Nhà thầu nội thất)", content: "Bộ chăn ga gối của Nệm Lê Gia có chất vải tốt, màu sắc tinh tế, đáp ứng yêu cầu khắt khe của các dự án resort 5 sao." },
             { stars: 5, name: "Chị Hương (Chủ nhà nghỉ Nha Trang)", content: "Mua số lượng lớn chăn ga gối, giá tốt, chất lượng đồng đều. Sản phẩm giữ màu tốt sau nhiều lần giặt." }
+        ],
+        // Review cho Phụ kiện
+        "bao-ve-nem": [
+            { stars: 5, name: "Chị Thu (Hà Nội)", content: "Bảo vệ nệm chất lượng tốt, vải mềm, ôm sát nệm, giặt dễ dàng. Giá hợp lý." },
+            { stars: 5, name: "Anh Phúc (TP.HCM)", content: "Mua về dùng thử thấy rất ưng, nệm không bị bám bẩn nữa." }
+        ],
+        "bao-ve-nem-chong-tham": [
+            { stars: 5, name: "Chị Hằng (Đà Nẵng)", content: "Bảo vệ nệm chống thấm tốt, yên tâm khi có trẻ nhỏ. Vải mềm, không bí." },
+            { stars: 5, name: "Anh Đức (Hà Nội)", content: "Chống thấm hiệu quả, giặt sạch nhanh, rất hài lòng." }
+        ],
+        "topper": [
+            { stars: 5, name: "Chị Lan (TP.HCM)", content: "Topper êm ái, cải thiện giấc ngủ rõ rệt. Đặt lên nệm cũ thấy ngủ ngon hơn hẳn." },
+            { stars: 5, name: "Anh Quang (Đà Nẵng)", content: "Chất lượng topper tốt, gòn microfiber mềm, thoáng khí. Rất đáng tiền." }
         ]
     };
 
@@ -1453,8 +1632,9 @@
     let currentFilter = "all";
     function renderFilteredProducts() {
         const grid = document.getElementById("productGrid");
+        // Ẩn khuyến mãi, dự án, phụ kiện khỏi trang chủ
         const filteredIds = Object.keys(productsDB).filter(id => {
-            if (productsDB[id].category === 'khuyen-mai' || productsDB[id].category === 'du-an') return false;
+            if (productsDB[id].category === 'khuyen-mai' || productsDB[id].category === 'du-an' || productsDB[id].category === 'phu-kien') return false;
             if (currentFilter === "all") return true;
             return productsDB[id].category === currentFilter;
         });
@@ -1478,7 +1658,12 @@
 
     // ==================== FLASH SALE ====================
     function renderFlashSale() {
-        const allIds = Object.keys(productsDB).filter(id => productsDB[id].category !== 'khuyen-mai' && productsDB[id].category !== 'du-an');
+        // Ẩn khuyến mãi, dự án, phụ kiện khỏi flash sale
+        const allIds = Object.keys(productsDB).filter(id => 
+            productsDB[id].category !== 'khuyen-mai' && 
+            productsDB[id].category !== 'du-an' && 
+            productsDB[id].category !== 'phu-kien'
+        );
         const sorted = allIds.sort((a,b) => productsDB[b].discountPercent - productsDB[a].discountPercent);
         const flashIds = sorted.slice(0, 4);
         const grid = document.getElementById("flashGrid");
@@ -1524,7 +1709,8 @@
         "bong-ep": ["bông ép", "nệm bông ép", "bong ep"],
         "lo-xo-tui": ["lò xo túi", "nệm lò xo túi", "lò xo", "nệm lò xo", "lò xo tui"],
         "khuyen-mai": ["khuyến mãi", "lotus", "premium", "giảm 70%"],
-        "du-an": ["dự án", "nệm dự án", "chăn ga gối dự án", "khách sạn", "căn hộ"]
+        "du-an": ["dự án", "nệm dự án", "chăn ga gối dự án", "khách sạn", "căn hộ"],
+        "phu-kien": ["phụ kiện", "bảo vệ nệm", "chống thấm", "topper"]
     };
 
     function getCategoryFromKeyword(keyword) {
@@ -1672,45 +1858,32 @@
         navigateTo(newUrl, `Nệm Lê Gia - ${prod.name}`, { type: 'product', productId: randomId });
     });
 
-    // ==================== MEGA MENU LINKS ====================
-    document.querySelectorAll(".mega-col a, .mobile-category-items a").forEach(link => {
-        link.addEventListener("click", function(e) {
+    // ==================== MEGA MENU LINKS (NỆM, KHUYẾN MÃI, DỰ ÁN, PHỤ KIỆN) ====================
+    // Xử lý các link trong mega menu desktop và mobile
+    document.querySelectorAll('.mega-col a, .mobile-category-items a').forEach(link => {
+        link.addEventListener('click', function(e) {
             e.preventDefault();
-            const id = this.getAttribute("data-product");
+            const id = this.getAttribute('data-product');
             if (id && productsDB[id]) {
                 const prod = productsDB[id];
                 const newUrl = `/${prod.category}/${prod.slug}`;
                 navigateTo(newUrl, `Nệm Lê Gia - ${prod.name}`, { type: 'product', productId: id });
             }
-            if (window.innerWidth < 992) document.getElementById("mobileNav").classList.remove("open");
+            if (window.innerWidth < 992) document.getElementById('mobileNav').classList.remove('open');
         });
     });
 
-    // ==================== MỤC KHUYẾN MÃI ====================
-    document.querySelectorAll(".promo-mega-dropdown a, .mobile-promo-items a").forEach(link => {
-        link.addEventListener("click", function(e) {
+    // Khuyến mãi, dự án, phụ kiện – desktop dropdown & mobile accordion
+    document.querySelectorAll('.promo-mega-dropdown a, .du-an-mega-dropdown a, .phu-kien-mega-dropdown a, .mobile-accordion-item .accordion-content a').forEach(link => {
+        link.addEventListener('click', function(e) {
             e.preventDefault();
-            const id = this.getAttribute("data-product");
+            const id = this.getAttribute('data-product');
             if (id && productsDB[id]) {
                 const prod = productsDB[id];
                 const newUrl = `/${prod.category}/${prod.slug}`;
                 navigateTo(newUrl, `Nệm Lê Gia - ${prod.name}`, { type: 'product', productId: id });
             }
-            if (window.innerWidth < 992) document.getElementById("mobileNav").classList.remove("open");
-        });
-    });
-
-    // ==================== MỤC DỰ ÁN ====================
-    document.querySelectorAll(".du-an-mega-dropdown a, .mobile-du-an-items a").forEach(link => {
-        link.addEventListener("click", function(e) {
-            e.preventDefault();
-            const id = this.getAttribute("data-product");
-            if (id && productsDB[id]) {
-                const prod = productsDB[id];
-                const newUrl = `/${prod.category}/${prod.slug}`;
-                navigateTo(newUrl, `Nệm Lê Gia - ${prod.name}`, { type: 'product', productId: id });
-            }
-            if (window.innerWidth < 992) document.getElementById("mobileNav").classList.remove("open");
+            if (window.innerWidth < 992) document.getElementById('mobileNav').classList.remove('open');
         });
     });
 
