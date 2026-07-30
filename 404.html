@@ -48,6 +48,7 @@
         .mega-col a { text-decoration: none; color: #1e3a5f; font-size: 0.9rem; cursor: pointer; transition: 0.2s; display: inline-block; }
         .mega-col a:hover { color: #d63384; transform: translateX(4px); }
 
+        /* ===== MEGA MENU KHUYẾN MÃI ===== */
         .promo-mega-dropdown {
             position: absolute;
             top: calc(100% - 5px);
@@ -90,6 +91,49 @@
         .mega-promo:hover .promo-mega-dropdown,
         .promo-mega-dropdown:hover { display: block; }
 
+        /* ===== MEGA MENU DỰ ÁN ===== */
+        .du-an-mega-dropdown {
+            position: absolute;
+            top: calc(100% - 5px);
+            left: -20px;
+            min-width: 220px;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 35px rgba(0,0,0,0.12);
+            padding: 16px 0;
+            display: none;
+            z-index: 1001;
+            border: 1px solid #e2e8f0;
+        }
+        .du-an-mega-dropdown a {
+            display: block;
+            padding: 12px 24px;
+            color: #1e3a5f;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .du-an-mega-dropdown a:hover {
+            background: #f8f9fc;
+            color: #d63384;
+        }
+        .mega-du-an-trigger {
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 10px 0;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #0d1b2a;
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            transition: 0.2s;
+        }
+        .mega-du-an-trigger:hover { color: #d63384; }
+        .mega-du-an:hover .du-an-mega-dropdown,
+        .du-an-mega-dropdown:hover { display: block; }
+
         .search-wrapper { flex: 1; max-width: 340px; position: relative; }
         .search-box { background: #f5f7fa; border-radius: 40px; padding: 4px 16px; display: flex; border: 1px solid #b0c4de; align-items: center; }
         .search-box input { flex: 1; border: none; background: transparent; outline: none; padding: 12px 8px; font-size: 16px; min-height: 48px; }
@@ -121,6 +165,13 @@
         .mobile-promo-items { display: flex; flex-direction: column; gap: 8px; }
         .mobile-promo-items a { display: block; padding: 12px 16px; background: white; border-radius: 16px; text-decoration: none; color: #1e3a5f; font-weight: 500; border: 1px solid #e2e8f0; transition: 0.2s; }
         .mobile-promo-items a:hover { background: #d63384; color: white; border-color: #d63384; }
+        /* Mobile Dự Án */
+        .mobile-du-an-group { padding: 12px 16px 20px; background: #fafafc; border-bottom: 1px solid #e2e8f0; }
+        .mobile-du-an-group h4 { font-size: 1rem; font-weight: 700; color: #1e3a5f; margin-bottom: 10px; border-left: 3px solid #1e3a5f; padding-left: 10px; }
+        .mobile-du-an-items { display: flex; flex-direction: column; gap: 8px; }
+        .mobile-du-an-items a { display: block; padding: 12px 16px; background: white; border-radius: 16px; text-decoration: none; color: #1e3a5f; font-weight: 500; border: 1px solid #e2e8f0; transition: 0.2s; }
+        .mobile-du-an-items a:hover { background: #1e3a5f; color: white; border-color: #1e3a5f; }
+
         @media (max-width: 480px) { .mobile-category-items { grid-template-columns: 1fr; } }
         @media (max-width: 992px) { .nav-desktop { display: none; } .mobile-menu-btn { display: block; } .search-wrapper { width: 100%; max-width: 100%; order: 3; margin-top: 12px; } }
         .hero { background: linear-gradient(120deg, #eef5f2, #fff); padding: 40px 0; border-radius: 0 0 48px 48px; margin-bottom: 40px; }
@@ -287,6 +338,167 @@
         .detail-view, .cart-view { display: none; }
         .toast-message { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); background: #333; color: white; padding: 12px 24px; border-radius: 40px; font-size: 0.9rem; z-index: 2000; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
         @media (max-width: 768px) { .toast-message { bottom: 70px; font-size: 0.8rem; padding: 10px 20px; } }
+
+        /* ===== CSS DÀNH CHO TRANG DỰ ÁN (RESPONSIVE) ===== */
+        .project-content {
+            padding: 20px 0;
+        }
+        .project-content .project-intro {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #1e3a5f;
+            margin-bottom: 20px;
+            padding: 16px 20px;
+            background: #f0f4f8;
+            border-radius: 12px;
+            border-left: 4px solid #d63384;
+        }
+        .project-content .section-block {
+            margin-bottom: 28px;
+        }
+        .project-content .section-block h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .project-content .section-block h3 i {
+            color: #d63384;
+            width: 24px;
+            text-align: center;
+        }
+        .project-content ul {
+            margin: 8px 0 0 20px;
+            list-style: none;
+            padding: 0;
+        }
+        .project-content ul li {
+            margin-bottom: 10px;
+            padding-left: 28px;
+            position: relative;
+            line-height: 1.6;
+        }
+        .project-content ul li i {
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: #d63384;
+            width: 20px;
+            text-align: center;
+        }
+        .project-content .faq-block {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid #e2e8f0;
+        }
+        .project-content .faq-block .faq-item {
+            margin-bottom: 16px;
+        }
+        .project-content .faq-block .faq-item:last-child {
+            margin-bottom: 0;
+        }
+        .project-content .faq-block .faq-q {
+            font-weight: 700;
+            color: #1e3a5f;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .project-content .faq-block .faq-q i {
+            color: #d63384;
+        }
+        .project-content .faq-block .faq-a {
+            padding-left: 32px;
+            color: #5a6e82;
+            font-size: 0.95rem;
+            margin-top: 4px;
+        }
+        .project-content .cta-box {
+            background: linear-gradient(135deg, #d63384, #b82a6e);
+            border-radius: 16px;
+            padding: 24px 20px;
+            margin-top: 28px;
+            text-align: center;
+            color: white;
+        }
+        .project-content .cta-box p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .project-content .cta-box .btn-hero {
+            background: white;
+            color: #d63384;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.2s;
+            display: inline-block;
+        }
+        .project-content .cta-box .btn-hero:hover {
+            background: #f8f9fc;
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 768px) {
+            .project-content .project-intro {
+                font-size: 1rem;
+                padding: 14px 16px;
+            }
+            .project-content .section-block h3 {
+                font-size: 1.05rem;
+            }
+            .project-content ul li {
+                font-size: 0.95rem;
+                padding-left: 24px;
+            }
+            .project-content .faq-block .faq-a {
+                font-size: 0.9rem;
+                padding-left: 28px;
+            }
+            .project-content .cta-box p {
+                font-size: 1rem;
+            }
+            .project-content .cta-box .btn-hero {
+                padding: 12px 24px;
+                font-size: 0.95rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .project-content .project-intro {
+                font-size: 0.9rem;
+                padding: 12px 14px;
+            }
+            .project-content .section-block h3 {
+                font-size: 0.95rem;
+            }
+            .project-content ul li {
+                font-size: 0.85rem;
+                padding-left: 22px;
+            }
+            .project-content .faq-block .faq-q {
+                font-size: 0.9rem;
+            }
+            .project-content .faq-block .faq-a {
+                font-size: 0.8rem;
+                padding-left: 24px;
+            }
+            .project-content .cta-box p {
+                font-size: 0.9rem;
+            }
+            .project-content .cta-box .btn-hero {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -337,6 +549,14 @@
                         <a role="menuitem" href="#" data-product="premium">Nệm Lò Xo Túi Cao Cấp Premium</a>
                     </div>
                 </div>
+                <!-- Menu DỰ ÁN -->
+                <div class="mega-menu mega-du-an">
+                    <button class="mega-du-an-trigger" aria-expanded="false" aria-haspopup="true">📐 DỰ ÁN <i class="fas fa-chevron-down"></i></button>
+                    <div class="du-an-mega-dropdown" role="menu">
+                        <a role="menuitem" href="#" data-product="du-an-nem">Nệm dự án</a>
+                        <a role="menuitem" href="#" data-product="du-an-changagoi">Chăn ga gối dự án</a>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="search-wrapper" role="search">
@@ -350,11 +570,20 @@
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Mở menu điều hướng"><i class="fas fa-bars"></i></button>
     </div>
     <div class="mobile-nav" id="mobileNav" role="navigation">
+        <!-- KHUYẾN MÃI trên mobile -->
         <div class="mobile-promo-group">
             <h4>🔥 KHUYẾN MÃI</h4>
             <div class="mobile-promo-items">
-                <a href="#" data-product="lotus">Nệm Cao Su Tổng Hợp Lotus</a>
+                <a href="#" data-product="lotus">Nệm CSTH Lotus</a>
                 <a href="#" data-product="premium">Nệm Lò Xo Túi Cao Cấp Premium</a>
+            </div>
+        </div>
+        <!-- DỰ ÁN trên mobile -->
+        <div class="mobile-du-an-group">
+            <h4>📐 DỰ ÁN</h4>
+            <div class="mobile-du-an-items">
+                <a href="#" data-product="du-an-nem">Nệm dự án</a>
+                <a href="#" data-product="du-an-changagoi">Chăn ga gối dự án</a>
             </div>
         </div>
         <div class="accordion-item">
@@ -370,7 +599,6 @@
 </header>
 
 <main>
-    <!-- Home View -->
     <div id="homeView" class="home-view">
         <section class="hero" aria-labelledby="heroTitle">
             <div class="container hero-grid">
@@ -453,7 +681,7 @@
         </div>
     </div>
 
-    <!-- Detail View -->
+    <!-- Detail View (dùng chung cho sản phẩm và trang dự án) -->
     <div id="detailView" class="detail-view">
         <div class="container">
             <button class="btn-back-home" id="backToHomeBtn"><i class="fas fa-arrow-left" aria-hidden="true"></i> Quay lại trang chủ</button>
@@ -638,8 +866,8 @@
 
         // ===== SẢN PHẨM KHUYẾN MÃI =====
         "lotus": {
-            name: "NỆM Cao Su Tổng Hợp LOTUS",
-            desc: "Nệm cao su tổng hợp Lotus được sản xuất với công nghệ tiên tiến, kết hợp độ đàn hồi và khả năng nâng đỡ vượt trội. Sản phẩm thoáng khí, không bí nhiệt, phù hợp với mọi khách hàng.<br><br><strong>Cấu tạo 5 lớp</strong> (nằm được 2 mặt):<br><ul style=\"margin:8px 0 12px 20px;list-style:disc;\"><li><strong>Lớp 1:</strong> Vải thoáng khí – mềm mại, thấm hút tốt</li><li><strong>Lớp 2:</strong> Lớp foam – tạo độ êm ái</li><li><strong>Lớp 3:</strong> Lõi mút ép – chắc chắn, nâng đỡ cột sống</li><li><strong>Lớp 4:</strong> Lớp foam – tăng cường thoải mái</li><li><strong>Lớp 5:</strong> Vải thoáng khí – bề mặt êm, dễ chịu</li></ul><br>✅ <strong>Bảo hành 10 năm</strong> – hoàn toàn yên tâm về chất lượng.<br>✅ <strong>Nằm thử 30 ngày</strong> – trải nghiệm trước khi quyết định.<br>✅ <strong>Đổi trả miễn phí</strong> nếu không hài lòng – không lo rủi ro.<br><br>Giá bán đã bao gồm phí giao hàng tận nơi tại nội thành Đà Nẵng. Với mức giảm sốc 70%, đây là cơ hội không thể bỏ qua.",
+            name: "NỆM CSTH LOTUS",
+            desc: "Nệm cao su tổng hợp Lotus được sản xuất với công nghệ tiên tiến, kết hợp độ đàn hồi và khả năng nâng đỡ vượt trội. Sản phẩm thoáng khí, không bí nhiệt, phù hợp với mọi đối tượng.<br><br><strong>Cấu tạo 5 lớp</strong> (nằm được 2 mặt):<br><ul style=\"margin:8px 0 12px 20px;list-style:disc;\"><li><strong>Lớp 1:</strong> Vải thoáng khí – mềm mại, thấm hút tốt</li><li><strong>Lớp 2:</strong> Lớp foam – tạo độ êm ái</li><li><strong>Lớp 3:</strong> Lõi mút ép – chắc chắn, nâng đỡ cột sống</li><li><strong>Lớp 4:</strong> Lớp foam – tăng cường thoải mái</li><li><strong>Lớp 5:</strong> Vải thoáng khí – bề mặt êm, dễ chịu</li></ul><br>✅ <strong>Bảo hành 10 năm</strong> – hoàn toàn yên tâm về chất lượng.<br>✅ <strong>Nằm thử 30 ngày</strong> – trải nghiệm trước khi quyết định.<br>✅ <strong>Đổi trả miễn phí</strong> nếu không hài lòng – không lo rủi ro.<br><br>Giá bán đã bao gồm phí giao hàng tận nơi tại nội thành Đà Nẵng. Với mức giảm sốc 70%, đây là cơ hội không thể bỏ qua.",
             img: "https://i.ibb.co/21csQg0p/Chat-GPT-Image-22-18-25-17-thg-7-2026.png",
             images: [
                 "https://i.ibb.co/21csQg0p/Chat-GPT-Image-22-18-25-17-thg-7-2026.png",
@@ -693,10 +921,131 @@
             category: "khuyen-mai",
             slug: "premium",
             keywords: ["lò xo túi", "cao cấp", "premium", "bảo hành 10 năm", "30 ngày đổi trả", "giảm 70%"]
+        },
+
+        // ===== TRANG DỰ ÁN (CẢI TIẾN) =====
+        "du-an-nem": {
+            name: "📐 NỆM DỰ ÁN – CHẤT LƯỢNG CHO MỌI CÔNG TRÌNH",
+            desc: `<div class="project-content">
+                <div class="project-intro">
+                    <i class="fas fa-quote-left" style="color:#d63384; margin-right:8px;"></i> 
+                    Hàng ngàn khách sạn, resort và căn hộ dịch vụ đã tin chọn Nệm Lê Gia làm đối tác nội thất.
+                </div>
+
+                <div class="section-block">
+                    <h3><i class="fas fa-boxes"></i> SẢN PHẨM ĐA DẠNG</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <strong>Nệm cao su thiên nhiên</strong> – êm ái, thoáng khí, an toàn cho sức khỏe</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Nệm bông ép</strong> – độ cứng vừa phải, hỗ trợ cột sống tốt</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Nệm lò xo túi</strong> – công nghệ độc lập, không ồn, không rung lắc</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Nệm foam</strong> – nhẹ, gấp gọn, tiện lợi cho nhiều không gian</li>
+                    </ul>
+                </div>
+
+                <div class="section-block">
+                    <h3><i class="fas fa-medal"></i> CAM KẾT CHẤT LƯỢNG</h3>
+                    <ul>
+                        <li><i class="fas fa-shield-alt"></i> Sản phẩm đạt chuẩn xuất khẩu, kiểm định nghiêm ngặt</li>
+                        <li><i class="fas fa-calendar-check"></i> Bảo hành lên đến 10 năm cho dòng lò xo túi</li>
+                        <li><i class="fas fa-handshake"></i> Hỗ trợ đổi trả linh hoạt cho dự án</li>
+                    </ul>
+                </div>
+
+                <div class="section-block">
+                    <h3><i class="fas fa-truck"></i> DỊCH VỤ TRỌN GÓI</h3>
+                    <ul>
+                        <li><i class="fas fa-pencil-ruler"></i> Tư vấn thiết kế miễn phí – chọn đúng sản phẩm cho từng không gian</li>
+                        <li><i class="fas fa-shipping-fast"></i> Giao hàng toàn quốc – đóng gói chuyên nghiệp, đúng tiến độ</li>
+                        <li><i class="fas fa-user-cog"></i> Hỗ trợ lắp đặt và bảo trì định kỳ</li>
+                    </ul>
+                </div>
+
+                <div class="faq-block">
+                    <div class="faq-item">
+                        <div class="faq-q"><i class="fas fa-question-circle"></i> Tôi có thể đặt hàng số lượng ít để thử trước không?</div>
+                        <div class="faq-a">Có, chúng tôi hỗ trợ đặt mẫu số lượng nhỏ để đánh giá chất lượng trước khi đặt hàng số lượng lớn.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q"><i class="fas fa-question-circle"></i> Thời gian giao hàng cho dự án lớn là bao lâu?</div>
+                        <div class="faq-a">Tùy thuộc số lượng và kích thước, thông thường từ 3-7 ngày làm việc. Chúng tôi cam kết giao hàng đúng tiến độ.</div>
+                    </div>
+                </div>
+
+                <div class="cta-box">
+                    <p>🏆 HỢP TÁC NGAY HÔM NAY – Nhận báo giá tốt nhất và tư vấn thiết kế miễn phí!</p>
+                    <button class="btn-hero" onclick="window.location.href='tel:0905513984'">📞 GỌI NGAY: 0905 513 984</button>
+                    <p style="font-size:0.9rem; margin-top:10px; opacity:0.9;">Đội ngũ tư vấn viên giàu kinh nghiệm sẵn sàng hỗ trợ bạn 24/7.</p>
+                </div>
+            </div>`,
+            img: "https://i.ibb.co/fGGDhxYG/Chat-GPT-Image-Jul-29-2026-03-19-31-PM.png",
+            oldPrices: {},
+            discountPercent: 0,
+            category: "du-an",
+            slug: "du-an-nem",
+            keywords: ["dự án", "nệm dự án", "khách sạn", "căn hộ", "chung cư"]
+        },
+        "du-an-changagoi": {
+            name: "📐 CHĂN GA GỐI DỰ ÁN – TINH TẾ CHO KHÔNG GIAN NGHỈ DƯỠNG",
+            desc: `<div class="project-content">
+                <div class="project-intro">
+                    <i class="fas fa-quote-left" style="color:#d63384; margin-right:8px;"></i> 
+                    Bộ sưu tập chăn ga gối cao cấp – nơi sự sang trọng gặp gỡ sự tiện nghi.
+                </div>
+
+                <div class="section-block">
+                    <h3><i class="fas fa-bed"></i> SẢN PHẨM ĐA DẠNG</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <strong>Chăn – ga – gối</strong> đồng bộ theo tiêu chuẩn khách sạn 3-5 sao</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Gối ôm, gối nằm</strong> nhiều độ cứng, phù hợp nhu cầu khách hàng</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Drap và ga</strong> các loại, đa dạng màu sắc và kích thước</li>
+                    </ul>
+                </div>
+
+                <div class="section-block">
+                    <h3><i class="fas fa-thumbs-up"></i> CHẤT LƯỢNG VƯỢT TRỘI</h3>
+                    <ul>
+                        <li><i class="fas fa-tshirt"></i> Vải cotton, tencel, satin cao cấp – mềm mại, thấm hút tốt, không xù lông</li>
+                        <li><i class="fas fa-palette"></i> Thiết kế tinh tế, màu sắc trang nhã, phù hợp mọi phong cách nội thất</li>
+                        <li><i class="fas fa-ruler-combined"></i> Đặt may theo kích thước – phù hợp với mọi loại giường</li>
+                    </ul>
+                </div>
+
+                <div class="section-block">
+                    <h3><i class="fas fa-hand-holding-usd"></i> CHÍNH SÁCH ƯU ĐÃI DÀNH CHO DỰ ÁN</h3>
+                    <ul>
+                        <li><i class="fas fa-percent"></i> Giá sỉ cạnh tranh, chiết khấu theo số lượng</li>
+                        <li><i class="fas fa-gem"></i> Chính sách hợp tác dài hạn, ưu đãi cho các đối tác thường xuyên</li>
+                        <li><i class="fas fa-award"></i> Cam kết giá tốt nhất trên thị trường cho dự án</li>
+                    </ul>
+                </div>
+
+                <div class="faq-block">
+                    <div class="faq-item">
+                        <div class="faq-q"><i class="fas fa-question-circle"></i> Tôi có thể đặt hàng chăn ga gối theo mẫu riêng không?</div>
+                        <div class="faq-a">Có, chúng tôi nhận sản xuất theo mẫu mã, chất vải và kích thước riêng cho các dự án.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q"><i class="fas fa-question-circle"></i> Thời gian giao hàng cho dự án chăn ga gối là bao lâu?</div>
+                        <div class="faq-a">Thông thường 5-10 ngày làm việc tùy theo số lượng và yêu cầu may đo. Chúng tôi luôn đảm bảo tiến độ.</div>
+                    </div>
+                </div>
+
+                <div class="cta-box">
+                    <p>🏆 HỢP TÁC NGAY HÔM NAY – Nhận báo giá tốt nhất và tư vấn thiết kế miễn phí!</p>
+                    <button class="btn-hero" onclick="window.location.href='tel:0905513984'">📞 GỌI NGAY: 0905 513 984</button>
+                    <p style="font-size:0.9rem; margin-top:10px; opacity:0.9;">Đội ngũ tư vấn viên giàu kinh nghiệm sẵn sàng hỗ trợ bạn 24/7.</p>
+                </div>
+            </div>`,
+            img: "https://i.ibb.co/wZcWMfkr/Chat-GPT-Image-Jul-29-2026-03-20-34-PM.png",
+            oldPrices: {},
+            discountPercent: 0,
+            category: "du-an",
+            slug: "du-an-changagoi",
+            keywords: ["chăn ga gối", "dự án", "khách sạn", "bộ sưu tập"]
         }
     };
 
-    // Tính giá bán cho tất cả sản phẩm
+    // Tính giá bán cho các sản phẩm (trừ dự án)
     for (let key in productsDB) {
         const prod = productsDB[key];
         if (prod.oldPrices && prod.discountPercent !== undefined && !prod.prices) {
@@ -735,7 +1084,7 @@
                 content_category: prod.category,
                 content_ids: [productId],
                 content_type: 'product',
-                value: prod.prices[Object.keys(prod.prices)[0]],
+                value: prod.prices ? prod.prices[Object.keys(prod.prices)[0]] : 0,
                 currency: 'VND'
             });
         }
@@ -786,8 +1135,13 @@
 
     function renderProductDetailView(productId, size = null) {
         currentProductId = productId;
-        if (size && productsDB[productId].prices[size]) currentSize = size;
-        else currentSize = Object.keys(productsDB[productId].prices)[0];
+        const prod = productsDB[productId];
+        if (prod.category === 'du-an') {
+            currentSize = null;
+        } else {
+            if (size && prod.prices[size]) currentSize = size;
+            else currentSize = Object.keys(prod.prices)[0];
+        }
         currentQuantity = 1;
         renderProductDetail();
         document.getElementById("homeView").style.display = "none";
@@ -859,6 +1213,10 @@
     function updateCartCount() { document.getElementById('cartCount').innerText = cart.reduce((s,i)=>s+i.quantity,0); }
     function addToCart(productId, size, quantity) {
         const prod = productsDB[productId];
+        if (!prod.prices || Object.keys(prod.prices).length === 0) {
+            showToast("Sản phẩm này không thể đặt hàng trực tiếp. Vui lòng liên hệ để được tư vấn.", true);
+            return;
+        }
         const price = prod.prices[size];
         const existing = cart.find(item => item.id === productId && item.size === size);
         if (existing) existing.quantity += quantity;
@@ -906,7 +1264,7 @@
 
     // ======================== RELATED & REVIEWS ========================
     function renderRelatedProducts(category, currentId) {
-        if (category === 'khuyen-mai') {
+        if (category === 'khuyen-mai' || category === 'du-an') {
             document.getElementById('relatedContainer').innerHTML = '';
             return;
         }
@@ -920,8 +1278,8 @@
         let html = `<div class="related-title">📌 Sản phẩm liên quan</div><div class="related-grid">`;
         related.forEach(id => {
             const p = productsDB[id];
-            const demoPrice = p.prices[Object.keys(p.prices)[0]];
-            html += `<div class="related-card" data-id="${id}" data-slug="${p.slug}" data-category="${p.category}"><img class="related-img" src="${p.img}" alt="${p.name}" width="300" height="300" loading="lazy"><div class="related-info"><div class="related-name">${p.name}</div><div class="related-price">${formatPrice(demoPrice)}</div></div></div>`;
+            const demoPrice = p.prices ? p.prices[Object.keys(p.prices)[0]] : 0;
+            html += `<div class="related-card" data-id="${id}" data-slug="${p.slug}" data-category="${p.category}"><img class="related-img" src="${p.img}" alt="${p.name}" width="300" height="300" loading="lazy"><div class="related-info"><div class="related-name">${p.name}</div><div class="related-price">${demoPrice ? formatPrice(demoPrice) : ''}</div></div></div>`;
         });
         html += `</div>`;
         document.getElementById('relatedContainer').innerHTML = html;
@@ -938,6 +1296,7 @@
         });
     }
 
+    // ==================== REVIEWS ====================
     const reviewsDB = {
         "platinum": [{ stars: 5, name: "Anh Minh (TP.HCM)", content: "Nệm lò xo túi Platinum chất lượng tốt, không rung lắc." }, { stars: 5, name: "Chị Lan (Hà Nội)", content: "Ngủ rất êm." }],
         "elan": [{ stars: 5, name: "Chị Hằng (Đà Nẵng)", content: "Nệm Elan cuộn hộp tiện lợi, êm ái." }, { stars: 5, name: "Anh Vũ (Hải Phòng)", content: "Lò xo túi êm." }],
@@ -952,7 +1311,16 @@
         "everon": [{ stars: 5, name: "Chị Bích (Hà Nội)", content: "Nệm Everon gấp gọn tiện lợi." }, { stars: 5, name: "Anh Sơn (Thanh Hóa)", content: "Giá rẻ, chất lượng tốt." }],
         "seoul": [{ stars: 5, name: "Chị Linh (HCM)", content: "Nệm Seoul êm ái, chất lượng cao." }, { stars: 5, name: "Anh Khang (Cần Thơ)", content: "Mua cho phòng trọ, rất ưng." }],
         "lotus": [{ stars: 5, name: "Chị Mai (Đà Nẵng)", content: "Nệm Lotus êm ái, bảo hành 10 năm yên tâm." }, { stars: 5, name: "Anh Tuấn (HCM)", content: "Giá siêu rẻ, chất lượng bất ngờ." }],
-        "premium": [{ stars: 5, name: "Anh Hoàng (Đà Nẵng)", content: "Nệm Premium chắc chắn, không ồn, ngủ ngon." }, { stars: 5, name: "Chị Thanh (Hà Nội)", content: "Giao hàng nhanh, đóng gói cẩn thận, rất hài lòng." }]
+        "premium": [{ stars: 5, name: "Anh Hoàng (Đà Nẵng)", content: "Nệm Premium chắc chắn, không ồn, ngủ ngon." }, { stars: 5, name: "Chị Thanh (Hà Nội)", content: "Giao hàng nhanh, đóng gói cẩn thận, rất hài lòng." }],
+        // ===== REVIEW CHO DỰ ÁN =====
+        "du-an-nem": [
+            { stars: 5, name: "Anh Tuấn (Chủ khách sạn Hà Nội)", content: "Nệm Lê Gia cung cấp cho khách sạn của tôi số lượng lớn, chất lượng ổn định, giá tốt, giao hàng đúng hẹn. Khách hàng phản hồi rất tích cực về giấc ngủ." },
+            { stars: 5, name: "Chị Lan (Quản lý căn hộ dịch vụ Đà Nẵng)", content: "Chúng tôi đã hợp tác nhiều dự án với Nệm Lê Gia, sản phẩm bền đẹp, phù hợp với phân khúc cao cấp. Rất hài lòng!" }
+        ],
+        "du-an-changagoi": [
+            { stars: 5, name: "Anh Minh (Nhà thầu nội thất)", content: "Bộ chăn ga gối của Nệm Lê Gia có chất vải tốt, màu sắc tinh tế, đáp ứng yêu cầu khắt khe của các dự án resort 5 sao." },
+            { stars: 5, name: "Chị Hương (Chủ nhà nghỉ Nha Trang)", content: "Mua số lượng lớn chăn ga gối, giá tốt, chất lượng đồng đều. Sản phẩm giữ màu tốt sau nhiều lần giặt." }
+        ]
     };
 
     function renderReviews(productId) {
@@ -960,45 +1328,52 @@
         document.getElementById("reviewContainer").innerHTML = `<h3>📸 Khách hàng tin dùng</h3>${reviews.map(r => `<div class="review-item"><div>${'⭐️'.repeat(r.stars)}</div><p><strong>“${r.content}”</strong> - ${r.name}</p></div>`).join('')}`;
     }
 
-    // ==================== RENDER PRODUCT DETAIL (có gallery ảnh) ====================
+    // ==================== RENDER PRODUCT DETAIL ====================
     function renderProductDetail() {
         const prod = productsDB[currentProductId];
-        const price = prod.prices[currentSize];
-        const oldPrice = prod.oldPrices[currentSize];
-        const savePercent = prod.discountPercent;
-        const sizeOptions = Object.keys(prod.prices);
-        // Lấy danh sách ảnh
+        const isProject = prod.category === 'du-an';
+        const hasPrice = prod.prices && Object.keys(prod.prices).length > 0;
+
         const imageList = prod.images || [prod.img];
         const mainImg = imageList[0];
 
-        // Tạo gallery ảnh
         let imagesHtml = `<div class="detail-image-gallery">
             <img class="detail-img" id="mainImage" src="${mainImg}" alt="${prod.name}" width="500" height="500" loading="lazy">
-            <div class="thumbnail-list" style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap;">
+            ${imageList.length > 1 ? `<div class="thumbnail-list" style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap;">
                 ${imageList.map((url, idx) => `
                     <img src="${url}" alt="${prod.name} - ảnh ${idx+1}"
                          style="width:70px; height:70px; object-fit:cover; border-radius:12px; cursor:pointer; border:2px solid ${idx===0?'#d63384':'transparent'};"
                          data-index="${idx}" class="thumb-img">
                 `).join('')}
-            </div>
+            </div>` : ''}
         </div>`;
 
-        const html = `<div class="product-grid-detail">
-            <div>${imagesHtml}</div>
-            <div>
-                <h2 class="product-title" style="font-size:1.8rem; font-weight:800;">${prod.name}</h2>
-                <p style="margin:16px 0;">${prod.desc}</p>
-                <div><strong>Chọn kích thước:</strong><div class="size-chips" id="detailSizeChips">${sizeOptions.map(sz => `<div class="chip ${sz === currentSize ? 'selected' : ''}" data-size="${sz}" role="button" tabindex="0">${sz}</div>`).join('')}</div></div>
-                <div class="price-wrapper"><span class="old-price">${formatPrice(oldPrice)}</span><span class="discount-price">${formatPrice(price)}</span><span class="saving-badge">Tiết kiệm ${savePercent}%</span></div>
-                <div class="quantity-selector"><button id="qtyMinus" aria-label="Giảm số lượng">-</button><span id="qtyValue">${currentQuantity}</span><button id="qtyPlus" aria-label="Tăng số lượng">+</button></div>
-                <button class="btn-add-to-cart" id="addToCartBtn"><i class="fas fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</button>
-                <button class="btn-buy-now" id="quickBuyBtn">Mua nhanh</button>
-            </div>
-        </div>`;
+        let detailHtml = `<div class="product-grid-detail"><div>${imagesHtml}</div><div>`;
+        detailHtml += `<h2 class="product-title" style="font-size:1.8rem; font-weight:800;">${prod.name}</h2>`;
 
-        document.getElementById("productDetailSection").innerHTML = html;
+        if (isProject) {
+            detailHtml += `<div style="margin:16px 0;">${prod.desc}</div>`;
+        } else {
+            detailHtml += `<p style="margin:16px 0;">${prod.desc}</p>`;
+            if (hasPrice) {
+                const price = prod.prices[currentSize];
+                const oldPrice = prod.oldPrices[currentSize];
+                const savePercent = prod.discountPercent;
+                const sizeOptions = Object.keys(prod.prices);
+                detailHtml += `<div><strong>Chọn kích thước:</strong><div class="size-chips" id="detailSizeChips">${sizeOptions.map(sz => `<div class="chip ${sz === currentSize ? 'selected' : ''}" data-size="${sz}" role="button" tabindex="0">${sz}</div>`).join('')}</div></div>`;
+                detailHtml += `<div class="price-wrapper"><span class="old-price">${formatPrice(oldPrice)}</span><span class="discount-price">${formatPrice(price)}</span><span class="saving-badge">Tiết kiệm ${savePercent}%</span></div>`;
+                detailHtml += `<div class="quantity-selector"><button id="qtyMinus" aria-label="Giảm số lượng">-</button><span id="qtyValue">${currentQuantity}</span><button id="qtyPlus" aria-label="Tăng số lượng">+</button></div>`;
+                detailHtml += `<button class="btn-add-to-cart" id="addToCartBtn"><i class="fas fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</button>`;
+                detailHtml += `<button class="btn-buy-now" id="quickBuyBtn">Mua nhanh</button>`;
+            } else {
+                detailHtml += `<p style="color:#c73e1d; font-weight:600; margin-top:20px;">Vui lòng liên hệ để được báo giá và tư vấn dự án.</p>`;
+                detailHtml += `<button class="btn-hero" onclick="window.location.href='tel:0905513984'" style="margin-top:16px;">📞 Gọi tư vấn ngay</button>`;
+            }
+        }
 
-        // Sự kiện click thumbnail
+        detailHtml += `</div></div>`;
+        document.getElementById("productDetailSection").innerHTML = detailHtml;
+
         document.querySelectorAll('.thumb-img').forEach(thumb => {
             thumb.addEventListener('click', function() {
                 document.getElementById('mainImage').src = this.src;
@@ -1007,20 +1382,21 @@
             });
         });
 
-        // Sự kiện chọn size
-        document.getElementById("detailSizeChips").addEventListener('click', function(e) {
-            const chip = e.target.closest('.chip');
-            if (!chip) return;
-            currentSize = chip.dataset.size;
-            renderProductDetail();
-            renderReviews(currentProductId);
-            renderRelatedProducts(prod.category, currentProductId);
-        });
+        if (!isProject && hasPrice) {
+            document.getElementById("detailSizeChips")?.addEventListener('click', function(e) {
+                const chip = e.target.closest('.chip');
+                if (!chip) return;
+                currentSize = chip.dataset.size;
+                renderProductDetail();
+                renderReviews(currentProductId);
+                renderRelatedProducts(prod.category, currentProductId);
+            });
 
-        document.getElementById("qtyMinus").addEventListener('click', function() { if (currentQuantity > 1) { currentQuantity--; document.getElementById("qtyValue").innerText = currentQuantity; } });
-        document.getElementById("qtyPlus").addEventListener('click', function() { currentQuantity++; document.getElementById("qtyValue").innerText = currentQuantity; });
-        document.getElementById("addToCartBtn").addEventListener('click', function() { addToCart(currentProductId, currentSize, currentQuantity); });
-        document.getElementById("quickBuyBtn").addEventListener('click', function() { openQuickBuyModal(); });
+            document.getElementById("qtyMinus")?.addEventListener('click', function() { if (currentQuantity > 1) { currentQuantity--; document.getElementById("qtyValue").innerText = currentQuantity; } });
+            document.getElementById("qtyPlus")?.addEventListener('click', function() { currentQuantity++; document.getElementById("qtyValue").innerText = currentQuantity; });
+            document.getElementById("addToCartBtn")?.addEventListener('click', function() { addToCart(currentProductId, currentSize, currentQuantity); });
+            document.getElementById("quickBuyBtn")?.addEventListener('click', function() { openQuickBuyModal(); });
+        }
 
         renderReviews(currentProductId);
         renderRelatedProducts(prod.category, currentProductId);
@@ -1078,15 +1454,15 @@
     function renderFilteredProducts() {
         const grid = document.getElementById("productGrid");
         const filteredIds = Object.keys(productsDB).filter(id => {
-            if (productsDB[id].category === 'khuyen-mai') return false;
+            if (productsDB[id].category === 'khuyen-mai' || productsDB[id].category === 'du-an') return false;
             if (currentFilter === "all") return true;
             return productsDB[id].category === currentFilter;
         });
         if (filteredIds.length === 0) { grid.innerHTML = '<div style="text-align:center; padding:40px;">Không có sản phẩm nào trong danh mục này.</div>'; return; }
         grid.innerHTML = filteredIds.map(id => {
             const p = productsDB[id];
-            const demoPrice = p.prices[Object.keys(p.prices)[0]];
-            return `<div class="product-card" data-id="${id}" data-slug="${p.slug}" data-category="${p.category}"><div class="discount-badge">-${p.discountPercent}%</div><img class="card-img" src="${p.img}" alt="${p.name}" width="400" height="400" loading="lazy"><div class="card-info"><div class="card-title">${p.name}</div><div class="card-price">${formatPrice(demoPrice)}</div><button class="btn-hero" style="background:#d63384; width:100%;">Xem chi tiết</button></div></div>`;
+            const demoPrice = p.prices ? p.prices[Object.keys(p.prices)[0]] : 0;
+            return `<div class="product-card" data-id="${id}" data-slug="${p.slug}" data-category="${p.category}"><div class="discount-badge">-${p.discountPercent}%</div><img class="card-img" src="${p.img}" alt="${p.name}" width="400" height="400" loading="lazy"><div class="card-info"><div class="card-title">${p.name}</div><div class="card-price">${demoPrice ? formatPrice(demoPrice) : ''}</div><button class="btn-hero" style="background:#d63384; width:100%;">Xem chi tiết</button></div></div>`;
         }).join('');
         grid.addEventListener('click', function(e) {
             const card = e.target.closest('.product-card');
@@ -1102,14 +1478,14 @@
 
     // ==================== FLASH SALE ====================
     function renderFlashSale() {
-        const allIds = Object.keys(productsDB).filter(id => productsDB[id].category !== 'khuyen-mai');
+        const allIds = Object.keys(productsDB).filter(id => productsDB[id].category !== 'khuyen-mai' && productsDB[id].category !== 'du-an');
         const sorted = allIds.sort((a,b) => productsDB[b].discountPercent - productsDB[a].discountPercent);
         const flashIds = sorted.slice(0, 4);
         const grid = document.getElementById("flashGrid");
         grid.innerHTML = flashIds.map(id => {
             const p = productsDB[id];
-            const demoPrice = p.prices[Object.keys(p.prices)[0]];
-            const oldPrice = p.oldPrices[Object.keys(p.oldPrices)[0]];
+            const demoPrice = p.prices ? p.prices[Object.keys(p.prices)[0]] : 0;
+            const oldPrice = p.oldPrices ? p.oldPrices[Object.keys(p.oldPrices)[0]] : 0;
             return `<div class="flash-card" data-id="${id}" data-slug="${p.slug}" data-category="${p.category}"><div class="flash-badge">🔥 -${p.discountPercent}%</div><img class="flash-img" src="${p.img}" alt="${p.name}" width="300" height="300" loading="lazy"><div class="flash-info"><div class="flash-name">${p.name}</div><div class="flash-price">${formatPrice(demoPrice)} <span class="flash-old-price">${formatPrice(oldPrice)}</span></div></div></div>`;
         }).join('');
         grid.addEventListener('click', function(e) {
@@ -1147,7 +1523,8 @@
         "cao-su-tong-hop": ["cao su tổng hợp", "nệm cao su tổng hợp", "cao su tổng", "tổng hợp"],
         "bong-ep": ["bông ép", "nệm bông ép", "bong ep"],
         "lo-xo-tui": ["lò xo túi", "nệm lò xo túi", "lò xo", "nệm lò xo", "lò xo tui"],
-        "khuyen-mai": ["khuyến mãi", "lotus", "premium", "giảm 70%"]
+        "khuyen-mai": ["khuyến mãi", "lotus", "premium", "giảm 70%"],
+        "du-an": ["dự án", "nệm dự án", "chăn ga gối dự án", "khách sạn", "căn hộ"]
     };
 
     function getCategoryFromKeyword(keyword) {
@@ -1218,7 +1595,7 @@
                     <img src="${prod.img}" alt="${prod.name}" width="40" height="40" loading="lazy">
                     <div class="suggestion-info">
                         <div class="suggestion-name">${prod.name}</div>
-                        <div class="suggestion-meta">${prod.category.replace(/-/g, ' ')} • ${formatPrice(demoPrice)}</div>
+                        <div class="suggestion-meta">${prod.category.replace(/-/g, ' ')} ${demoPrice ? '• ' + formatPrice(demoPrice) : ''}</div>
                     </div>
                 </div>
             `;
@@ -1323,9 +1700,28 @@
         });
     });
 
+    // ==================== MỤC DỰ ÁN ====================
+    document.querySelectorAll(".du-an-mega-dropdown a, .mobile-du-an-items a").forEach(link => {
+        link.addEventListener("click", function(e) {
+            e.preventDefault();
+            const id = this.getAttribute("data-product");
+            if (id && productsDB[id]) {
+                const prod = productsDB[id];
+                const newUrl = `/${prod.category}/${prod.slug}`;
+                navigateTo(newUrl, `Nệm Lê Gia - ${prod.name}`, { type: 'product', productId: id });
+            }
+            if (window.innerWidth < 992) document.getElementById("mobileNav").classList.remove("open");
+        });
+    });
+
     // ==================== QUICK BUY MODAL ====================
     let quickBuyProduct = null, quickBuySize = null, quickBuyQuantity = 1;
     function openQuickBuyModal() {
+        const prod = productsDB[currentProductId];
+        if (prod.category === 'du-an') {
+            showToast("Sản phẩm này vui lòng liên hệ để được tư vấn.", true);
+            return;
+        }
         quickBuyProduct = currentProductId;
         quickBuySize = currentSize;
         quickBuyQuantity = currentQuantity;
