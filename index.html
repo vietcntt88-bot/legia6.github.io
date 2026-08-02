@@ -591,6 +591,112 @@
                 font-size: 0.85rem;
             }
         }
+
+        /* ===== LIGHTBOX CSS ===== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 99999;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+            cursor: default;
+        }
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+            object-fit: contain;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: #fff;
+            cursor: pointer;
+            z-index: 10;
+            transition: 0.2s;
+            font-weight: 300;
+        }
+        .lightbox-close:hover {
+            color: #d63384;
+            transform: scale(1.2);
+        }
+        .lightbox-prev,
+        .lightbox-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 40px;
+            color: #fff;
+            cursor: pointer;
+            z-index: 10;
+            padding: 16px;
+            transition: 0.2s;
+            user-select: none;
+            background: rgba(0,0,0,0.3);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-prev { left: 20px; }
+        .lightbox-next { right: 20px; }
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: rgba(214,51,132,0.7);
+            color: #fff;
+        }
+        .lightbox-caption {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            font-size: 1rem;
+            padding: 0 20px;
+            pointer-events: none;
+            background: rgba(0,0,0,0.4);
+            padding: 12px 20px;
+            max-width: 80%;
+            margin: 0 auto;
+            border-radius: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: 500;
+        }
+        @media (max-width: 768px) {
+            .lightbox-prev,
+            .lightbox-next {
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+                padding: 8px;
+            }
+            .lightbox-prev { left: 10px; }
+            .lightbox-next { right: 10px; }
+            .lightbox-close { font-size: 30px; top: 10px; right: 20px; }
+            .lightbox-caption { font-size: 0.8rem; bottom: 20px; padding: 8px 16px; }
+        }
     </style>
 </head>
 <body>
@@ -633,14 +739,7 @@
                         <div class="mega-col"><h4>Lò Xo Túi</h4><ul><li><a role="menuitem" data-product="platinum">Platinum</a></li><li><a role="menuitem" data-product="elan">Elan</a></li><li><a role="menuitem" data-product="celina">Celina</a></li></ul></div>
                     </div>
                 </div>
-                <!-- Menu KHUYẾN MÃI -->
-                <div class="mega-menu mega-promo">
-                    <button class="mega-promo-trigger" aria-expanded="false" aria-haspopup="true">KHUYẾN MÃI <i class="fas fa-chevron-down"></i></button>
-                    <div class="promo-mega-dropdown" role="menu">
-                        <a role="menuitem" href="#" data-product="lotus">Nệm CSTH Lotus</a>
-                        <a role="menuitem" href="#" data-product="premium">Nệm Lò Xo Túi Cao Cấp Premium</a>
-                    </div>
-                </div>
+
                 <!-- Menu DỰ ÁN -->
                 <div class="mega-menu mega-du-an">
                     <button class="mega-du-an-trigger" aria-expanded="false" aria-haspopup="true">DỰ ÁN <i class="fas fa-chevron-down"></i></button>
@@ -649,6 +748,7 @@
                         <a role="menuitem" href="#" data-product="du-an-changagoi">Chăn ga gối dự án</a>
                     </div>
                 </div>
+
                 <!-- Menu PHỤ KIỆN -->
                 <div class="mega-menu mega-phu-kien">
                     <button class="mega-phu-kien-trigger" aria-expanded="false" aria-haspopup="true">PHỤ KIỆN <i class="fas fa-chevron-down"></i></button>
@@ -656,6 +756,15 @@
                         <a role="menuitem" href="#" data-product="bao-ve-nem">Bảo vệ nệm</a>
                         <a role="menuitem" href="#" data-product="bao-ve-nem-chong-tham">Bảo vệ nệm chống thấm</a>
                         <a role="menuitem" href="#" data-product="topper">Topper nệm cao cấp</a>
+                    </div>
+                </div>
+
+                <!-- Menu KHUYẾN MÃI -->
+                <div class="mega-menu mega-promo">
+                    <button class="mega-promo-trigger" aria-expanded="false" aria-haspopup="true">KHUYẾN MÃI <i class="fas fa-chevron-down"></i></button>
+                    <div class="promo-mega-dropdown" role="menu">
+                        <a role="menuitem" href="#" data-product="lotus">Nệm CSTH Lotus</a>
+                        <a role="menuitem" href="#" data-product="premium">Nệm Lò Xo Túi Cao Cấp Premium</a>
                     </div>
                 </div>
             </div>
@@ -671,14 +780,17 @@
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Mở menu điều hướng"><i class="fas fa-bars"></i></button>
     </div>
     <div class="mobile-nav" id="mobileNav" role="navigation">
-        <!-- KHUYẾN MÃI (Accordion) -->
+        <!-- NỆM (Accordion) -->
         <div class="mobile-accordion-item">
-            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">KHUYẾN MÃI <i class="fas fa-angle-down"></i></div>
+            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">NỆM <i class="fas fa-angle-down"></i></div>
             <div class="accordion-content">
-                <a href="#" data-product="lotus">Nệm CSTH Lotus</a>
-                <a href="#" data-product="premium">Nệm Lò Xo Túi Cao Cấp Premium</a>
+                <div class="mobile-category-group"><h4>Cao Su Thiên Nhiên</h4><div class="mobile-category-items"><a data-product="van-thanh">Vạn Thành</a><a data-product="dong-phu">Đồng Phú</a><a data-product="lien-a">Liên Á</a><a data-product="thang-loi">Thắng Lợi</a><a data-product="png">PNG</a></div></div>
+                <div class="mobile-category-group"><h4>Cao Su Tổng Hợp</h4><div class="mobile-category-items"><a data-product="csn-thang-loi">CSN Thắng Lợi</a><a data-product="diamond">Diamond</a></div></div>
+                <div class="mobile-category-group"><h4>Bông Ép</h4><div class="mobile-category-items"><a data-product="everon">Everon</a><a data-product="seoul">Seoul</a></div></div>
+                <div class="mobile-category-group"><h4>Lò Xo Túi</h4><div class="mobile-category-items"><a data-product="platinum">Platinum</a><a data-product="elan">Elan</a><a data-product="celina">Celina</a></div></div>
             </div>
         </div>
+
         <!-- DỰ ÁN (Accordion) -->
         <div class="mobile-accordion-item">
             <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">DỰ ÁN <i class="fas fa-angle-down"></i></div>
@@ -687,6 +799,7 @@
                 <a href="#" data-product="du-an-changagoi">Chăn ga gối dự án</a>
             </div>
         </div>
+
         <!-- PHỤ KIỆN (Accordion) -->
         <div class="mobile-accordion-item">
             <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">PHỤ KIỆN <i class="fas fa-angle-down"></i></div>
@@ -696,14 +809,13 @@
                 <a href="#" data-product="topper">Topper nệm cao cấp</a>
             </div>
         </div>
-        <!-- NỆM (Accordion) -->
+
+        <!-- KHUYẾN MÃI (Accordion) -->
         <div class="mobile-accordion-item">
-            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">NỆM <i class="fas fa-angle-down"></i></div>
+            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">KHUYẾN MÃI <i class="fas fa-angle-down"></i></div>
             <div class="accordion-content">
-                <div class="mobile-category-group"><h4>Cao Su Thiên Nhiên</h4><div class="mobile-category-items"><a data-product="van-thanh">Vạn Thành</a><a data-product="dong-phu">Đồng Phú</a><a data-product="lien-a">Liên Á</a><a data-product="thang-loi">Thắng Lợi</a><a data-product="png">PNG</a></div></div>
-                <div class="mobile-category-group"><h4>Cao Su Tổng Hợp</h4><div class="mobile-category-items"><a data-product="csn-thang-loi">CSN Thắng Lợi</a><a data-product="diamond">Diamond</a></div></div>
-                <div class="mobile-category-group"><h4>Bông Ép</h4><div class="mobile-category-items"><a data-product="everon">Everon</a><a data-product="seoul">Seoul</a></div></div>
-                <div class="mobile-category-group"><h4>Lò Xo Túi</h4><div class="mobile-category-items"><a data-product="platinum">Platinum</a><a data-product="elan">Elan</a><a data-product="celina">Celina</a></div></div>
+                <a href="#" data-product="lotus">Nệm CSTH Lotus</a>
+                <a href="#" data-product="premium">Nệm Lò Xo Túi Cao Cấp Premium</a>
             </div>
         </div>
     </div>
@@ -846,6 +958,17 @@
     <div class="btn-sticky btn-call" id="stickyCallBtn" role="button" tabindex="0"><i class="fas fa-phone-alt" aria-hidden="true"></i> GỌI</div>
 </div>
 
+<!-- Lightbox Modal -->
+<div id="lightboxModal" class="lightbox">
+    <span class="lightbox-close" id="lightboxClose">&times;</span>
+    <span class="lightbox-prev" id="lightboxPrev">&#10094;</span>
+    <span class="lightbox-next" id="lightboxNext">&#10095;</span>
+    <div class="lightbox-content">
+        <img id="lightboxImage" src="" alt="Xem ảnh phóng to">
+    </div>
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
 <script>
     // ==================== DỮ LIỆU SẢN PHẨM ====================
     const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xwvwzorl';
@@ -856,7 +979,7 @@
         // === Các sản phẩm cũ (giữ nguyên) ===
         "van-thanh": {
             name: "NỆM CSTN VẠN THÀNH",
-            desc: "Nệm cao su thiên nhiên Vạn Thành được sản xuất từ mủ cao su nguyên chất, giúp kháng khuẩn tự nhiên, ngăn ngừa nấm mốc và các tác nhân gây dị ứng. Với cấu trúc đàn hồi vượt trội, sản phẩm nâng đỡ cột sống tối ưu, mang lại giấc ngủ sâu và thoải mái. Thoáng khí tốt, không bí bách, phù hợp với mọi đối tượng, đặc biệt là người lớn tuổi và trẻ nhỏ. Giảm ngay 22%.",
+            desc: "Nệm cao su thiên nhiên Vạn Thành được sản xuất từ mủ cao su nguyên chất, giúp kháng khuẩn tự nhiên, ngăn ngừa nấm mốc và các tác nhân gây dị ứng. Với cấu trúc đàn hồi vượt trội, sản phẩm nâng đỡ cột sống tối ưu, mang lại giấc ngủ sâu và thoải mái. Thoáng khí tốt, không bí bách, phù hợp với mọi Khách Hàng, đặc biệt là người lớn tuổi và trẻ nhỏ. Giảm ngay 22%.",
             img: "https://i.ibb.co/dJ7JD98q/nem-cao-su-unique-5-1.jpg",
             oldPrices: { "1m x 2m x 10cm":9910000,"1m2 x 2m x 10cm":11300000,"1m4 x 2m x 10cm":13070000,"1m6 x 2m x 10cm":14340000,"1m8 x 2m x 10cm":16150000,"2m x 2m x 10cm":18530000 },
             discountPercent: 22,
@@ -978,11 +1101,11 @@
         // ===== SẢN PHẨM KHUYẾN MÃI =====
         "lotus": {
             name: "NỆM CSTH LOTUS",
-            desc: "Nệm cao su tổng hợp Lotus được sản xuất với công nghệ tiên tiến, kết hợp độ đàn hồi và khả năng nâng đỡ vượt trội. Sản phẩm thoáng khí, không bí nhiệt, phù hợp với mọi đối tượng.<br><br><strong>Cấu tạo 5 lớp</strong> (nằm được 2 mặt):<br><ul style=\"margin:8px 0 12px 20px;list-style:disc;\"><li><strong>Lớp 1:</strong> Vải thoáng khí – mềm mại, thấm hút tốt</li><li><strong>Lớp 2:</strong> Lớp foam – tạo độ êm ái</li><li><strong>Lớp 3:</strong> Lõi mút ép – chắc chắn, nâng đỡ cột sống</li><li><strong>Lớp 4:</strong> Lớp foam – tăng cường thoải mái</li><li><strong>Lớp 5:</strong> Vải thoáng khí – bề mặt êm, dễ chịu</li></ul><br>✅ <strong>Bảo hành 10 năm</strong> – hoàn toàn yên tâm về chất lượng.<br>✅ <strong>Nằm thử 30 ngày</strong> – trải nghiệm trước khi quyết định.<br>✅ <strong>Đổi trả miễn phí</strong> nếu không hài lòng – không lo rủi ro.<br><br>Giá bán đã bao gồm phí giao hàng tận nơi tại nội thành Đà Nẵng. Với mức giảm sốc 70%, đây là cơ hội không thể bỏ qua.",
+            desc: "Nệm cao su tổng hợp Lotus được sản xuất với công nghệ tiên tiến, kết hợp độ đàn hồi và khả năng nâng đỡ vượt trội. Sản phẩm thoáng khí, không bí nhiệt, phù hợp với mọi Khách Hàng.<br><br><strong>Cấu tạo 5 lớp</strong> (nằm được 2 mặt):<br><ul style=\"margin:8px 0 12px 20px;list-style:disc;\"><li><strong>Lớp 1:</strong> Vải thoáng khí – mềm mại, thấm hút tốt</li><li><strong>Lớp 2:</strong> Lớp foam – tạo độ êm ái</li><li><strong>Lớp 3:</strong> Lõi mút ép – chắc chắn, nâng đỡ cột sống</li><li><strong>Lớp 4:</strong> Lớp foam – tăng cường thoải mái</li><li><strong>Lớp 5:</strong> Vải thoáng khí – bề mặt êm, dễ chịu</li></ul><br>✅ <strong>Bảo hành 10 năm</strong> – hoàn toàn yên tâm về chất lượng.<br>✅ <strong>Nằm thử 30 ngày</strong> – trải nghiệm trước khi quyết định.<br>✅ <strong>Đổi trả miễn phí</strong> nếu không hài lòng – không lo rủi ro.<br><br>Giá bán đã bao gồm phí giao hàng tận nơi tại nội thành Đà Nẵng. Với mức giảm sốc 70%, đây là cơ hội không thể bỏ qua.",
             img: "https://i.ibb.co/21csQg0p/Chat-GPT-Image-22-18-25-17-thg-7-2026.png",
             images: [
                 "https://i.ibb.co/21csQg0p/Chat-GPT-Image-22-18-25-17-thg-7-2026.png",
-                "https://i.ibb.co/rfGW5RC6/ad47efd58c5c0d02544d.jpg"
+                "https://i.ibb.co/LXspK69t/b99a3798-7b51-494e-80f2-5a7cb0f5ceb6.png"
             ],
             oldPrices: {
                 "1m0 x 2m x 10cm": 4667000,
@@ -1560,9 +1683,77 @@
             document.getElementById("quickBuyBtn")?.addEventListener('click', function() { openQuickBuyModal(); });
         }
 
+        // Gắn sự kiện lightbox cho ảnh chính
+        bindLightboxEvents();
+
         renderReviews(currentProductId);
         renderRelatedProducts(prod.category, currentProductId);
     }
+
+    // ==================== LIGHTBOX ====================
+    let lightboxImages = [];
+    let currentLightboxIndex = 0;
+
+    function openLightbox(index) {
+        const modal = document.getElementById('lightboxModal');
+        const img = document.getElementById('lightboxImage');
+        const caption = document.getElementById('lightboxCaption');
+        if (!modal || !img) return;
+        if (!lightboxImages.length) return;
+        if (index < 0) index = lightboxImages.length - 1;
+        if (index >= lightboxImages.length) index = 0;
+        currentLightboxIndex = index;
+        img.src = lightboxImages[index];
+        caption.textContent = `Ảnh ${index+1} / ${lightboxImages.length}`;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        const modal = document.getElementById('lightboxModal');
+        if (modal) modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function changeLightbox(direction) {
+        openLightbox(currentLightboxIndex + direction);
+    }
+
+    function bindLightboxEvents() {
+        const mainImage = document.getElementById('mainImage');
+        if (mainImage) {
+            mainImage.addEventListener('click', function() {
+                const prod = productsDB[currentProductId];
+                if (prod) {
+                    lightboxImages = prod.images || [prod.img];
+                    openLightbox(0);
+                }
+            });
+        }
+    }
+
+    // Gắn sự kiện cho lightbox
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('lightboxModal');
+        const closeBtn = document.getElementById('lightboxClose');
+        const prevBtn = document.getElementById('lightboxPrev');
+        const nextBtn = document.getElementById('lightboxNext');
+
+        if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+        if (prevBtn) prevBtn.addEventListener('click', function() { changeLightbox(-1); });
+        if (nextBtn) nextBtn.addEventListener('click', function() { changeLightbox(1); });
+        if (modal) {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) closeLightbox();
+            });
+            document.addEventListener('keydown', function(e) {
+                if (!modal.classList.contains('active')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') changeLightbox(-1);
+                if (e.key === 'ArrowRight') changeLightbox(1);
+            });
+        }
+    });
 
     // ==================== SLIDESHOW ====================
     let slideIndex = 0;
