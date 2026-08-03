@@ -15,8 +15,8 @@
     <link rel="canonical" href="https://legia.pro.vn/" />
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" /></noscript>
+    <!-- Font Awesome 6.5.2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
     <!-- Facebook Pixel -->
     <script>
@@ -25,7 +25,7 @@
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2046389759421110&ev=PageView&noscript=1" /></noscript>
 
     <style>
-        /* ===== GIỮ NGUYÊN TOÀN BỘ CSS CŨ ===== */
+        /* ===== BASE ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Montserrat', sans-serif; background: #fff; color: #1A2C3E; line-height: 1.5; }
         .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
@@ -47,135 +47,27 @@
         .mega-col li { margin-bottom: 8px; }
         .mega-col a { text-decoration: none; color: #1e3a5f; font-size: 0.9rem; cursor: pointer; transition: 0.2s; display: inline-block; }
         .mega-col a:hover { color: #d63384; transform: translateX(4px); }
-
-        /* ===== MEGA MENU KHUYẾN MÃI ===== */
-        .promo-mega-dropdown {
-            position: absolute;
-            top: calc(100% - 5px);
-            left: -20px;
-            min-width: 220px;
-            background: white;
-            border-radius: 24px;
-            box-shadow: 0 20px 35px rgba(0,0,0,0.12);
-            padding: 16px 0;
-            display: none;
-            z-index: 1001;
-            border: 1px solid #e2e8f0;
+        .promo-mega-dropdown, .du-an-mega-dropdown, .phu-kien-mega-dropdown {
+            position: absolute; top: calc(100% - 5px); left: -20px; min-width: 220px; background: white; border-radius: 24px; box-shadow: 0 20px 35px rgba(0,0,0,0.12); padding: 16px 0; display: none; z-index: 1001; border: 1px solid #e2e8f0;
         }
-        .promo-mega-dropdown a {
-            display: block;
-            padding: 12px 24px;
-            color: #1e3a5f;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.2s;
+        .promo-mega-dropdown a, .du-an-mega-dropdown a, .phu-kien-mega-dropdown a {
+            display: block; padding: 12px 24px; color: #1e3a5f; text-decoration: none; font-weight: 500; transition: 0.2s;
         }
-        .promo-mega-dropdown a:hover {
-            background: #f8f9fc;
-            color: #d63384;
+        .promo-mega-dropdown a:hover, .du-an-mega-dropdown a:hover, .phu-kien-mega-dropdown a:hover {
+            background: #f8f9fc; color: #d63384;
         }
-        .mega-promo-trigger {
-            font-weight: 700;
-            font-size: 1rem;
-            padding: 10px 0;
-            cursor: pointer;
-            background: none;
-            border: none;
-            color: #d63384;
-            display: flex;
-            gap: 6px;
-            align-items: center;
-            transition: 0.2s;
+        .mega-promo-trigger, .mega-du-an-trigger, .mega-phu-kien-trigger {
+            font-weight: 700; font-size: 1rem; padding: 10px 0; cursor: pointer; background: none; border: none; display: flex; gap: 6px; align-items: center; transition: 0.2s;
         }
+        .mega-promo-trigger { color: #d63384; }
         .mega-promo-trigger:hover { color: #b82a6e; }
-        .mega-promo:hover .promo-mega-dropdown,
-        .promo-mega-dropdown:hover { display: block; }
-
-        /* ===== MEGA MENU DỰ ÁN ===== */
-        .du-an-mega-dropdown {
-            position: absolute;
-            top: calc(100% - 5px);
-            left: -20px;
-            min-width: 220px;
-            background: white;
-            border-radius: 24px;
-            box-shadow: 0 20px 35px rgba(0,0,0,0.12);
-            padding: 16px 0;
-            display: none;
-            z-index: 1001;
-            border: 1px solid #e2e8f0;
-        }
-        .du-an-mega-dropdown a {
+        .mega-du-an-trigger, .mega-phu-kien-trigger { color: #0d1b2a; }
+        .mega-du-an-trigger:hover, .mega-phu-kien-trigger:hover { color: #d63384; }
+        .mega-promo:hover .promo-mega-dropdown, .promo-mega-dropdown:hover,
+        .mega-du-an:hover .du-an-mega-dropdown, .du-an-mega-dropdown:hover,
+        .mega-phu-kien:hover .phu-kien-mega-dropdown, .phu-kien-mega-dropdown:hover {
             display: block;
-            padding: 12px 24px;
-            color: #1e3a5f;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.2s;
         }
-        .du-an-mega-dropdown a:hover {
-            background: #f8f9fc;
-            color: #d63384;
-        }
-        .mega-du-an-trigger {
-            font-weight: 700;
-            font-size: 1rem;
-            padding: 10px 0;
-            cursor: pointer;
-            background: none;
-            border: none;
-            color: #0d1b2a;
-            display: flex;
-            gap: 6px;
-            align-items: center;
-            transition: 0.2s;
-        }
-        .mega-du-an-trigger:hover { color: #d63384; }
-        .mega-du-an:hover .du-an-mega-dropdown,
-        .du-an-mega-dropdown:hover { display: block; }
-
-        /* ===== MEGA MENU PHỤ KIỆN ===== */
-        .phu-kien-mega-dropdown {
-            position: absolute;
-            top: calc(100% - 5px);
-            left: -20px;
-            min-width: 220px;
-            background: white;
-            border-radius: 24px;
-            box-shadow: 0 20px 35px rgba(0,0,0,0.12);
-            padding: 16px 0;
-            display: none;
-            z-index: 1001;
-            border: 1px solid #e2e8f0;
-        }
-        .phu-kien-mega-dropdown a {
-            display: block;
-            padding: 12px 24px;
-            color: #1e3a5f;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.2s;
-        }
-        .phu-kien-mega-dropdown a:hover {
-            background: #f8f9fc;
-            color: #d63384;
-        }
-        .mega-phu-kien-trigger {
-            font-weight: 700;
-            font-size: 1rem;
-            padding: 10px 0;
-            cursor: pointer;
-            background: none;
-            border: none;
-            color: #0d1b2a;
-            display: flex;
-            gap: 6px;
-            align-items: center;
-            transition: 0.2s;
-        }
-        .mega-phu-kien-trigger:hover { color: #d63384; }
-        .mega-phu-kien:hover .phu-kien-mega-dropdown,
-        .phu-kien-mega-dropdown:hover { display: block; }
 
         .search-wrapper { flex: 1; max-width: 340px; position: relative; }
         .search-box { background: #f5f7fa; border-radius: 40px; padding: 4px 16px; display: flex; border: 1px solid #b0c4de; align-items: center; }
@@ -204,68 +96,20 @@
         .mobile-category-items a { display: block; background: white; padding: 12px 12px; border-radius: 16px; text-decoration: none; color: #1e3a5f; font-size: 0.9rem; font-weight: 500; border: 1px solid #e2e8f0; text-align: center; transition: 0.2s; }
         .mobile-category-items a:hover, .mobile-category-items a:active { background: #d63384; color: white; border-color: #d63384; }
 
-        /* Mobile Accordion cho các mục */
-        .mobile-accordion-item {
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .mobile-accordion-item .accordion-header {
-            padding: 16px 20px;
-            font-weight: 700;
-            display: flex;
-            justify-content: space-between;
-            cursor: pointer;
-            background: #fff;
-            font-size: 1rem;
-            color: #0d1b2a;
-        }
-        .mobile-accordion-item .accordion-header i {
-            transition: transform 0.2s;
-        }
-        .mobile-accordion-item .accordion-header .fa-angle-down {
-            transform: rotate(0deg);
-        }
-        .mobile-accordion-item .accordion-header .fa-angle-up {
-            transform: rotate(180deg);
-        }
-        .mobile-accordion-item .accordion-content {
-            display: none;
-            padding: 12px 16px 20px;
-            background: #fafafc;
-        }
-        .mobile-accordion-item .accordion-content.show {
-            display: block;
-        }
-        .mobile-accordion-item .accordion-content a {
-            display: block;
-            padding: 10px 16px;
-            background: white;
-            border-radius: 12px;
-            text-decoration: none;
-            color: #1e3a5f;
-            font-weight: 500;
-            border: 1px solid #e2e8f0;
-            margin-bottom: 8px;
-            transition: 0.2s;
-            text-align: center;
-        }
-        .mobile-accordion-item .accordion-content a:hover,
-        .mobile-accordion-item .accordion-content a:active {
-            background: #d63384;
-            color: white;
-            border-color: #d63384;
-        }
-        .mobile-accordion-item .accordion-content a:last-child {
-            margin-bottom: 0;
-        }
-
-        .mobile-category-group { margin-bottom: 20px; }
-        .mobile-category-group h4 { font-size: 1rem; font-weight: 700; color: #d63384; margin-bottom: 10px; border-left: 3px solid #d63384; padding-left: 10px; }
-        .mobile-category-items { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-        .mobile-category-items a { display: block; background: white; padding: 12px 12px; border-radius: 16px; text-decoration: none; color: #1e3a5f; font-size: 0.9rem; font-weight: 500; border: 1px solid #e2e8f0; text-align: center; transition: 0.2s; }
-        .mobile-category-items a:hover, .mobile-category-items a:active { background: #d63384; color: white; border-color: #d63384; }
+        .mobile-accordion-item { border-bottom: 1px solid #e2e8f0; }
+        .mobile-accordion-item .accordion-header { padding: 16px 20px; font-weight: 700; display: flex; justify-content: space-between; cursor: pointer; background: #fff; font-size: 1rem; color: #0d1b2a; }
+        .mobile-accordion-item .accordion-header i { transition: transform 0.2s; }
+        .mobile-accordion-item .accordion-header .fa-angle-down { transform: rotate(0deg); }
+        .mobile-accordion-item .accordion-header .fa-angle-up { transform: rotate(180deg); }
+        .mobile-accordion-item .accordion-content { display: none; padding: 12px 16px 20px; background: #fafafc; }
+        .mobile-accordion-item .accordion-content.show { display: block; }
+        .mobile-accordion-item .accordion-content a { display: block; padding: 10px 16px; background: white; border-radius: 12px; text-decoration: none; color: #1e3a5f; font-weight: 500; border: 1px solid #e2e8f0; margin-bottom: 8px; transition: 0.2s; text-align: center; }
+        .mobile-accordion-item .accordion-content a:hover, .mobile-accordion-item .accordion-content a:active { background: #d63384; color: white; border-color: #d63384; }
+        .mobile-accordion-item .accordion-content a:last-child { margin-bottom: 0; }
 
         @media (max-width: 480px) { .mobile-category-items { grid-template-columns: 1fr; } }
         @media (max-width: 992px) { .nav-desktop { display: none; } .mobile-menu-btn { display: block; } .search-wrapper { width: 100%; max-width: 100%; order: 3; margin-top: 12px; } }
+
         .hero { background: linear-gradient(120deg, #eef5f2, #fff); padding: 40px 0; border-radius: 0 0 48px 48px; margin-bottom: 40px; }
         .hero-grid { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
         .hero-content { flex: 1; }
@@ -288,12 +132,14 @@
         .dot { display: inline-block; width: 10px; height: 10px; margin: 0 4px; background: rgba(255,255,255,0.6); border-radius: 50%; cursor: pointer; transition: 0.2s; }
         .dot.active { background: #d63384; transform: scale(1.2); }
         @media (max-width: 768px) { .hero-content h2 { font-size: 1.8rem; } .hero-content p { font-size: 1rem; } .btn-hero { padding: 12px 24px; font-size: 0.9rem; } .hero-grid { flex-direction: column; text-align: center; } .hero-slideshow-container { max-width: 100%; } .promo-banner { padding: 6px 18px; margin-bottom: 16px; } .promo-banner span { font-size: 0.85rem; } .promo-banner i { font-size: 1rem; } .slideshow-prev, .slideshow-next { width: 40px; height: 40px; font-size: 1rem; } }
+
         .filter-section { margin-bottom: 30px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
         .filter-btn { background: white; border: 1px solid #b0c4de; padding: 10px 24px; border-radius: 60px; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.2s ease; color: #0d1b2a; box-shadow: 0 1px 2px rgba(0,0,0,0.02); }
         .filter-btn.active { background: #d63384; color: white; border-color: #d63384; box-shadow: 0 4px 10px rgba(214, 51, 132, 0.25); }
         .filter-btn:hover:not(.active) { background: #f8f9fc; border-color: #d63384; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
         .section-title { font-size: 1.8rem; font-weight: 700; margin: 48px 0 24px; border-left: 5px solid #d63384; padding-left: 20px; }
         @media (max-width: 768px) { .section-title { font-size: 1.4rem; } }
+
         .product-grid-home { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-bottom: 40px; }
         @media (max-width: 992px) { .product-grid-home { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
         @media (max-width: 768px) { .product-grid-home { grid-template-columns: repeat(2, 1fr) !important; gap: 16px; } }
@@ -305,6 +151,7 @@
         .card-price { color: #b3362b; font-weight: 700; margin: 10px 0; }
         .discount-badge { position: absolute; top: 12px; right: 12px; background: #c73e1d; color: white; font-weight: 800; font-size: 0.85rem; padding: 6px 12px; border-radius: 30px; z-index: 2; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
         @media (max-width: 768px) { .card-img { height: 180px; } .product-card .card-title { font-size: 0.85rem !important; line-height: 1.3; } .product-card .card-price { font-size: 0.85rem !important; margin: 6px 0; } .product-card .card-info .btn-hero { font-size: 0.75rem !important; padding: 8px 12px !important; margin-top: 8px; } .product-card .card-info { padding: 10px !important; } .discount-badge { font-size: 0.7rem; padding: 3px 8px; top: 8px; right: 8px; } }
+
         .flash-sale { background: linear-gradient(135deg, #fff5e6, #fff); border-radius: 32px; padding: 24px; margin: 40px 0; border: 1px solid #ffe0b3; }
         .flash-title { display: flex; align-items: center; gap: 10px; font-size: 1.5rem; font-weight: 800; color: #c73e1d; margin-bottom: 20px; flex-wrap: wrap; }
         .flash-countdown { background: #c73e1d; color: white; padding: 6px 14px; border-radius: 60px; font-size: 1rem; font-weight: 700; margin-left: 8px; }
@@ -318,6 +165,7 @@
         .flash-old-price { text-decoration: line-through; font-size: 0.75rem; color: #5a6e82; margin-left: 8px; }
         .flash-badge { position: absolute; top: 10px; left: 10px; background: #c73e1d; color: white; padding: 4px 12px; border-radius: 30px; font-size: 0.7rem; font-weight: bold; }
         @media (max-width: 768px) { .flash-title { font-size: 1rem; gap: 6px; justify-content: center; } .flash-title i { font-size: 1.1rem; } .flash-title span:first-of-type { font-size: 0.95rem; font-weight: 700; } .flash-countdown { font-size: 0.8rem; padding: 4px 10px; margin-left: 5px; } .flash-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } .flash-img { height: 140px; } .flash-name { font-size: 0.8rem; } .flash-price { font-size: 0.9rem; } }
+
         .why-us { background: #f8fafc; border-radius: 48px; padding: 40px 20px; margin: 40px 0; text-align: center; }
         .why-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 30px; color: #1e3a5f; }
         .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
@@ -326,6 +174,7 @@
         .why-item h3 { font-size: 1.1rem; margin-bottom: 8px; color: #0d1b2a; }
         .why-item p { font-size: 0.85rem; color: #5a6e82; }
         @media (max-width: 768px) { .why-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
+
         .home-reviews { background: #f8fafc; border-radius: 32px; padding: 30px; margin: 40px 0; }
         .home-reviews-title { font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 25px; color: #0d1b2a; }
         .home-reviews-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
@@ -334,6 +183,7 @@
         .home-review-content { font-style: italic; margin-bottom: 12px; color: #1e3a5f; }
         .home-review-author { font-weight: 600; color: #0d1b2a; }
         @media (max-width: 768px) { .home-reviews-grid { grid-template-columns: 1fr; } }
+
         .product-detail-section { background: #fefcf8; border-radius: 36px; padding: 32px; margin: 40px 0; box-shadow: 0 8px 24px rgba(0,0,0,0.04); }
         .product-grid-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
         .detail-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 28px; }
@@ -352,6 +202,7 @@
         .btn-buy-now { background: #d63384; color: white; }
         .btn-back-home { background: #1e3a5f; color: white; border: none; padding: 12px 24px; border-radius: 40px; font-weight: 600; cursor: pointer; margin-bottom: 20px; display: inline-block; }
         @media (max-width: 768px) { .product-grid-detail { grid-template-columns: 1fr; gap: 24px; } .size-chips { gap: 10px; margin: 16px 0; } .chip { padding: 8px 14px; font-size: 0.8rem; } .quantity-selector button { width: 36px; height: 36px; } .quantity-selector span { font-size: 1rem; } .discount-price { font-size: 1.4rem; } .old-price { font-size: 0.85rem; } .saving-badge { font-size: 0.7rem; padding: 2px 8px; } .price-wrapper { gap: 8px; margin: 16px 0; } .btn-add-to-cart, .btn-buy-now { padding: 14px; font-size: 0.9rem; } .btn-back-home { padding: 10px 20px; font-size: 0.85rem; } .product-detail-section .product-title { font-size: 1.2rem !important; } }
+
         .related-products { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; }
         .related-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; color: #1e3a5f; }
         .related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
@@ -362,6 +213,7 @@
         .related-info { padding: 10px; }
         .related-name { font-weight: 700; font-size: 0.8rem; color: #0d1b2a; }
         .related-price { color: #b3362b; font-weight: 600; font-size: 0.8rem; margin-top: 5px; }
+
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; justify-content: center; align-items: center; padding: 16px; }
         .modal-content { background: white; border-radius: 32px; width: 100%; max-width: 500px; padding: 30px 24px; position: relative; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
         .modal-close { position: absolute; top: 16px; right: 20px; font-size: 1.8rem; cursor: pointer; color: #5a6e82; transition: 0.2s; background: none; border: none; }
@@ -382,6 +234,7 @@
         .spinner { display: inline-block; width: 20px; height: 20px; border: 2px solid #fff; border-radius: 50%; border-top-color: transparent; animation: spin 0.6s linear infinite; vertical-align: middle; margin-right: 8px; }
         @keyframes spin { to { transform: rotate(360deg); } }
         @media (max-width: 600px) { .modal-content { padding: 24px 16px; } .modal h3 { font-size: 1.3rem; } .modal .form-group input, .modal .form-group textarea { font-size: 15px; padding: 12px 16px; } .modal .payment-methods label { padding: 10px 14px; font-size: 0.9rem; } .btn-submit { font-size: 1rem; padding: 14px; } }
+
         .cart-view { background: white; border-radius: 32px; padding: 32px; margin: 40px 0; border: 1px solid #e2e8f0; }
         .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #e2e8f0; flex-wrap: wrap; gap: 10px; }
         .cart-item-info { flex: 2; display: flex; align-items: center; gap: 12px; }
@@ -410,8 +263,35 @@
         .checkout-section .btn-checkout:hover { background: #b82a6e; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(214, 51, 132, 0.3); }
         .checkout-section .btn-checkout:disabled { opacity: 0.7; cursor: not-allowed; transform: none; box-shadow: none; }
         @media (max-width: 600px) { .checkout-section { padding: 24px 16px; } .checkout-section h3 { font-size: 1.3rem; } .checkout-section .form-group input, .checkout-section .form-group textarea { font-size: 15px; padding: 12px 16px; } .checkout-section .payment-methods label { padding: 10px 14px; font-size: 0.9rem; } .checkout-section .btn-checkout { font-size: 1rem; padding: 14px; } }
-        .sticky-buttons { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: white; padding: 12px 16px; gap: 12px; box-shadow: 0 -4px 12px rgba(0,0,0,0.1); z-index: 1000; border-top: 1px solid #e2e8f0; }
-        .btn-sticky { flex: 1; text-align: center; padding: 14px 0; border-radius: 40px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: 0.2s; }
+
+        .sticky-buttons {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 8px 12px;
+            gap: 8px;
+            box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+            z-index: 1000;
+            border-top: 1px solid #e2e8f0;
+        }
+        .btn-sticky {
+            flex: 1;
+            text-align: center;
+            padding: 10px 0;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            white-space: nowrap;
+        }
         .btn-cart { background: #d63384; color: white; }
         .btn-zalo { background: #0068ff; color: white; }
         .btn-messenger { background: #0084ff; color: white; }
@@ -419,7 +299,6 @@
         .back-to-top { position: fixed; bottom: 80px; right: 20px; background: #1e3a5f; color: white; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transition: 0.3s; z-index: 999; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
         .back-to-top.show { opacity: 1; visibility: visible; }
 
-        /* Desktop floating buttons: Zalo & Messenger */
         .floating-buttons {
             position: fixed;
             right: 20px;
@@ -456,192 +335,74 @@
             background: #0084ff;
         }
         @media (max-width: 768px) {
-            .floating-buttons {
-                display: none;
-            }
+            .floating-buttons { display: none; }
         }
 
         @media (max-width: 768px) {
-            .sticky-buttons { display: flex; padding: 10px 12px; gap: 10px; }
-            .btn-sticky { padding: 12px 0; font-size: 0.9rem; }
-            .back-to-top { bottom: 70px; right: 15px; width: 42px; height: 42px; }
-            body { padding-bottom: 70px; }
+            .sticky-buttons {
+                display: flex;
+                padding: 8px 10px;
+                gap: 6px;
+            }
+            .btn-sticky {
+                font-size: 0.65rem;
+                padding: 10px 2px;
+                gap: 2px;
+                border-radius: 30px;
+                flex: 1 1 0;
+                min-width: 0;
+            }
+            .btn-sticky i {
+                font-size: 0.9rem;
+                margin-right: 2px;
+            }
+            body { padding-bottom: 60px; }
+            .back-to-top { bottom: 65px; right: 15px; width: 40px; height: 40px; }
         }
+        @media (max-width: 480px) {
+            .btn-sticky { font-size: 0.55rem; padding: 8px 2px; }
+            .btn-sticky i { font-size: 0.8rem; }
+        }
+
         footer { background: #1e3a5f; color: white; text-align: center; padding: 20px 16px; margin-top: 40px; font-size: 0.85rem; border-radius: 30px; width: 90%; margin-left: auto; margin-right: auto; margin-bottom: 10px; }
         footer .footer-line { margin: 8px 0; display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
         footer .footer-line i { width: 24px; color: #d63384; font-size: 1rem; }
         footer .pink { color: #d63384; font-weight: 600; }
         @media (max-width: 768px) { footer { font-size: 0.7rem; padding: 15px 12px; width: 95%; } footer .footer-line { gap: 6px; } footer .footer-line i { width: 20px; font-size: 0.8rem; } }
+
         .review-mini { background: #f8fafc; border-radius: 28px; padding: 20px; margin: 24px 0; }
         .review-mini .review-item { margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 12px; }
         .review-mini .review-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
         .home-view, .detail-view, .cart-view { transition: all 0.2s; }
         .detail-view, .cart-view { display: none; }
+
         .toast-message { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); background: #333; color: white; padding: 12px 24px; border-radius: 40px; font-size: 0.9rem; z-index: 2000; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
         @media (max-width: 768px) { .toast-message { bottom: 70px; font-size: 0.8rem; padding: 10px 20px; } }
 
-        /* ===== CSS DÀNH CHO TRANG DỰ ÁN ===== */
-        .project-content {
-            padding: 20px 0;
-        }
-        .project-content .project-intro {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #1e3a5f;
-            margin-bottom: 20px;
-            padding: 16px 20px;
-            background: #f0f4f8;
-            border-radius: 12px;
-            border-left: 4px solid #d63384;
-        }
-        .project-content .section-block {
-            margin-bottom: 28px;
-        }
-        .project-content .section-block h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #1e3a5f;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .project-content .section-block h3 i {
-            color: #d63384;
-            width: 24px;
-            text-align: center;
-        }
-        .project-content ul {
-            margin: 8px 0 0 20px;
-            list-style: none;
-            padding: 0;
-        }
-        .project-content ul li {
-            margin-bottom: 10px;
-            padding-left: 28px;
-            position: relative;
-            line-height: 1.6;
-        }
-        .project-content ul li i {
-            position: absolute;
-            left: 0;
-            top: 2px;
-            color: #d63384;
-            width: 20px;
-            text-align: center;
-        }
-        .project-content .faq-block {
-            background: #f8fafc;
-            border-radius: 16px;
-            padding: 20px;
-            margin-top: 20px;
-            border: 1px solid #e2e8f0;
-        }
-        .project-content .faq-block .faq-item {
-            margin-bottom: 16px;
-        }
-        .project-content .faq-block .faq-item:last-child {
-            margin-bottom: 0;
-        }
-        .project-content .faq-block .faq-q {
-            font-weight: 700;
-            color: #1e3a5f;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .project-content .faq-block .faq-q i {
-            color: #d63384;
-        }
-        .project-content .faq-block .faq-a {
-            padding-left: 32px;
-            color: #5a6e82;
-            font-size: 0.95rem;
-            margin-top: 4px;
-        }
-        .project-content .cta-box {
-            background: linear-gradient(135deg, #d63384, #b82a6e);
-            border-radius: 16px;
-            padding: 24px 20px;
-            margin-top: 28px;
-            text-align: center;
-            color: white;
-        }
-        .project-content .cta-box p {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .project-content .cta-box .btn-hero {
-            background: white;
-            color: #d63384;
-            border: none;
-            padding: 14px 32px;
-            border-radius: 50px;
-            font-weight: 700;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: 0.2s;
-            display: inline-block;
-        }
-        .project-content .cta-box .btn-hero:hover {
-            background: #f8f9fc;
-            transform: scale(1.02);
-        }
+        /* Project content */
+        .project-content { padding: 20px 0; }
+        .project-content .project-intro { font-size: 1.1rem; font-weight: 500; color: #1e3a5f; margin-bottom: 20px; padding: 16px 20px; background: #f0f4f8; border-radius: 12px; border-left: 4px solid #d63384; }
+        .project-content .section-block { margin-bottom: 28px; }
+        .project-content .section-block h3 { font-size: 1.2rem; font-weight: 700; color: #1e3a5f; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+        .project-content .section-block h3 i { color: #d63384; width: 24px; text-align: center; }
+        .project-content ul { margin: 8px 0 0 20px; list-style: none; padding: 0; }
+        .project-content ul li { margin-bottom: 10px; padding-left: 28px; position: relative; line-height: 1.6; }
+        .project-content ul li i { position: absolute; left: 0; top: 2px; color: #d63384; width: 20px; text-align: center; }
+        .project-content .faq-block { background: #f8fafc; border-radius: 16px; padding: 20px; margin-top: 20px; border: 1px solid #e2e8f0; }
+        .project-content .faq-block .faq-item { margin-bottom: 16px; }
+        .project-content .faq-block .faq-item:last-child { margin-bottom: 0; }
+        .project-content .faq-block .faq-q { font-weight: 700; color: #1e3a5f; display: flex; align-items: center; gap: 8px; }
+        .project-content .faq-block .faq-q i { color: #d63384; }
+        .project-content .faq-block .faq-a { padding-left: 32px; color: #5a6e82; font-size: 0.95rem; margin-top: 4px; }
+        .project-content .cta-box { background: linear-gradient(135deg, #d63384, #b82a6e); border-radius: 16px; padding: 24px 20px; margin-top: 28px; text-align: center; color: white; }
+        .project-content .cta-box p { font-size: 1.1rem; font-weight: 600; margin-bottom: 12px; }
+        .project-content .cta-box .btn-hero { background: white; color: #d63384; border: none; padding: 14px 32px; border-radius: 50px; font-weight: 700; cursor: pointer; font-size: 1rem; transition: 0.2s; display: inline-block; }
+        .project-content .cta-box .btn-hero:hover { background: #f8f9fc; transform: scale(1.02); }
+        @media (max-width: 768px) { .project-content .project-intro { font-size: 1rem; padding: 14px 16px; } .project-content .section-block h3 { font-size: 1.05rem; } .project-content ul li { font-size: 0.95rem; padding-left: 24px; } .project-content .faq-block .faq-a { font-size: 0.9rem; padding-left: 28px; } .project-content .cta-box p { font-size: 1rem; } .project-content .cta-box .btn-hero { padding: 12px 24px; font-size: 0.95rem; } }
+        @media (max-width: 480px) { .project-content .project-intro { font-size: 0.9rem; padding: 12px 14px; } .project-content .section-block h3 { font-size: 0.95rem; } .project-content ul li { font-size: 0.85rem; padding-left: 22px; } .project-content .faq-block .faq-q { font-size: 0.9rem; } .project-content .faq-block .faq-a { font-size: 0.8rem; padding-left: 24px; } .project-content .cta-box p { font-size: 0.9rem; } .project-content .cta-box .btn-hero { padding: 10px 20px; font-size: 0.85rem; } }
 
-        @media (max-width: 768px) {
-            .project-content .project-intro {
-                font-size: 1rem;
-                padding: 14px 16px;
-            }
-            .project-content .section-block h3 {
-                font-size: 1.05rem;
-            }
-            .project-content ul li {
-                font-size: 0.95rem;
-                padding-left: 24px;
-            }
-            .project-content .faq-block .faq-a {
-                font-size: 0.9rem;
-                padding-left: 28px;
-            }
-            .project-content .cta-box p {
-                font-size: 1rem;
-            }
-            .project-content .cta-box .btn-hero {
-                padding: 12px 24px;
-                font-size: 0.95rem;
-            }
-        }
-        @media (max-width: 480px) {
-            .project-content .project-intro {
-                font-size: 0.9rem;
-                padding: 12px 14px;
-            }
-            .project-content .section-block h3 {
-                font-size: 0.95rem;
-            }
-            .project-content ul li {
-                font-size: 0.85rem;
-                padding-left: 22px;
-            }
-            .project-content .faq-block .faq-q {
-                font-size: 0.9rem;
-            }
-            .project-content .faq-block .faq-a {
-                font-size: 0.8rem;
-                padding-left: 24px;
-            }
-            .project-content .cta-box p {
-                font-size: 0.9rem;
-            }
-            .project-content .cta-box .btn-hero {
-                padding: 10px 20px;
-                font-size: 0.85rem;
-            }
-        }
-
-        /* ===== LIGHTBOX CSS ===== */
+        /* Lightbox */
         .lightbox {
             display: none;
             position: fixed;
@@ -655,92 +416,18 @@
             align-items: center;
             cursor: pointer;
         }
-        .lightbox.active {
-            display: flex;
-        }
-        .lightbox-content {
-            max-width: 90%;
-            max-height: 90%;
-            position: relative;
-            cursor: default;
-        }
-        .lightbox-content img {
-            max-width: 100%;
-            max-height: 90vh;
-            display: block;
-            border-radius: 8px;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.5);
-            object-fit: contain;
-        }
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 40px;
-            color: #fff;
-            cursor: pointer;
-            z-index: 10;
-            transition: 0.2s;
-            font-weight: 300;
-        }
-        .lightbox-close:hover {
-            color: #d63384;
-            transform: scale(1.2);
-        }
-        .lightbox-prev,
-        .lightbox-next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 40px;
-            color: #fff;
-            cursor: pointer;
-            z-index: 10;
-            padding: 16px;
-            transition: 0.2s;
-            user-select: none;
-            background: rgba(0,0,0,0.3);
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+        .lightbox.active { display: flex; }
+        .lightbox-content { max-width: 90%; max-height: 90%; position: relative; cursor: default; }
+        .lightbox-content img { max-width: 100%; max-height: 90vh; display: block; border-radius: 8px; box-shadow: 0 4px 30px rgba(0,0,0,0.5); object-fit: contain; }
+        .lightbox-close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: #fff; cursor: pointer; z-index: 10; transition: 0.2s; font-weight: 300; }
+        .lightbox-close:hover { color: #d63384; transform: scale(1.2); }
+        .lightbox-prev, .lightbox-next { position: absolute; top: 50%; transform: translateY(-50%); font-size: 40px; color: #fff; cursor: pointer; z-index: 10; padding: 16px; transition: 0.2s; user-select: none; background: rgba(0,0,0,0.3); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; }
         .lightbox-prev { left: 20px; }
         .lightbox-next { right: 20px; }
-        .lightbox-prev:hover,
-        .lightbox-next:hover {
-            background: rgba(214,51,132,0.7);
-            color: #fff;
-        }
-        .lightbox-caption {
-            position: absolute;
-            bottom: 30px;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            color: #fff;
-            font-size: 1rem;
-            padding: 0 20px;
-            pointer-events: none;
-            background: rgba(0,0,0,0.4);
-            padding: 12px 20px;
-            max-width: 80%;
-            margin: 0 auto;
-            border-radius: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-weight: 500;
-        }
+        .lightbox-prev:hover, .lightbox-next:hover { background: rgba(214,51,132,0.7); color: #fff; }
+        .lightbox-caption { position: absolute; bottom: 30px; left: 0; width: 100%; text-align: center; color: #fff; font-size: 1rem; padding: 0 20px; pointer-events: none; background: rgba(0,0,0,0.4); padding: 12px 20px; max-width: 80%; margin: 0 auto; border-radius: 30px; left: 50%; transform: translateX(-50%); font-weight: 500; }
         @media (max-width: 768px) {
-            .lightbox-prev,
-            .lightbox-next {
-                width: 40px;
-                height: 40px;
-                font-size: 24px;
-                padding: 8px;
-            }
+            .lightbox-prev, .lightbox-next { width: 40px; height: 40px; font-size: 24px; padding: 8px; }
             .lightbox-prev { left: 10px; }
             .lightbox-next { right: 10px; }
             .lightbox-close { font-size: 30px; top: 10px; right: 20px; }
@@ -752,6 +439,7 @@
 <div id="toast" class="toast-message"></div>
 <div class="back-to-top" id="backToTopBtn" aria-label="Lên đầu trang"><i class="fas fa-arrow-up"></i></div>
 
+<!-- Quick Buy Modal -->
 <div id="quickBuyModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-content">
         <button class="modal-close" id="closeModalBtn" aria-label="Đóng">&times;</button>
@@ -779,7 +467,7 @@
         <div class="nav-left">
             <div class="logo" id="logoHome" role="button" tabindex="0" aria-label="Về trang chủ"><h1>NỆM LÊ GIA</h1></div>
             <div class="nav-desktop">
-                <!-- Menu NỆM -->
+                <!-- NỆM -->
                 <div class="mega-menu">
                     <button class="mega-trigger" aria-expanded="false" aria-haspopup="true">NỆM <i class="fas fa-chevron-down"></i></button>
                     <div class="mega-dropdown" role="menu">
@@ -788,8 +476,7 @@
                         <div class="mega-col"><h4>Lò Xo Túi</h4><ul><li><a role="menuitem" data-product="platinum">Platinum</a></li><li><a role="menuitem" data-product="elan">Elan</a></li><li><a role="menuitem" data-product="celina">Celina</a></li></ul></div>
                     </div>
                 </div>
-
-                <!-- Menu DỰ ÁN -->
+                <!-- DỰ ÁN -->
                 <div class="mega-menu mega-du-an">
                     <button class="mega-du-an-trigger" aria-expanded="false" aria-haspopup="true">DỰ ÁN <i class="fas fa-chevron-down"></i></button>
                     <div class="du-an-mega-dropdown" role="menu">
@@ -797,8 +484,7 @@
                         <a role="menuitem" href="#" data-product="du-an-changagoi">Chăn ga gối dự án</a>
                     </div>
                 </div>
-
-                <!-- Menu PHỤ KIỆN -->
+                <!-- PHỤ KIỆN -->
                 <div class="mega-menu mega-phu-kien">
                     <button class="mega-phu-kien-trigger" aria-expanded="false" aria-haspopup="true">PHỤ KIỆN <i class="fas fa-chevron-down"></i></button>
                     <div class="phu-kien-mega-dropdown" role="menu">
@@ -807,8 +493,7 @@
                         <a role="menuitem" href="#" data-product="topper">Topper nệm cao cấp</a>
                     </div>
                 </div>
-
-                <!-- Menu KHUYẾN MÃI -->
+                <!-- KHUYẾN MÃI -->
                 <div class="mega-menu mega-promo">
                     <button class="mega-promo-trigger" aria-expanded="false" aria-haspopup="true">KHUYẾN MÃI <i class="fas fa-chevron-down"></i></button>
                     <div class="promo-mega-dropdown" role="menu">
@@ -829,7 +514,7 @@
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Mở menu điều hướng"><i class="fas fa-bars"></i></button>
     </div>
     <div class="mobile-nav" id="mobileNav" role="navigation">
-        <!-- NỆM (Accordion) -->
+        <!-- NỆM -->
         <div class="mobile-accordion-item">
             <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">NỆM <i class="fas fa-angle-down"></i></div>
             <div class="accordion-content">
@@ -839,8 +524,7 @@
                 <div class="mobile-category-group"><h4>Lò Xo Túi</h4><div class="mobile-category-items"><a data-product="platinum">Platinum</a><a data-product="elan">Elan</a><a data-product="celina">Celina</a></div></div>
             </div>
         </div>
-
-        <!-- DỰ ÁN (Accordion) -->
+        <!-- DỰ ÁN -->
         <div class="mobile-accordion-item">
             <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">DỰ ÁN <i class="fas fa-angle-down"></i></div>
             <div class="accordion-content">
@@ -848,8 +532,7 @@
                 <a href="#" data-product="du-an-changagoi">Chăn ga gối dự án</a>
             </div>
         </div>
-
-        <!-- PHỤ KIỆN (Accordion) -->
+        <!-- PHỤ KIỆN -->
         <div class="mobile-accordion-item">
             <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">PHỤ KIỆN <i class="fas fa-angle-down"></i></div>
             <div class="accordion-content">
@@ -858,8 +541,7 @@
                 <a href="#" data-product="topper">Topper nệm cao cấp</a>
             </div>
         </div>
-
-        <!-- KHUYẾN MÃI (Accordion) -->
+        <!-- KHUYẾN MÃI -->
         <div class="mobile-accordion-item">
             <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">KHUYẾN MÃI <i class="fas fa-angle-down"></i></div>
             <div class="accordion-content">
@@ -871,6 +553,7 @@
 </header>
 
 <main>
+    <!-- HOME VIEW -->
     <div id="homeView" class="home-view">
         <section class="hero" aria-labelledby="heroTitle">
             <div class="container hero-grid">
@@ -953,7 +636,7 @@
         </div>
     </div>
 
-    <!-- Detail View -->
+    <!-- DETAIL VIEW -->
     <div id="detailView" class="detail-view">
         <div class="container">
             <button class="btn-back-home" id="backToHomeBtn"><i class="fas fa-arrow-left" aria-hidden="true"></i> Quay lại trang chủ</button>
@@ -963,7 +646,7 @@
         </div>
     </div>
 
-    <!-- Cart View -->
+    <!-- CART VIEW -->
     <div id="cartView" class="cart-view">
         <div class="container">
             <button class="btn-back-home" id="backToHomeFromCart"><i class="fas fa-arrow-left" aria-hidden="true"></i> Tiếp tục mua sắm</button>
@@ -1003,23 +686,24 @@
 
 <!-- Desktop Floating Buttons (Zalo & Messenger) -->
 <div class="floating-buttons">
+    <!-- Nút Zalo hiển thị chữ "Zalo" trên nền xanh -->
     <a href="https://zalo.me/0905513984" target="_blank" class="floating-btn zalo" title="Chat Zalo">
-        <i class="fab fa-zalo"></i>
+        <span style="font-weight:700; font-size:16px; color:#fff; letter-spacing:0.5px;">Zalo</span>
     </a>
     <a href="https://m.me/nemlegia" target="_blank" class="floating-btn messenger" title="Chat Messenger">
         <i class="fab fa-facebook-messenger"></i>
     </a>
 </div>
 
-<!-- Sticky buttons Mobile (thêm Messenger) -->
+<!-- Mobile Sticky Buttons (4 buttons) -->
 <div class="sticky-buttons">
-    <div class="btn-sticky btn-cart" id="stickyCartBtn" role="button" tabindex="0"><i class="fas fa-shopping-cart" aria-hidden="true"></i> GIỎ HÀNG</div>
+    <div class="btn-sticky btn-cart" id="stickyCartBtn" role="button" tabindex="0"><i class="fas fa-shopping-cart" aria-hidden="true"></i> GIỎ</div>
     <div class="btn-sticky btn-zalo" id="stickyZaloBtn" role="button" tabindex="0"><i class="fab fa-zalo" aria-hidden="true"></i> ZALO</div>
-    <div class="btn-sticky btn-messenger" id="stickyMessengerBtn" role="button" tabindex="0"><i class="fab fa-facebook-messenger" aria-hidden="true"></i> MESSENGER</div>
+    <div class="btn-sticky btn-messenger" id="stickyMessengerBtn" role="button" tabindex="0"><i class="fab fa-facebook-messenger" aria-hidden="true"></i> MESS</div>
     <div class="btn-sticky btn-call" id="stickyCallBtn" role="button" tabindex="0"><i class="fas fa-phone-alt" aria-hidden="true"></i> GỌI</div>
 </div>
 
-<!-- Lightbox Modal -->
+<!-- Lightbox -->
 <div id="lightboxModal" class="lightbox">
     <span class="lightbox-close" id="lightboxClose">&times;</span>
     <span class="lightbox-prev" id="lightboxPrev">&#10094;</span>
@@ -1037,7 +721,7 @@
     function discountedPrice(original, percent) { return Math.round(original * (100 - percent) / 100 / 1000) * 1000; }
 
     const productsDB = {
-        // === Các sản phẩm cũ (giữ nguyên) ===
+        // === Sản phẩm cũ ===
         "van-thanh": {
             name: "NỆM CSTN VẠN THÀNH",
             desc: "Nệm cao su thiên nhiên Vạn Thành được sản xuất từ mủ cao su nguyên chất, giúp kháng khuẩn tự nhiên, ngăn ngừa nấm mốc và các tác nhân gây dị ứng. Với cấu trúc đàn hồi vượt trội, sản phẩm nâng đỡ cột sống tối ưu, mang lại giấc ngủ sâu và thoải mái. Thoáng khí tốt, không bí bách, phù hợp với mọi Khách Hàng, đặc biệt là người lớn tuổi và trẻ nhỏ. Giảm ngay 22%.",
@@ -1226,7 +910,6 @@
                     <i class="fas fa-quote-left" style="color:#d63384; margin-right:8px;"></i> 
                     Hàng ngàn khách sạn, resort và căn hộ dịch vụ đã tin chọn Nệm Lê Gia làm đối tác nội thất.
                 </div>
-
                 <div class="section-block">
                     <h3><i class="fas fa-boxes"></i> SẢN PHẨM ĐA DẠNG</h3>
                     <ul>
@@ -1236,7 +919,6 @@
                         <li><i class="fas fa-check-circle"></i> <strong>Nệm foam</strong> – nhẹ, gấp gọn, tiện lợi cho nhiều không gian</li>
                     </ul>
                 </div>
-
                 <div class="section-block">
                     <h3><i class="fas fa-medal"></i> CAM KẾT CHẤT LƯỢNG</h3>
                     <ul>
@@ -1244,8 +926,6 @@
                         <li><i class="fas fa-calendar-check"></i> Bảo hành từ 5 năm đến 10 năm</li>
                     </ul>
                 </div>
-
-
                 <div class="faq-block">
                     <div class="faq-item">
                         <div class="faq-q"><i class="fas fa-question-circle"></i> Tôi có thể đặt hàng số lượng ít để thử trước không?</div>
@@ -1256,7 +936,6 @@
                         <div class="faq-a">Tùy thuộc số lượng và kích thước, thông thường từ 3-7 ngày làm việc. Chúng tôi cam kết giao hàng đúng tiến độ.</div>
                     </div>
                 </div>
-
                 <div class="cta-box">
                     <p>🏆 HỢP TÁC NGAY HÔM NAY – Nhận báo giá tốt nhất và tư vấn thiết kế miễn phí!</p>
                     <button class="btn-hero" onclick="window.location.href='tel:0905513984'">📞 GỌI NGAY: 0905 513 984</button>
@@ -1277,8 +956,6 @@
                     <i class="fas fa-quote-left" style="color:#d63384; margin-right:8px;"></i> 
                     Bộ sưu tập chăn ga gối cao cấp – nơi sự sang trọng gặp gỡ sự tiện nghi.
                 </div>
-
-
                 <div class="section-block">
                     <h3><i class="fas fa-thumbs-up"></i> CHẤT LƯỢNG VƯỢT TRỘI</h3>
                     <ul>
@@ -1287,7 +964,6 @@
                         <li><i class="fas fa-ruler-combined"></i> Đặt may theo kích thước – phù hợp với mọi loại giường</li>
                     </ul>
                 </div>
-
                 <div class="section-block">
                     <h3><i class="fas fa-hand-holding-usd"></i> CHÍNH SÁCH ƯU ĐÃI DÀNH CHO DỰ ÁN</h3>
                     <ul>
@@ -1296,7 +972,6 @@
                         <li><i class="fas fa-award"></i> Cam kết giá tốt nhất trên thị trường cho dự án</li>
                     </ul>
                 </div>
-
                 <div class="faq-block">
                     <div class="faq-item">
                         <div class="faq-q"><i class="fas fa-question-circle"></i> Tôi có thể đặt hàng chăn ga gối theo mẫu riêng không?</div>
@@ -1307,7 +982,6 @@
                         <div class="faq-a">Thông thường 5-10 ngày làm việc tùy theo số lượng và yêu cầu may đo. Chúng tôi luôn đảm bảo tiến độ.</div>
                     </div>
                 </div>
-
                 <div class="cta-box">
                     <p>🏆 HỢP TÁC NGAY HÔM NAY – Nhận báo giá tốt nhất và tư vấn thiết kế miễn phí!</p>
                     <button class="btn-hero" onclick="window.location.href='tel:0905513984'">📞 GỌI NGAY: 0905 513 984</button>
@@ -1322,7 +996,7 @@
             keywords: ["chăn ga gối", "dự án", "khách sạn", "bộ sưu tập"]
         },
 
-        // ===== SẢN PHẨM PHỤ KIỆN (đã thêm câu "Các sản phẩm đều đạt tiêu chuẩn khách sạn.") =====
+        // ===== SẢN PHẨM PHỤ KIỆN =====
         "bao-ve-nem": {
             name: "BẢO VỆ NỆM",
             desc: "Bảo vệ nệm là lớp phủ bảo vệ bề mặt nệm khỏi bụi bẩn, mồ hôi, vết bẩn. Sản phẩm mềm mại, thoáng khí, thấm hút tốt, dễ dàng tháo giặt và vệ sinh. Giúp kéo dài tuổi thọ nệm, giữ cho nệm luôn sạch sẽ và bền đẹp như mới. Phù hợp với mọi loại nệm, thiết kế ôm sát 4 góc, không bị xô lệch. Các sản phẩm đều đạt tiêu chuẩn khách sạn.",
@@ -1378,7 +1052,7 @@
         }
     };
 
-    // Tính giá bán cho các sản phẩm
+    // Tính giá cho các sản phẩm
     for (let key in productsDB) {
         const prod = productsDB[key];
         if (prod.oldPrices && prod.discountPercent !== undefined && !prod.prices) {
@@ -1653,7 +1327,6 @@
             { stars: 5, name: "Anh Minh (Nhà thầu nội thất)", content: "Bộ chăn ga gối của Nệm Lê Gia có chất vải tốt, màu sắc tinh tế, đáp ứng yêu cầu khắt khe của các dự án resort 5 sao." },
             { stars: 5, name: "Chị Hương (Chủ nhà nghỉ Nha Trang)", content: "Mua số lượng lớn chăn ga gối, giá tốt, chất lượng đồng đều. Sản phẩm giữ màu tốt sau nhiều lần giặt." }
         ],
-        // Review cho Phụ kiện
         "bao-ve-nem": [
             { stars: 5, name: "Chị Thu (Hà Nội)", content: "Bảo vệ nệm chất lượng tốt, vải mềm, ôm sát nệm, giặt dễ dàng. Giá hợp lý." },
             { stars: 5, name: "Anh Phúc (TP.HCM)", content: "Mua về dùng thử thấy rất ưng, nệm không bị bám bẩn nữa." }
@@ -1743,7 +1416,6 @@
             document.getElementById("quickBuyBtn")?.addEventListener('click', function() { openQuickBuyModal(); });
         }
 
-        // Gắn sự kiện lightbox cho ảnh chính
         bindLightboxEvents();
 
         renderReviews(currentProductId);
@@ -1792,7 +1464,6 @@
         }
     }
 
-    // Gắn sự kiện cho lightbox
     document.addEventListener('DOMContentLoaded', function() {
         const modal = document.getElementById('lightboxModal');
         const closeBtn = document.getElementById('lightboxClose');
@@ -1866,7 +1537,6 @@
     let currentFilter = "all";
     function renderFilteredProducts() {
         const grid = document.getElementById("productGrid");
-        // Ẩn khuyến mãi, dự án, phụ kiện khỏi trang chủ
         const filteredIds = Object.keys(productsDB).filter(id => {
             if (productsDB[id].category === 'khuyen-mai' || productsDB[id].category === 'du-an' || productsDB[id].category === 'phu-kien') return false;
             if (currentFilter === "all") return true;
@@ -2092,21 +1762,7 @@
         navigateTo(newUrl, `Nệm Lê Gia - ${prod.name}`, { type: 'product', productId: randomId });
     });
 
-    // ==================== MEGA MENU LINKS ====================
-    document.querySelectorAll('.mega-col a, .mobile-category-items a').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const id = this.getAttribute('data-product');
-            if (id && productsDB[id]) {
-                const prod = productsDB[id];
-                const newUrl = `/${prod.category}/${prod.slug}`;
-                navigateTo(newUrl, `Nệm Lê Gia - ${prod.name}`, { type: 'product', productId: id });
-            }
-            if (window.innerWidth < 992) document.getElementById('mobileNav').classList.remove('open');
-        });
-    });
-
-    document.querySelectorAll('.promo-mega-dropdown a, .du-an-mega-dropdown a, .phu-kien-mega-dropdown a, .mobile-accordion-item .accordion-content a').forEach(link => {
+    document.querySelectorAll('.mega-col a, .mobile-category-items a, .promo-mega-dropdown a, .du-an-mega-dropdown a, .phu-kien-mega-dropdown a, .mobile-accordion-item .accordion-content a').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const id = this.getAttribute('data-product');
