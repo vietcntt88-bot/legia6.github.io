@@ -25,7 +25,7 @@
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2046389759421110&ev=PageView&noscript=1" /></noscript>
 
     <style>
-        /* ===== GIỮ NGUYÊN CSS CŨ (đã có) ===== */
+        /* ===== GIỮ NGUYÊN TOÀN BỘ CSS CŨ ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Montserrat', sans-serif; background: #fff; color: #1A2C3E; line-height: 1.5; }
         .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
@@ -414,10 +414,59 @@
         .btn-sticky { flex: 1; text-align: center; padding: 14px 0; border-radius: 40px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: 0.2s; }
         .btn-cart { background: #d63384; color: white; }
         .btn-zalo { background: #0068ff; color: white; }
+        .btn-messenger { background: #0084ff; color: white; }
         .btn-call { background: #1e3a5f; color: white; }
         .back-to-top { position: fixed; bottom: 80px; right: 20px; background: #1e3a5f; color: white; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transition: 0.3s; z-index: 999; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
         .back-to-top.show { opacity: 1; visibility: visible; }
-        @media (max-width: 768px) { .sticky-buttons { display: flex; padding: 10px 12px; gap: 10px; } .btn-sticky { padding: 12px 0; font-size: 0.9rem; } .back-to-top { bottom: 70px; right: 15px; width: 42px; height: 42px; } body { padding-bottom: 70px; } }
+
+        /* Desktop floating buttons: Zalo & Messenger */
+        .floating-buttons {
+            position: fixed;
+            right: 20px;
+            bottom: 140px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+        .floating-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        .floating-btn.zalo {
+            background: #0068ff;
+        }
+        .floating-btn.messenger {
+            background: #0084ff;
+        }
+        @media (max-width: 768px) {
+            .floating-buttons {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sticky-buttons { display: flex; padding: 10px 12px; gap: 10px; }
+            .btn-sticky { padding: 12px 0; font-size: 0.9rem; }
+            .back-to-top { bottom: 70px; right: 15px; width: 42px; height: 42px; }
+            body { padding-bottom: 70px; }
+        }
         footer { background: #1e3a5f; color: white; text-align: center; padding: 20px 16px; margin-top: 40px; font-size: 0.85rem; border-radius: 30px; width: 90%; margin-left: auto; margin-right: auto; margin-bottom: 10px; }
         footer .footer-line { margin: 8px 0; display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
         footer .footer-line i { width: 24px; color: #d63384; font-size: 1rem; }
@@ -431,7 +480,7 @@
         .toast-message { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); background: #333; color: white; padding: 12px 24px; border-radius: 40px; font-size: 0.9rem; z-index: 2000; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
         @media (max-width: 768px) { .toast-message { bottom: 70px; font-size: 0.8rem; padding: 10px 20px; } }
 
-        /* ===== CSS DÀNH CHO TRANG DỰ ÁN (RESPONSIVE) ===== */
+        /* ===== CSS DÀNH CHO TRANG DỰ ÁN ===== */
         .project-content {
             padding: 20px 0;
         }
@@ -952,9 +1001,21 @@
     <div class="footer-line"><i class="fas fa-phone-alt" aria-hidden="true"></i> <span>Hotline: 0905 513 984</span></div>
 </footer>
 
+<!-- Desktop Floating Buttons (Zalo & Messenger) -->
+<div class="floating-buttons">
+    <a href="https://zalo.me/0905513984" target="_blank" class="floating-btn zalo" title="Chat Zalo">
+        <i class="fab fa-zalo"></i>
+    </a>
+    <a href="https://m.me/nemlegia" target="_blank" class="floating-btn messenger" title="Chat Messenger">
+        <i class="fab fa-facebook-messenger"></i>
+    </a>
+</div>
+
+<!-- Sticky buttons Mobile (thêm Messenger) -->
 <div class="sticky-buttons">
     <div class="btn-sticky btn-cart" id="stickyCartBtn" role="button" tabindex="0"><i class="fas fa-shopping-cart" aria-hidden="true"></i> GIỎ HÀNG</div>
     <div class="btn-sticky btn-zalo" id="stickyZaloBtn" role="button" tabindex="0"><i class="fab fa-zalo" aria-hidden="true"></i> ZALO</div>
+    <div class="btn-sticky btn-messenger" id="stickyMessengerBtn" role="button" tabindex="0"><i class="fab fa-facebook-messenger" aria-hidden="true"></i> MESSENGER</div>
     <div class="btn-sticky btn-call" id="stickyCallBtn" role="button" tabindex="0"><i class="fas fa-phone-alt" aria-hidden="true"></i> GỌI</div>
 </div>
 
@@ -1049,7 +1110,7 @@
         },
         "everon": {
             name: "NỆM BÔNG ÉP EVERON (HÀN QUỐC)",
-            desc: "Nệm bông ép Everon là sản phẩm mang thương hiệu Hàn Quốc, được sản xuất trên dây chuyền công nghệ tiên tiến, đảm bảo chất lượng vượt trội. Lõi bông ép có mật độ cao, tạo độ cứng vừa phải, hỗ trợ cột sống và giảm áp lực lên các khớp xương. Bề mặt thoáng khí, không bí bách, thích hợp cho mọi đối tượng, kể cả trẻ em và người cao tuổi. Sản phẩm có độ bền tốt, ít bị xẹp lún, dễ dàng vệ sinh và bảo quản. Giảm ngay 21%, sở hữu ngay nệm chất lượng Hàn Quốc với giá ưu đãi.",
+            desc: "Nệm bông ép Everon là sản phẩm mang thương hiệu Hàn Quốc, được sản xuất trên dây chuyền công nghệ tiên tiến, đảm bảo chất lượng vượt trội. Lõi bông ép có mật độ cao, tạo độ cứng vừa phải, hỗ trợ cột sống và giảm áp lực lên các khớp xương. Bề mặt thoáng khí, không bí bách, thích hợp cho mọi Khách Hàng, kể cả trẻ em và người cao tuổi. Sản phẩm có độ bền tốt, ít bị xẹp lún, dễ dàng vệ sinh và bảo quản. Giảm ngay 21%, sở hữu ngay nệm chất lượng Hàn Quốc với giá ưu đãi.",
             img: "https://i.ibb.co/Pz5WQb8J/everon.jpg",
             oldPrices: { "1m0 x 2m x 9cm":2990000,"1m2 x 2m x 9cm":3590000,"1m4 x 2m x 9cm":4190000,"1m6 x 2m x 9cm":4290000,"1m8 x 2m x 9cm":4690000 },
             discountPercent: 21,
@@ -1261,10 +1322,10 @@
             keywords: ["chăn ga gối", "dự án", "khách sạn", "bộ sưu tập"]
         },
 
-        // ===== SẢN PHẨM PHỤ KIỆN =====
+        // ===== SẢN PHẨM PHỤ KIỆN (đã thêm câu "Các sản phẩm đều đạt tiêu chuẩn khách sạn.") =====
         "bao-ve-nem": {
             name: "BẢO VỆ NỆM",
-            desc: "Bảo vệ nệm là lớp phủ bảo vệ bề mặt nệm khỏi bụi bẩn, mồ hôi, vết bẩn. Sản phẩm mềm mại, thoáng khí, thấm hút tốt, dễ dàng tháo giặt và vệ sinh. Giúp kéo dài tuổi thọ nệm, giữ cho nệm luôn sạch sẽ và bền đẹp như mới. Phù hợp với mọi loại nệm, thiết kế ôm sát 4 góc, không bị xô lệch.",
+            desc: "Bảo vệ nệm là lớp phủ bảo vệ bề mặt nệm khỏi bụi bẩn, mồ hôi, vết bẩn. Sản phẩm mềm mại, thoáng khí, thấm hút tốt, dễ dàng tháo giặt và vệ sinh. Giúp kéo dài tuổi thọ nệm, giữ cho nệm luôn sạch sẽ và bền đẹp như mới. Phù hợp với mọi loại nệm, thiết kế ôm sát 4 góc, không bị xô lệch. Các sản phẩm đều đạt tiêu chuẩn khách sạn.",
             img: "https://i.ibb.co/QvRr3RVS/5-3.jpg",
             oldPrices: {
                 "1m0 x 2m": 296000,
@@ -1282,7 +1343,7 @@
         },
         "bao-ve-nem-chong-tham": {
             name: "BẢO VỆ NỆM CHỐNG THẤM",
-            desc: "Bảo vệ nệm chống thấm cấu tạo 3 lớp cao cấp với lớp màng chống thấm tiên tiến, bảo vệ nệm khỏi nước, chất lỏng và vết bẩn cứng đầu. Bề mặt vải cotton mềm mại, thoáng khí, không gây bí nhiệt. Lớp chống thấm giúp ngăn ngừa ẩm mốc và vi khuẩn phát triển, bảo vệ sức khỏe gia đình bạn. Dễ dàng tháo giặt và tái sử dụng nhiều lần.",
+            desc: "Bảo vệ nệm chống thấm cấu tạo 3 lớp cao cấp với lớp màng chống thấm tiên tiến, bảo vệ nệm khỏi nước, chất lỏng và vết bẩn cứng đầu. Bề mặt vải cotton mềm mại, thoáng khí, không gây bí nhiệt. Lớp chống thấm giúp ngăn ngừa ẩm mốc và vi khuẩn phát triển, bảo vệ sức khỏe gia đình bạn. Dễ dàng tháo giặt và tái sử dụng nhiều lần. Các sản phẩm đều đạt tiêu chuẩn khách sạn.",
             img: "https://i.ibb.co/sp3gDy4v/62-bao-ve-nem-chong-tham-da-nang.jpg",
             oldPrices: {
                 "1m0 x 2m": 443000,
@@ -1299,7 +1360,7 @@
         },
         "topper": {
             name: "TOPPER NỆM CAO CẤP",
-            desc: "Topper nệm cao cấp là lớp đệm bổ sung êm ái, nâng cao trải nghiệm giấc ngủ của bạn. Bên trong là gòn microfiber, mang lại cảm giác êm mềm, hỗ trợ giảm đau lưng và cải thiện tư thế ngủ. Độ dày tiêu chuẩn giúp cải thiện độ êm cho nệm cũ hoặc nệm quá cứng. Dễ dàng lắp đặt và vệ sinh, lý tưởng cho phòng ngủ khách sạn, căn hộ và gia đình.",
+            desc: "Topper nệm cao cấp là lớp đệm bổ sung êm ái, nâng cao trải nghiệm giấc ngủ của bạn. Bên trong là gòn microfiber, mang lại cảm giác êm mềm, hỗ trợ giảm đau lưng và cải thiện tư thế ngủ. Độ dày tiêu chuẩn giúp cải thiện độ êm cho nệm cũ hoặc nệm quá cứng. Dễ dàng lắp đặt và vệ sinh, lý tưởng cho phòng ngủ khách sạn, căn hộ và gia đình. Các sản phẩm đều đạt tiêu chuẩn khách sạn.",
             img: "https://i.ibb.co/NgNB0tnR/1126-topper-nem-da-nang.jpg",
             oldPrices: {
                 "1m0 x 2m": 756000,
@@ -1536,7 +1597,6 @@
 
     // ======================== RELATED & REVIEWS ========================
     function renderRelatedProducts(category, currentId) {
-        // Ẩn related cho các danh mục đặc biệt
         if (category === 'khuyen-mai' || category === 'du-an' || category === 'phu-kien') {
             document.getElementById('relatedContainer').innerHTML = '';
             return;
@@ -1832,7 +1892,6 @@
 
     // ==================== FLASH SALE ====================
     function renderFlashSale() {
-        // Ẩn khuyến mãi, dự án, phụ kiện khỏi flash sale
         const allIds = Object.keys(productsDB).filter(id => 
             productsDB[id].category !== 'khuyen-mai' && 
             productsDB[id].category !== 'du-an' && 
@@ -2005,6 +2064,7 @@
     document.getElementById("stickyCartBtn")?.addEventListener("click", () => navigateTo('/gio-hang', 'Giỏ hàng - Nệm Lê Gia', { type: 'cart' }));
     document.getElementById("cartIcon")?.addEventListener("click", () => navigateTo('/gio-hang', 'Giỏ hàng - Nệm Lê Gia', { type: 'cart' }));
     document.getElementById("stickyZaloBtn")?.addEventListener("click", () => window.open(`https://zalo.me/${PHONE_NUMBER}`, '_blank'));
+    document.getElementById("stickyMessengerBtn")?.addEventListener("click", () => window.open('https://m.me/nemlegia', '_blank'));
     document.getElementById("stickyCallBtn")?.addEventListener("click", () => window.location.href = `tel:${PHONE_NUMBER}`);
     document.getElementById("mobileMenuBtn")?.addEventListener("click", function() {
         const nav = document.getElementById("mobileNav");
@@ -2032,8 +2092,7 @@
         navigateTo(newUrl, `Nệm Lê Gia - ${prod.name}`, { type: 'product', productId: randomId });
     });
 
-    // ==================== MEGA MENU LINKS (NỆM, KHUYẾN MÃI, DỰ ÁN, PHỤ KIỆN) ====================
-    // Xử lý các link trong mega menu desktop và mobile
+    // ==================== MEGA MENU LINKS ====================
     document.querySelectorAll('.mega-col a, .mobile-category-items a').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -2047,7 +2106,6 @@
         });
     });
 
-    // Khuyến mãi, dự án, phụ kiện – desktop dropdown & mobile accordion
     document.querySelectorAll('.promo-mega-dropdown a, .du-an-mega-dropdown a, .phu-kien-mega-dropdown a, .mobile-accordion-item .accordion-content a').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
