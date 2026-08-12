@@ -15,7 +15,6 @@
     <link rel="canonical" href="https://legia.pro.vn/" />
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <!-- Font Awesome 6.5.2 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
     <!-- Facebook Pixel -->
@@ -25,7 +24,7 @@
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2046389759421110&ev=PageView&noscript=1" /></noscript>
 
     <style>
-        /* ===== BASE ===== */
+        /* ===== GIỮ NGUYÊN TOÀN BỘ CSS CŨ ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Montserrat', sans-serif; background: #fff; color: #1A2C3E; line-height: 1.5; }
         .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
@@ -684,9 +683,8 @@
     <div class="footer-line"><i class="fas fa-phone-alt" aria-hidden="true"></i> <span>Hotline: 0905 513 984</span></div>
 </footer>
 
-<!-- Desktop Floating Buttons (Zalo & Messenger) -->
+<!-- Desktop Floating Buttons -->
 <div class="floating-buttons">
-    <!-- Nút Zalo hiển thị chữ "Zalo" trên nền xanh -->
     <a href="https://zalo.me/0905513984" target="_blank" class="floating-btn zalo" title="Chat Zalo">
         <span style="font-weight:700; font-size:16px; color:#fff; letter-spacing:0.5px;">Zalo</span>
     </a>
@@ -695,7 +693,7 @@
     </a>
 </div>
 
-<!-- Mobile Sticky Buttons (4 buttons) -->
+<!-- Mobile Sticky Buttons -->
 <div class="sticky-buttons">
     <div class="btn-sticky btn-cart" id="stickyCartBtn" role="button" tabindex="0"><i class="fas fa-shopping-cart" aria-hidden="true"></i> GIỎ</div>
     <div class="btn-sticky btn-zalo" id="stickyZaloBtn" role="button" tabindex="0"><i class="fab fa-zalo" aria-hidden="true"></i> ZALO</div>
@@ -715,13 +713,12 @@
 </div>
 
 <script>
-    // ==================== DỮ LIỆU SẢN PHẨM ====================
     const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xwvwzorl';
     const PHONE_NUMBER = "0905513984";
     function discountedPrice(original, percent) { return Math.round(original * (100 - percent) / 100 / 1000) * 1000; }
 
     const productsDB = {
-        // === Sản phẩm cũ ===
+        // ===== CÁC SẢN PHẨM CŨ (GIỮ NGUYÊN) =====
         "van-thanh": {
             name: "NỆM CSTN VẠN THÀNH",
             desc: "Nệm cao su thiên nhiên Vạn Thành được sản xuất từ mủ cao su nguyên chất, giúp kháng khuẩn tự nhiên, ngăn ngừa nấm mốc và các tác nhân gây dị ứng. Với cấu trúc đàn hồi vượt trội, sản phẩm nâng đỡ cột sống tối ưu, mang lại giấc ngủ sâu và thoải mái. Thoáng khí tốt, không bí bách, phù hợp với mọi Khách Hàng, đặc biệt là người lớn tuổi và trẻ nhỏ. Giảm ngay 22%.",
@@ -843,63 +840,65 @@
             keywords: ["lò xo túi", "celina", "độc lập", "sang trọng", "giấc ngủ ngon"]
         },
 
-        // ===== SẢN PHẨM KHUYẾN MÃI =====
+        // ===== SẢN PHẨM KHUYẾN MÃI – LOTUS (CẬP NHẬT GIÁ MỚI) =====
         "lotus": {
             name: "NỆM CSTH LOTUS",
-            desc: "Nệm cao su tổng hợp Lotus được sản xuất với công nghệ tiên tiến, kết hợp độ đàn hồi và khả năng nâng đỡ vượt trội. Sản phẩm thoáng khí, không bí nhiệt, phù hợp với mọi Khách Hàng.<br><br><strong>Cấu tạo 5 lớp</strong> (nằm được 2 mặt):<br><ul style=\"margin:8px 0 12px 20px;list-style:disc;\"><li><strong>Lớp 1:</strong> Vải thoáng khí – mềm mại, thấm hút tốt</li><li><strong>Lớp 2:</strong> Lớp foam – tạo độ êm ái</li><li><strong>Lớp 3:</strong> Lõi mút ép – chắc chắn, nâng đỡ cột sống</li><li><strong>Lớp 4:</strong> Lớp foam – tăng cường thoải mái</li><li><strong>Lớp 5:</strong> Vải thoáng khí – bề mặt êm, dễ chịu</li></ul><br>✅ <strong>Bảo hành 10 năm</strong> – hoàn toàn yên tâm về chất lượng.<br>✅ <strong>Nằm thử 30 ngày</strong> – trải nghiệm trước khi quyết định.<br>✅ <strong>Đổi trả miễn phí</strong> nếu không hài lòng – không lo rủi ro.<br><br>Giá bán đã bao gồm phí giao hàng tận nơi tại nội thành Đà Nẵng. Với mức giảm sốc 70%, đây là cơ hội không thể bỏ qua.",
+            desc: "Nệm cao su tổng hợp Lotus được sản xuất với công nghệ tiên tiến, kết hợp độ đàn hồi và khả năng nâng đỡ vượt trội. Sản phẩm thoáng khí, không bí nhiệt, phù hợp với mọi Khách Hàng.<br><br><strong>Cấu tạo 5 lớp</strong> (nằm được 2 mặt):<br><ul style=\"margin:8px 0 12px 20px;list-style:disc;\"><li><strong>Lớp 1:</strong> Vải thoáng khí – mềm mại, thấm hút tốt</li><li><strong>Lớp 2:</strong> Lớp foam – tạo độ êm ái</li><li><strong>Lớp 3:</strong> Lõi mút ép – chắc chắn, nâng đỡ cột sống</li><li><strong>Lớp 4:</strong> Lớp foam – tăng cường thoải mái</li><li><strong>Lớp 5:</strong> Vải thoáng khí – bề mặt êm, dễ chịu</li></ul><br>✅ <strong>Bảo hành 10 năm</strong> – hoàn toàn yên tâm về chất lượng.<br>✅ <strong>Nằm thử 30 ngày</strong> – trải nghiệm trước khi quyết định.<br>✅ <strong>Đổi trả miễn phí</strong> nếu không hài lòng – không lo rủi ro.<br><br>Giá bán đã bao gồm phí giao hàng tận nơi tại nội thành Đà Nẵng. Với mức giảm sốc 35%, đây là cơ hội không thể bỏ qua.",
             img: "https://i.ibb.co/21csQg0p/Chat-GPT-Image-22-18-25-17-thg-7-2026.png",
             images: [
                 "https://i.ibb.co/21csQg0p/Chat-GPT-Image-22-18-25-17-thg-7-2026.png",
                 "https://i.ibb.co/LXspK69t/b99a3798-7b51-494e-80f2-5a7cb0f5ceb6.png"
             ],
             oldPrices: {
-                "1m0 x 2m x 10cm": 4667000,
-                "1m2 x 2m x 10cm": 4833000,
-                "1m4 x 2m x 10cm": 5000000,
-                "1m6 x 2m x 10cm": 5167000,
-                "1m8 x 2m x 10cm": 5500000,
-                "2m0 x 2m x 10cm": 5900000,
-                "2m2 x 2m x 10cm": 6300000,
-                "1m0 x 2m x 15cm": 5400000,
-                "1m2 x 2m x 15cm": 5633000,
-                "1m4 x 2m x 15cm": 5867000,
-                "1m6 x 2m x 15cm": 6100000,
-                "1m8 x 2m x 15cm": 6567000,
-                "2m0 x 2m x 15cm": 7133000,
-                "2m2 x 2m x 15cm": 7700000,
-                "1m0 x 2m x 20cm": 6000000,
-                "1m2 x 2m x 20cm": 6367000,
-                "1m4 x 2m x 20cm": 6700000,
-                "1m6 x 2m x 20cm": 7033000,
-                "1m8 x 2m x 20cm": 7600000,
-                "2m0 x 2m x 20cm": 8267000,
-                "2m2 x 2m x 20cm": 8933000
+                "1m0 x 2m x 10cm": 2154000,
+                "1m2 x 2m x 10cm": 2231000,
+                "1m4 x 2m x 10cm": 2308000,
+                "1m6 x 2m x 10cm": 2385000,
+                "1m8 x 2m x 10cm": 2538000,
+                "2m0 x 2m x 10cm": 2723000,
+                "2m2 x 2m x 10cm": 2908000,
+                "1m0 x 2m x 15cm": 2492000,
+                "1m2 x 2m x 15cm": 2600000,
+                "1m4 x 2m x 15cm": 2708000,
+                "1m6 x 2m x 15cm": 2815000,
+                "1m8 x 2m x 15cm": 3031000,
+                "2m0 x 2m x 15cm": 3292000,
+                "2m2 x 2m x 15cm": 3554000,
+                "1m0 x 2m x 20cm": 2785000,
+                "1m2 x 2m x 20cm": 2938000,
+                "1m4 x 2m x 20cm": 3092000,
+                "1m6 x 2m x 20cm": 3246000,
+                "1m8 x 2m x 20cm": 3508000,
+                "2m0 x 2m x 20cm": 3815000,
+                "2m2 x 2m x 20cm": 4123000
             },
-            discountPercent: 70,
+            discountPercent: 35,
             category: "khuyen-mai",
             slug: "lotus",
             keywords: ["cao su tổng hợp", "lotus", "bảo hành 10 năm", "30 ngày đổi trả", "giao tận nơi"]
         },
+
+        // ===== SẢN PHẨM KHUYẾN MÃI – PREMIUM (CẬP NHẬT GIÁ MỚI) =====
         "premium": {
             name: "NỆM LÒ XO TÚI CAO CẤP PREMIUM",
-            desc: "Nệm lò xo túi cao cấp Premium sử dụng công nghệ lò xo túi độc lập, từng lò xo được bọc túi vải riêng, giúp chống ồn và chống rung lắc tối đa. Nhờ đó, giấc ngủ của bạn và người thân không bị gián đoạn. Sản phẩm dày 24cm, nâng đỡ cột sống tối ưu, giảm áp lực lên các khớp xương.<br><br><strong>Cấu tạo 7 lớp</strong> (nằm được 2 mặt):<br><ul style=\"margin:8px 0 12px 20px;list-style:disc;\"><li><strong>Lớp 1:</strong> Vải gấm cao cấp – sang trọng, bền đẹp</li><li><strong>Lớp 2:</strong> Lớp bông – êm ái, thoáng khí</li><li><strong>Lớp 3:</strong> Vải không dệt – tăng độ kết dính</li><li><strong>Lớp 4:</strong> Khung lò xo túi độc lập – nâng đỡ từng điểm</li><li><strong>Lớp 5:</strong> Vải không dệt – bảo vệ lò xo</li><li><strong>Lớp 6:</strong> Lớp bông – tạo cảm giác mềm mại</li><li><strong>Lớp 7:</strong> Vải gấm cao cấp – hoàn thiện bề mặt</li></ul><br>✅ <strong>Bảo hành 10 năm</strong> – cam kết chất lượng bền vững.<br>✅ <strong>Nằm thử 30 ngày</strong> – thoải mái trải nghiệm tại nhà.<br>✅ <strong>Đổi trả miễn phí</strong> nếu chưa ưng ý – hoàn toàn không lo lắng.<br><br>Giá bán đã bao gồm phí giao hàng tận nơi tại nội thành Đà Nẵng. Với mức giảm sốc 70%, đây là cơ hội tuyệt vời để sở hữu chiếc nệm lò xo túi cao cấp với giá cực kỳ ưu đãi.",
+            desc: "Nệm lò xo túi cao cấp Premium sử dụng công nghệ lò xo túi độc lập, từng lò xo được bọc túi vải riêng, giúp chống ồn và chống rung lắc tối đa. Nhờ đó, giấc ngủ của bạn và người thân không bị gián đoạn. Sản phẩm dày 24cm, nâng đỡ cột sống tối ưu, giảm áp lực lên các khớp xương.<br><br><strong>Cấu tạo 7 lớp</strong> (nằm được 2 mặt):<br><ul style=\"margin:8px 0 12px 20px;list-style:disc;\"><li><strong>Lớp 1:</strong> Vải gấm cao cấp – sang trọng, bền đẹp</li><li><strong>Lớp 2:</strong> Lớp bông – êm ái, thoáng khí</li><li><strong>Lớp 3:</strong> Vải không dệt – tăng độ kết dính</li><li><strong>Lớp 4:</strong> Khung lò xo túi độc lập – nâng đỡ từng điểm</li><li><strong>Lớp 5:</strong> Vải không dệt – bảo vệ lò xo</li><li><strong>Lớp 6:</strong> Lớp bông – tạo cảm giác mềm mại</li><li><strong>Lớp 7:</strong> Vải gấm cao cấp – hoàn thiện bề mặt</li></ul><br>✅ <strong>Bảo hành 10 năm</strong> – cam kết chất lượng bền vững.<br>✅ <strong>Nằm thử 30 ngày</strong> – thoải mái trải nghiệm tại nhà.<br>✅ <strong>Đổi trả miễn phí</strong> nếu chưa ưng ý – hoàn toàn không lo lắng.<br><br>Giá bán đã bao gồm phí giao hàng tận nơi tại nội thành Đà Nẵng. Với mức giảm sốc 38%, đây là cơ hội tuyệt vời để sở hữu chiếc nệm lò xo túi cao cấp với giá cực kỳ ưu đãi.",
             img: "https://i.ibb.co/Pzj7G7NL/4f7ef563ece16dbf34f0.jpg",
             images: [
                 "https://i.ibb.co/Pzj7G7NL/4f7ef563ece16dbf34f0.jpg",
                 "https://i.ibb.co/KjYMbwwk/e61364a90620877ede31.jpg"
             ],
             oldPrices: {
-                "1m0 x 2m x 24cm": 12000000,
-                "1m2 x 2m x 24cm": 12500000,
-                "1m4 x 2m x 24cm": 13000000,
-                "1m6 x 2m x 24cm": 13500000,
-                "1m8 x 2m x 24cm": 14333000,
-                "2m0 x 2m x 24cm": 15167000
+                "1m0 x 2m x 24cm": 5806000,
+                "1m2 x 2m x 24cm": 6048000,
+                "1m4 x 2m x 24cm": 6290000,
+                "1m6 x 2m x 24cm": 6532000,
+                "1m8 x 2m x 24cm": 6935000,
+                "2m0 x 2m x 24cm": 7339000
             },
-            discountPercent: 70,
+            discountPercent: 38,
             category: "khuyen-mai",
             slug: "premium",
-            keywords: ["lò xo túi", "cao cấp", "premium", "bảo hành 10 năm", "30 ngày đổi trả", "giảm 70%"]
+            keywords: ["lò xo túi", "cao cấp", "premium", "bảo hành 10 năm", "30 ngày đổi trả", "giảm 38%"]
         },
 
         // ===== TRANG DỰ ÁN =====
@@ -1052,7 +1051,7 @@
         }
     };
 
-    // Tính giá cho các sản phẩm
+    // Tính giá bán thực tế (giá sau chiết khấu)
     for (let key in productsDB) {
         const prod = productsDB[key];
         if (prod.oldPrices && prod.discountPercent !== undefined && !prod.prices) {
@@ -1611,7 +1610,7 @@
         "cao-su-tong-hop": ["cao su tổng hợp", "nệm cao su tổng hợp", "cao su tổng", "tổng hợp"],
         "bong-ep": ["bông ép", "nệm bông ép", "bong ep"],
         "lo-xo-tui": ["lò xo túi", "nệm lò xo túi", "lò xo", "nệm lò xo", "lò xo tui"],
-        "khuyen-mai": ["khuyến mãi", "lotus", "premium", "giảm 70%"],
+        "khuyen-mai": ["khuyến mãi", "lotus", "premium", "giảm 35%", "giảm 38%"],
         "du-an": ["dự án", "nệm dự án", "chăn ga gối dự án", "khách sạn", "căn hộ"],
         "phu-kien": ["phụ kiện", "bảo vệ nệm", "chống thấm", "topper"]
     };
