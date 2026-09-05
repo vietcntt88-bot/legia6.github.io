@@ -363,11 +363,95 @@
             .btn-sticky i { font-size: 0.8rem; }
         }
 
-        footer { background: #1e3a5f; color: white; text-align: center; padding: 20px 16px; margin-top: 40px; font-size: 0.85rem; border-radius: 30px; width: 90%; margin-left: auto; margin-right: auto; margin-bottom: 10px; }
+        /* ===== FOOTER MỚI ===== */
+        footer {
+            background: #1e3a5f;
+            color: white;
+            text-align: center;
+            padding: 20px 16px;
+            margin-top: 40px;
+            font-size: 0.85rem;
+            border-radius: 30px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 10px;
+        }
         footer .footer-line { margin: 8px 0; display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
         footer .footer-line i { width: 24px; color: #d63384; font-size: 1rem; }
         footer .pink { color: #d63384; font-weight: 600; }
-        @media (max-width: 768px) { footer { font-size: 0.7rem; padding: 15px 12px; width: 95%; } footer .footer-line { gap: 6px; } footer .footer-line i { width: 20px; font-size: 0.8rem; } }
+        footer .footer-link {
+            color: #fff;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        footer .footer-link:hover { color: #d63384; }
+        @media (max-width: 768px) {
+            footer { font-size: 0.7rem; padding: 15px 12px; width: 95%; }
+            footer .footer-line { gap: 6px; }
+            footer .footer-line i { width: 20px; font-size: 0.8rem; }
+        }
+
+        /* ===== MODAL CHÍNH SÁCH ===== */
+        .policy-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 99998;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .policy-modal.active {
+            display: flex;
+        }
+        .policy-modal .policy-content {
+            background: #fff;
+            max-width: 850px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 24px;
+            padding: 40px 35px;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            margin: auto;
+        }
+        .policy-modal .policy-close {
+            position: sticky;
+            top: 0;
+            float: right;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #5a6e82;
+            background: #fff;
+            padding: 0 0 0 12px;
+            z-index: 2;
+            border: none;
+            transition: 0.2s;
+        }
+        .policy-modal .policy-close:hover { color: #d63384; transform: rotate(90deg); }
+        .policy-modal h2 { font-size: 1.6rem; color: #1e3a5f; margin-bottom: 16px; border-left: 4px solid #d63384; padding-left: 16px; }
+        .policy-modal h3 { font-size: 1.2rem; color: #1e3a5f; margin: 20px 0 8px; }
+        .policy-modal p { margin-bottom: 8px; line-height: 1.7; color: #1A2C3E; }
+        .policy-modal ul { margin: 8px 0 12px 24px; list-style: disc; }
+        .policy-modal ul li { margin-bottom: 6px; line-height: 1.6; }
+        .policy-modal table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.9rem; }
+        .policy-modal table th, .policy-modal table td { border: 1px solid #ddd; padding: 10px 12px; text-align: left; }
+        .policy-modal table th { background: #f0f4f8; font-weight: 700; color: #1e3a5f; }
+        @media (max-width: 768px) {
+            .policy-modal .policy-content { padding: 24px 18px; }
+            .policy-modal h2 { font-size: 1.3rem; }
+            .policy-modal h3 { font-size: 1rem; }
+            .policy-modal table { font-size: 0.8rem; }
+            .policy-modal table th, .policy-modal table td { padding: 6px 8px; }
+        }
 
         .review-mini { background: #f8fafc; border-radius: 28px; padding: 20px; margin: 24px 0; }
         .review-mini .review-item { margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 12px; }
@@ -379,7 +463,6 @@
         .toast-message { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); background: #333; color: white; padding: 12px 24px; border-radius: 40px; font-size: 0.9rem; z-index: 2000; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
         @media (max-width: 768px) { .toast-message { bottom: 70px; font-size: 0.8rem; padding: 10px 20px; } }
 
-        /* Project content */
         .project-content { padding: 20px 0; }
         .project-content .project-intro { font-size: 1.1rem; font-weight: 500; color: #1e3a5f; margin-bottom: 20px; padding: 16px 20px; background: #f0f4f8; border-radius: 12px; border-left: 4px solid #d63384; }
         .project-content .section-block { margin-bottom: 28px; }
@@ -401,7 +484,6 @@
         @media (max-width: 768px) { .project-content .project-intro { font-size: 1rem; padding: 14px 16px; } .project-content .section-block h3 { font-size: 1.05rem; } .project-content ul li { font-size: 0.95rem; padding-left: 24px; } .project-content .faq-block .faq-a { font-size: 0.9rem; padding-left: 28px; } .project-content .cta-box p { font-size: 1rem; } .project-content .cta-box .btn-hero { padding: 12px 24px; font-size: 0.95rem; } }
         @media (max-width: 480px) { .project-content .project-intro { font-size: 0.9rem; padding: 12px 14px; } .project-content .section-block h3 { font-size: 0.95rem; } .project-content ul li { font-size: 0.85rem; padding-left: 22px; } .project-content .faq-block .faq-q { font-size: 0.9rem; } .project-content .faq-block .faq-a { font-size: 0.8rem; padding-left: 24px; } .project-content .cta-box p { font-size: 0.9rem; } .project-content .cta-box .btn-hero { padding: 10px 20px; font-size: 0.85rem; } }
 
-        /* Lightbox */
         .lightbox {
             display: none;
             position: fixed;
@@ -466,7 +548,7 @@
         <div class="nav-left">
             <div class="logo" id="logoHome" role="button" tabindex="0" aria-label="Về trang chủ"><h1>NỆM LÊ GIA</h1></div>
             <div class="nav-desktop">
-                <!-- NỆM -->
+                <!-- Menu NỆM -->
                 <div class="mega-menu">
                     <button class="mega-trigger" aria-expanded="false" aria-haspopup="true">NỆM <i class="fas fa-chevron-down"></i></button>
                     <div class="mega-dropdown" role="menu">
@@ -677,28 +759,213 @@
     </div>
 </main>
 
+<!-- ====== FOOTER MỚI ====== -->
 <footer role="contentinfo">
-    <div class="footer-line"><i class="fas fa-store" aria-hidden="true"></i> <span><span class="pink">Nệm Lê Gia</span> - Hạnh phúc mọi nhà</span></div>
-    <div class="footer-line"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span>123 Bùi Trang Chước - Đà Nẵng</span></div>
+    <div class="footer-line"><i class="fas fa-store" aria-hidden="true"></i> <span><span class="pink">HỘ KINH DOANH NỆM LÊ GIA</span></span></div>
+    <div class="footer-line"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span>123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng</span></div>
+    <div class="footer-line"><i class="fas fa-id-card" aria-hidden="true"></i> <span>MST: 049088001414</span></div>
     <div class="footer-line"><i class="fas fa-phone-alt" aria-hidden="true"></i> <span>Hotline: 0905 513 984</span></div>
+    <div class="footer-line"><i class="fas fa-envelope" aria-hidden="true"></i> <span>Email: nemlegia9288@gmail.com</span></div>
+    <div class="footer-line"><i class="fas fa-globe" aria-hidden="true"></i> <span>Website: legia.pro.vn</span></div>
+    <div class="footer-line" style="margin-top:12px; border-top:1px solid rgba(255,255,255,0.15); padding-top:12px;">
+        <span class="footer-link" onclick="openPolicy('doi-tra')">Chính sách đổi trả</span>
+        <span style="opacity:0.3;">|</span>
+        <span class="footer-link" onclick="openPolicy('bao-mat')">Chính sách bảo mật</span>
+        <span style="opacity:0.3;">|</span>
+        <span class="footer-link" onclick="openPolicy('huong-dan')">Hướng dẫn mua hàng</span>
+    </div>
 </footer>
 
-<!-- Desktop Floating Buttons -->
-<div class="floating-buttons">
-    <a href="https://zalo.me/0905513984" target="_blank" class="floating-btn zalo" title="Chat Zalo">
-        <span style="font-weight:700; font-size:16px; color:#fff; letter-spacing:0.5px;">Zalo</span>
-    </a>
-    <a href="https://m.me/nemlegia" target="_blank" class="floating-btn messenger" title="Chat Messenger">
-        <i class="fab fa-facebook-messenger"></i>
-    </a>
+<!-- ====== CÁC MODAL CHÍNH SÁCH ====== -->
+
+<!-- 1. Chính sách đổi trả -->
+<div id="policy-doi-tra" class="policy-modal">
+    <div class="policy-content">
+        <button class="policy-close" onclick="closePolicy('doi-tra')">&times;</button>
+        <h2>CHÍNH SÁCH ĐỔI TRẢ VÀ BẢO HÀNH</h2>
+        <p><em>Cập nhật lần cuối: 05/09/2026</em></p>
+
+        <h3>1. THÔNG TIN CHỦ SỞ HỮU</h3>
+        <p><strong>HỘ KINH DOANH NỆM LÊ GIA</strong><br>
+        Mã số thuế: 049088001414<br>
+        Địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng<br>
+        Hotline: 0905 513 984<br>
+        Email: nemlegia9288@gmail.com</p>
+
+        <h3>2. ĐIỀU KIỆN ĐỔI TRẢ</h3>
+        <p>Quý khách có thể yêu cầu đổi trả trong các trường hợp sau:</p>
+        <ul>
+            <li>Sản phẩm bị lỗi kỹ thuật do nhà sản xuất (lò xo gãy, móp méo, hỏng lớp mút…)</li>
+            <li>Sản phẩm sai kích thước, sai mẫu mã so với đơn hàng.</li>
+            <li>Sản phẩm bị hư hỏng trong quá trình vận chuyển (bể, vỡ, trầy xước nặng).</li>
+        </ul>
+        <p><strong>Điều kiện áp dụng:</strong></p>
+        <ul>
+            <li>Thông báo trong vòng 7 ngày kể từ ngày nhận hàng.</li>
+            <li>Sản phẩm còn nguyên vẹn, chưa qua sử dụng, còn tem mác, hộp đựng.</li>
+            <li>Có kèm hóa đơn hoặc xác nhận đơn hàng.</li>
+        </ul>
+
+        <h3>3. TRƯỜNG HỢP KHÔNG ĐƯỢC ĐỔI TRẢ</h3>
+        <ul>
+            <li>Sản phẩm đã qua sử dụng hoặc bị trầy xước do khách hàng.</li>
+            <li>Hàng đặt may theo yêu cầu riêng (kích thước đặc biệt, màu sắc riêng).</li>
+            <li>Hàng không còn tem, mác hoặc bao bì nguyên bản.</li>
+        </ul>
+
+        <h3>4. QUY TRÌNH ĐỔI TRẢ</h3>
+        <ol>
+            <li>Liên hệ hotline 0905 513 984 hoặc Zalo 0905 513 984.</li>
+            <li>Cung cấp thông tin đơn hàng và hình ảnh/video sản phẩm lỗi.</li>
+            <li>Chúng tôi xác nhận và hướng dẫn gửi hàng về địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng.</li>
+            <li>Kiểm tra và xử lý đổi trả trong 3-5 ngày làm việc.</li>
+        </ol>
+
+        <h3>5. CHI PHÍ ĐỔI TRẢ</h3>
+        <ul>
+            <li>Lỗi từ phía Nệm Lê Gia (giao sai, lỗi sản xuất) → <strong>Miễn phí</strong> đổi trả và vận chuyển.</li>
+            <li>Khách hàng đổi trả do không ưng ý → Khách chịu chi phí vận chuyển cả 2 chiều.</li>
+        </ul>
+
+        <h3>6. CHÍNH SÁCH BẢO HÀNH CHI TIẾT</h3>
+        <table>
+            <tr><th>Sản phẩm</th><th>Thời gian bảo hành</th><th>Điều kiện áp dụng</th></tr>
+            <tr><td>Nệm lò xo túi (Platinum, Elan, Celina, Premium)</td><td>10 - 12 năm (tùy sản phẩm)</td><td>Lỗi kỹ thuật, lò xo xẹp, gãy</td></tr>
+            <tr><td>Nệm cao su thiên nhiên (Vạn Thành, Đồng Phú, Liên Á, Thắng Lợi, PNG)</td><td>5 - 15 năm (tùy sản phẩm)</td><td>Xẹp lún quá mức</td></tr>
+            <tr><td>Nệm cao su tổng hợp (Lotus, Diamond, CSN Thắng Lợi)</td><td>5 - 10 năm (tùy sản phẩm)</td><td>Lỗi từ nhà sản xuất</td></tr>
+            <tr><td>Nệm bông ép (Everon, Seoul)</td><td>5 - 10 năm (tùy sản phẩm)</td><td>Xẹp lún</td></tr>
+            <tr><td>Phụ kiện (Bảo vệ nệm, Topper)</td><td>1 tháng</td><td>Lỗi kỹ thuật từ nhà sản xuất</td></tr>
+        </table>
+        <p><strong>Lưu ý:</strong> Bảo hành không bao gồm hao mòn tự nhiên, vết bẩn, hư hỏng do tác động ngoại lực.</p>
+
+        <h3>7. QUY TRÌNH BẢO HÀNH</h3>
+        <ul>
+            <li>Liên hệ hotline 0905 513 984, cung cấp mã đơn hàng/hóa đơn.</li>
+            <li>Kiểm tra và xác nhận tình trạng sản phẩm.</li>
+            <li>Nếu đủ điều kiện, sửa chữa hoặc thay thế miễn phí.</li>
+        </ul>
+
+        <h3>8. CHÍNH SÁCH HOÀN TIỀN</h3>
+        <ul>
+            <li>Hoàn tiền qua chuyển khoản ngân hàng trong 5-7 ngày làm việc.</li>
+            <li>Hoặc hoàn bằng mã giảm giá cho đơn hàng kế tiếp (nếu khách chọn).</li>
+        </ul>
+    </div>
 </div>
 
-<!-- Mobile Sticky Buttons -->
-<div class="sticky-buttons">
-    <div class="btn-sticky btn-cart" id="stickyCartBtn" role="button" tabindex="0"><i class="fas fa-shopping-cart" aria-hidden="true"></i> GIỎ</div>
-    <div class="btn-sticky btn-zalo" id="stickyZaloBtn" role="button" tabindex="0"><i class="fab fa-zalo" aria-hidden="true"></i> ZALO</div>
-    <div class="btn-sticky btn-messenger" id="stickyMessengerBtn" role="button" tabindex="0"><i class="fab fa-facebook-messenger" aria-hidden="true"></i> MESS</div>
-    <div class="btn-sticky btn-call" id="stickyCallBtn" role="button" tabindex="0"><i class="fas fa-phone-alt" aria-hidden="true"></i> GỌI</div>
+<!-- 2. Chính sách bảo mật -->
+<div id="policy-bao-mat" class="policy-modal">
+    <div class="policy-content">
+        <button class="policy-close" onclick="closePolicy('bao-mat')">&times;</button>
+        <h2>CHÍNH SÁCH BẢO MẬT THÔNG TIN</h2>
+        <p><em>Cập nhật lần cuối: 05/09/2026</em></p>
+
+        <h3>1. THÔNG TIN CHỦ SỞ HỮU</h3>
+        <p><strong>HỘ KINH DOANH NỆM LÊ GIA</strong><br>
+        Mã số thuế: 049088001414<br>
+        Địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng<br>
+        Hotline: 0905 513 984<br>
+        Email: nemlegia9288@gmail.com</p>
+
+        <h3>2. MỤC ĐÍCH THU THẬP THÔNG TIN</h3>
+        <ul>
+            <li>Xử lý và giao hàng các đơn hàng.</li>
+            <li>Liên hệ xác nhận đơn hàng và thông báo tình trạng giao hàng.</li>
+            <li>Hỗ trợ khách hàng giải đáp thắc mắc, khiếu nại.</li>
+            <li>Gửi thông tin khuyến mãi, ưu đãi (nếu khách đồng ý).</li>
+            <li>Cải thiện chất lượng dịch vụ và trải nghiệm mua sắm.</li>
+        </ul>
+
+        <h3>3. PHẠM VI THU THẬP THÔNG TIN</h3>
+        <ul>
+            <li>Họ và tên</li>
+            <li>Số điện thoại</li>
+            <li>Địa chỉ giao hàng</li>
+            <li>Email (nếu có)</li>
+            <li>Lịch sử mua hàng</li>
+        </ul>
+
+        <h3>4. PHẠM VI SỬ DỤNG THÔNG TIN</h3>
+        <p>Chúng tôi cam kết <strong>không bán, trao đổi hoặc cho thuê</strong> thông tin cá nhân của quý khách cho bên thứ ba. Chỉ cung cấp khi có yêu cầu từ cơ quan pháp luật.</p>
+
+        <h3>5. THỜI GIAN LƯU TRỮ</h3>
+        <p>Thông tin được lưu trữ trong suốt quá trình hoạt động hoặc đến khi khách hàng yêu cầu xóa.</p>
+
+        <h3>6. QUYỀN CỦA KHÁCH HÀNG</h3>
+        <ul>
+            <li>Yêu cầu cung cấp bản sao thông tin đang lưu trữ.</li>
+            <li>Yêu cầu chỉnh sửa, cập nhật thông tin.</li>
+            <li>Yêu cầu xóa thông tin (trừ khi pháp luật yêu cầu).</li>
+        </ul>
+        <p>Liên hệ qua hotline 0905 513 984 hoặc email: <strong>nemlegia9288@gmail.com</strong> để thực hiện các quyền trên.</p>
+
+        <h3>7. CAM KẾT BẢO MẬT</h3>
+        <ul>
+            <li>Áp dụng biện pháp kỹ thuật và quản lý để bảo vệ thông tin.</li>
+            <li>Mọi thông tin thanh toán qua cổng trung gian đều được mã hóa SSL.</li>
+        </ul>
+
+        <h3>8. LIÊN HỆ</h3>
+        <p>Nếu có thắc mắc hoặc khiếu nại về bảo mật, vui lòng liên hệ:</p>
+        <ul>
+            <li><strong>Hotline:</strong> 0905 513 984</li>
+            <li><strong>Email:</strong> nemlegia9288@gmail.com</li>
+            <li><strong>Địa chỉ:</strong> 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng</li>
+        </ul>
+    </div>
+</div>
+
+<!-- 3. Hướng dẫn mua hàng -->
+<div id="policy-huong-dan" class="policy-modal">
+    <div class="policy-content">
+        <button class="policy-close" onclick="closePolicy('huong-dan')">&times;</button>
+        <h2>HƯỚNG DẪN MUA HÀNG &amp; ĐIỀU KHOẢN SỬ DỤNG</h2>
+        <p><em>Cập nhật lần cuối: 05/09/2026</em></p>
+
+        <h3>1. THÔNG TIN CHỦ SỞ HỮU</h3>
+        <p><strong>HỘ KINH DOANH NỆM LÊ GIA</strong><br>
+        Mã số thuế: 049088001414<br>
+        Địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng<br>
+        Hotline: 0905 513 984<br>
+        Email: nemlegia9288@gmail.com</p>
+
+        <h3>2. HƯỚNG DẪN ĐẶT HÀNG</h3>
+        <ol>
+            <li><strong>Chọn sản phẩm:</strong> Truy cập website, chọn sản phẩm mong muốn.</li>
+            <li><strong>Chọn kích thước và số lượng:</strong> Tại trang chi tiết, chọn kích thước và số lượng, nhấn "Thêm vào giỏ".</li>
+            <li><strong>Xem giỏ hàng:</strong> Click biểu tượng giỏ hàng để kiểm tra, có thể điều chỉnh số lượng hoặc xóa.</li>
+            <li><strong>Tiến hành đặt hàng:</strong> Nhấn "Tiến hành đặt hàng", điền đầy đủ thông tin: họ tên, số điện thoại, địa chỉ, ghi chú.</li>
+            <li><strong>Xác nhận đơn hàng:</strong> Nhấn "XÁC NHẬN ĐẶT HÀNG". Chúng tôi sẽ xử lý đơn hàng của bạn.</li>
+        </ol>
+
+        <h3>3. PHƯƠNG THỨC THANH TOÁN</h3>
+        <ul>
+            <li><strong>COD:</strong> Thanh toán tiền mặt khi nhận hàng.</li>
+            <li><strong>Chuyển khoản ngân hàng:</strong> Chuyển khoản trước và gửi ảnh giao dịch qua Zalo để xác nhận.</li>
+        </ul>
+
+        <h3>4. PHƯƠNG THỨC GIAO NHẬN</h3>
+        <ul>
+            <li><strong>Khu vực:</strong> Miễn phí nội thành Đà Nẵng. Các tỉnh khác liên hệ để được báo giá.</li>
+            <li><strong>Thời gian:</strong> Đà Nẵng 1-2 ngày; các tỉnh lân cận 2-4 ngày; các tỉnh xa 4-7 ngày.</li>
+        </ul>
+
+        <h3>5. ĐIỀU KHOẢN SỬ DỤNG</h3>
+        <ul>
+            <li><strong>Chấp nhận điều khoản:</strong> Khi sử dụng website và đặt hàng, quý khách đồng ý với tất cả điều khoản.</li>
+            <li><strong>Thông tin chính xác:</strong> Quý khách cam kết cung cấp thông tin chính xác, trung thực.</li>
+            <li><strong>Bảo mật tài khoản:</strong> Quý khách tự chịu trách nhiệm bảo mật thông tin tài khoản.</li>
+            <li><strong>Thay đổi đơn hàng:</strong> Liên hệ trong vòng 1 giờ sau khi đặt hàng để thay đổi hoặc hủy.</li>
+            <li><strong>Giải quyết tranh chấp:</strong> Thỏa thuận trước; nếu không thành, đưa ra Tòa án nhân dân có thẩm quyền tại Đà Nẵng.</li>
+        </ul>
+
+        <h3>6. LIÊN HỆ</h3>
+        <p><strong>HỘ KINH DOANH NỆM LÊ GIA</strong><br>
+        Địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng<br>
+        Hotline: 0905 513 984<br>
+        Zalo: 0905 513 984<br>
+        Email: nemlegia9288@gmail.com</p>
+    </div>
 </div>
 
 <!-- Lightbox -->
@@ -713,12 +980,52 @@
 </div>
 
 <script>
+    // ====== MỞ/ĐÓNG MODAL CHÍNH SÁCH ======
+    function openPolicy(type) {
+        const modal = document.getElementById('policy-' + type);
+        if (modal) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+    function closePolicy(type) {
+        const modal = document.getElementById('policy-' + type);
+        if (modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+    // Đóng modal khi click ra ngoài
+    document.querySelectorAll('.policy-modal').forEach(function(modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+    // Đóng modal bằng phím ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.policy-modal.active').forEach(function(modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+    });
+
+    // ====== TOÀN BỘ JAVASCRIPT CỦA WEBSITE ======
+    // Đây là phần đầy đủ tất cả chức năng
+
     const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xwvwzorl';
     const PHONE_NUMBER = "0905513984";
-    function discountedPrice(original, percent) { return Math.round(original * (100 - percent) / 100 / 1000) * 1000; }
+
+    function discountedPrice(original, percent) {
+        return Math.round(original * (100 - percent) / 100 / 1000) * 1000;
+    }
 
     const productsDB = {
-        // ===== CÁC SẢN PHẨM CŨ (GIỮ NGUYÊN) =====
+        // Các sản phẩm cũ (đã có đầy đủ từ trước)
         "van-thanh": {
             name: "NỆM CSTN VẠN THÀNH",
             desc: "Nệm cao su thiên nhiên Vạn Thành được sản xuất từ mủ cao su nguyên chất, giúp kháng khuẩn tự nhiên, ngăn ngừa nấm mốc và các tác nhân gây dị ứng. Với cấu trúc đàn hồi vượt trội, sản phẩm nâng đỡ cột sống tối ưu, mang lại giấc ngủ sâu và thoải mái. Thoáng khí tốt, không bí bách, phù hợp với mọi Khách Hàng, đặc biệt là người lớn tuổi và trẻ nhỏ. Giảm ngay 22%.",
@@ -791,7 +1098,7 @@
         },
         "everon": {
             name: "NỆM BÔNG ÉP EVERON (HÀN QUỐC)",
-            desc: "Nệm bông ép Everon là sản phẩm mang thương hiệu Hàn Quốc, được sản xuất trên dây chuyền công nghệ tiên tiến, đảm bảo chất lượng vượt trội. Lõi bông ép có mật độ cao, tạo độ cứng vừa phải, hỗ trợ cột sống và giảm áp lực lên các khớp xương. Bề mặt thoáng khí, không bí bách, thích hợp cho mọi Khách Hàng, kể cả trẻ em và người cao tuổi. Sản phẩm có độ bền tốt, ít bị xẹp lún, dễ dàng vệ sinh và bảo quản. Giảm ngay 21%, sở hữu ngay nệm chất lượng Hàn Quốc với giá ưu đãi.",
+            desc: "Nệm bông ép Everon là sản phẩm mang thương hiệu Hàn Quốc, được sản xuất trên dây chuyền công nghệ tiên tiến, đảm bảo chất lượng vượt trội. Lõi bông ép có mật độ cao, tạo độ cứng vừa phải, hỗ trợ cột sống và giảm áp lực lên các khớp xương. Bề mặt thoáng khí, không bí bách, thích hợp cho mọi đối tượng, kể cả trẻ em và người cao tuổi. Sản phẩm có độ bền tốt, ít bị xẹp lún, dễ dàng vệ sinh và bảo quản. Giảm ngay 21%, sở hữu ngay nệm chất lượng Hàn Quốc với giá ưu đãi.",
             img: "https://i.ibb.co/Pz5WQb8J/everon.jpg",
             oldPrices: { "1m0 x 2m x 9cm":2990000,"1m2 x 2m x 9cm":3590000,"1m4 x 2m x 9cm":4190000,"1m6 x 2m x 9cm":4290000,"1m8 x 2m x 9cm":4690000 },
             discountPercent: 21,
@@ -840,7 +1147,7 @@
             keywords: ["lò xo túi", "celina", "độc lập", "sang trọng", "giấc ngủ ngon"]
         },
 
-        // ===== SẢN PHẨM KHUYẾN MÃI – LOTUS (CẬP NHẬT GIÁ MỚI) =====
+        // ===== SẢN PHẨM KHUYẾN MÃI =====
         "lotus": {
             name: "NỆM CSTH LOTUS",
             desc: "Nệm cao su tổng hợp Lotus được sản xuất với công nghệ tiên tiến, kết hợp độ đàn hồi và khả năng nâng đỡ vượt trội. Sản phẩm thoáng khí, không bí nhiệt, phù hợp với mọi Khách Hàng.<br><br><strong>Cấu tạo 5 lớp</strong> (nằm được 2 mặt):<br><ul style=\"margin:8px 0 12px 20px;list-style:disc;\"><li><strong>Lớp 1:</strong> Vải thoáng khí – mềm mại, thấm hút tốt</li><li><strong>Lớp 2:</strong> Lớp foam – tạo độ êm ái</li><li><strong>Lớp 3:</strong> Lõi mút ép – chắc chắn, nâng đỡ cột sống</li><li><strong>Lớp 4:</strong> Lớp foam – tăng cường thoải mái</li><li><strong>Lớp 5:</strong> Vải thoáng khí – bề mặt êm, dễ chịu</li></ul><br>✅ <strong>Bảo hành 10 năm</strong> – hoàn toàn yên tâm về chất lượng.<br>✅ <strong>Nằm thử 30 ngày</strong> – trải nghiệm trước khi quyết định.<br>✅ <strong>Đổi trả miễn phí</strong> nếu không hài lòng – không lo rủi ro.<br><br>Giá bán đã bao gồm phí giao hàng tận nơi tại nội thành Đà Nẵng. Với mức giảm sốc 35%, đây là cơ hội không thể bỏ qua.",
@@ -877,8 +1184,6 @@
             slug: "lotus",
             keywords: ["cao su tổng hợp", "lotus", "bảo hành 10 năm", "30 ngày đổi trả", "giao tận nơi"]
         },
-
-        // ===== SẢN PHẨM KHUYẾN MÃI – PREMIUM (CẬP NHẬT GIÁ MỚI) =====
         "premium": {
             name: "NỆM LÒ XO TÚI CAO CẤP PREMIUM",
             desc: "Nệm lò xo túi cao cấp Premium sử dụng công nghệ lò xo túi độc lập, từng lò xo được bọc túi vải riêng, giúp chống ồn và chống rung lắc tối đa. Nhờ đó, giấc ngủ của bạn và người thân không bị gián đoạn. Sản phẩm dày 24cm, nâng đỡ cột sống tối ưu, giảm áp lực lên các khớp xương.<br><br><strong>Cấu tạo 7 lớp</strong> (nằm được 2 mặt):<br><ul style=\"margin:8px 0 12px 20px;list-style:disc;\"><li><strong>Lớp 1:</strong> Vải gấm cao cấp – sang trọng, bền đẹp</li><li><strong>Lớp 2:</strong> Lớp bông – êm ái, thoáng khí</li><li><strong>Lớp 3:</strong> Vải không dệt – tăng độ kết dính</li><li><strong>Lớp 4:</strong> Khung lò xo túi độc lập – nâng đỡ từng điểm</li><li><strong>Lớp 5:</strong> Vải không dệt – bảo vệ lò xo</li><li><strong>Lớp 6:</strong> Lớp bông – tạo cảm giác mềm mại</li><li><strong>Lớp 7:</strong> Vải gấm cao cấp – hoàn thiện bề mặt</li></ul><br>✅ <strong>Bảo hành 10 năm</strong> – cam kết chất lượng bền vững.<br>✅ <strong>Nằm thử 30 ngày</strong> – thoải mái trải nghiệm tại nhà.<br>✅ <strong>Đổi trả miễn phí</strong> nếu chưa ưng ý – hoàn toàn không lo lắng.<br><br>Giá bán đã bao gồm phí giao hàng tận nơi tại nội thành Đà Nẵng. Với mức giảm sốc 38%, đây là cơ hội tuyệt vời để sở hữu chiếc nệm lò xo túi cao cấp với giá cực kỳ ưu đãi.",
@@ -905,41 +1210,11 @@
         "du-an-nem": {
             name: "NỆM DỰ ÁN – CHẤT LƯỢNG CHO MỌI CÔNG TRÌNH",
             desc: `<div class="project-content">
-                <div class="project-intro">
-                    <i class="fas fa-quote-left" style="color:#d63384; margin-right:8px;"></i> 
-                    Hàng ngàn khách sạn, resort và căn hộ dịch vụ đã tin chọn Nệm Lê Gia làm đối tác nội thất.
-                </div>
-                <div class="section-block">
-                    <h3><i class="fas fa-boxes"></i> SẢN PHẨM ĐA DẠNG</h3>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> <strong>Nệm cao su thiên nhiên</strong> – êm ái, thoáng khí, an toàn cho sức khỏe</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Nệm bông ép</strong> – độ cứng vừa phải, hỗ trợ cột sống tốt</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Nệm lò xo túi</strong> – công nghệ độc lập, không ồn, không rung lắc</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Nệm foam</strong> – nhẹ, gấp gọn, tiện lợi cho nhiều không gian</li>
-                    </ul>
-                </div>
-                <div class="section-block">
-                    <h3><i class="fas fa-medal"></i> CAM KẾT CHẤT LƯỢNG</h3>
-                    <ul>
-                        <li><i class="fas fa-shield-alt"></i> Sản phẩm đạt chuẩn, kiểm định nghiêm ngặt</li>
-                        <li><i class="fas fa-calendar-check"></i> Bảo hành từ 5 năm đến 10 năm</li>
-                    </ul>
-                </div>
-                <div class="faq-block">
-                    <div class="faq-item">
-                        <div class="faq-q"><i class="fas fa-question-circle"></i> Tôi có thể đặt hàng số lượng ít để thử trước không?</div>
-                        <div class="faq-a">Có, chúng tôi hỗ trợ đặt mẫu số lượng nhỏ để đánh giá chất lượng trước khi đặt hàng số lượng lớn.</div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-q"><i class="fas fa-question-circle"></i> Thời gian giao hàng cho dự án lớn là bao lâu?</div>
-                        <div class="faq-a">Tùy thuộc số lượng và kích thước, thông thường từ 3-7 ngày làm việc. Chúng tôi cam kết giao hàng đúng tiến độ.</div>
-                    </div>
-                </div>
-                <div class="cta-box">
-                    <p>🏆 HỢP TÁC NGAY HÔM NAY – Nhận báo giá tốt nhất và tư vấn thiết kế miễn phí!</p>
-                    <button class="btn-hero" onclick="window.location.href='tel:0905513984'">📞 GỌI NGAY: 0905 513 984</button>
-                    <p style="font-size:0.9rem; margin-top:10px; opacity:0.9;">Đội ngũ tư vấn viên giàu kinh nghiệm sẵn sàng hỗ trợ bạn 24/7.</p>
-                </div>
+                <div class="project-intro"><i class="fas fa-quote-left" style="color:#d63384; margin-right:8px;"></i> Hàng ngàn khách sạn, resort và căn hộ dịch vụ đã tin chọn Nệm Lê Gia làm đối tác nội thất.</div>
+                <div class="section-block"><h3><i class="fas fa-boxes"></i> SẢN PHẨM ĐA DẠNG</h3><ul><li><i class="fas fa-check-circle"></i> <strong>Nệm cao su thiên nhiên</strong> – êm ái, thoáng khí, an toàn cho sức khỏe</li><li><i class="fas fa-check-circle"></i> <strong>Nệm bông ép</strong> – độ cứng vừa phải, hỗ trợ cột sống tốt</li><li><i class="fas fa-check-circle"></i> <strong>Nệm lò xo túi</strong> – công nghệ độc lập, không ồn, không rung lắc</li><li><i class="fas fa-check-circle"></i> <strong>Nệm foam</strong> – nhẹ, gấp gọn, tiện lợi cho nhiều không gian</li></ul></div>
+                <div class="section-block"><h3><i class="fas fa-medal"></i> CAM KẾT CHẤT LƯỢNG</h3><ul><li><i class="fas fa-shield-alt"></i> Sản phẩm đạt chuẩn, kiểm định nghiêm ngặt</li><li><i class="fas fa-calendar-check"></i> Bảo hành từ 5 năm đến 10 năm</li></ul></div>
+                <div class="faq-block"><div class="faq-item"><div class="faq-q"><i class="fas fa-question-circle"></i> Tôi có thể đặt hàng số lượng ít để thử trước không?</div><div class="faq-a">Có, chúng tôi hỗ trợ đặt mẫu số lượng nhỏ để đánh giá chất lượng trước khi đặt hàng số lượng lớn.</div></div><div class="faq-item"><div class="faq-q"><i class="fas fa-question-circle"></i> Thời gian giao hàng cho dự án lớn là bao lâu?</div><div class="faq-a">Tùy thuộc số lượng và kích thước, thông thường từ 3-7 ngày làm việc. Chúng tôi cam kết giao hàng đúng tiến độ.</div></div></div>
+                <div class="cta-box"><p>🏆 HỢP TÁC NGAY HÔM NAY – Nhận báo giá tốt nhất và tư vấn thiết kế miễn phí!</p><button class="btn-hero" onclick="window.location.href='tel:0905513984'">📞 GỌI NGAY: 0905 513 984</button><p style="font-size:0.9rem; margin-top:10px; opacity:0.9;">Đội ngũ tư vấn viên giàu kinh nghiệm sẵn sàng hỗ trợ bạn 24/7.</p></div>
             </div>`,
             img: "https://i.ibb.co/fGGDhxYG/Chat-GPT-Image-Jul-29-2026-03-19-31-PM.png",
             oldPrices: {},
@@ -951,41 +1226,11 @@
         "du-an-changagoi": {
             name: "CHĂN GA GỐI DỰ ÁN – TINH TẾ CHO KHÔNG GIAN NGHỈ DƯỠNG",
             desc: `<div class="project-content">
-                <div class="project-intro">
-                    <i class="fas fa-quote-left" style="color:#d63384; margin-right:8px;"></i> 
-                    Bộ sưu tập chăn ga gối cao cấp – nơi sự sang trọng gặp gỡ sự tiện nghi.
-                </div>
-                <div class="section-block">
-                    <h3><i class="fas fa-thumbs-up"></i> CHẤT LƯỢNG VƯỢT TRỘI</h3>
-                    <ul>
-                        <li><i class="fas fa-tshirt"></i> Vải cotton, tencel, satin cao cấp – mềm mại, thấm hút tốt, không xù lông</li>
-                        <li><i class="fas fa-palette"></i> Thiết kế tinh tế, màu sắc trang nhã, phù hợp mọi phong cách nội thất</li>
-                        <li><i class="fas fa-ruler-combined"></i> Đặt may theo kích thước – phù hợp với mọi loại giường</li>
-                    </ul>
-                </div>
-                <div class="section-block">
-                    <h3><i class="fas fa-hand-holding-usd"></i> CHÍNH SÁCH ƯU ĐÃI DÀNH CHO DỰ ÁN</h3>
-                    <ul>
-                        <li><i class="fas fa-percent"></i> Giá sỉ cạnh tranh, chiết khấu theo số lượng</li>
-                        <li><i class="fas fa-gem"></i> Chính sách hợp tác dài hạn, ưu đãi cho các đối tác thường xuyên</li>
-                        <li><i class="fas fa-award"></i> Cam kết giá tốt nhất trên thị trường cho dự án</li>
-                    </ul>
-                </div>
-                <div class="faq-block">
-                    <div class="faq-item">
-                        <div class="faq-q"><i class="fas fa-question-circle"></i> Tôi có thể đặt hàng chăn ga gối theo mẫu riêng không?</div>
-                        <div class="faq-a">Có, chúng tôi nhận sản xuất theo mẫu mã, chất vải và kích thước riêng cho các dự án.</div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-q"><i class="fas fa-question-circle"></i> Thời gian giao hàng cho dự án chăn ga gối là bao lâu?</div>
-                        <div class="faq-a">Thông thường 5-10 ngày làm việc tùy theo số lượng và yêu cầu may đo. Chúng tôi luôn đảm bảo tiến độ.</div>
-                    </div>
-                </div>
-                <div class="cta-box">
-                    <p>🏆 HỢP TÁC NGAY HÔM NAY – Nhận báo giá tốt nhất và tư vấn thiết kế miễn phí!</p>
-                    <button class="btn-hero" onclick="window.location.href='tel:0905513984'">📞 GỌI NGAY: 0905 513 984</button>
-                    <p style="font-size:0.9rem; margin-top:10px; opacity:0.9;">Đội ngũ tư vấn viên giàu kinh nghiệm sẵn sàng hỗ trợ bạn 24/7.</p>
-                </div>
+                <div class="project-intro"><i class="fas fa-quote-left" style="color:#d63384; margin-right:8px;"></i> Bộ sưu tập chăn ga gối cao cấp – nơi sự sang trọng gặp gỡ sự tiện nghi.</div>
+                <div class="section-block"><h3><i class="fas fa-thumbs-up"></i> CHẤT LƯỢNG VƯỢT TRỘI</h3><ul><li><i class="fas fa-tshirt"></i> Vải cotton, tencel, satin cao cấp – mềm mại, thấm hút tốt, không xù lông</li><li><i class="fas fa-palette"></i> Thiết kế tinh tế, màu sắc trang nhã, phù hợp mọi phong cách nội thất</li><li><i class="fas fa-ruler-combined"></i> Đặt may theo kích thước – phù hợp với mọi loại giường</li></ul></div>
+                <div class="section-block"><h3><i class="fas fa-hand-holding-usd"></i> CHÍNH SÁCH ƯU ĐÃI DÀNH CHO DỰ ÁN</h3><ul><li><i class="fas fa-percent"></i> Giá sỉ cạnh tranh, chiết khấu theo số lượng</li><li><i class="fas fa-gem"></i> Chính sách hợp tác dài hạn, ưu đãi cho các đối tác thường xuyên</li><li><i class="fas fa-award"></i> Cam kết giá tốt nhất trên thị trường cho dự án</li></ul></div>
+                <div class="faq-block"><div class="faq-item"><div class="faq-q"><i class="fas fa-question-circle"></i> Tôi có thể đặt hàng chăn ga gối theo mẫu riêng không?</div><div class="faq-a">Có, chúng tôi nhận sản xuất theo mẫu mã, chất vải và kích thước riêng cho các dự án.</div></div><div class="faq-item"><div class="faq-q"><i class="fas fa-question-circle"></i> Thời gian giao hàng cho dự án chăn ga gối là bao lâu?</div><div class="faq-a">Thông thường 5-10 ngày làm việc tùy theo số lượng và yêu cầu may đo. Chúng tôi luôn đảm bảo tiến độ.</div></div></div>
+                <div class="cta-box"><p>🏆 HỢP TÁC NGAY HÔM NAY – Nhận báo giá tốt nhất và tư vấn thiết kế miễn phí!</p><button class="btn-hero" onclick="window.location.href='tel:0905513984'">📞 GỌI NGAY: 0905 513 984</button><p style="font-size:0.9rem; margin-top:10px; opacity:0.9;">Đội ngũ tư vấn viên giàu kinh nghiệm sẵn sàng hỗ trợ bạn 24/7.</p></div>
             </div>`,
             img: "https://i.ibb.co/wZcWMfkr/Chat-GPT-Image-Jul-29-2026-03-20-34-PM.png",
             oldPrices: {},
@@ -1051,7 +1296,7 @@
         }
     };
 
-    // Tính giá bán thực tế (giá sau chiết khấu)
+    // Tính giá bán thực tế (sau chiết khấu)
     for (let key in productsDB) {
         const prod = productsDB[key];
         if (prod.oldPrices && prod.discountPercent !== undefined && !prod.prices) {
@@ -1302,7 +1547,6 @@
         });
     }
 
-    // ==================== REVIEWS ====================
     const reviewsDB = {
         "platinum": [{ stars: 5, name: "Anh Minh (TP.HCM)", content: "Nệm lò xo túi Platinum chất lượng tốt, không rung lắc." }, { stars: 5, name: "Chị Lan (Hà Nội)", content: "Ngủ rất êm." }],
         "elan": [{ stars: 5, name: "Chị Hằng (Đà Nẵng)", content: "Nệm Elan cuộn hộp tiện lợi, êm ái." }, { stars: 5, name: "Anh Vũ (Hải Phòng)", content: "Lò xo túi êm." }],
