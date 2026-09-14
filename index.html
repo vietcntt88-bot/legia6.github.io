@@ -17,14 +17,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
-    <!-- Facebook Pixel -->
     <script>
         !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2046389759421110');fbq('track','PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2046389759421110&ev=PageView&noscript=1" /></noscript>
 
     <style>
-        /* ===== GIỮ NGUYÊN TOÀN BỘ CSS CŨ ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Montserrat', sans-serif; background: #fff; color: #1A2C3E; line-height: 1.5; }
         .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
@@ -67,7 +65,6 @@
         .mega-phu-kien:hover .phu-kien-mega-dropdown, .phu-kien-mega-dropdown:hover {
             display: block;
         }
-
         .search-wrapper { flex: 1; max-width: 340px; position: relative; }
         .search-box { background: #f5f7fa; border-radius: 40px; padding: 4px 16px; display: flex; border: 1px solid #b0c4de; align-items: center; }
         .search-box input { flex: 1; border: none; background: transparent; outline: none; padding: 12px 8px; font-size: 16px; min-height: 48px; }
@@ -94,7 +91,6 @@
         .mobile-category-items { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
         .mobile-category-items a { display: block; background: white; padding: 12px 12px; border-radius: 16px; text-decoration: none; color: #1e3a5f; font-size: 0.9rem; font-weight: 500; border: 1px solid #e2e8f0; text-align: center; transition: 0.2s; }
         .mobile-category-items a:hover, .mobile-category-items a:active { background: #d63384; color: white; border-color: #d63384; }
-
         .mobile-accordion-item { border-bottom: 1px solid #e2e8f0; }
         .mobile-accordion-item .accordion-header { padding: 16px 20px; font-weight: 700; display: flex; justify-content: space-between; cursor: pointer; background: #fff; font-size: 1rem; color: #0d1b2a; }
         .mobile-accordion-item .accordion-header i { transition: transform 0.2s; }
@@ -105,10 +101,8 @@
         .mobile-accordion-item .accordion-content a { display: block; padding: 10px 16px; background: white; border-radius: 12px; text-decoration: none; color: #1e3a5f; font-weight: 500; border: 1px solid #e2e8f0; margin-bottom: 8px; transition: 0.2s; text-align: center; }
         .mobile-accordion-item .accordion-content a:hover, .mobile-accordion-item .accordion-content a:active { background: #d63384; color: white; border-color: #d63384; }
         .mobile-accordion-item .accordion-content a:last-child { margin-bottom: 0; }
-
         @media (max-width: 480px) { .mobile-category-items { grid-template-columns: 1fr; } }
         @media (max-width: 992px) { .nav-desktop { display: none; } .mobile-menu-btn { display: block; } .search-wrapper { width: 100%; max-width: 100%; order: 3; margin-top: 12px; } }
-
         .hero { background: linear-gradient(120deg, #eef5f2, #fff); padding: 40px 0; border-radius: 0 0 48px 48px; margin-bottom: 40px; }
         .hero-grid { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
         .hero-content { flex: 1; }
@@ -131,14 +125,12 @@
         .dot { display: inline-block; width: 10px; height: 10px; margin: 0 4px; background: rgba(255,255,255,0.6); border-radius: 50%; cursor: pointer; transition: 0.2s; }
         .dot.active { background: #d63384; transform: scale(1.2); }
         @media (max-width: 768px) { .hero-content h2 { font-size: 1.8rem; } .hero-content p { font-size: 1rem; } .btn-hero { padding: 12px 24px; font-size: 0.9rem; } .hero-grid { flex-direction: column; text-align: center; } .hero-slideshow-container { max-width: 100%; } .promo-banner { padding: 6px 18px; margin-bottom: 16px; } .promo-banner span { font-size: 0.85rem; } .promo-banner i { font-size: 1rem; } .slideshow-prev, .slideshow-next { width: 40px; height: 40px; font-size: 1rem; } }
-
         .filter-section { margin-bottom: 30px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
         .filter-btn { background: white; border: 1px solid #b0c4de; padding: 10px 24px; border-radius: 60px; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.2s ease; color: #0d1b2a; box-shadow: 0 1px 2px rgba(0,0,0,0.02); }
         .filter-btn.active { background: #d63384; color: white; border-color: #d63384; box-shadow: 0 4px 10px rgba(214, 51, 132, 0.25); }
         .filter-btn:hover:not(.active) { background: #f8f9fc; border-color: #d63384; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
         .section-title { font-size: 1.8rem; font-weight: 700; margin: 48px 0 24px; border-left: 5px solid #d63384; padding-left: 20px; }
         @media (max-width: 768px) { .section-title { font-size: 1.4rem; } }
-
         .product-grid-home { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-bottom: 40px; }
         @media (max-width: 992px) { .product-grid-home { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
         @media (max-width: 768px) { .product-grid-home { grid-template-columns: repeat(2, 1fr) !important; gap: 16px; } }
@@ -150,7 +142,6 @@
         .card-price { color: #b3362b; font-weight: 700; margin: 10px 0; }
         .discount-badge { position: absolute; top: 12px; right: 12px; background: #c73e1d; color: white; font-weight: 800; font-size: 0.85rem; padding: 6px 12px; border-radius: 30px; z-index: 2; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
         @media (max-width: 768px) { .card-img { height: 180px; } .product-card .card-title { font-size: 0.85rem !important; line-height: 1.3; } .product-card .card-price { font-size: 0.85rem !important; margin: 6px 0; } .product-card .card-info .btn-hero { font-size: 0.75rem !important; padding: 8px 12px !important; margin-top: 8px; } .product-card .card-info { padding: 10px !important; } .discount-badge { font-size: 0.7rem; padding: 3px 8px; top: 8px; right: 8px; } }
-
         .flash-sale { background: linear-gradient(135deg, #fff5e6, #fff); border-radius: 32px; padding: 24px; margin: 40px 0; border: 1px solid #ffe0b3; }
         .flash-title { display: flex; align-items: center; gap: 10px; font-size: 1.5rem; font-weight: 800; color: #c73e1d; margin-bottom: 20px; flex-wrap: wrap; }
         .flash-countdown { background: #c73e1d; color: white; padding: 6px 14px; border-radius: 60px; font-size: 1rem; font-weight: 700; margin-left: 8px; }
@@ -164,7 +155,6 @@
         .flash-old-price { text-decoration: line-through; font-size: 0.75rem; color: #5a6e82; margin-left: 8px; }
         .flash-badge { position: absolute; top: 10px; left: 10px; background: #c73e1d; color: white; padding: 4px 12px; border-radius: 30px; font-size: 0.7rem; font-weight: bold; }
         @media (max-width: 768px) { .flash-title { font-size: 1rem; gap: 6px; justify-content: center; } .flash-title i { font-size: 1.1rem; } .flash-title span:first-of-type { font-size: 0.95rem; font-weight: 700; } .flash-countdown { font-size: 0.8rem; padding: 4px 10px; margin-left: 5px; } .flash-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } .flash-img { height: 140px; } .flash-name { font-size: 0.8rem; } .flash-price { font-size: 0.9rem; } }
-
         .why-us { background: #f8fafc; border-radius: 48px; padding: 40px 20px; margin: 40px 0; text-align: center; }
         .why-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 30px; color: #1e3a5f; }
         .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
@@ -173,7 +163,6 @@
         .why-item h3 { font-size: 1.1rem; margin-bottom: 8px; color: #0d1b2a; }
         .why-item p { font-size: 0.85rem; color: #5a6e82; }
         @media (max-width: 768px) { .why-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
-
         .home-reviews { background: #f8fafc; border-radius: 32px; padding: 30px; margin: 40px 0; }
         .home-reviews-title { font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 25px; color: #0d1b2a; }
         .home-reviews-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
@@ -182,7 +171,6 @@
         .home-review-content { font-style: italic; margin-bottom: 12px; color: #1e3a5f; }
         .home-review-author { font-weight: 600; color: #0d1b2a; }
         @media (max-width: 768px) { .home-reviews-grid { grid-template-columns: 1fr; } }
-
         .product-detail-section { background: #fefcf8; border-radius: 36px; padding: 32px; margin: 40px 0; box-shadow: 0 8px 24px rgba(0,0,0,0.04); }
         .product-grid-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
         .detail-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 28px; }
@@ -201,7 +189,6 @@
         .btn-buy-now { background: #d63384; color: white; }
         .btn-back-home { background: #1e3a5f; color: white; border: none; padding: 12px 24px; border-radius: 40px; font-weight: 600; cursor: pointer; margin-bottom: 20px; display: inline-block; }
         @media (max-width: 768px) { .product-grid-detail { grid-template-columns: 1fr; gap: 24px; } .size-chips { gap: 10px; margin: 16px 0; } .chip { padding: 8px 14px; font-size: 0.8rem; } .quantity-selector button { width: 36px; height: 36px; } .quantity-selector span { font-size: 1rem; } .discount-price { font-size: 1.4rem; } .old-price { font-size: 0.85rem; } .saving-badge { font-size: 0.7rem; padding: 2px 8px; } .price-wrapper { gap: 8px; margin: 16px 0; } .btn-add-to-cart, .btn-buy-now { padding: 14px; font-size: 0.9rem; } .btn-back-home { padding: 10px 20px; font-size: 0.85rem; } .product-detail-section .product-title { font-size: 1.2rem !important; } }
-
         .related-products { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; }
         .related-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; color: #1e3a5f; }
         .related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
@@ -212,7 +199,6 @@
         .related-info { padding: 10px; }
         .related-name { font-weight: 700; font-size: 0.8rem; color: #0d1b2a; }
         .related-price { color: #b3362b; font-weight: 600; font-size: 0.8rem; margin-top: 5px; }
-
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; justify-content: center; align-items: center; padding: 16px; }
         .modal-content { background: white; border-radius: 32px; width: 100%; max-width: 500px; padding: 30px 24px; position: relative; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
         .modal-close { position: absolute; top: 16px; right: 20px; font-size: 1.8rem; cursor: pointer; color: #5a6e82; transition: 0.2s; background: none; border: none; }
@@ -233,7 +219,6 @@
         .spinner { display: inline-block; width: 20px; height: 20px; border: 2px solid #fff; border-radius: 50%; border-top-color: transparent; animation: spin 0.6s linear infinite; vertical-align: middle; margin-right: 8px; }
         @keyframes spin { to { transform: rotate(360deg); } }
         @media (max-width: 600px) { .modal-content { padding: 24px 16px; } .modal h3 { font-size: 1.3rem; } .modal .form-group input, .modal .form-group textarea { font-size: 15px; padding: 12px 16px; } .modal .payment-methods label { padding: 10px 14px; font-size: 0.9rem; } .btn-submit { font-size: 1rem; padding: 14px; } }
-
         .cart-view { background: white; border-radius: 32px; padding: 32px; margin: 40px 0; border: 1px solid #e2e8f0; }
         .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #e2e8f0; flex-wrap: wrap; gap: 10px; }
         .cart-item-info { flex: 2; display: flex; align-items: center; gap: 12px; }
@@ -262,186 +247,45 @@
         .checkout-section .btn-checkout:hover { background: #b82a6e; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(214, 51, 132, 0.3); }
         .checkout-section .btn-checkout:disabled { opacity: 0.7; cursor: not-allowed; transform: none; box-shadow: none; }
         @media (max-width: 600px) { .checkout-section { padding: 24px 16px; } .checkout-section h3 { font-size: 1.3rem; } .checkout-section .form-group input, .checkout-section .form-group textarea { font-size: 15px; padding: 12px 16px; } .checkout-section .payment-methods label { padding: 10px 14px; font-size: 0.9rem; } .checkout-section .btn-checkout { font-size: 1rem; padding: 14px; } }
-
-        .sticky-buttons {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: white;
-            padding: 8px 12px;
-            gap: 8px;
-            box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
-            z-index: 1000;
-            border-top: 1px solid #e2e8f0;
-        }
-        .btn-sticky {
-            flex: 1;
-            text-align: center;
-            padding: 10px 0;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 0.75rem;
-            cursor: pointer;
-            transition: 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 4px;
-            white-space: nowrap;
-        }
+        .sticky-buttons { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: white; padding: 8px 12px; gap: 8px; box-shadow: 0 -4px 12px rgba(0,0,0,0.1); z-index: 1000; border-top: 1px solid #e2e8f0; }
+        .btn-sticky { flex: 1; text-align: center; padding: 10px 0; border-radius: 40px; font-weight: 600; font-size: 0.75rem; cursor: pointer; transition: 0.2s; display: flex; align-items: center; justify-content: center; gap: 4px; white-space: nowrap; }
         .btn-cart { background: #d63384; color: white; }
         .btn-zalo { background: #0068ff; color: white; }
         .btn-messenger { background: #0084ff; color: white; }
         .btn-call { background: #1e3a5f; color: white; }
         .back-to-top { position: fixed; bottom: 80px; right: 20px; background: #1e3a5f; color: white; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transition: 0.3s; z-index: 999; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
         .back-to-top.show { opacity: 1; visibility: visible; }
-
-        .floating-buttons {
-            position: fixed;
-            right: 20px;
-            bottom: 140px;
-            z-index: 999;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            align-items: center;
-        }
-        .floating-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 24px;
-            text-decoration: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-        }
-        .floating-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-        .floating-btn.zalo {
-            background: #0068ff;
-        }
-        .floating-btn.messenger {
-            background: #0084ff;
-        }
+        .floating-buttons { position: fixed; right: 20px; bottom: 140px; z-index: 999; display: flex; flex-direction: column; gap: 12px; align-items: center; }
+        .floating-btn { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 24px; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: all 0.3s ease; cursor: pointer; border: none; }
+        .floating-btn:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+        .floating-btn.zalo { background: #0068ff; }
+        .floating-btn.messenger { background: #0084ff; }
+        @media (max-width: 768px) { .floating-buttons { display: none; } }
         @media (max-width: 768px) {
-            .floating-buttons { display: none; }
-        }
-
-        @media (max-width: 768px) {
-            .sticky-buttons {
-                display: flex;
-                padding: 8px 10px;
-                gap: 6px;
-            }
-            .btn-sticky {
-                font-size: 0.65rem;
-                padding: 10px 2px;
-                gap: 2px;
-                border-radius: 30px;
-                flex: 1 1 0;
-                min-width: 0;
-            }
-            .btn-sticky i {
-                font-size: 0.9rem;
-                margin-right: 2px;
-            }
+            .sticky-buttons { display: flex; padding: 8px 10px; gap: 6px; }
+            .btn-sticky { font-size: 0.65rem; padding: 10px 2px; gap: 2px; border-radius: 30px; flex: 1 1 0; min-width: 0; }
+            .btn-sticky i { font-size: 0.9rem; margin-right: 2px; }
             body { padding-bottom: 60px; }
             .back-to-top { bottom: 65px; right: 15px; width: 40px; height: 40px; }
         }
-        @media (max-width: 480px) {
-            .btn-sticky { font-size: 0.55rem; padding: 8px 2px; }
-            .btn-sticky i { font-size: 0.8rem; }
-        }
-
-        /* ===== FOOTER MỚI ===== */
-        footer {
-            background: #1e3a5f;
-            color: white;
-            text-align: center;
-            padding: 20px 16px;
-            margin-top: 40px;
-            font-size: 0.85rem;
-            border-radius: 30px;
-            width: 90%;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 10px;
-        }
+        @media (max-width: 480px) { .btn-sticky { font-size: 0.55rem; padding: 8px 2px; } .btn-sticky i { font-size: 0.8rem; } }
+        footer { background: #1e3a5f; color: white; text-align: center; padding: 20px 16px; margin-top: 40px; font-size: 0.85rem; border-radius: 30px; width: 90%; margin-left: auto; margin-right: auto; margin-bottom: 10px; }
         footer .footer-line { margin: 8px 0; display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
         footer .footer-line i { width: 24px; color: #d63384; font-size: 1rem; }
         footer .pink { color: #d63384; font-weight: 600; }
-        footer .footer-link {
-            color: #fff;
-            text-decoration: underline;
-            cursor: pointer;
-            transition: 0.2s;
-        }
+        footer .footer-link { color: #fff; text-decoration: underline; cursor: pointer; transition: 0.2s; }
         footer .footer-link:hover { color: #d63384; }
-        @media (max-width: 768px) {
-            footer { font-size: 0.7rem; padding: 15px 12px; width: 95%; }
-            footer .footer-line { gap: 6px; }
-            footer .footer-line i { width: 20px; font-size: 0.8rem; }
-        }
-
-        /* ===== MODAL CHÍNH SÁCH ===== */
-        .policy-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.6);
-            z-index: 99998;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            overflow-y: auto;
-        }
-        .policy-modal.active {
-            display: flex;
-        }
-        .policy-modal .policy-content {
-            background: #fff;
-            max-width: 850px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            border-radius: 24px;
-            padding: 40px 35px;
-            position: relative;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            margin: auto;
-        }
-        .policy-modal .policy-close {
-            position: sticky;
-            top: 0;
-            float: right;
-            font-size: 2rem;
-            cursor: pointer;
-            color: #5a6e82;
-            background: #fff;
-            padding: 0 0 0 12px;
-            z-index: 2;
-            border: none;
-            transition: 0.2s;
-        }
+        @media (max-width: 768px) { footer { font-size: 0.7rem; padding: 15px 12px; width: 95%; } footer .footer-line { gap: 6px; } footer .footer-line i { width: 20px; font-size: 0.8rem; } }
+        .policy-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 99998; justify-content: center; align-items: center; padding: 20px; overflow-y: auto; }
+        .policy-modal.active { display: flex; }
+        .policy-modal .policy-content { background: #fff; max-width: 850px; width: 100%; max-height: 90vh; overflow-y: auto; border-radius: 24px; padding: 40px 35px; position: relative; box-shadow: 0 20px 60px rgba(0,0,0,0.3); margin: auto; }
+        .policy-modal .policy-close { position: sticky; top: 0; float: right; font-size: 2rem; cursor: pointer; color: #5a6e82; background: #fff; padding: 0 0 0 12px; z-index: 2; border: none; transition: 0.2s; }
         .policy-modal .policy-close:hover { color: #d63384; transform: rotate(90deg); }
         .policy-modal h2 { font-size: 1.6rem; color: #1e3a5f; margin-bottom: 16px; border-left: 4px solid #d63384; padding-left: 16px; }
         .policy-modal h3 { font-size: 1.2rem; color: #1e3a5f; margin: 20px 0 8px; }
         .policy-modal p { margin-bottom: 8px; line-height: 1.7; color: #1A2C3E; }
-        .policy-modal ul { margin: 8px 0 12px 24px; list-style: disc; }
-        .policy-modal ul li { margin-bottom: 6px; line-height: 1.6; }
+        .policy-modal ul, .policy-modal ol { margin: 8px 0 12px 24px; }
+        .policy-modal ul li, .policy-modal ol li { margin-bottom: 6px; line-height: 1.6; }
         .policy-modal table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.9rem; }
         .policy-modal table th, .policy-modal table td { border: 1px solid #ddd; padding: 10px 12px; text-align: left; }
         .policy-modal table th { background: #f0f4f8; font-weight: 700; color: #1e3a5f; }
@@ -452,17 +296,13 @@
             .policy-modal table { font-size: 0.8rem; }
             .policy-modal table th, .policy-modal table td { padding: 6px 8px; }
         }
-
         .review-mini { background: #f8fafc; border-radius: 28px; padding: 20px; margin: 24px 0; }
         .review-mini .review-item { margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 12px; }
         .review-mini .review-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-
         .home-view, .detail-view, .cart-view { transition: all 0.2s; }
         .detail-view, .cart-view { display: none; }
-
         .toast-message { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); background: #333; color: white; padding: 12px 24px; border-radius: 40px; font-size: 0.9rem; z-index: 2000; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
         @media (max-width: 768px) { .toast-message { bottom: 70px; font-size: 0.8rem; padding: 10px 20px; } }
-
         .project-content { padding: 20px 0; }
         .project-content .project-intro { font-size: 1.1rem; font-weight: 500; color: #1e3a5f; margin-bottom: 20px; padding: 16px 20px; background: #f0f4f8; border-radius: 12px; border-left: 4px solid #d63384; }
         .project-content .section-block { margin-bottom: 28px; }
@@ -483,20 +323,7 @@
         .project-content .cta-box .btn-hero:hover { background: #f8f9fc; transform: scale(1.02); }
         @media (max-width: 768px) { .project-content .project-intro { font-size: 1rem; padding: 14px 16px; } .project-content .section-block h3 { font-size: 1.05rem; } .project-content ul li { font-size: 0.95rem; padding-left: 24px; } .project-content .faq-block .faq-a { font-size: 0.9rem; padding-left: 28px; } .project-content .cta-box p { font-size: 1rem; } .project-content .cta-box .btn-hero { padding: 12px 24px; font-size: 0.95rem; } }
         @media (max-width: 480px) { .project-content .project-intro { font-size: 0.9rem; padding: 12px 14px; } .project-content .section-block h3 { font-size: 0.95rem; } .project-content ul li { font-size: 0.85rem; padding-left: 22px; } .project-content .faq-block .faq-q { font-size: 0.9rem; } .project-content .faq-block .faq-a { font-size: 0.8rem; padding-left: 24px; } .project-content .cta-box p { font-size: 0.9rem; } .project-content .cta-box .btn-hero { padding: 10px 20px; font-size: 0.85rem; } }
-
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.9);
-            z-index: 99999;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-        }
+        .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 99999; justify-content: center; align-items: center; cursor: pointer; }
         .lightbox.active { display: flex; }
         .lightbox-content { max-width: 90%; max-height: 90%; position: relative; cursor: default; }
         .lightbox-content img { max-width: 100%; max-height: 90vh; display: block; border-radius: 8px; box-shadow: 0 4px 30px rgba(0,0,0,0.5); object-fit: contain; }
@@ -548,7 +375,6 @@
         <div class="nav-left">
             <div class="logo" id="logoHome" role="button" tabindex="0" aria-label="Về trang chủ"><h1>NỆM LÊ GIA</h1></div>
             <div class="nav-desktop">
-                <!-- Menu NỆM -->
                 <div class="mega-menu">
                     <button class="mega-trigger" aria-expanded="false" aria-haspopup="true">NỆM <i class="fas fa-chevron-down"></i></button>
                     <div class="mega-dropdown" role="menu">
@@ -557,7 +383,6 @@
                         <div class="mega-col"><h4>Lò Xo Túi</h4><ul><li><a role="menuitem" data-product="platinum">Platinum</a></li><li><a role="menuitem" data-product="elan">Elan</a></li><li><a role="menuitem" data-product="celina">Celina</a></li></ul></div>
                     </div>
                 </div>
-                <!-- DỰ ÁN -->
                 <div class="mega-menu mega-du-an">
                     <button class="mega-du-an-trigger" aria-expanded="false" aria-haspopup="true">DỰ ÁN <i class="fas fa-chevron-down"></i></button>
                     <div class="du-an-mega-dropdown" role="menu">
@@ -565,7 +390,6 @@
                         <a role="menuitem" href="#" data-product="du-an-changagoi">Chăn ga gối dự án</a>
                     </div>
                 </div>
-                <!-- PHỤ KIỆN -->
                 <div class="mega-menu mega-phu-kien">
                     <button class="mega-phu-kien-trigger" aria-expanded="false" aria-haspopup="true">PHỤ KIỆN <i class="fas fa-chevron-down"></i></button>
                     <div class="phu-kien-mega-dropdown" role="menu">
@@ -574,7 +398,6 @@
                         <a role="menuitem" href="#" data-product="topper">Topper nệm cao cấp</a>
                     </div>
                 </div>
-                <!-- KHUYẾN MÃI -->
                 <div class="mega-menu mega-promo">
                     <button class="mega-promo-trigger" aria-expanded="false" aria-haspopup="true">KHUYẾN MÃI <i class="fas fa-chevron-down"></i></button>
                     <div class="promo-mega-dropdown" role="menu">
@@ -595,7 +418,6 @@
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Mở menu điều hướng"><i class="fas fa-bars"></i></button>
     </div>
     <div class="mobile-nav" id="mobileNav" role="navigation">
-        <!-- NỆM -->
         <div class="mobile-accordion-item">
             <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">NỆM <i class="fas fa-angle-down"></i></div>
             <div class="accordion-content">
@@ -605,7 +427,6 @@
                 <div class="mobile-category-group"><h4>Lò Xo Túi</h4><div class="mobile-category-items"><a data-product="platinum">Platinum</a><a data-product="elan">Elan</a><a data-product="celina">Celina</a></div></div>
             </div>
         </div>
-        <!-- DỰ ÁN -->
         <div class="mobile-accordion-item">
             <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">DỰ ÁN <i class="fas fa-angle-down"></i></div>
             <div class="accordion-content">
@@ -613,7 +434,6 @@
                 <a href="#" data-product="du-an-changagoi">Chăn ga gối dự án</a>
             </div>
         </div>
-        <!-- PHỤ KIỆN -->
         <div class="mobile-accordion-item">
             <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">PHỤ KIỆN <i class="fas fa-angle-down"></i></div>
             <div class="accordion-content">
@@ -622,7 +442,6 @@
                 <a href="#" data-product="topper">Topper nệm cao cấp</a>
             </div>
         </div>
-        <!-- KHUYẾN MÃI -->
         <div class="mobile-accordion-item">
             <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">KHUYẾN MÃI <i class="fas fa-angle-down"></i></div>
             <div class="accordion-content">
@@ -634,7 +453,6 @@
 </header>
 
 <main>
-    <!-- HOME VIEW -->
     <div id="homeView" class="home-view">
         <section class="hero" aria-labelledby="heroTitle">
             <div class="container hero-grid">
@@ -645,25 +463,16 @@
                     <button class="btn-hero" id="heroCta">Khám phá ngay</button>
                 </div>
                 <div class="hero-slideshow-container" aria-label="Banner giới thiệu">
-                    <div class="slideshow-slide active">
-                        <img src="https://i.ibb.co/BH36N924/50c53038-1c73-46fb-89b8-4a6348563986.jpg" alt="Phòng ngủ hiện đại với nệm Nệm Lê Gia" width="600" height="450" fetchpriority="high">
-                    </div>
-                    <div class="slideshow-slide">
-                        <img src="https://i.ibb.co/zTvPP7JC/da5ce066-b480-4e73-aa65-dd5c0c978915.jpg" alt="Phòng ngủ ấm cúng với nệm Lê Gia" width="600" height="450" loading="lazy">
-                    </div>
-                    <div class="slideshow-slide">
-                        <img src="https://i.ibb.co/JW4WnFTs/7591d458-d670-409c-81dc-fabb969344fd.jpg" alt="Không gian phòng ngủ sang trọng" width="600" height="450" loading="lazy">
-                    </div>
-                    <div class="slideshow-slide">
-                        <img src="https://i.ibb.co/SDBk2g6w/bfdb34f8-2632-478f-a56f-93fa242ed714.jpg" alt="Phòng ngủ tối giản với nệm cao cấp" width="600" height="450" loading="lazy">
-                    </div>
+                    <div class="slideshow-slide active"><img src="https://i.ibb.co/BH36N924/50c53038-1c73-46fb-89b8-4a6348563986.jpg" alt="Phòng ngủ hiện đại với nệm Nệm Lê Gia" width="600" height="450" fetchpriority="high"></div>
+                    <div class="slideshow-slide"><img src="https://i.ibb.co/zTvPP7JC/da5ce066-b480-4e73-aa65-dd5c0c978915.jpg" alt="Phòng ngủ ấm cúng với nệm Lê Gia" width="600" height="450" loading="lazy"></div>
+                    <div class="slideshow-slide"><img src="https://i.ibb.co/JW4WnFTs/7591d458-d670-409c-81dc-fabb969344fd.jpg" alt="Không gian phòng ngủ sang trọng" width="600" height="450" loading="lazy"></div>
+                    <div class="slideshow-slide"><img src="https://i.ibb.co/SDBk2g6w/bfdb34f8-2632-478f-a56f-93fa242ed714.jpg" alt="Phòng ngủ tối giản với nệm cao cấp" width="600" height="450" loading="lazy"></div>
                     <button class="slideshow-prev" id="slidePrev" aria-label="Xem ảnh trước"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
                     <button class="slideshow-next" id="slideNext" aria-label="Xem ảnh tiếp theo"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
                     <div class="slideshow-dots" id="slideDots" role="tablist"></div>
                 </div>
             </div>
         </section>
-
         <div class="container">
             <div class="filter-section" id="filterSection" role="tablist">
                 <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Tất cả</button>
@@ -673,19 +482,16 @@
                 <button class="filter-btn" data-filter="lo-xo-tui" role="tab" aria-selected="false">Lò xo túi</button>
             </div>
         </div>
-
         <div class="container">
             <div class="flash-sale" id="flashSaleContainer">
                 <div class="flash-title"><i class="fas fa-bolt" aria-hidden="true"></i> <span>FLASH SALE – GIẢM SỐC 24H</span> <span class="flash-countdown" id="countdownTimer">23:59:59</span></div>
                 <div class="flash-grid" id="flashGrid"></div>
             </div>
         </div>
-
         <div class="container">
             <h2 class="section-title">Sản phẩm nổi bật</h2>
             <div class="product-grid-home" id="productGrid"></div>
         </div>
-
         <div class="container">
             <div class="why-us">
                 <h2 class="why-title">✨ Tại sao chọn Nệm Lê Gia?</h2>
@@ -697,7 +503,6 @@
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="home-reviews">
                 <h2 class="home-reviews-title">💬 Khách hàng nói gì về chúng tôi?</h2>
@@ -717,7 +522,6 @@
         </div>
     </div>
 
-    <!-- DETAIL VIEW -->
     <div id="detailView" class="detail-view">
         <div class="container">
             <button class="btn-back-home" id="backToHomeBtn"><i class="fas fa-arrow-left" aria-hidden="true"></i> Quay lại trang chủ</button>
@@ -727,7 +531,6 @@
         </div>
     </div>
 
-    <!-- CART VIEW -->
     <div id="cartView" class="cart-view">
         <div class="container">
             <button class="btn-back-home" id="backToHomeFromCart"><i class="fas fa-arrow-left" aria-hidden="true"></i> Tiếp tục mua sắm</button>
@@ -759,7 +562,7 @@
     </div>
 </main>
 
-<!-- ====== FOOTER MỚI ====== -->
+<!-- FOOTER MỚI -->
 <footer role="contentinfo">
     <div class="footer-line"><i class="fas fa-store" aria-hidden="true"></i> <span><span class="pink">HỘ KINH DOANH NỆM LÊ GIA</span></span></div>
     <div class="footer-line"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span>123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng</span></div>
@@ -767,50 +570,207 @@
     <div class="footer-line"><i class="fas fa-phone-alt" aria-hidden="true"></i> <span>Hotline: 0905 513 984</span></div>
     <div class="footer-line"><i class="fas fa-envelope" aria-hidden="true"></i> <span>Email: nemlegia9288@gmail.com</span></div>
     <div class="footer-line"><i class="fas fa-globe" aria-hidden="true"></i> <span>Website: legia.pro.vn</span></div>
-    <div class="footer-line" style="margin-top:12px; border-top:1px solid rgba(255,255,255,0.15); padding-top:12px;">
-        <span class="footer-link" onclick="openPolicy('doi-tra')">Chính sách đổi trả</span>
-        <span style="opacity:0.3;">|</span>
+    <div class="footer-line" style="margin-top:12px; border-top:1px solid rgba(255,255,255,0.15); padding-top:12px; flex-wrap:wrap;">
         <span class="footer-link" onclick="openPolicy('bao-mat')">Chính sách bảo mật</span>
+        <span style="opacity:0.3;">|</span>
+        <span class="footer-link" onclick="openPolicy('gia')">Chính sách giá</span>
+        <span style="opacity:0.3;">|</span>
+        <span class="footer-link" onclick="openPolicy('thanh-toan')">Chính sách thanh toán</span>
+        <span style="opacity:0.3;">|</span>
+        <span class="footer-link" onclick="openPolicy('giao-hang')">Chính sách giao hàng &amp; đổi trả</span>
+        <span style="opacity:0.3;">|</span>
+        <span class="footer-link" onclick="openPolicy('khieu-nai')">Phương thức khiếu nại</span>
+        <span style="opacity:0.3;">|</span>
+        <span class="footer-link" onclick="openPolicy('dieu-khoan')">Điều khoản sử dụng</span>
         <span style="opacity:0.3;">|</span>
         <span class="footer-link" onclick="openPolicy('huong-dan')">Hướng dẫn mua hàng</span>
     </div>
 </footer>
 
-<!-- ====== CÁC MODAL CHÍNH SÁCH ====== -->
+<!-- ============ CÁC MODAL CHÍNH SÁCH ============ -->
 
-<!-- 1. Chính sách đổi trả -->
-<div id="policy-doi-tra" class="policy-modal">
+<!-- 1. Chính sách bảo mật -->
+<div id="policy-bao-mat" class="policy-modal">
     <div class="policy-content">
-        <button class="policy-close" onclick="closePolicy('doi-tra')">&times;</button>
-        <h2>CHÍNH SÁCH ĐỔI TRẢ VÀ BẢO HÀNH</h2>
-        <p><em>Cập nhật lần cuối: 05/09/2026</em></p>
-
+        <button class="policy-close" onclick="closePolicy('bao-mat')">&times;</button>
+        <h2>CHÍNH SÁCH BẢO MẬT THÔNG TIN</h2>
+        <p><em>Cập nhật lần cuối: 15/09/2024</em></p>
         <h3>1. THÔNG TIN CHỦ SỞ HỮU</h3>
-        <p><strong>HỘ KINH DOANH NỆM LÊ GIA</strong><br>
-        Mã số thuế: 049088001414<br>
-        Địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng<br>
-        Hotline: 0905 513 984<br>
-        Email: nemlegia9288@gmail.com</p>
+        <p><strong>HỘ KINH DOANH NỆM LÊ GIA</strong><br>Mã số thuế: 049088001414<br>Địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng<br>Hotline: 0905 513 984<br>Email: nemlegia9288@gmail.com</p>
+        <h3>2. MỤC ĐÍCH THU THẬP THÔNG TIN</h3>
+        <ul>
+            <li>Xử lý và giao hàng các đơn hàng.</li>
+            <li>Liên hệ xác nhận đơn hàng và thông báo tình trạng giao hàng.</li>
+            <li>Hỗ trợ khách hàng giải đáp thắc mắc, khiếu nại.</li>
+            <li>Gửi thông tin khuyến mãi, ưu đãi (nếu khách đồng ý).</li>
+            <li>Cải thiện chất lượng dịch vụ và trải nghiệm mua sắm.</li>
+        </ul>
+        <h3>3. PHẠM VI THU THẬP THÔNG TIN</h3>
+        <ul>
+            <li>Họ và tên</li>
+            <li>Số điện thoại</li>
+            <li>Địa chỉ giao hàng</li>
+            <li>Email (nếu có)</li>
+            <li>Lịch sử mua hàng</li>
+        </ul>
+        <h3>4. PHẠM VI SỬ DỤNG THÔNG TIN</h3>
+        <p>Chúng tôi cam kết <strong>không bán, trao đổi hoặc cho thuê</strong> thông tin cá nhân của quý khách cho bên thứ ba. Chỉ cung cấp khi có yêu cầu từ cơ quan pháp luật.</p>
+        <h3>5. THỜI GIAN LƯU TRỮ</h3>
+        <p>Thông tin được lưu trữ trong suốt quá trình hoạt động hoặc đến khi khách hàng yêu cầu xóa.</p>
+        <h3>6. QUYỀN CỦA KHÁCH HÀNG</h3>
+        <ul>
+            <li>Yêu cầu cung cấp bản sao thông tin đang lưu trữ.</li>
+            <li>Yêu cầu chỉnh sửa, cập nhật thông tin.</li>
+            <li>Yêu cầu xóa thông tin (trừ khi pháp luật yêu cầu).</li>
+        </ul>
+        <p>Liên hệ qua hotline 0905 513 984 hoặc email: <strong>nemlegia9288@gmail.com</strong> để thực hiện các quyền trên.</p>
+        <h3>7. CAM KẾT BẢO MẬT</h3>
+        <ul>
+            <li>Áp dụng biện pháp kỹ thuật và quản lý để bảo vệ thông tin.</li>
+            <li>Mọi thông tin thanh toán qua cổng trung gian đều được mã hóa SSL.</li>
+        </ul>
+        <h3>8. LIÊN HỆ</h3>
+        <p>Nếu có thắc mắc hoặc khiếu nại về bảo mật, vui lòng liên hệ:</p>
+        <ul>
+            <li><strong>Hotline:</strong> 0905 513 984</li>
+            <li><strong>Email:</strong> nemlegia9288@gmail.com</li>
+            <li><strong>Địa chỉ:</strong> 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng</li>
+        </ul>
+    </div>
+</div>
 
-        <h3>2. ĐIỀU KIỆN ĐỔI TRẢ</h3>
+<!-- 2. Chính sách giá -->
+<div id="policy-gia" class="policy-modal">
+    <div class="policy-content">
+        <button class="policy-close" onclick="closePolicy('gia')">&times;</button>
+        <h2>CHÍNH SÁCH GIÁ</h2>
+        <p><em>Cập nhật lần cuối: 15/09/2024</em></p>
+        <h3>1. THÔNG TIN CHỦ SỞ HỮU</h3>
+        <p><strong>HỘ KINH DOANH NỆM LÊ GIA</strong><br>Mã số thuế: 049088001414<br>Địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng</p>
+        <h3>2. NGUYÊN TẮC NIÊM YẾT GIÁ</h3>
+        <ul>
+            <li>Giá niêm yết trên website là giá bán lẻ chính thức, đã bao gồm thuế giá trị gia tăng (VAT) theo quy định.</li>
+            <li>Giá được hiển thị rõ ràng bằng đơn vị tiền tệ Việt Nam Đồng (VNĐ) bên cạnh từng sản phẩm.</li>
+            <li>Giá gạch ngang (nếu có) là giá niêm yết trước khi áp dụng khuyến mãi.</li>
+            <li>Giá khuyến mãi được hiển thị bằng màu nổi bật và có badge phần trăm giảm giá rõ ràng.</li>
+        </ul>
+        <h3>3. CÁC YẾU TỐ ẢNH HƯỞNG ĐẾN GIÁ</h3>
+        <ul>
+            <li><strong>Kích thước sản phẩm:</strong> Mỗi kích thước (1m0x2m, 1m2x2m, ...) có mức giá khác nhau.</li>
+            <li><strong>Độ dày sản phẩm:</strong> Nệm có độ dày 10cm, 15cm, 20cm có giá khác nhau.</li>
+            <li><strong>Chất liệu:</strong> Nệm cao su thiên nhiên, cao su tổng hợp, bông ép, lò xo túi có mức giá khác nhau.</li>
+            <li><strong>Chương trình khuyến mãi:</strong> Các chương trình flash sale, khuyến mãi theo mùa có thể làm thay đổi giá bán.</li>
+        </ul>
+        <h3>4. PHÍ VẬN CHUYỂN</h3>
+        <ul>
+            <li><strong>Miễn phí giao hàng</strong> đối với đơn hàng trong nội thành Đà Nẵng.</li>
+            <li>Các tỉnh/thành khác: Phí vận chuyển được tính theo bảng giá của đơn vị vận chuyển và sẽ thông báo cụ thể khi xác nhận đơn hàng.</li>
+            <li>Phí vận chuyển sẽ được thông báo trước khi quý khách xác nhận đặt hàng.</li>
+        </ul>
+        <h3>5. CHÍNH SÁCH ĐIỀU CHỈNH GIÁ</h3>
+        <ul>
+            <li>Nệm Lê Gia có quyền thay đổi giá sản phẩm mà không cần báo trước.</li>
+            <li>Mọi thay đổi giá đều được cập nhật trực tiếp trên website.</li>
+            <li>Đối với đơn hàng đã được xác nhận trước thời điểm thay đổi giá, chúng tôi giữ nguyên giá đã xác nhận.</li>
+        </ul>
+        <h3>6. HÓA ĐƠN VÀ CHỨNG TỪ</h3>
+        <ul>
+            <li>Chúng tôi cung cấp hóa đơn bán hàng cho tất cả các đơn hàng.</li>
+            <li>Nếu quý khách có nhu cầu xuất hóa đơn VAT, vui lòng thông báo khi đặt hàng hoặc liên hệ hotline.</li>
+        </ul>
+        <h3>7. LIÊN HỆ</h3>
+        <p>Mọi thắc mắc về giá, vui lòng liên hệ:</p>
+        <ul>
+            <li><strong>Hotline:</strong> 0905 513 984</li>
+            <li><strong>Email:</strong> nemlegia9288@gmail.com</li>
+        </ul>
+    </div>
+</div>
+
+<!-- 3. Chính sách thanh toán -->
+<div id="policy-thanh-toan" class="policy-modal">
+    <div class="policy-content">
+        <button class="policy-close" onclick="closePolicy('thanh-toan')">&times;</button>
+        <h2>CHÍNH SÁCH THANH TOÁN</h2>
+        <p><em>Cập nhật lần cuối: 15/09/2024</em></p>
+        <h3>1. THÔNG TIN CHỦ SỞ HỮU</h3>
+        <p><strong>HỘ KINH DOANH NỆM LÊ GIA</strong><br>Mã số thuế: 049088001414<br>Địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng</p>
+        <h3>2. CÁC PHƯƠNG THỨC THANH TOÁN</h3>
+        <p>Nệm Lê Gia hiện hỗ trợ 2 hình thức thanh toán:</p>
+        <ul>
+            <li><strong>Thanh toán khi nhận hàng (COD):</strong> Quý khách thanh toán tiền mặt cho nhân viên giao hàng khi nhận được sản phẩm. Áp dụng cho tất cả đơn hàng trên toàn quốc.</li>
+            <li><strong>Chuyển khoản ngân hàng:</strong> Quý khách chuyển khoản trước theo thông tin tài khoản được cung cấp khi xác nhận đơn hàng. Sau khi chuyển khoản, vui lòng gửi ảnh giao dịch qua Zalo 0905 513 984 để xác nhận.</li>
+        </ul>
+        <h3>3. THỜI ĐIỂM THANH TOÁN</h3>
+        <ul>
+            <li><strong>Đối với COD:</strong> Thanh toán ngay khi nhận hàng và kiểm tra sản phẩm.</li>
+            <li><strong>Đối với chuyển khoản:</strong> Thanh toán trong vòng 24 giờ kể từ khi xác nhận đơn hàng.</li>
+        </ul>
+        <h3>4. XÁC NHẬN THANH TOÁN</h3>
+        <ul>
+            <li>Sau khi nhận được thanh toán, chúng tôi sẽ gửi xác nhận qua điện thoại, Zalo hoặc email.</li>
+            <li>Đối với chuyển khoản, thời gian xác nhận tối đa là 2 giờ làm việc.</li>
+        </ul>
+        <h3>5. HÓA ĐƠN</h3>
+        <ul>
+            <li>Hóa đơn bán hàng được cung cấp cho tất cả đơn hàng.</li>
+            <li>Nếu cần hóa đơn VAT, vui lòng thông báo khi đặt hàng.</li>
+        </ul>
+        <h3>6. CHÍNH SÁCH HOÀN TIỀN</h3>
+        <p>Trong trường hợp hủy đơn hàng hoặc đổi trả sản phẩm, tiền sẽ được hoàn lại theo phương thức:</p>
+        <ul>
+            <li>Chuyển khoản ngân hàng trong vòng 5-7 ngày làm việc.</li>
+            <li>Hoặc hoàn bằng mã giảm giá cho đơn hàng kế tiếp (nếu khách hàng đồng ý).</li>
+        </ul>
+        <h3>7. LIÊN HỆ</h3>
+        <p>Mọi thắc mắc về thanh toán, vui lòng liên hệ:</p>
+        <ul>
+            <li><strong>Hotline:</strong> 0905 513 984</li>
+            <li><strong>Email:</strong> nemlegia9288@gmail.com</li>
+        </ul>
+    </div>
+</div>
+
+<!-- 4. Chính sách giao hàng & đổi trả -->
+<div id="policy-giao-hang" class="policy-modal">
+    <div class="policy-content">
+        <button class="policy-close" onclick="closePolicy('giao-hang')">&times;</button>
+        <h2>CHÍNH SÁCH GIAO HÀNG, ĐỔI TRẢ VÀ HOÀN TIỀN</h2>
+        <p><em>Cập nhật lần cuối: 15/09/2024</em></p>
+        <h3>1. THÔNG TIN CHỦ SỞ HỮU</h3>
+        <p><strong>HỘ KINH DOANH NỆM LÊ GIA</strong><br>Mã số thuế: 049088001414<br>Địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng</p>
+
+        <h3>2. CHÍNH SÁCH GIAO HÀNG</h3>
+        <p><strong>Khu vực giao hàng:</strong></p>
+        <ul>
+            <li>Giao hàng toàn quốc.</li>
+            <li>Miễn phí giao hàng nội thành Đà Nẵng.</li>
+            <li>Các tỉnh/thành khác: phí vận chuyển tính theo bảng giá của đơn vị vận chuyển.</li>
+        </ul>
+        <p><strong>Thời gian giao hàng:</strong></p>
+        <ul>
+            <li>Đà Nẵng: 1-2 ngày làm việc.</li>
+            <li>Các tỉnh lân cận: 2-4 ngày làm việc.</li>
+            <li>Các tỉnh xa: 4-7 ngày làm việc.</li>
+        </ul>
+        <p><strong>Trách nhiệm khi giao hàng:</strong></p>
+        <ul>
+            <li>Quý khách vui lòng kiểm tra sản phẩm trước khi thanh toán (đối với COD).</li>
+            <li>Nếu sản phẩm có dấu hiệu hư hỏng, quý khách có quyền từ chối nhận hàng.</li>
+        </ul>
+
+        <h3>3. ĐIỀU KIỆN ĐỔI TRẢ</h3>
         <p>Quý khách có thể yêu cầu đổi trả trong các trường hợp sau:</p>
         <ul>
-            <li>Sản phẩm bị lỗi kỹ thuật do nhà sản xuất (lò xo gãy, móp méo, hỏng lớp mút…)</li>
+            <li>Sản phẩm bị lỗi kỹ thuật do nhà sản xuất.</li>
             <li>Sản phẩm sai kích thước, sai mẫu mã so với đơn hàng.</li>
-            <li>Sản phẩm bị hư hỏng trong quá trình vận chuyển (bể, vỡ, trầy xước nặng).</li>
+            <li>Sản phẩm bị hư hỏng trong quá trình vận chuyển.</li>
         </ul>
         <p><strong>Điều kiện áp dụng:</strong></p>
         <ul>
             <li>Thông báo trong vòng 7 ngày kể từ ngày nhận hàng.</li>
-            <li>Sản phẩm còn nguyên vẹn, chưa qua sử dụng, còn tem mác, hộp đựng.</li>
+            <li>Sản phẩm còn nguyên vẹn, chưa qua sử dụng, còn tem mác.</li>
             <li>Có kèm hóa đơn hoặc xác nhận đơn hàng.</li>
-        </ul>
-
-        <h3>3. TRƯỜNG HỢP KHÔNG ĐƯỢC ĐỔI TRẢ</h3>
-        <ul>
-            <li>Sản phẩm đã qua sử dụng hoặc bị trầy xước do khách hàng.</li>
-            <li>Hàng đặt may theo yêu cầu riêng (kích thước đặc biệt, màu sắc riêng).</li>
-            <li>Hàng không còn tem, mác hoặc bao bì nguyên bản.</li>
         </ul>
 
         <h3>4. QUY TRÌNH ĐỔI TRẢ</h3>
@@ -823,29 +783,21 @@
 
         <h3>5. CHI PHÍ ĐỔI TRẢ</h3>
         <ul>
-            <li>Lỗi từ phía Nệm Lê Gia (giao sai, lỗi sản xuất) → <strong>Miễn phí</strong> đổi trả và vận chuyển.</li>
+            <li>Lỗi từ phía Nệm Lê Gia → <strong>Miễn phí</strong> đổi trả và vận chuyển.</li>
             <li>Khách hàng đổi trả do không ưng ý → Khách chịu chi phí vận chuyển cả 2 chiều.</li>
         </ul>
 
-        <h3>6. CHÍNH SÁCH BẢO HÀNH CHI TIẾT</h3>
+        <h3>6. CHÍNH SÁCH BẢO HÀNH</h3>
         <table>
-            <tr><th>Sản phẩm</th><th>Thời gian bảo hành</th><th>Điều kiện áp dụng</th></tr>
-            <tr><td>Nệm lò xo túi (Platinum, Elan, Celina, Premium)</td><td>10 - 12 năm (tùy sản phẩm)</td><td>Lỗi kỹ thuật, lò xo xẹp, gãy</td></tr>
-            <tr><td>Nệm cao su thiên nhiên (Vạn Thành, Đồng Phú, Liên Á, Thắng Lợi, PNG)</td><td>5 - 15 năm (tùy sản phẩm)</td><td>Xẹp lún quá mức</td></tr>
-            <tr><td>Nệm cao su tổng hợp (Lotus, Diamond, CSN Thắng Lợi)</td><td>5 - 10 năm (tùy sản phẩm)</td><td>Lỗi từ nhà sản xuất</td></tr>
-            <tr><td>Nệm bông ép (Everon, Seoul)</td><td>5 - 10 năm (tùy sản phẩm)</td><td>Xẹp lún</td></tr>
-            <tr><td>Phụ kiện (Bảo vệ nệm, Topper)</td><td>1 tháng</td><td>Lỗi kỹ thuật từ nhà sản xuất</td></tr>
+            <tr><th>Sản phẩm</th><th>Thời gian bảo hành</th></tr>
+            <tr><td>Nệm lò xo túi (Platinum, Elan, Celina, Premium)</td><td>10 - 12 năm</td></tr>
+            <tr><td>Nệm cao su thiên nhiên (Vạn Thành, Đồng Phú, Liên Á, Thắng Lợi, PNG)</td><td>5 - 15 năm</td></tr>
+            <tr><td>Nệm cao su tổng hợp (Lotus, Diamond, CSN Thắng Lợi)</td><td>5 - 10 năm</td></tr>
+            <tr><td>Nệm bông ép (Everon, Seoul)</td><td>5 - 10 năm</td></tr>
+            <tr><td>Phụ kiện (Bảo vệ nệm, Topper)</td><td>1 tháng</td></tr>
         </table>
-        <p><strong>Lưu ý:</strong> Bảo hành không bao gồm hao mòn tự nhiên, vết bẩn, hư hỏng do tác động ngoại lực.</p>
 
-        <h3>7. QUY TRÌNH BẢO HÀNH</h3>
-        <ul>
-            <li>Liên hệ hotline 0905 513 984, cung cấp mã đơn hàng/hóa đơn.</li>
-            <li>Kiểm tra và xác nhận tình trạng sản phẩm.</li>
-            <li>Nếu đủ điều kiện, sửa chữa hoặc thay thế miễn phí.</li>
-        </ul>
-
-        <h3>8. CHÍNH SÁCH HOÀN TIỀN</h3>
+        <h3>7. CHÍNH SÁCH HOÀN TIỀN</h3>
         <ul>
             <li>Hoàn tiền qua chuyển khoản ngân hàng trong 5-7 ngày làm việc.</li>
             <li>Hoặc hoàn bằng mã giảm giá cho đơn hàng kế tiếp (nếu khách chọn).</li>
@@ -853,118 +805,178 @@
     </div>
 </div>
 
-<!-- 2. Chính sách bảo mật -->
-<div id="policy-bao-mat" class="policy-modal">
+<!-- 5. Phương thức khiếu nại -->
+<div id="policy-khieu-nai" class="policy-modal">
     <div class="policy-content">
-        <button class="policy-close" onclick="closePolicy('bao-mat')">&times;</button>
-        <h2>CHÍNH SÁCH BẢO MẬT THÔNG TIN</h2>
-        <p><em>Cập nhật lần cuối: 05/09/2026</em></p>
-
+        <button class="policy-close" onclick="closePolicy('khieu-nai')">&times;</button>
+        <h2>PHƯƠNG THỨC TIẾP NHẬN VÀ GIẢI QUYẾT KHIẾU NẠI</h2>
+        <p><em>Cập nhật lần cuối: 15/09/2024</em></p>
         <h3>1. THÔNG TIN CHỦ SỞ HỮU</h3>
-        <p><strong>HỘ KINH DOANH NỆM LÊ GIA</strong><br>
-        Mã số thuế: 049088001414<br>
-        Địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng<br>
-        Hotline: 0905 513 984<br>
-        Email: nemlegia9288@gmail.com</p>
+        <p><strong>HỘ KINH DOANH NỆM LÊ GIA</strong><br>Mã số thuế: 049088001414<br>Địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng</p>
 
-        <h3>2. MỤC ĐÍCH THU THẬP THÔNG TIN</h3>
+        <h3>2. CÁC KÊNH TIẾP NHẬN KHIẾU NẠI</h3>
+        <p>Quý khách có thể gửi phản ánh, yêu cầu, khiếu nại qua các kênh sau:</p>
         <ul>
-            <li>Xử lý và giao hàng các đơn hàng.</li>
-            <li>Liên hệ xác nhận đơn hàng và thông báo tình trạng giao hàng.</li>
-            <li>Hỗ trợ khách hàng giải đáp thắc mắc, khiếu nại.</li>
-            <li>Gửi thông tin khuyến mãi, ưu đãi (nếu khách đồng ý).</li>
-            <li>Cải thiện chất lượng dịch vụ và trải nghiệm mua sắm.</li>
+            <li><strong>Hotline:</strong> 0905 513 984 (Thời gian: 8h00 - 21h00 hàng ngày)</li>
+            <li><strong>Email:</strong> nemlegia9288@gmail.com</li>
+            <li><strong>Zalo:</strong> 0905 513 984</li>
+            <li><strong>Facebook Messenger:</strong> m.me/nemlegia</li>
+            <li><strong>Địa chỉ trực tiếp:</strong> 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng</li>
         </ul>
 
-        <h3>3. PHẠM VI THU THẬP THÔNG TIN</h3>
+        <h3>3. QUY TRÌNH TIẾP NHẬN VÀ GIẢI QUYẾT KHIẾU NẠI</h3>
+        <ol>
+            <li><strong>Bước 1 - Tiếp nhận:</strong> Quý khách gửi khiếu nại qua một trong các kênh trên, cung cấp thông tin đơn hàng, nội dung khiếu nại và bằng chứng liên quan (hình ảnh, video nếu có).</li>
+            <li><strong>Bước 2 - Xác nhận:</strong> Nệm Lê Gia tiếp nhận và xác nhận khiếu nại trong vòng 24 giờ làm việc.</li>
+            <li><strong>Bước 3 - Xác minh:</strong> Tiến hành xác minh thông tin, trao đổi với khách hàng để làm rõ vấn đề.</li>
+            <li><strong>Bước 4 - Giải quyết:</strong> Đưa ra phương án giải quyết (đổi trả, bồi thường, hoàn tiền) trong vòng 3 ngày làm việc kể từ khi xác minh xong.</li>
+            <li><strong>Bước 5 - Thông báo kết quả:</strong> Thông báo kết quả cho quý khách và thực hiện phương án đã thống nhất.</li>
+        </ol>
+
+        <h3>4. THỜI GIAN GIẢI QUYẾT</h3>
         <ul>
-            <li>Họ và tên</li>
-            <li>Số điện thoại</li>
-            <li>Địa chỉ giao hàng</li>
-            <li>Email (nếu có)</li>
-            <li>Lịch sử mua hàng</li>
+            <li>Thời gian giải quyết tối đa: <strong>5 ngày làm việc</strong> kể từ khi nhận được khiếu nại hợp lệ.</li>
+            <li>Trường hợp phức tạp cần thêm thời gian xác minh, chúng tôi sẽ thông báo cụ thể cho quý khách.</li>
         </ul>
 
-        <h3>4. PHẠM VI SỬ DỤNG THÔNG TIN</h3>
-        <p>Chúng tôi cam kết <strong>không bán, trao đổi hoặc cho thuê</strong> thông tin cá nhân của quý khách cho bên thứ ba. Chỉ cung cấp khi có yêu cầu từ cơ quan pháp luật.</p>
-
-        <h3>5. THỜI GIAN LƯU TRỮ</h3>
-        <p>Thông tin được lưu trữ trong suốt quá trình hoạt động hoặc đến khi khách hàng yêu cầu xóa.</p>
-
-        <h3>6. QUYỀN CỦA KHÁCH HÀNG</h3>
+        <h3>5. TRÁCH NHIỆM CỦA KHÁCH HÀNG</h3>
         <ul>
-            <li>Yêu cầu cung cấp bản sao thông tin đang lưu trữ.</li>
-            <li>Yêu cầu chỉnh sửa, cập nhật thông tin.</li>
-            <li>Yêu cầu xóa thông tin (trừ khi pháp luật yêu cầu).</li>
-        </ul>
-        <p>Liên hệ qua hotline 0905 513 984 hoặc email: <strong>nemlegia9288@gmail.com</strong> để thực hiện các quyền trên.</p>
-
-        <h3>7. CAM KẾT BẢO MẬT</h3>
-        <ul>
-            <li>Áp dụng biện pháp kỹ thuật và quản lý để bảo vệ thông tin.</li>
-            <li>Mọi thông tin thanh toán qua cổng trung gian đều được mã hóa SSL.</li>
+            <li>Cung cấp thông tin trung thực, đầy đủ, chính xác.</li>
+            <li>Hợp tác với chúng tôi trong quá trình giải quyết khiếu nại.</li>
+            <li>Không sử dụng các biện pháp gây ảnh hưởng đến uy tín của Nệm Lê Gia khi chưa có kết luận chính thức.</li>
         </ul>
 
-        <h3>8. LIÊN HỆ</h3>
-        <p>Nếu có thắc mắc hoặc khiếu nại về bảo mật, vui lòng liên hệ:</p>
+        <h3>6. CAM KẾT</h3>
+        <p>Nệm Lê Gia cam kết giải quyết mọi khiếu nại của khách hàng một cách công bằng, minh bạch, đúng quy định pháp luật. Mọi thông tin khiếu nại của khách hàng đều được bảo mật.</p>
+
+        <h3>7. LIÊN HỆ</h3>
+        <p>Nếu cần hỗ trợ thêm, vui lòng liên hệ:</p>
         <ul>
             <li><strong>Hotline:</strong> 0905 513 984</li>
             <li><strong>Email:</strong> nemlegia9288@gmail.com</li>
-            <li><strong>Địa chỉ:</strong> 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng</li>
         </ul>
     </div>
 </div>
 
-<!-- 3. Hướng dẫn mua hàng -->
+<!-- 6. Điều khoản sử dụng -->
+<div id="policy-dieu-khoan" class="policy-modal">
+    <div class="policy-content">
+        <button class="policy-close" onclick="closePolicy('dieu-khoan')">&times;</button>
+        <h2>ĐIỀU KHOẢN SỬ DỤNG VÀ ĐIỀU KIỆN CUNG CẤP HÀNG HÓA</h2>
+        <p><em>Cập nhật lần cuối: 15/09/2024</em></p>
+        <h3>1. THÔNG TIN CHỦ SỞ HỮU</h3>
+        <p><strong>HỘ KINH DOANH NỆM LÊ GIA</strong><br>Mã số thuế: 049088001414<br>Địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng</p>
+
+        <h3>2. ĐIỀU KIỆN VÀ HẠN CHẾ TRONG VIỆC CUNG CẤP HÀNG HÓA</h3>
+        <p><strong>2.1. Độ tuổi mua hàng:</strong></p>
+        <ul>
+            <li>Khách hàng phải từ 18 tuổi trở lên hoặc có người giám hộ hợp pháp khi thực hiện giao dịch.</li>
+            <li>Khách hàng chịu trách nhiệm về tính chính xác của thông tin cá nhân cung cấp.</li>
+        </ul>
+        <p><strong>2.2. Giới hạn số lượng:</strong></p>
+        <ul>
+            <li>Đối với các sản phẩm khuyến mãi, mỗi khách hàng chỉ được mua tối đa 5 sản phẩm/đơn hàng (trừ khi có thỏa thuận khác).</li>
+            <li>Đơn hàng dự án số lượng lớn, vui lòng liên hệ hotline để được tư vấn và báo giá riêng.</li>
+        </ul>
+        <p><strong>2.3. Khu vực giao hàng:</strong></p>
+        <ul>
+            <li>Chúng tôi giao hàng trên toàn quốc.</li>
+            <li>Miễn phí vận chuyển cho đơn hàng nội thành Đà Nẵng.</li>
+            <li>Các tỉnh/thành khác: phí vận chuyển tính theo bảng giá của đơn vị vận chuyển.</li>
+        </ul>
+        <p><strong>2.4. Điều kiện thanh toán:</strong></p>
+        <ul>
+            <li>COD: áp dụng cho đơn hàng có tổng giá trị dưới 50.000.000 VNĐ.</li>
+            <li>Chuyển khoản ngân hàng: áp dụng cho mọi đơn hàng.</li>
+        </ul>
+        <p><strong>2.5. Các trường hợp từ chối cung cấp hàng hóa:</strong></p>
+        <ul>
+            <li>Khách hàng cung cấp thông tin giả mạo, không chính xác.</li>
+            <li>Khách hàng có dấu hiệu lừa đảo hoặc vi phạm pháp luật.</li>
+            <li>Đơn hàng có dấu hiệu bất thường (số lượng lớn, địa chỉ không rõ ràng).</li>
+        </ul>
+
+        <h3>3. ĐIỀU KHOẢN SỬ DỤNG WEBSITE</h3>
+        <p><strong>3.1. Chấp nhận điều khoản:</strong></p>
+        <ul>
+            <li>Bằng việc sử dụng website legia.pro.vn và đặt hàng, quý khách đồng ý với tất cả điều khoản được nêu ở đây.</li>
+        </ul>
+        <p><strong>3.2. Thông tin chính xác:</strong></p>
+        <ul>
+            <li>Quý khách cam kết cung cấp thông tin cá nhân và địa chỉ giao hàng chính xác, trung thực.</li>
+            <li>Nếu thông tin sai dẫn đến giao hàng thất bại, quý khách sẽ chịu chi phí phát sinh.</li>
+        </ul>
+        <p><strong>3.3. Bảo mật tài khoản:</strong></p>
+        <ul>
+            <li>Quý khách tự chịu trách nhiệm bảo mật thông tin tài khoản (nếu có) khi sử dụng website.</li>
+        </ul>
+        <p><strong>3.4. Thay đổi đơn hàng:</strong></p>
+        <ul>
+            <li>Nếu muốn thay đổi hoặc hủy đơn hàng, quý khách vui lòng liên hệ với chúng tôi trong vòng 1 giờ sau khi đặt hàng.</li>
+            <li>Sau thời gian này, đơn hàng có thể đã được xử lý và sẽ áp dụng chính sách đổi trả thông thường.</li>
+        </ul>
+
+        <h3>4. QUYỀN VÀ NGHĨA VỤ CỦA NỆM LÊ GIA</h3>
+        <ul>
+            <li>Cung cấp hàng hóa đúng chất lượng, số lượng, chủng loại đã thỏa thuận.</li>
+            <li>Bảo mật thông tin khách hàng theo chính sách bảo mật.</li>
+            <li>Giải quyết khiếu nại của khách hàng theo đúng quy định.</li>
+            <li>Có quyền từ chối cung cấp hàng hóa trong các trường hợp nêu tại Mục 2.5.</li>
+        </ul>
+
+        <h3>5. QUYỀN VÀ NGHĨA VỤ CỦA KHÁCH HÀNG</h3>
+        <ul>
+            <li>Được cung cấp hàng hóa đúng chất lượng, số lượng đã thỏa thuận.</li>
+            <li>Được bảo vệ thông tin cá nhân theo chính sách bảo mật.</li>
+            <li>Thanh toán đầy đủ và đúng hạn.</li>
+            <li>Tuân thủ các điều khoản sử dụng website.</li>
+        </ul>
+
+        <h3>6. GIẢI QUYẾT TRANH CHẤP</h3>
+        <p>Mọi tranh chấp phát sinh sẽ được giải quyết trên tinh thần thỏa thuận. Nếu không thể thỏa thuận, vụ việc sẽ được đưa ra Tòa án nhân dân có thẩm quyền tại Đà Nẵng để giải quyết theo quy định của pháp luật Việt Nam.</p>
+
+        <h3>7. HIỆU LỰC</h3>
+        <p>Điều khoản sử dụng này có hiệu lực kể từ ngày 15/09/2024 và có thể được sửa đổi, bổ sung bất kỳ lúc nào. Mọi thay đổi sẽ được thông báo trên website.</p>
+
+        <h3>8. LIÊN HỆ</h3>
+        <ul>
+            <li><strong>Hotline:</strong> 0905 513 984</li>
+            <li><strong>Email:</strong> nemlegia9288@gmail.com</li>
+        </ul>
+    </div>
+</div>
+
+<!-- 7. Hướng dẫn mua hàng -->
 <div id="policy-huong-dan" class="policy-modal">
     <div class="policy-content">
         <button class="policy-close" onclick="closePolicy('huong-dan')">&times;</button>
-        <h2>HƯỚNG DẪN MUA HÀNG &amp; ĐIỀU KHOẢN SỬ DỤNG</h2>
-        <p><em>Cập nhật lần cuối: 05/09/2026</em></p>
-
+        <h2>HƯỚNG DẪN MUA HÀNG</h2>
+        <p><em>Cập nhật lần cuối: 15/09/2024</em></p>
         <h3>1. THÔNG TIN CHỦ SỞ HỮU</h3>
-        <p><strong>HỘ KINH DOANH NỆM LÊ GIA</strong><br>
-        Mã số thuế: 049088001414<br>
-        Địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng<br>
-        Hotline: 0905 513 984<br>
-        Email: nemlegia9288@gmail.com</p>
-
+        <p><strong>HỘ KINH DOANH NỆM LÊ GIA</strong><br>Mã số thuế: 049088001414<br>Địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng</p>
         <h3>2. HƯỚNG DẪN ĐẶT HÀNG</h3>
         <ol>
-            <li><strong>Chọn sản phẩm:</strong> Truy cập website, chọn sản phẩm mong muốn.</li>
+            <li><strong>Chọn sản phẩm:</strong> Truy cập website legia.pro.vn, chọn sản phẩm mong muốn.</li>
             <li><strong>Chọn kích thước và số lượng:</strong> Tại trang chi tiết, chọn kích thước và số lượng, nhấn "Thêm vào giỏ".</li>
             <li><strong>Xem giỏ hàng:</strong> Click biểu tượng giỏ hàng để kiểm tra, có thể điều chỉnh số lượng hoặc xóa.</li>
             <li><strong>Tiến hành đặt hàng:</strong> Nhấn "Tiến hành đặt hàng", điền đầy đủ thông tin: họ tên, số điện thoại, địa chỉ, ghi chú.</li>
             <li><strong>Xác nhận đơn hàng:</strong> Nhấn "XÁC NHẬN ĐẶT HÀNG". Chúng tôi sẽ xử lý đơn hàng của bạn.</li>
         </ol>
-
         <h3>3. PHƯƠNG THỨC THANH TOÁN</h3>
         <ul>
             <li><strong>COD:</strong> Thanh toán tiền mặt khi nhận hàng.</li>
             <li><strong>Chuyển khoản ngân hàng:</strong> Chuyển khoản trước và gửi ảnh giao dịch qua Zalo để xác nhận.</li>
         </ul>
-
         <h3>4. PHƯƠNG THỨC GIAO NHẬN</h3>
         <ul>
             <li><strong>Khu vực:</strong> Miễn phí nội thành Đà Nẵng. Các tỉnh khác liên hệ để được báo giá.</li>
             <li><strong>Thời gian:</strong> Đà Nẵng 1-2 ngày; các tỉnh lân cận 2-4 ngày; các tỉnh xa 4-7 ngày.</li>
         </ul>
-
-        <h3>5. ĐIỀU KHOẢN SỬ DỤNG</h3>
+        <h3>5. LIÊN HỆ</h3>
         <ul>
-            <li><strong>Chấp nhận điều khoản:</strong> Khi sử dụng website và đặt hàng, quý khách đồng ý với tất cả điều khoản.</li>
-            <li><strong>Thông tin chính xác:</strong> Quý khách cam kết cung cấp thông tin chính xác, trung thực.</li>
-            <li><strong>Bảo mật tài khoản:</strong> Quý khách tự chịu trách nhiệm bảo mật thông tin tài khoản.</li>
-            <li><strong>Thay đổi đơn hàng:</strong> Liên hệ trong vòng 1 giờ sau khi đặt hàng để thay đổi hoặc hủy.</li>
-            <li><strong>Giải quyết tranh chấp:</strong> Thỏa thuận trước; nếu không thành, đưa ra Tòa án nhân dân có thẩm quyền tại Đà Nẵng.</li>
+            <li><strong>Hotline:</strong> 0905 513 984</li>
+            <li><strong>Email:</strong> nemlegia9288@gmail.com</li>
         </ul>
-
-        <h3>6. LIÊN HỆ</h3>
-        <p><strong>HỘ KINH DOANH NỆM LÊ GIA</strong><br>
-        Địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng<br>
-        Hotline: 0905 513 984<br>
-        Zalo: 0905 513 984<br>
-        Email: nemlegia9288@gmail.com</p>
     </div>
 </div>
 
@@ -995,7 +1007,6 @@
             document.body.style.overflow = '';
         }
     }
-    // Đóng modal khi click ra ngoài
     document.querySelectorAll('.policy-modal').forEach(function(modal) {
         modal.addEventListener('click', function(e) {
             if (e.target === this) {
@@ -1004,7 +1015,6 @@
             }
         });
     });
-    // Đóng modal bằng phím ESC
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             document.querySelectorAll('.policy-modal.active').forEach(function(modal) {
@@ -1015,25 +1025,17 @@
     });
 
     // ====== TOÀN BỘ JAVASCRIPT CỦA WEBSITE ======
-    // Đây là phần đầy đủ tất cả chức năng
-
     const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xwvwzorl';
     const PHONE_NUMBER = "0905513984";
-
-    function discountedPrice(original, percent) {
-        return Math.round(original * (100 - percent) / 100 / 1000) * 1000;
-    }
+    function discountedPrice(original, percent) { return Math.round(original * (100 - percent) / 100 / 1000) * 1000; }
 
     const productsDB = {
-        // Các sản phẩm cũ (đã có đầy đủ từ trước)
         "van-thanh": {
             name: "NỆM CSTN VẠN THÀNH",
             desc: "Nệm cao su thiên nhiên Vạn Thành được sản xuất từ mủ cao su nguyên chất, giúp kháng khuẩn tự nhiên, ngăn ngừa nấm mốc và các tác nhân gây dị ứng. Với cấu trúc đàn hồi vượt trội, sản phẩm nâng đỡ cột sống tối ưu, mang lại giấc ngủ sâu và thoải mái. Thoáng khí tốt, không bí bách, phù hợp với mọi Khách Hàng, đặc biệt là người lớn tuổi và trẻ nhỏ. Giảm ngay 22%.",
             img: "https://i.ibb.co/dJ7JD98q/nem-cao-su-unique-5-1.jpg",
             oldPrices: { "1m x 2m x 10cm":9910000,"1m2 x 2m x 10cm":11300000,"1m4 x 2m x 10cm":13070000,"1m6 x 2m x 10cm":14340000,"1m8 x 2m x 10cm":16150000,"2m x 2m x 10cm":18530000 },
-            discountPercent: 22,
-            category: "cao-su-thien-nhien",
-            slug: "van-thanh",
+            discountPercent: 22, category: "cao-su-thien-nhien", slug: "van-thanh",
             keywords: ["cao su thiên nhiên", "nệm cao su", "cao su tự nhiên", "kháng khuẩn", "thoáng khí", "nâng đỡ cột sống"]
         },
         "dong-phu": {
@@ -1041,9 +1043,7 @@
             desc: "Nệm cao su thiên nhiên Đồng Phú dòng Friendly được chiết xuất từ mủ cao su tự nhiên tinh khiết, mang lại sự êm ái, mềm mại nhưng vẫn đảm bảo độ nâng đỡ cần thiết. Bề mặt nệm thoáng khí, không gây bí nhiệt, giúp bạn duy trì giấc ngủ liên tục và sâu giấc. Đặc biệt, sản phẩm có độ bền cao, ít bị xẹp lún theo thời gian. Ưu đãi giảm 28% – quá hời để sở hữu.",
             img: "https://i.ibb.co/Q7sZgRNQ/nem-cao-su-thien-nhien-friendly-dong-phu-1-1.jpg",
             oldPrices: { "1m x 2m x 10cm":8700000,"1m2 x 2m x 10cm":9700000,"1m4 x 2m x 10cm":11250000,"1m6 x 2m x 10cm":12750000,"1m8 x 2m x 10cm":14450000,"2m x 2m x 10cm":16450000,"2m2 x 2m x 10cm":17950000 },
-            discountPercent: 28,
-            category: "cao-su-thien-nhien",
-            slug: "dong-phu",
+            discountPercent: 28, category: "cao-su-thien-nhien", slug: "dong-phu",
             keywords: ["cao su thiên nhiên", "friendly", "êm ái", "bền bỉ", "thoáng khí"]
         },
         "lien-a": {
@@ -1051,9 +1051,7 @@
             desc: "Nệm cao su thiên nhiên Liên Á Classic là lựa chọn hoàn hảo cho những ai yêu thích sự nguyên chất và an toàn. Với 100% mủ cao su tự nhiên, nệm có độ đàn hồi lý tưởng, hỗ trợ cột sống và các khớp xương, giảm áp lực khi nằm. Đặc tính không gây dị ứng, không mùi hóa chất, rất thân thiện với làn da nhạy cảm. Được giảm 16%, đây là cơ hội tốt để nâng cấp giấc ngủ của bạn.",
             img: "https://i.ibb.co/zW9TWT9v/Nem-CSTN-Lien-A-Classic-1.jpg",
             oldPrices: { "1m0 x 2m x 10cm":9490000,"1m2 x 2m x 10cm":10690000,"1m4 x 2m x 10cm":12290000,"1m6 x 2m x 10cm":13690000,"1m8 x 2m x 10cm":15690000 },
-            discountPercent: 16,
-            category: "cao-su-thien-nhien",
-            slug: "lien-a",
+            discountPercent: 16, category: "cao-su-thien-nhien", slug: "lien-a",
             keywords: ["cao su thiên nhiên", "nguyên chất", "đàn hồi", "không dị ứng"]
         },
         "thang-loi": {
@@ -1061,9 +1059,7 @@
             desc: "Nệm cao su thiên nhiên Thắng Lợi thuộc dòng cao cấp với mật độ cao su dày đặc, mang lại độ cứng vừa phải và khả năng nâng đỡ tuyệt vời. Sản phẩm được thiết kế để phân tán trọng lực cơ thể, giúp giảm đau lưng và căng cơ sau một ngày làm việc. Chất liệu cao su tự nhiên giúp điều hòa nhiệt độ, mát mẻ vào mùa hè và ấm áp vào mùa đông. Bền bỉ theo thời gian, giảm giá sốc 40% – đừng bỏ lỡ!",
             img: "https://i.ibb.co/4ZP1M9Hy/nemthangloichinhhang-vn-cstn-susu-original-cao-su-thien-nhien-1.png",
             oldPrices: { "1m0 x 2m x 10cm":12333000,"1m2 x 2m x 10cm":12833000,"1m4 x 2m x 10cm":13917000,"1m6 x 2m x 10cm":15000000,"1m8 x 2m x 10cm":17083000 },
-            discountPercent: 40,
-            category: "cao-su-thien-nhien",
-            slug: "thang-loi",
+            discountPercent: 40, category: "cao-su-thien-nhien", slug: "thang-loi",
             keywords: ["cao su thiên nhiên", "cao cấp", "siêu bền", "điều hòa nhiệt độ"]
         },
         "png": {
@@ -1071,9 +1067,7 @@
             desc: "Nệm cao su thiên nhiên PNG được sản xuất từ nguồn mủ cao su thiên nhiên chất lượng cao trong nước, đáp ứng tiêu chuẩn khắt khe về an toàn sức khỏe. Sản phẩm có độ đàn hồi tốt, khả năng nâng đỡ vượt trội, giúp giảm áp lực lên cột sống và các khớp xương. Bề mặt thoáng khí, không gây bí nhiệt, kháng khuẩn tự nhiên và không gây dị ứng. Đặc biệt, nệm có độ bền cao, ít bị xẹp lún theo thời gian, mang lại giấc ngủ thoải mái và bền bỉ. Giảm ngay 40%, cơ hội sở hữu sản phẩm chất lượng với giá ưu đãi.",
             img: "https://i.ibb.co/DjmcrVB/3-18-1.jpg",
             oldPrices: { "1m6 x 2m x 10cm":9888000, "1m8 x 2m x 10cm":10900000 },
-            discountPercent: 40,
-            category: "cao-su-thien-nhien",
-            slug: "png",
+            discountPercent: 40, category: "cao-su-thien-nhien", slug: "png",
             keywords: ["cao su thiên nhiên", "trong nước", "đàn hồi", "bền bỉ", "kháng khuẩn"]
         },
         "csn-thang-loi": {
@@ -1081,9 +1075,7 @@
             desc: "Nệm cao su tổng hợp CSN Thắng Lợi được sản xuất từ hợp chất cao su chất lượng cao, mang lại độ đàn hồi tốt và khả năng chịu lực vượt trội. Với cấu trúc đặc khít, nệm có độ cứng vừa phải, hỗ trợ cột sống và phân tán áp lực hiệu quả. Sản phẩm có nhiều độ dày 10cm, 15cm, 20cm để bạn lựa chọn, phù hợp với nhiều nhu cầu sử dụng khác nhau. Bề mặt thoáng khí, không gây bí nhiệt, dễ vệ sinh. Đặc biệt, với mức giảm lên đến 55%, đây là giải pháp tiết kiệm và chất lượng cho mọi gia đình.",
             img: "https://i.ibb.co/pvR7j6Jt/csn-thangloi.jpg",
             oldPrices: { "1m0 x 2m x 10cm":3500000,"1m2 x 2m x 10cm":3722000,"1m4 x 2m x 10cm":3944000,"1m6 x 2m x 10cm":4167000,"1m8 x 2m x 10cm":4611000, "1m0 x 2m x 15cm":4944000,"1m2 x 2m x 15cm":5167000,"1m4 x 2m x 15cm":5389000,"1m6 x 2m x 15cm":5611000,"1m8 x 2m x 15cm":6056000, "1m0 x 2m x 20cm":6167000,"1m2 x 2m x 20cm":6389000,"1m4 x 2m x 20cm":6611000,"1m6 x 2m x 20cm":6833000,"1m8 x 2m x 20cm":7278000 },
-            discountPercent: 55,
-            category: "cao-su-tong-hop",
-            slug: "csn-thang-loi",
+            discountPercent: 55, category: "cao-su-tong-hop", slug: "csn-thang-loi",
             keywords: ["cao su tổng hợp", "thắng lợi", "chất lượng cao", "độ dày đa dạng"]
         },
         "diamond": {
@@ -1091,9 +1083,7 @@
             desc: "Nệm cao su tổng hợp Diamond được sản xuất từ công nghệ hiện đại, kết hợp giữa độ đàn hồi và độ cứng lý tưởng. Sản phẩm mang lại cảm giác êm ái nhưng vẫn có khả năng nâng đỡ tốt, giúp giảm đau mỏi và căng thẳng sau ngày dài. Với nhiều kích thước và độ dày đa dạng (10cm, 15cm, 20cm), Diamond phù hợp với mọi không gian phòng ngủ. Chất liệu cao su tổng hợp cao cấp giúp sản phẩm bền bỉ, chống mối mọt và ít bị biến dạng. Giảm giá 50% – cơ hội vàng để nâng cấp giấc ngủ của bạn.",
             img: "https://i.ibb.co/nqHhmggT/diamond.jpg",
             oldPrices: { "1m0 x 2m x 10cm":3560000,"1m2 x 2m x 10cm":3760000,"1m4 x 2m x 10cm":3960000,"1m6 x 2m x 10cm":4160000,"1m8 x 2m x 10cm":4360000, "1m0 x 2m x 15cm":4140000,"1m2 x 2m x 15cm":4480000,"1m4 x 2m x 15cm":4820000,"1m6 x 2m x 15cm":5160000,"1m8 x 2m x 15cm":5640000, "1m0 x 2m x 20cm":5160000,"1m2 x 2m x 20cm":5560000,"1m4 x 2m x 20cm":5960000,"1m6 x 2m x 20cm":6360000,"1m8 x 2m x 20cm":6900000 },
-            discountPercent: 50,
-            category: "cao-su-tong-hop",
-            slug: "diamond",
+            discountPercent: 50, category: "cao-su-tong-hop", slug: "diamond",
             keywords: ["cao su tổng hợp", "diamond", "đàn hồi", "bền bỉ"]
         },
         "everon": {
@@ -1101,9 +1091,7 @@
             desc: "Nệm bông ép Everon là sản phẩm mang thương hiệu Hàn Quốc, được sản xuất trên dây chuyền công nghệ tiên tiến, đảm bảo chất lượng vượt trội. Lõi bông ép có mật độ cao, tạo độ cứng vừa phải, hỗ trợ cột sống và giảm áp lực lên các khớp xương. Bề mặt thoáng khí, không bí bách, thích hợp cho mọi đối tượng, kể cả trẻ em và người cao tuổi. Sản phẩm có độ bền tốt, ít bị xẹp lún, dễ dàng vệ sinh và bảo quản. Giảm ngay 21%, sở hữu ngay nệm chất lượng Hàn Quốc với giá ưu đãi.",
             img: "https://i.ibb.co/Pz5WQb8J/everon.jpg",
             oldPrices: { "1m0 x 2m x 9cm":2990000,"1m2 x 2m x 9cm":3590000,"1m4 x 2m x 9cm":4190000,"1m6 x 2m x 9cm":4290000,"1m8 x 2m x 9cm":4690000 },
-            discountPercent: 21,
-            category: "bong-ep",
-            slug: "everon",
+            discountPercent: 21, category: "bong-ep", slug: "everon",
             keywords: ["bông ép", "everon", "hàn quốc", "thoáng khí", "cao cấp"]
         },
         "seoul": {
@@ -1111,9 +1099,7 @@
             desc: "Nệm bông ép Seoul được làm từ bông ép cao cấp, có độ đàn hồi và độ cứng vừa phải, mang lại cảm giác thoải mái và dễ chịu. Sản phẩm đặc biệt chống xẹp lún, giữ form dáng lâu dài, rất thích hợp cho người dùng có nhu cầu nằm lâu hoặc cần hỗ trợ cột sống. Với thiết kế gọn nhẹ, dễ dàng di chuyển và lắp đặt, Seoul là lựa chọn lý tưởng cho phòng ngủ, phòng trọ hay khách sạn. Giá thành hợp lý, lại được giảm đến 44%, bạn sẽ không phải đắn đo khi chọn mua.",
             img: "https://i.ibb.co/B51cqgnt/Chat-GPT-Image-10-57-49-17-thg-6-2026-1.webp",
             oldPrices: { "1m0 x 2m x 9cm":3200000,"1m2 x 2m x 9cm":3600000,"1m4 x 2m x 9cm":4000000,"1m6 x 2m x 9cm":4400000,"1m8 x 2m x 9cm":4800000 },
-            discountPercent: 44,
-            category: "bong-ep",
-            slug: "seoul",
+            discountPercent: 44, category: "bong-ep", slug: "seoul",
             keywords: ["bông ép", "seoul", "chống xẹp lún", "gọn nhẹ"]
         },
         "platinum": {
@@ -1121,9 +1107,7 @@
             desc: "Nệm lò xo túi Platinum nổi bật với công nghệ lò xo túi độc lập, từng lò xo được bọc trong túi vải riêng, giúp giảm thiểu tiếng ồn và chống rung lắc khi người nằm trở mình. Nhờ đó, giấc ngủ của bạn sẽ không bị gián đoạn. Lớp đệm mút bên trên tạo cảm giác êm ái, thoáng khí, nâng đỡ cơ thể tốt. Sản phẩm được bảo hành lên đến 10 năm, thể hiện sự tin tưởng về chất lượng. Giảm giá 18%, đây là giải pháp lý tưởng cho những ai muốn trải nghiệm giấc ngủ công nghệ cao.",
             img: "https://i.ibb.co/pjgp9Wbt/Untitled.png",
             oldPrices: { "1m0 x 2m x 22cm":5137000,"1m2 x 2m x 22cm":5916000,"1m4 x 2m x 22cm":6711000,"1m6 x 2m x 22cm":7523000,"1m8 x 2m x 22cm":8432000 },
-            discountPercent: 18,
-            category: "lo-xo-tui",
-            slug: "platinum",
+            discountPercent: 18, category: "lo-xo-tui", slug: "platinum",
             keywords: ["lò xo túi", "platinum", "độc lập", "bảo hành 10 năm", "không tiếng ồn"]
         },
         "elan": {
@@ -1131,9 +1115,7 @@
             desc: "Nệm lò xo túi Elan với công nghệ lò xo túi hiện đại, được cuộn hộp tiện lợi, dễ vận chuyển và lắp đặt. Hệ thống lò xo độc lập mang lại sự êm ái, không gây tiếng ồn, phù hợp với cặp đôi hoặc người ngủ nhạy cảm. Bề mặt nệm được phủ lớp vải thoáng khí, mềm mại, tạo cảm giác dễ chịu khi nằm. Độ bền cao, bảo hành lâu dài, Elan xứng đáng là người bạn đồng hành tin cậy cho giấc ngủ. Giảm ngay 30%, hãy trải nghiệm sự khác biệt ngay hôm nay.",
             img: "https://i.ibb.co/FbfcrSsH/7269-dem-lo-xo-tui-cuon-vimatt-elan-1.png",
             oldPrices: { "1m0 x 2m x 22cm":6260000,"1m2 x 2m x 22cm":6520000,"1m4 x 2m x 22cm":6860000,"1m6 x 2m x 22cm":7210000,"1m8 x 2m x 22cm":7780000 },
-            discountPercent: 30,
-            category: "lo-xo-tui",
-            slug: "elan",
+            discountPercent: 30, category: "lo-xo-tui", slug: "elan",
             keywords: ["lò xo túi", "elan", "cuộn hộp", "êm ái"]
         },
         "celina": {
@@ -1141,162 +1123,73 @@
             desc: "Nệm lò xo túi Celina với công nghệ lò xo túi độc lập hiện đại, từng lò xo được bọc trong túi vải riêng biệt, giúp giảm thiểu tiếng ồn và chống rung lắc tối đa. Nhờ đó, khi người nằm trở mình, giấc ngủ của người bên cạnh vẫn được bảo đảm không bị gián đoạn. Độ dày 24cm tạo cảm giác chắc chắn, êm ái, nâng đỡ cơ thể tốt, giảm áp lực lên cột sống. Lớp đệm mút cao cấp phía trên thoáng khí, mềm mại, giúp bạn có giấc ngủ sâu và ngon. Sản phẩm thích hợp cho những ai mong muốn sự sang trọng và tiện nghi trong không gian ngủ. Với mức giảm 35%, Celina là sự lựa chọn hoàn hảo cho giấc ngủ trọn vẹn.",
             img: "https://i.ibb.co/gZfzzK6f/a0ec5640-609d-436a-a21c-0b5cb53742b2.jpg",
             oldPrices: { "1m0 x 2m x 24cm":6260000,"1m2 x 2m x 24cm":6520000,"1m4 x 2m x 24cm":6860000,"1m6 x 2m x 24cm":7210000,"1m8 x 2m x 24cm":7780000 },
-            discountPercent: 35,
-            category: "lo-xo-tui",
-            slug: "celina",
+            discountPercent: 35, category: "lo-xo-tui", slug: "celina",
             keywords: ["lò xo túi", "celina", "độc lập", "sang trọng", "giấc ngủ ngon"]
         },
-
-        // ===== SẢN PHẨM KHUYẾN MÃI =====
         "lotus": {
             name: "NỆM CSTH LOTUS",
-            desc: "Nệm cao su tổng hợp Lotus được sản xuất với công nghệ tiên tiến, kết hợp độ đàn hồi và khả năng nâng đỡ vượt trội. Sản phẩm thoáng khí, không bí nhiệt, phù hợp với mọi Khách Hàng.<br><br><strong>Cấu tạo 5 lớp</strong> (nằm được 2 mặt):<br><ul style=\"margin:8px 0 12px 20px;list-style:disc;\"><li><strong>Lớp 1:</strong> Vải thoáng khí – mềm mại, thấm hút tốt</li><li><strong>Lớp 2:</strong> Lớp foam – tạo độ êm ái</li><li><strong>Lớp 3:</strong> Lõi mút ép – chắc chắn, nâng đỡ cột sống</li><li><strong>Lớp 4:</strong> Lớp foam – tăng cường thoải mái</li><li><strong>Lớp 5:</strong> Vải thoáng khí – bề mặt êm, dễ chịu</li></ul><br>✅ <strong>Bảo hành 10 năm</strong> – hoàn toàn yên tâm về chất lượng.<br>✅ <strong>Nằm thử 30 ngày</strong> – trải nghiệm trước khi quyết định.<br>✅ <strong>Đổi trả miễn phí</strong> nếu không hài lòng – không lo rủi ro.<br><br>Giá bán đã bao gồm phí giao hàng tận nơi tại nội thành Đà Nẵng. Với mức giảm sốc 35%, đây là cơ hội không thể bỏ qua.",
+            desc: "Nệm cao su tổng hợp Lotus được sản xuất với công nghệ tiên tiến, kết hợp độ đàn hồi và khả năng nâng đỡ vượt trội. Sản phẩm thoáng khí, không bí nhiệt, phù hợp với mọi Khách Hàng.<br><br><strong>Cấu tạo 5 lớp</strong> (nằm được 2 mặt):<br><ul style=\"margin:8px 0 12px 20px;list-style:disc;\"><li><strong>Lớp 1:</strong> Vải thoáng khí – mềm mại, thấm hút tốt</li><li><strong>Lớp 2:</strong> Lớp foam – tạo độ êm ái</li><li><strong>Lớp 3:</strong> Lõi mút ép – chắc chắn, nâng đỡ cột sống</li><li><strong>Lớp 4:</strong> Lớp foam – tăng cường thoải mái</li><li><strong>Lớp 5:</strong> Vải thoáng khí – bề mặt êm, dễ chịu</li></ul><br>✅ <strong>Bảo hành 10 năm</strong><br>✅ <strong>Nằm thử 30 ngày</strong><br>✅ <strong>Đổi trả miễn phí</strong> nếu không hài lòng<br><br>Giá bán đã bao gồm phí giao hàng tận nơi tại nội thành Đà Nẵng. Với mức giảm sốc 35%, đây là cơ hội không thể bỏ qua.",
             img: "https://i.ibb.co/21csQg0p/Chat-GPT-Image-22-18-25-17-thg-7-2026.png",
-            images: [
-                "https://i.ibb.co/21csQg0p/Chat-GPT-Image-22-18-25-17-thg-7-2026.png",
-                "https://i.ibb.co/LXspK69t/b99a3798-7b51-494e-80f2-5a7cb0f5ceb6.png"
-            ],
+            images: ["https://i.ibb.co/21csQg0p/Chat-GPT-Image-22-18-25-17-thg-7-2026.png","https://i.ibb.co/LXspK69t/b99a3798-7b51-494e-80f2-5a7cb0f5ceb6.png"],
             oldPrices: {
-                "1m0 x 2m x 10cm": 2154000,
-                "1m2 x 2m x 10cm": 2231000,
-                "1m4 x 2m x 10cm": 2308000,
-                "1m6 x 2m x 10cm": 2385000,
-                "1m8 x 2m x 10cm": 2538000,
-                "2m0 x 2m x 10cm": 2723000,
-                "2m2 x 2m x 10cm": 2908000,
-                "1m0 x 2m x 15cm": 2492000,
-                "1m2 x 2m x 15cm": 2600000,
-                "1m4 x 2m x 15cm": 2708000,
-                "1m6 x 2m x 15cm": 2815000,
-                "1m8 x 2m x 15cm": 3031000,
-                "2m0 x 2m x 15cm": 3292000,
-                "2m2 x 2m x 15cm": 3554000,
-                "1m0 x 2m x 20cm": 2785000,
-                "1m2 x 2m x 20cm": 2938000,
-                "1m4 x 2m x 20cm": 3092000,
-                "1m6 x 2m x 20cm": 3246000,
-                "1m8 x 2m x 20cm": 3508000,
-                "2m0 x 2m x 20cm": 3815000,
-                "2m2 x 2m x 20cm": 4123000
+                "1m0 x 2m x 10cm": 2154000,"1m2 x 2m x 10cm": 2231000,"1m4 x 2m x 10cm": 2308000,"1m6 x 2m x 10cm": 2385000,"1m8 x 2m x 10cm": 2538000,"2m0 x 2m x 10cm": 2723000,"2m2 x 2m x 10cm": 2908000,
+                "1m0 x 2m x 15cm": 2492000,"1m2 x 2m x 15cm": 2600000,"1m4 x 2m x 15cm": 2708000,"1m6 x 2m x 15cm": 2815000,"1m8 x 2m x 15cm": 3031000,"2m0 x 2m x 15cm": 3292000,"2m2 x 2m x 15cm": 3554000,
+                "1m0 x 2m x 20cm": 2785000,"1m2 x 2m x 20cm": 2938000,"1m4 x 2m x 20cm": 3092000,"1m6 x 2m x 20cm": 3246000,"1m8 x 2m x 20cm": 3508000,"2m0 x 2m x 20cm": 3815000,"2m2 x 2m x 20cm": 4123000
             },
-            discountPercent: 35,
-            category: "khuyen-mai",
-            slug: "lotus",
+            discountPercent: 35, category: "khuyen-mai", slug: "lotus",
             keywords: ["cao su tổng hợp", "lotus", "bảo hành 10 năm", "30 ngày đổi trả", "giao tận nơi"]
         },
         "premium": {
             name: "NỆM LÒ XO TÚI CAO CẤP PREMIUM",
-            desc: "Nệm lò xo túi cao cấp Premium sử dụng công nghệ lò xo túi độc lập, từng lò xo được bọc túi vải riêng, giúp chống ồn và chống rung lắc tối đa. Nhờ đó, giấc ngủ của bạn và người thân không bị gián đoạn. Sản phẩm dày 24cm, nâng đỡ cột sống tối ưu, giảm áp lực lên các khớp xương.<br><br><strong>Cấu tạo 7 lớp</strong> (nằm được 2 mặt):<br><ul style=\"margin:8px 0 12px 20px;list-style:disc;\"><li><strong>Lớp 1:</strong> Vải gấm cao cấp – sang trọng, bền đẹp</li><li><strong>Lớp 2:</strong> Lớp bông – êm ái, thoáng khí</li><li><strong>Lớp 3:</strong> Vải không dệt – tăng độ kết dính</li><li><strong>Lớp 4:</strong> Khung lò xo túi độc lập – nâng đỡ từng điểm</li><li><strong>Lớp 5:</strong> Vải không dệt – bảo vệ lò xo</li><li><strong>Lớp 6:</strong> Lớp bông – tạo cảm giác mềm mại</li><li><strong>Lớp 7:</strong> Vải gấm cao cấp – hoàn thiện bề mặt</li></ul><br>✅ <strong>Bảo hành 10 năm</strong> – cam kết chất lượng bền vững.<br>✅ <strong>Nằm thử 30 ngày</strong> – thoải mái trải nghiệm tại nhà.<br>✅ <strong>Đổi trả miễn phí</strong> nếu chưa ưng ý – hoàn toàn không lo lắng.<br><br>Giá bán đã bao gồm phí giao hàng tận nơi tại nội thành Đà Nẵng. Với mức giảm sốc 38%, đây là cơ hội tuyệt vời để sở hữu chiếc nệm lò xo túi cao cấp với giá cực kỳ ưu đãi.",
+            desc: "Nệm lò xo túi cao cấp Premium sử dụng công nghệ lò xo túi độc lập, từng lò xo được bọc túi vải riêng, giúp chống ồn và chống rung lắc tối đa. Nhờ đó, giấc ngủ của bạn và người thân không bị gián đoạn. Sản phẩm dày 24cm, nâng đỡ cột sống tối ưu, giảm áp lực lên các khớp xương.<br><br><strong>Cấu tạo 7 lớp</strong> (nằm được 2 mặt):<br><ul style=\"margin:8px 0 12px 20px;list-style:disc;\"><li><strong>Lớp 1:</strong> Vải gấm cao cấp – sang trọng, bền đẹp</li><li><strong>Lớp 2:</strong> Lớp bông – êm ái, thoáng khí</li><li><strong>Lớp 3:</strong> Vải không dệt – tăng độ kết dính</li><li><strong>Lớp 4:</strong> Khung lò xo túi độc lập – nâng đỡ từng điểm</li><li><strong>Lớp 5:</strong> Vải không dệt – bảo vệ lò xo</li><li><strong>Lớp 6:</strong> Lớp bông – tạo cảm giác mềm mại</li><li><strong>Lớp 7:</strong> Vải gấm cao cấp – hoàn thiện bề mặt</li></ul><br>✅ <strong>Bảo hành 10 năm</strong><br>✅ <strong>Nằm thử 30 ngày</strong><br>✅ <strong>Đổi trả miễn phí</strong> nếu chưa ưng ý<br><br>Giá bán đã bao gồm phí giao hàng tận nơi tại nội thành Đà Nẵng. Với mức giảm sốc 38%, đây là cơ hội tuyệt vời để sở hữu chiếc nệm lò xo túi cao cấp với giá cực kỳ ưu đãi.",
             img: "https://i.ibb.co/Pzj7G7NL/4f7ef563ece16dbf34f0.jpg",
-            images: [
-                "https://i.ibb.co/Pzj7G7NL/4f7ef563ece16dbf34f0.jpg",
-                "https://i.ibb.co/KjYMbwwk/e61364a90620877ede31.jpg"
-            ],
+            images: ["https://i.ibb.co/Pzj7G7NL/4f7ef563ece16dbf34f0.jpg","https://i.ibb.co/KjYMbwwk/e61364a90620877ede31.jpg"],
             oldPrices: {
-                "1m0 x 2m x 24cm": 5806000,
-                "1m2 x 2m x 24cm": 6048000,
-                "1m4 x 2m x 24cm": 6290000,
-                "1m6 x 2m x 24cm": 6532000,
-                "1m8 x 2m x 24cm": 6935000,
-                "2m0 x 2m x 24cm": 7339000
+                "1m0 x 2m x 24cm": 5806000,"1m2 x 2m x 24cm": 6048000,"1m4 x 2m x 24cm": 6290000,"1m6 x 2m x 24cm": 6532000,"1m8 x 2m x 24cm": 6935000,"2m0 x 2m x 24cm": 7339000
             },
-            discountPercent: 38,
-            category: "khuyen-mai",
-            slug: "premium",
+            discountPercent: 38, category: "khuyen-mai", slug: "premium",
             keywords: ["lò xo túi", "cao cấp", "premium", "bảo hành 10 năm", "30 ngày đổi trả", "giảm 38%"]
         },
-
-        // ===== TRANG DỰ ÁN =====
         "du-an-nem": {
             name: "NỆM DỰ ÁN – CHẤT LƯỢNG CHO MỌI CÔNG TRÌNH",
-            desc: `<div class="project-content">
-                <div class="project-intro"><i class="fas fa-quote-left" style="color:#d63384; margin-right:8px;"></i> Hàng ngàn khách sạn, resort và căn hộ dịch vụ đã tin chọn Nệm Lê Gia làm đối tác nội thất.</div>
-                <div class="section-block"><h3><i class="fas fa-boxes"></i> SẢN PHẨM ĐA DẠNG</h3><ul><li><i class="fas fa-check-circle"></i> <strong>Nệm cao su thiên nhiên</strong> – êm ái, thoáng khí, an toàn cho sức khỏe</li><li><i class="fas fa-check-circle"></i> <strong>Nệm bông ép</strong> – độ cứng vừa phải, hỗ trợ cột sống tốt</li><li><i class="fas fa-check-circle"></i> <strong>Nệm lò xo túi</strong> – công nghệ độc lập, không ồn, không rung lắc</li><li><i class="fas fa-check-circle"></i> <strong>Nệm foam</strong> – nhẹ, gấp gọn, tiện lợi cho nhiều không gian</li></ul></div>
-                <div class="section-block"><h3><i class="fas fa-medal"></i> CAM KẾT CHẤT LƯỢNG</h3><ul><li><i class="fas fa-shield-alt"></i> Sản phẩm đạt chuẩn, kiểm định nghiêm ngặt</li><li><i class="fas fa-calendar-check"></i> Bảo hành từ 5 năm đến 10 năm</li></ul></div>
-                <div class="faq-block"><div class="faq-item"><div class="faq-q"><i class="fas fa-question-circle"></i> Tôi có thể đặt hàng số lượng ít để thử trước không?</div><div class="faq-a">Có, chúng tôi hỗ trợ đặt mẫu số lượng nhỏ để đánh giá chất lượng trước khi đặt hàng số lượng lớn.</div></div><div class="faq-item"><div class="faq-q"><i class="fas fa-question-circle"></i> Thời gian giao hàng cho dự án lớn là bao lâu?</div><div class="faq-a">Tùy thuộc số lượng và kích thước, thông thường từ 3-7 ngày làm việc. Chúng tôi cam kết giao hàng đúng tiến độ.</div></div></div>
-                <div class="cta-box"><p>🏆 HỢP TÁC NGAY HÔM NAY – Nhận báo giá tốt nhất và tư vấn thiết kế miễn phí!</p><button class="btn-hero" onclick="window.location.href='tel:0905513984'">📞 GỌI NGAY: 0905 513 984</button><p style="font-size:0.9rem; margin-top:10px; opacity:0.9;">Đội ngũ tư vấn viên giàu kinh nghiệm sẵn sàng hỗ trợ bạn 24/7.</p></div>
-            </div>`,
+            desc: `<div class="project-content"><div class="project-intro"><i class="fas fa-quote-left" style="color:#d63384; margin-right:8px;"></i> Hàng ngàn khách sạn, resort và căn hộ dịch vụ đã tin chọn Nệm Lê Gia làm đối tác nội thất.</div><div class="section-block"><h3><i class="fas fa-boxes"></i> SẢN PHẨM ĐA DẠNG</h3><ul><li><i class="fas fa-check-circle"></i> <strong>Nệm cao su thiên nhiên</strong> – êm ái, thoáng khí, an toàn cho sức khỏe</li><li><i class="fas fa-check-circle"></i> <strong>Nệm bông ép</strong> – độ cứng vừa phải, hỗ trợ cột sống tốt</li><li><i class="fas fa-check-circle"></i> <strong>Nệm lò xo túi</strong> – công nghệ độc lập, không ồn, không rung lắc</li><li><i class="fas fa-check-circle"></i> <strong>Nệm foam</strong> – nhẹ, gấp gọn, tiện lợi cho nhiều không gian</li></ul></div><div class="section-block"><h3><i class="fas fa-medal"></i> CAM KẾT CHẤT LƯỢNG</h3><ul><li><i class="fas fa-shield-alt"></i> Sản phẩm đạt chuẩn, kiểm định nghiêm ngặt</li><li><i class="fas fa-calendar-check"></i> Bảo hành từ 5 năm đến 10 năm</li></ul></div><div class="faq-block"><div class="faq-item"><div class="faq-q"><i class="fas fa-question-circle"></i> Tôi có thể đặt hàng số lượng ít để thử trước không?</div><div class="faq-a">Có, chúng tôi hỗ trợ đặt mẫu số lượng nhỏ để đánh giá chất lượng trước khi đặt hàng số lượng lớn.</div></div><div class="faq-item"><div class="faq-q"><i class="fas fa-question-circle"></i> Thời gian giao hàng cho dự án lớn là bao lâu?</div><div class="faq-a">Tùy thuộc số lượng và kích thước, thông thường từ 3-7 ngày làm việc. Chúng tôi cam kết giao hàng đúng tiến độ.</div></div></div><div class="cta-box"><p>🏆 HỢP TÁC NGAY HÔM NAY – Nhận báo giá tốt nhất và tư vấn thiết kế miễn phí!</p><button class="btn-hero" onclick="window.location.href='tel:0905513984'">📞 GỌI NGAY: 0905 513 984</button></div></div>`,
             img: "https://i.ibb.co/fGGDhxYG/Chat-GPT-Image-Jul-29-2026-03-19-31-PM.png",
-            oldPrices: {},
-            discountPercent: 0,
-            category: "du-an",
-            slug: "du-an-nem",
+            oldPrices: {}, discountPercent: 0, category: "du-an", slug: "du-an-nem",
             keywords: ["dự án", "nệm dự án", "khách sạn", "căn hộ", "chung cư"]
         },
         "du-an-changagoi": {
             name: "CHĂN GA GỐI DỰ ÁN – TINH TẾ CHO KHÔNG GIAN NGHỈ DƯỠNG",
-            desc: `<div class="project-content">
-                <div class="project-intro"><i class="fas fa-quote-left" style="color:#d63384; margin-right:8px;"></i> Bộ sưu tập chăn ga gối cao cấp – nơi sự sang trọng gặp gỡ sự tiện nghi.</div>
-                <div class="section-block"><h3><i class="fas fa-thumbs-up"></i> CHẤT LƯỢNG VƯỢT TRỘI</h3><ul><li><i class="fas fa-tshirt"></i> Vải cotton, tencel, satin cao cấp – mềm mại, thấm hút tốt, không xù lông</li><li><i class="fas fa-palette"></i> Thiết kế tinh tế, màu sắc trang nhã, phù hợp mọi phong cách nội thất</li><li><i class="fas fa-ruler-combined"></i> Đặt may theo kích thước – phù hợp với mọi loại giường</li></ul></div>
-                <div class="section-block"><h3><i class="fas fa-hand-holding-usd"></i> CHÍNH SÁCH ƯU ĐÃI DÀNH CHO DỰ ÁN</h3><ul><li><i class="fas fa-percent"></i> Giá sỉ cạnh tranh, chiết khấu theo số lượng</li><li><i class="fas fa-gem"></i> Chính sách hợp tác dài hạn, ưu đãi cho các đối tác thường xuyên</li><li><i class="fas fa-award"></i> Cam kết giá tốt nhất trên thị trường cho dự án</li></ul></div>
-                <div class="faq-block"><div class="faq-item"><div class="faq-q"><i class="fas fa-question-circle"></i> Tôi có thể đặt hàng chăn ga gối theo mẫu riêng không?</div><div class="faq-a">Có, chúng tôi nhận sản xuất theo mẫu mã, chất vải và kích thước riêng cho các dự án.</div></div><div class="faq-item"><div class="faq-q"><i class="fas fa-question-circle"></i> Thời gian giao hàng cho dự án chăn ga gối là bao lâu?</div><div class="faq-a">Thông thường 5-10 ngày làm việc tùy theo số lượng và yêu cầu may đo. Chúng tôi luôn đảm bảo tiến độ.</div></div></div>
-                <div class="cta-box"><p>🏆 HỢP TÁC NGAY HÔM NAY – Nhận báo giá tốt nhất và tư vấn thiết kế miễn phí!</p><button class="btn-hero" onclick="window.location.href='tel:0905513984'">📞 GỌI NGAY: 0905 513 984</button><p style="font-size:0.9rem; margin-top:10px; opacity:0.9;">Đội ngũ tư vấn viên giàu kinh nghiệm sẵn sàng hỗ trợ bạn 24/7.</p></div>
-            </div>`,
+            desc: `<div class="project-content"><div class="project-intro"><i class="fas fa-quote-left" style="color:#d63384; margin-right:8px;"></i> Bộ sưu tập chăn ga gối cao cấp – nơi sự sang trọng gặp gỡ sự tiện nghi.</div><div class="section-block"><h3><i class="fas fa-thumbs-up"></i> CHẤT LƯỢNG VƯỢT TRỘI</h3><ul><li><i class="fas fa-tshirt"></i> Vải cotton, tencel, satin cao cấp – mềm mại, thấm hút tốt, không xù lông</li><li><i class="fas fa-palette"></i> Thiết kế tinh tế, màu sắc trang nhã, phù hợp mọi phong cách nội thất</li><li><i class="fas fa-ruler-combined"></i> Đặt may theo kích thước – phù hợp với mọi loại giường</li></ul></div><div class="section-block"><h3><i class="fas fa-hand-holding-usd"></i> CHÍNH SÁCH ƯU ĐÃI DÀNH CHO DỰ ÁN</h3><ul><li><i class="fas fa-percent"></i> Giá sỉ cạnh tranh, chiết khấu theo số lượng</li><li><i class="fas fa-gem"></i> Chính sách hợp tác dài hạn, ưu đãi cho các đối tác thường xuyên</li><li><i class="fas fa-award"></i> Cam kết giá tốt nhất trên thị trường cho dự án</li></ul></div><div class="faq-block"><div class="faq-item"><div class="faq-q"><i class="fas fa-question-circle"></i> Tôi có thể đặt hàng chăn ga gối theo mẫu riêng không?</div><div class="faq-a">Có, chúng tôi nhận sản xuất theo mẫu mã, chất vải và kích thước riêng cho các dự án.</div></div><div class="faq-item"><div class="faq-q"><i class="fas fa-question-circle"></i> Thời gian giao hàng cho dự án chăn ga gối là bao lâu?</div><div class="faq-a">Thông thường 5-10 ngày làm việc tùy theo số lượng và yêu cầu may đo.</div></div></div><div class="cta-box"><p>🏆 HỢP TÁC NGAY HÔM NAY – Nhận báo giá tốt nhất và tư vấn thiết kế miễn phí!</p><button class="btn-hero" onclick="window.location.href='tel:0905513984'">📞 GỌI NGAY: 0905 513 984</button></div></div>`,
             img: "https://i.ibb.co/wZcWMfkr/Chat-GPT-Image-Jul-29-2026-03-20-34-PM.png",
-            oldPrices: {},
-            discountPercent: 0,
-            category: "du-an",
-            slug: "du-an-changagoi",
+            oldPrices: {}, discountPercent: 0, category: "du-an", slug: "du-an-changagoi",
             keywords: ["chăn ga gối", "dự án", "khách sạn", "bộ sưu tập"]
         },
-
-        // ===== SẢN PHẨM PHỤ KIỆN =====
         "bao-ve-nem": {
             name: "BẢO VỆ NỆM",
             desc: "Bảo vệ nệm là lớp phủ bảo vệ bề mặt nệm khỏi bụi bẩn, mồ hôi, vết bẩn. Sản phẩm mềm mại, thoáng khí, thấm hút tốt, dễ dàng tháo giặt và vệ sinh. Giúp kéo dài tuổi thọ nệm, giữ cho nệm luôn sạch sẽ và bền đẹp như mới. Phù hợp với mọi loại nệm, thiết kế ôm sát 4 góc, không bị xô lệch. Các sản phẩm đều đạt tiêu chuẩn khách sạn.",
             img: "https://i.ibb.co/QvRr3RVS/5-3.jpg",
-            oldPrices: {
-                "1m0 x 2m": 296000,
-                "1m2 x 2m": 312000,
-                "1m4 x 2m": 327000,
-                "1m6 x 2m": 341000,
-                "1m8 x 2m": 356000,
-                "2m0 x 2m": 385000,
-                "2m2 x 2m": 400000
-            },
-            discountPercent: 25,
-            category: "phu-kien",
-            slug: "bao-ve-nem",
+            oldPrices: { "1m0 x 2m": 296000,"1m2 x 2m": 312000,"1m4 x 2m": 327000,"1m6 x 2m": 341000,"1m8 x 2m": 356000,"2m0 x 2m": 385000,"2m2 x 2m": 400000 },
+            discountPercent: 25, category: "phu-kien", slug: "bao-ve-nem",
             keywords: ["bảo vệ nệm", "phụ kiện", "bảo vệ nệm", "chống bẩn", "thoáng khí"]
         },
         "bao-ve-nem-chong-tham": {
             name: "BẢO VỆ NỆM CHỐNG THẤM",
             desc: "Bảo vệ nệm chống thấm cấu tạo 3 lớp cao cấp với lớp màng chống thấm tiên tiến, bảo vệ nệm khỏi nước, chất lỏng và vết bẩn cứng đầu. Bề mặt vải cotton mềm mại, thoáng khí, không gây bí nhiệt. Lớp chống thấm giúp ngăn ngừa ẩm mốc và vi khuẩn phát triển, bảo vệ sức khỏe gia đình bạn. Dễ dàng tháo giặt và tái sử dụng nhiều lần. Các sản phẩm đều đạt tiêu chuẩn khách sạn.",
             img: "https://i.ibb.co/sp3gDy4v/62-bao-ve-nem-chong-tham-da-nang.jpg",
-            oldPrices: {
-                "1m0 x 2m": 443000,
-                "1m2 x 2m": 457000,
-                "1m4 x 2m": 472000,
-                "1m6 x 2m": 487000,
-                "1m8 x 2m": 501000,
-                "2m0 x 2m": 531000
-            },
-            discountPercent: 25,
-            category: "phu-kien",
-            slug: "bao-ve-nem-chong-tham",
+            oldPrices: { "1m0 x 2m": 443000,"1m2 x 2m": 457000,"1m4 x 2m": 472000,"1m6 x 2m": 487000,"1m8 x 2m": 501000,"2m0 x 2m": 531000 },
+            discountPercent: 25, category: "phu-kien", slug: "bao-ve-nem-chong-tham",
             keywords: ["bảo vệ nệm chống thấm", "chống thấm", "phụ kiện", "chống nước", "chống ẩm mốc"]
         },
         "topper": {
             name: "TOPPER NỆM CAO CẤP",
             desc: "Topper nệm cao cấp là lớp đệm bổ sung êm ái, nâng cao trải nghiệm giấc ngủ của bạn. Bên trong là gòn microfiber, mang lại cảm giác êm mềm, hỗ trợ giảm đau lưng và cải thiện tư thế ngủ. Độ dày tiêu chuẩn giúp cải thiện độ êm cho nệm cũ hoặc nệm quá cứng. Dễ dàng lắp đặt và vệ sinh, lý tưởng cho phòng ngủ khách sạn, căn hộ và gia đình. Các sản phẩm đều đạt tiêu chuẩn khách sạn.",
             img: "https://i.ibb.co/NgNB0tnR/1126-topper-nem-da-nang.jpg",
-            oldPrices: {
-                "1m0 x 2m": 756000,
-                "1m2 x 2m": 771000,
-                "1m4 x 2m": 801000,
-                "1m6 x 2m": 853000,
-                "1m8 x 2m": 935000,
-                "2m0 x 2m": 987000,
-                "2m2 x 2m": 1016000
-            },
-            discountPercent: 25,
-            category: "phu-kien",
-            slug: "topper",
+            oldPrices: { "1m0 x 2m": 756000,"1m2 x 2m": 771000,"1m4 x 2m": 801000,"1m6 x 2m": 853000,"1m8 x 2m": 935000,"2m0 x 2m": 987000,"2m2 x 2m": 1016000 },
+            discountPercent: 25, category: "phu-kien", slug: "topper",
             keywords: ["topper nệm", "đệm bổ sung", "êm ái", "phụ kiện", "nệm cao cấp"]
         }
     };
 
-    // Tính giá bán thực tế (sau chiết khấu)
     for (let key in productsDB) {
         const prod = productsDB[key];
         if (prod.oldPrices && prod.discountPercent !== undefined && !prod.prices) {
@@ -1308,17 +1201,12 @@
     }
 
     const slugToId = {};
-    for (let id in productsDB) {
-        slugToId[productsDB[id].slug] = id;
-    }
+    for (let id in productsDB) { slugToId[productsDB[id].slug] = id; }
 
-    // ======================== ROUTER ========================
     const basePath = '';
     function getCleanPath() {
         let fullPath = window.location.pathname;
-        if (basePath && fullPath.startsWith(basePath)) {
-            fullPath = fullPath.substring(basePath.length);
-        }
+        if (basePath && fullPath.startsWith(basePath)) { fullPath = fullPath.substring(basePath.length); }
         if (fullPath === '' || fullPath === '/') return '/';
         return fullPath;
     }
@@ -1329,53 +1217,17 @@
 
     function trackViewContent(productId) {
         const prod = productsDB[productId];
-        if (prod && typeof fbq !== 'undefined') {
-            fbq('track', 'ViewContent', {
-                content_name: prod.name,
-                content_category: prod.category,
-                content_ids: [productId],
-                content_type: 'product',
-                value: prod.prices ? prod.prices[Object.keys(prod.prices)[0]] : 0,
-                currency: 'VND'
-            });
-        }
+        if (prod && typeof fbq !== 'undefined') { fbq('track', 'ViewContent', { content_name: prod.name, content_category: prod.category, content_ids: [productId], content_type: 'product', value: prod.prices ? prod.prices[Object.keys(prod.prices)[0]] : 0, currency: 'VND' }); }
     }
-
     function trackAddToCart(productId, size, quantity, price) {
         const prod = productsDB[productId];
-        if (prod && typeof fbq !== 'undefined') {
-            fbq('track', 'AddToCart', {
-                content_name: prod.name,
-                content_category: prod.category,
-                content_ids: [productId],
-                content_type: 'product',
-                value: price * quantity,
-                currency: 'VND'
-            });
-        }
+        if (prod && typeof fbq !== 'undefined') { fbq('track', 'AddToCart', { content_name: prod.name, content_category: prod.category, content_ids: [productId], content_type: 'product', value: price * quantity, currency: 'VND' }); }
     }
-
     function trackInitiateCheckout(cartItems, total) {
-        if (typeof fbq !== 'undefined') {
-            fbq('track', 'InitiateCheckout', {
-                value: total,
-                currency: 'VND',
-                num_items: cartItems.length
-            });
-        }
+        if (typeof fbq !== 'undefined') { fbq('track', 'InitiateCheckout', { value: total, currency: 'VND', num_items: cartItems.length }); }
     }
-
     function trackPurchase(orderId, total, cartItems) {
-        if (typeof fbq !== 'undefined') {
-            fbq('track', 'Purchase', {
-                value: total,
-                currency: 'VND',
-                content_ids: cartItems.map(item => item.id),
-                content_type: 'product',
-                num_items: cartItems.length,
-                order_id: orderId
-            });
-        }
+        if (typeof fbq !== 'undefined') { fbq('track', 'Purchase', { value: total, currency: 'VND', content_ids: cartItems.map(item => item.id), content_type: 'product', num_items: cartItems.length, order_id: orderId }); }
     }
 
     function renderHomeView() {
@@ -1383,16 +1235,11 @@
         document.getElementById("detailView").style.display = "none";
         document.getElementById("cartView").style.display = "none";
     }
-
     function renderProductDetailView(productId, size = null) {
         currentProductId = productId;
         const prod = productsDB[productId];
-        if (prod.category === 'du-an') {
-            currentSize = null;
-        } else {
-            if (size && prod.prices[size]) currentSize = size;
-            else currentSize = Object.keys(prod.prices)[0];
-        }
+        if (prod.category === 'du-an') { currentSize = null; }
+        else { if (size && prod.prices[size]) currentSize = size; else currentSize = Object.keys(prod.prices)[0]; }
         currentQuantity = 1;
         renderProductDetail();
         document.getElementById("homeView").style.display = "none";
@@ -1401,7 +1248,6 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
         trackViewContent(productId);
     }
-
     function renderCartView() {
         renderCartViewFunc();
         document.getElementById("homeView").style.display = "none";
@@ -1409,12 +1255,8 @@
         document.getElementById("cartView").style.display = "block";
         document.getElementById("checkoutFormContainer").style.display = "none";
         window.scrollTo({ top: 0, behavior: "smooth" });
-        if (cart.length > 0) {
-            const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-            trackInitiateCheckout(cart, total);
-        }
+        if (cart.length > 0) { const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0); trackInitiateCheckout(cart, total); }
     }
-
     function navigateTo(url, title, state) {
         const fullUrl = basePath + url;
         history.pushState(state, title, fullUrl);
@@ -1422,35 +1264,21 @@
         else if (state.type === 'product') renderProductDetailView(state.productId, state.size);
         else if (state.type === 'cart') renderCartView();
     }
-
     function loadRouteFromPath() {
         const path = getCleanPath();
-        if (path === '/' || path === '') {
-            renderHomeView();
-        } else if (path === '/gio-hang') {
-            renderCartView();
-        } else {
+        if (path === '/' || path === '') { renderHomeView(); }
+        else if (path === '/gio-hang') { renderCartView(); }
+        else {
             const parts = path.split('/').filter(p => p);
             if (parts.length === 2) {
-                const category = parts[0];
-                const slug = parts[1];
-                const productId = slugToId[slug];
-                if (productId && productsDB[productId].category === category) {
-                    renderProductDetailView(productId);
-                } else {
-                    renderHomeView();
-                }
-            } else {
-                renderHomeView();
-            }
+                const category = parts[0]; const slug = parts[1]; const productId = slugToId[slug];
+                if (productId && productsDB[productId].category === category) { renderProductDetailView(productId); }
+                else { renderHomeView(); }
+            } else { renderHomeView(); }
         }
     }
+    window.addEventListener('popstate', () => { loadRouteFromPath(); });
 
-    window.addEventListener('popstate', () => {
-        loadRouteFromPath();
-    });
-
-    // ======================== UTILITY ========================
     function showToast(msg, isErr = false) {
         let t = document.getElementById('toast');
         t.textContent = msg;
@@ -1476,16 +1304,13 @@
         showToast(`Đã thêm ${quantity} ${prod.name} (${size}) vào giỏ!`);
         trackAddToCart(productId, size, quantity, price);
     }
-
     function formatPrice(p) { return p.toLocaleString('vi-VN') + 'đ'; }
-
     function renderCartViewFunc() {
         const container = document.getElementById('cartItemsList'), totalContainer = document.getElementById('cartTotal');
         if (!cart.length) { container.innerHTML = '<div class="empty-cart">🛒 Giỏ hàng trống!</div>'; totalContainer.innerHTML = ''; return; }
         let html = '', total = 0;
         cart.forEach((item, idx) => {
-            let it = item.price * item.quantity;
-            total += it;
+            let it = item.price * item.quantity; total += it;
             html += `<div class="cart-item"><div class="cart-item-info"><img src="${item.img}" alt="${item.name}" width="60" height="60"><div class="cart-item-details"><strong>${item.name}</strong><br>${item.size}<br>${formatPrice(item.price)}</div></div><div class="cart-item-actions"><button class="qty-down" data-index="${idx}" aria-label="Giảm số lượng">-</button><span>${item.quantity}</span><button class="qty-up" data-index="${idx}" aria-label="Tăng số lượng">+</button><button class="remove-item" data-index="${idx}" aria-label="Xóa sản phẩm">Xóa</button></div><div class="cart-item-price">${formatPrice(it)}</div></div>`;
         });
         container.innerHTML = html;
@@ -1502,8 +1327,7 @@
                 else return;
                 saveCart(); renderCartViewFunc();
             } else if (target.classList.contains('qty-up')) {
-                cart[index].quantity++;
-                saveCart(); renderCartViewFunc();
+                cart[index].quantity++; saveCart(); renderCartViewFunc();
             } else if (target.classList.contains('remove-item')) {
                 if (confirm('Xóa sản phẩm này?')) { cart.splice(index, 1); saveCart(); renderCartViewFunc(); }
             }
@@ -1513,19 +1337,10 @@
         });
     }
 
-    // ======================== RELATED & REVIEWS ========================
     function renderRelatedProducts(category, currentId) {
-        if (category === 'khuyen-mai' || category === 'du-an' || category === 'phu-kien') {
-            document.getElementById('relatedContainer').innerHTML = '';
-            return;
-        }
-        const related = Object.keys(productsDB).filter(id =>
-            productsDB[id].category === category && id !== currentId
-        ).slice(0, 4);
-        if (related.length === 0) {
-            document.getElementById('relatedContainer').innerHTML = '';
-            return;
-        }
+        if (category === 'khuyen-mai' || category === 'du-an' || category === 'phu-kien') { document.getElementById('relatedContainer').innerHTML = ''; return; }
+        const related = Object.keys(productsDB).filter(id => productsDB[id].category === category && id !== currentId).slice(0, 4);
+        if (related.length === 0) { document.getElementById('relatedContainer').innerHTML = ''; return; }
         let html = `<div class="related-title">📌 Sản phẩm liên quan</div><div class="related-grid">`;
         related.forEach(id => {
             const p = productsDB[id];
@@ -1537,51 +1352,31 @@
         document.getElementById('relatedContainer').addEventListener('click', function(e) {
             const card = e.target.closest('.related-card');
             if (!card) return;
-            const id = card.dataset.id;
-            const slug = card.dataset.slug;
-            const category = card.dataset.category;
-            if (id) {
-                const newUrl = `/${category}/${slug}`;
-                navigateTo(newUrl, `Nệm Lê Gia - ${productsDB[id].name}`, { type: 'product', productId: id });
-            }
+            const id = card.dataset.id; const slug = card.dataset.slug; const category = card.dataset.category;
+            if (id) { const newUrl = `/${category}/${slug}`; navigateTo(newUrl, `Nệm Lê Gia - ${productsDB[id].name}`, { type: 'product', productId: id }); }
         });
     }
 
     const reviewsDB = {
         "platinum": [{ stars: 5, name: "Anh Minh (TP.HCM)", content: "Nệm lò xo túi Platinum chất lượng tốt, không rung lắc." }, { stars: 5, name: "Chị Lan (Hà Nội)", content: "Ngủ rất êm." }],
         "elan": [{ stars: 5, name: "Chị Hằng (Đà Nẵng)", content: "Nệm Elan cuộn hộp tiện lợi, êm ái." }, { stars: 5, name: "Anh Vũ (Hải Phòng)", content: "Lò xo túi êm." }],
-        "celina": [{ stars: 5, name: "Chị Nga (HCM)", content: "Celina cao cấp, nâng đỡ cột sống tốt, giảm 35% quá hời." }, { stars: 5, name: "Anh Phong (Bình Định)", content: "Giao hàng nhanh, nệm êm, rất hài lòng." }],
+        "celina": [{ stars: 5, name: "Chị Nga (HCM)", content: "Celina cao cấp, nâng đỡ cột sống tốt." }, { stars: 5, name: "Anh Phong (Bình Định)", content: "Giao hàng nhanh, nệm êm." }],
         "thang-loi": [{ stars: 5, name: "Chị Thảo (HCM)", content: "Nệm CSTN Thắng Lợi siêu bền." }, { stars: 5, name: "Anh Đức (Hà Nội)", content: "Chất lượng vượt trội." }],
         "van-thanh": [{ stars: 5, name: "Chị Lan (Hà Nội)", content: "Nệm CSTN Vạn Thành êm, đỡ đau lưng." }, { stars: 5, name: "Anh Tuấn (Hải Phòng)", content: "Mua cho bố mẹ hài lòng." }],
-        "dong-phu": [{ stars: 5, name: "Chị Hoa (TP.HCM)", content: "Nệm CSTN Đồng Phú chất lượng cao, giảm 28% quá tốt." }, { stars: 5, name: "Anh Quân (Đà Nẵng)", content: "Giao hàng nhanh, nệm thơm mùi cao su tự nhiên, êm ái." }],
+        "dong-phu": [{ stars: 5, name: "Chị Hoa (TP.HCM)", content: "Nệm CSTN Đồng Phú chất lượng cao." }, { stars: 5, name: "Anh Quân (Đà Nẵng)", content: "Giao hàng nhanh, êm ái." }],
         "lien-a": [{ stars: 5, name: "Chị Ngọc (Bắc Ninh)", content: "Nệm CSTN Liên Á mềm mại." }, { stars: 5, name: "Anh Cường (Hà Nội)", content: "Độ đàn hồi tốt." }],
         "png": [{ stars: 5, name: "Chị Hương (Hải Dương)", content: "Nệm CSTN PNG nhập khẩu êm." }, { stars: 5, name: "Anh Phát (Đồng Nai)", content: "Mua 2 chiếc, chất lượng tốt." }],
-        "csn-thang-loi": [{ stars: 5, name: "Chị Mai (Hà Nội)", content: "CSN Thắng Lợi giá tốt, giảm 55%." }, { stars: 5, name: "Anh Lợi (Bình Dương)", content: "Mua cho con nhỏ." }],
+        "csn-thang-loi": [{ stars: 5, name: "Chị Mai (Hà Nội)", content: "CSN Thắng Lợi giá tốt." }, { stars: 5, name: "Anh Lợi (Bình Dương)", content: "Mua cho con nhỏ." }],
         "diamond": [{ stars: 5, name: "Chị Thu (HCM)", content: "Nệm Diamond cứng vừa phải." }, { stars: 5, name: "Anh Hùng (Quảng Ninh)", content: "Giảm 50% quá hời." }],
         "everon": [{ stars: 5, name: "Chị Bích (Hà Nội)", content: "Nệm Everon gấp gọn tiện lợi." }, { stars: 5, name: "Anh Sơn (Thanh Hóa)", content: "Giá rẻ, chất lượng tốt." }],
-        "seoul": [{ stars: 5, name: "Chị Linh (HCM)", content: "Nệm Seoul êm ái, chất lượng cao." }, { stars: 5, name: "Anh Khang (Cần Thơ)", content: "Mua cho phòng trọ, rất ưng." }],
+        "seoul": [{ stars: 5, name: "Chị Linh (HCM)", content: "Nệm Seoul êm ái." }, { stars: 5, name: "Anh Khang (Cần Thơ)", content: "Mua cho phòng trọ, rất ưng." }],
         "lotus": [{ stars: 5, name: "Chị Mai (Đà Nẵng)", content: "Nệm Lotus êm ái, bảo hành 10 năm yên tâm." }, { stars: 5, name: "Anh Tuấn (HCM)", content: "Giá siêu rẻ, chất lượng bất ngờ." }],
-        "premium": [{ stars: 5, name: "Anh Hoàng (Đà Nẵng)", content: "Nệm Premium chắc chắn, không ồn, ngủ ngon." }, { stars: 5, name: "Chị Thanh (Hà Nội)", content: "Giao hàng nhanh, đóng gói cẩn thận, rất hài lòng." }],
-        "du-an-nem": [
-            { stars: 5, name: "Anh Tuấn (Chủ khách sạn Hà Nội)", content: "Nệm Lê Gia cung cấp cho khách sạn của tôi số lượng lớn, chất lượng ổn định, giá tốt, giao hàng đúng hẹn. Khách hàng phản hồi rất tích cực về giấc ngủ." },
-            { stars: 5, name: "Chị Lan (Quản lý căn hộ dịch vụ Đà Nẵng)", content: "Chúng tôi đã hợp tác nhiều dự án với Nệm Lê Gia, sản phẩm bền đẹp, phù hợp với phân khúc cao cấp. Rất hài lòng!" }
-        ],
-        "du-an-changagoi": [
-            { stars: 5, name: "Anh Minh (Nhà thầu nội thất)", content: "Bộ chăn ga gối của Nệm Lê Gia có chất vải tốt, màu sắc tinh tế, đáp ứng yêu cầu khắt khe của các dự án resort 5 sao." },
-            { stars: 5, name: "Chị Hương (Chủ nhà nghỉ Nha Trang)", content: "Mua số lượng lớn chăn ga gối, giá tốt, chất lượng đồng đều. Sản phẩm giữ màu tốt sau nhiều lần giặt." }
-        ],
-        "bao-ve-nem": [
-            { stars: 5, name: "Chị Thu (Hà Nội)", content: "Bảo vệ nệm chất lượng tốt, vải mềm, ôm sát nệm, giặt dễ dàng. Giá hợp lý." },
-            { stars: 5, name: "Anh Phúc (TP.HCM)", content: "Mua về dùng thử thấy rất ưng, nệm không bị bám bẩn nữa." }
-        ],
-        "bao-ve-nem-chong-tham": [
-            { stars: 5, name: "Chị Hằng (Đà Nẵng)", content: "Bảo vệ nệm chống thấm tốt, yên tâm khi có trẻ nhỏ. Vải mềm, không bí." },
-            { stars: 5, name: "Anh Đức (Hà Nội)", content: "Chống thấm hiệu quả, giặt sạch nhanh, rất hài lòng." }
-        ],
-        "topper": [
-            { stars: 5, name: "Chị Lan (TP.HCM)", content: "Topper êm ái, cải thiện giấc ngủ rõ rệt. Đặt lên nệm cũ thấy ngủ ngon hơn hẳn." },
-            { stars: 5, name: "Anh Quang (Đà Nẵng)", content: "Chất lượng topper tốt, gòn microfiber mềm, thoáng khí. Rất đáng tiền." }
-        ]
+        "premium": [{ stars: 5, name: "Anh Hoàng (Đà Nẵng)", content: "Nệm Premium chắc chắn, không ồn." }, { stars: 5, name: "Chị Thanh (Hà Nội)", content: "Giao hàng nhanh, đóng gói cẩn thận." }],
+        "du-an-nem": [{ stars: 5, name: "Anh Tuấn (Chủ khách sạn Hà Nội)", content: "Nệm Lê Gia cung cấp số lượng lớn, chất lượng ổn định." }, { stars: 5, name: "Chị Lan (Quản lý căn hộ Đà Nẵng)", content: "Sản phẩm bền đẹp, rất hài lòng!" }],
+        "du-an-changagoi": [{ stars: 5, name: "Anh Minh (Nhà thầu nội thất)", content: "Bộ chăn ga gối chất vải tốt, màu sắc tinh tế." }, { stars: 5, name: "Chị Hương (Chủ nhà nghỉ Nha Trang)", content: "Giá tốt, chất lượng đồng đều." }],
+        "bao-ve-nem": [{ stars: 5, name: "Chị Thu (Hà Nội)", content: "Bảo vệ nệm chất lượng tốt, vải mềm." }, { stars: 5, name: "Anh Phúc (TP.HCM)", content: "Mua về dùng thử thấy rất ưng." }],
+        "bao-ve-nem-chong-tham": [{ stars: 5, name: "Chị Hằng (Đà Nẵng)", content: "Bảo vệ nệm chống thấm tốt, yên tâm." }, { stars: 5, name: "Anh Đức (Hà Nội)", content: "Chống thấm hiệu quả, giặt sạch nhanh." }],
+        "topper": [{ stars: 5, name: "Chị Lan (TP.HCM)", content: "Topper êm ái, cải thiện giấc ngủ rõ rệt." }, { stars: 5, name: "Anh Quang (Đà Nẵng)", content: "Chất lượng topper tốt, gòn microfiber mềm." }]
     };
 
     function renderReviews(productId) {
@@ -1589,52 +1384,30 @@
         document.getElementById("reviewContainer").innerHTML = `<h3>📸 Khách hàng tin dùng</h3>${reviews.map(r => `<div class="review-item"><div>${'⭐️'.repeat(r.stars)}</div><p><strong>“${r.content}”</strong> - ${r.name}</p></div>`).join('')}`;
     }
 
-    // ==================== RENDER PRODUCT DETAIL ====================
     function renderProductDetail() {
         const prod = productsDB[currentProductId];
         const isProject = prod.category === 'du-an';
         const hasPrice = prod.prices && Object.keys(prod.prices).length > 0;
-
         const imageList = prod.images || [prod.img];
         const mainImg = imageList[0];
-
-        let imagesHtml = `<div class="detail-image-gallery">
-            <img class="detail-img" id="mainImage" src="${mainImg}" alt="${prod.name}" width="500" height="500" loading="lazy">
-            ${imageList.length > 1 ? `<div class="thumbnail-list" style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap;">
-                ${imageList.map((url, idx) => `
-                    <img src="${url}" alt="${prod.name} - ảnh ${idx+1}"
-                         style="width:70px; height:70px; object-fit:cover; border-radius:12px; cursor:pointer; border:2px solid ${idx===0?'#d63384':'transparent'};"
-                         data-index="${idx}" class="thumb-img">
-                `).join('')}
-            </div>` : ''}
-        </div>`;
-
+        let imagesHtml = `<div class="detail-image-gallery"><img class="detail-img" id="mainImage" src="${mainImg}" alt="${prod.name}" width="500" height="500" loading="lazy">${imageList.length > 1 ? `<div class="thumbnail-list" style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap;">${imageList.map((url, idx) => `<img src="${url}" alt="${prod.name} - ảnh ${idx+1}" style="width:70px; height:70px; object-fit:cover; border-radius:12px; cursor:pointer; border:2px solid ${idx===0?'#d63384':'transparent'};" data-index="${idx}" class="thumb-img">`).join('')}</div>` : ''}</div>`;
         let detailHtml = `<div class="product-grid-detail"><div>${imagesHtml}</div><div>`;
         detailHtml += `<h2 class="product-title" style="font-size:1.8rem; font-weight:800;">${prod.name}</h2>`;
-
-        if (isProject) {
-            detailHtml += `<div style="margin:16px 0;">${prod.desc}</div>`;
-        } else {
+        if (isProject) { detailHtml += `<div style="margin:16px 0;">${prod.desc}</div>`; }
+        else {
             detailHtml += `<p style="margin:16px 0;">${prod.desc}</p>`;
             if (hasPrice) {
-                const price = prod.prices[currentSize];
-                const oldPrice = prod.oldPrices[currentSize];
-                const savePercent = prod.discountPercent;
-                const sizeOptions = Object.keys(prod.prices);
+                const price = prod.prices[currentSize]; const oldPrice = prod.oldPrices[currentSize]; const savePercent = prod.discountPercent; const sizeOptions = Object.keys(prod.prices);
                 detailHtml += `<div><strong>Chọn kích thước:</strong><div class="size-chips" id="detailSizeChips">${sizeOptions.map(sz => `<div class="chip ${sz === currentSize ? 'selected' : ''}" data-size="${sz}" role="button" tabindex="0">${sz}</div>`).join('')}</div></div>`;
                 detailHtml += `<div class="price-wrapper"><span class="old-price">${formatPrice(oldPrice)}</span><span class="discount-price">${formatPrice(price)}</span><span class="saving-badge">Tiết kiệm ${savePercent}%</span></div>`;
                 detailHtml += `<div class="quantity-selector"><button id="qtyMinus" aria-label="Giảm số lượng">-</button><span id="qtyValue">${currentQuantity}</span><button id="qtyPlus" aria-label="Tăng số lượng">+</button></div>`;
-                detailHtml += `<button class="btn-add-to-cart" id="addToCartBtn"><i class="fas fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</button>`;
-                detailHtml += `<button class="btn-buy-now" id="quickBuyBtn">Mua nhanh</button>`;
+                detailHtml += `<button class="btn-add-to-cart" id="addToCartBtn"><i class="fas fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</button><button class="btn-buy-now" id="quickBuyBtn">Mua nhanh</button>`;
             } else {
-                detailHtml += `<p style="color:#c73e1d; font-weight:600; margin-top:20px;">Vui lòng liên hệ để được báo giá và tư vấn dự án.</p>`;
-                detailHtml += `<button class="btn-hero" onclick="window.location.href='tel:0905513984'" style="margin-top:16px;">📞 Gọi tư vấn ngay</button>`;
+                detailHtml += `<p style="color:#c73e1d; font-weight:600; margin-top:20px;">Vui lòng liên hệ để được báo giá và tư vấn dự án.</p><button class="btn-hero" onclick="window.location.href='tel:0905513984'" style="margin-top:16px;">📞 Gọi tư vấn ngay</button>`;
             }
         }
-
         detailHtml += `</div></div>`;
         document.getElementById("productDetailSection").innerHTML = detailHtml;
-
         document.querySelectorAll('.thumb-img').forEach(thumb => {
             thumb.addEventListener('click', function() {
                 document.getElementById('mainImage').src = this.src;
@@ -1642,84 +1415,44 @@
                 this.style.borderColor = '#d63384';
             });
         });
-
         if (!isProject && hasPrice) {
             document.getElementById("detailSizeChips")?.addEventListener('click', function(e) {
-                const chip = e.target.closest('.chip');
-                if (!chip) return;
-                currentSize = chip.dataset.size;
-                renderProductDetail();
-                renderReviews(currentProductId);
-                renderRelatedProducts(prod.category, currentProductId);
+                const chip = e.target.closest('.chip'); if (!chip) return;
+                currentSize = chip.dataset.size; renderProductDetail(); renderReviews(currentProductId); renderRelatedProducts(prod.category, currentProductId);
             });
-
             document.getElementById("qtyMinus")?.addEventListener('click', function() { if (currentQuantity > 1) { currentQuantity--; document.getElementById("qtyValue").innerText = currentQuantity; } });
             document.getElementById("qtyPlus")?.addEventListener('click', function() { currentQuantity++; document.getElementById("qtyValue").innerText = currentQuantity; });
             document.getElementById("addToCartBtn")?.addEventListener('click', function() { addToCart(currentProductId, currentSize, currentQuantity); });
             document.getElementById("quickBuyBtn")?.addEventListener('click', function() { openQuickBuyModal(); });
         }
-
         bindLightboxEvents();
-
         renderReviews(currentProductId);
         renderRelatedProducts(prod.category, currentProductId);
     }
 
-    // ==================== LIGHTBOX ====================
     let lightboxImages = [];
     let currentLightboxIndex = 0;
-
     function openLightbox(index) {
-        const modal = document.getElementById('lightboxModal');
-        const img = document.getElementById('lightboxImage');
-        const caption = document.getElementById('lightboxCaption');
-        if (!modal || !img) return;
-        if (!lightboxImages.length) return;
-        if (index < 0) index = lightboxImages.length - 1;
-        if (index >= lightboxImages.length) index = 0;
-        currentLightboxIndex = index;
-        img.src = lightboxImages[index];
+        const modal = document.getElementById('lightboxModal'); const img = document.getElementById('lightboxImage'); const caption = document.getElementById('lightboxCaption');
+        if (!modal || !img) return; if (!lightboxImages.length) return;
+        if (index < 0) index = lightboxImages.length - 1; if (index >= lightboxImages.length) index = 0;
+        currentLightboxIndex = index; img.src = lightboxImages[index];
         caption.textContent = `Ảnh ${index+1} / ${lightboxImages.length}`;
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        modal.classList.add('active'); document.body.style.overflow = 'hidden';
     }
-
-    function closeLightbox() {
-        const modal = document.getElementById('lightboxModal');
-        if (modal) modal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-
-    function changeLightbox(direction) {
-        openLightbox(currentLightboxIndex + direction);
-    }
-
+    function closeLightbox() { const modal = document.getElementById('lightboxModal'); if (modal) modal.classList.remove('active'); document.body.style.overflow = ''; }
+    function changeLightbox(direction) { openLightbox(currentLightboxIndex + direction); }
     function bindLightboxEvents() {
         const mainImage = document.getElementById('mainImage');
-        if (mainImage) {
-            mainImage.addEventListener('click', function() {
-                const prod = productsDB[currentProductId];
-                if (prod) {
-                    lightboxImages = prod.images || [prod.img];
-                    openLightbox(0);
-                }
-            });
-        }
+        if (mainImage) { mainImage.addEventListener('click', function() { const prod = productsDB[currentProductId]; if (prod) { lightboxImages = prod.images || [prod.img]; openLightbox(0); } }); }
     }
-
     document.addEventListener('DOMContentLoaded', function() {
-        const modal = document.getElementById('lightboxModal');
-        const closeBtn = document.getElementById('lightboxClose');
-        const prevBtn = document.getElementById('lightboxPrev');
-        const nextBtn = document.getElementById('lightboxNext');
-
+        const modal = document.getElementById('lightboxModal'); const closeBtn = document.getElementById('lightboxClose'); const prevBtn = document.getElementById('lightboxPrev'); const nextBtn = document.getElementById('lightboxNext');
         if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
         if (prevBtn) prevBtn.addEventListener('click', function() { changeLightbox(-1); });
         if (nextBtn) nextBtn.addEventListener('click', function() { changeLightbox(1); });
         if (modal) {
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) closeLightbox();
-            });
+            modal.addEventListener('click', function(e) { if (e.target === modal) closeLightbox(); });
             document.addEventListener('keydown', function(e) {
                 if (!modal.classList.contains('active')) return;
                 if (e.key === 'Escape') closeLightbox();
@@ -1729,54 +1462,32 @@
         }
     });
 
-    // ==================== SLIDESHOW ====================
     let slideIndex = 0;
     const slides = document.querySelectorAll('.slideshow-slide');
     const dotsContainer = document.getElementById('slideDots');
-    function showSlide(n) {
-        if (!slides.length) return;
-        slideIndex = (n + slides.length) % slides.length;
-        slides.forEach((slide, i) => { slide.classList.toggle('active', i === slideIndex); });
-        if (dotsContainer) {
-            const dots = document.querySelectorAll('.dot');
-            dots.forEach((dot, i) => { dot.classList.toggle('active', i === slideIndex); });
-        }
-    }
+    function showSlide(n) { if (!slides.length) return; slideIndex = (n + slides.length) % slides.length; slides.forEach((slide, i) => { slide.classList.toggle('active', i === slideIndex); }); if (dotsContainer) { const dots = document.querySelectorAll('.dot'); dots.forEach((dot, i) => { dot.classList.toggle('active', i === slideIndex); }); } }
     function nextSlide() { showSlide(slideIndex + 1); }
     function prevSlide() { showSlide(slideIndex - 1); }
     function createDots() {
-        if (!dotsContainer) return;
-        dotsContainer.innerHTML = '';
-        slides.forEach((_, i) => {
-            const dot = document.createElement('span');
-            dot.classList.add('dot');
-            if (i === slideIndex) dot.classList.add('active');
-            dot.setAttribute('role', 'tab');
-            dot.setAttribute('aria-label', `Slide ${i+1}`);
-            dot.addEventListener('click', () => showSlide(i));
-            dotsContainer.appendChild(dot);
-        });
+        if (!dotsContainer) return; dotsContainer.innerHTML = '';
+        slides.forEach((_, i) => { const dot = document.createElement('span'); dot.classList.add('dot'); if (i === slideIndex) dot.classList.add('active'); dot.setAttribute('role', 'tab'); dot.setAttribute('aria-label', `Slide ${i+1}`); dot.addEventListener('click', () => showSlide(i)); dotsContainer.appendChild(dot); });
     }
     document.getElementById('slidePrev')?.addEventListener('click', prevSlide);
     document.getElementById('slideNext')?.addEventListener('click', nextSlide);
     createDots();
     let slideInterval = setInterval(nextSlide, 3000);
 
-    // ==================== COUNTDOWN ====================
     let countdownEnd = new Date().getTime() + 24 * 60 * 60 * 1000;
     function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = countdownEnd - now;
+        const now = new Date().getTime(); const distance = countdownEnd - now;
         if (distance < 0) { document.getElementById('countdownTimer').innerText = "00:00:00"; return; }
         const hours = Math.floor((distance % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
         const minutes = Math.floor((distance % (60 * 60 * 1000)) / (60 * 1000));
         const seconds = Math.floor((distance % (60 * 1000)) / 1000);
         document.getElementById('countdownTimer').innerText = `${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
     }
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
+    setInterval(updateCountdown, 1000); updateCountdown();
 
-    // ==================== FILTER & PRODUCT GRID ====================
     let currentFilter = "all";
     function renderFilteredProducts() {
         const grid = document.getElementById("productGrid");
@@ -1792,24 +1503,14 @@
             return `<div class="product-card" data-id="${id}" data-slug="${p.slug}" data-category="${p.category}"><div class="discount-badge">-${p.discountPercent}%</div><img class="card-img" src="${p.img}" alt="${p.name}" width="400" height="400" loading="lazy"><div class="card-info"><div class="card-title">${p.name}</div><div class="card-price">${demoPrice ? formatPrice(demoPrice) : ''}</div><button class="btn-hero" style="background:#d63384; width:100%;">Xem chi tiết</button></div></div>`;
         }).join('');
         grid.addEventListener('click', function(e) {
-            const card = e.target.closest('.product-card');
-            if (!card) return;
+            const card = e.target.closest('.product-card'); if (!card) return;
             const id = card.dataset.id;
-            if (id) {
-                const prod = productsDB[id];
-                const newUrl = `/${prod.category}/${prod.slug}`;
-                navigateTo(newUrl, `Nệm Lê Gia - ${prod.name}`, { type: 'product', productId: id });
-            }
+            if (id) { const prod = productsDB[id]; const newUrl = `/${prod.category}/${prod.slug}`; navigateTo(newUrl, `Nệm Lê Gia - ${prod.name}`, { type: 'product', productId: id }); }
         });
     }
 
-    // ==================== FLASH SALE ====================
     function renderFlashSale() {
-        const allIds = Object.keys(productsDB).filter(id => 
-            productsDB[id].category !== 'khuyen-mai' && 
-            productsDB[id].category !== 'du-an' && 
-            productsDB[id].category !== 'phu-kien'
-        );
+        const allIds = Object.keys(productsDB).filter(id => productsDB[id].category !== 'khuyen-mai' && productsDB[id].category !== 'du-an' && productsDB[id].category !== 'phu-kien');
         const sorted = allIds.sort((a,b) => productsDB[b].discountPercent - productsDB[a].discountPercent);
         const flashIds = sorted.slice(0, 4);
         const grid = document.getElementById("flashGrid");
@@ -1820,178 +1521,93 @@
             return `<div class="flash-card" data-id="${id}" data-slug="${p.slug}" data-category="${p.category}"><div class="flash-badge">🔥 -${p.discountPercent}%</div><img class="flash-img" src="${p.img}" alt="${p.name}" width="300" height="300" loading="lazy"><div class="flash-info"><div class="flash-name">${p.name}</div><div class="flash-price">${formatPrice(demoPrice)} <span class="flash-old-price">${formatPrice(oldPrice)}</span></div></div></div>`;
         }).join('');
         grid.addEventListener('click', function(e) {
-            const card = e.target.closest('.flash-card');
-            if (!card) return;
+            const card = e.target.closest('.flash-card'); if (!card) return;
             const id = card.dataset.id;
-            if (id) {
-                const prod = productsDB[id];
-                const newUrl = `/${prod.category}/${prod.slug}`;
-                navigateTo(newUrl, `Nệm Lê Gia - ${prod.name}`, { type: 'product', productId: id });
-            }
+            if (id) { const prod = productsDB[id]; const newUrl = `/${prod.category}/${prod.slug}`; navigateTo(newUrl, `Nệm Lê Gia - ${prod.name}`, { type: 'product', productId: id }); }
         });
     }
 
-    // ==================== FILTER BUTTONS ====================
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', function() {
-            document.querySelectorAll('.filter-btn').forEach(b => {
-                b.classList.remove('active');
-                b.setAttribute('aria-selected', 'false');
-            });
-            this.classList.add('active');
-            this.setAttribute('aria-selected', 'true');
-            currentFilter = this.dataset.filter;
-            renderFilteredProducts();
+            document.querySelectorAll('.filter-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+            this.classList.add('active'); this.setAttribute('aria-selected', 'true');
+            currentFilter = this.dataset.filter; renderFilteredProducts();
         });
     });
 
-    // ==================== SEARCH ENGINE ====================
     const searchInput = document.getElementById("smartSearch");
     const suggestionsBox = document.getElementById("suggestionsBox");
-
     const categoryKeywords = {
         "cao-su-thien-nhien": ["cao su thiên nhiên", "nệm cao su thiên nhiên", "cao su tự nhiên", "nệm cao su tự nhiên", "cao su thiên", "thiên nhiên"],
         "cao-su-tong-hop": ["cao su tổng hợp", "nệm cao su tổng hợp", "cao su tổng", "tổng hợp"],
         "bong-ep": ["bông ép", "nệm bông ép", "bong ep"],
         "lo-xo-tui": ["lò xo túi", "nệm lò xo túi", "lò xo", "nệm lò xo", "lò xo tui"],
-        "khuyen-mai": ["khuyến mãi", "lotus", "premium", "giảm 35%", "giảm 38%"],
+        "khuyen-mai": ["khuyến mãi", "lotus", "premium"],
         "du-an": ["dự án", "nệm dự án", "chăn ga gối dự án", "khách sạn", "căn hộ"],
         "phu-kien": ["phụ kiện", "bảo vệ nệm", "chống thấm", "topper"]
     };
-
     function getCategoryFromKeyword(keyword) {
         const lower = keyword.trim().toLowerCase();
-        for (let category in categoryKeywords) {
-            for (let phrase of categoryKeywords[category]) {
-                if (lower.includes(phrase)) {
-                    return category;
-                }
-            }
-        }
+        for (let category in categoryKeywords) { for (let phrase of categoryKeywords[category]) { if (lower.includes(phrase)) return category; } }
         return null;
     }
-
     function getSearchableText(prod) {
         let text = prod.name + ' ' + prod.category;
         if (prod.keywords) text += ' ' + prod.keywords.join(' ');
         return text.toLowerCase();
     }
-
     function searchProducts(keyword) {
-        const lower = keyword.trim().toLowerCase();
-        if (lower.length < 1) return [];
-
+        const lower = keyword.trim().toLowerCase(); if (lower.length < 1) return [];
         const category = getCategoryFromKeyword(lower);
-        if (category) {
-            return Object.keys(productsDB).filter(id => productsDB[id].category === category);
-        }
-
+        if (category) return Object.keys(productsDB).filter(id => productsDB[id].category === category);
         const words = lower.split(/\s+/).filter(w => w.length > 1);
         if (words.length === 0) return [];
-
         const results = Object.keys(productsDB).map(id => {
-            const prod = productsDB[id];
-            const text = getSearchableText(prod);
+            const prod = productsDB[id]; const text = getSearchableText(prod);
             let matchCount = 0;
-            for (let w of words) {
-                if (text.includes(w)) matchCount++;
-            }
+            for (let w of words) { if (text.includes(w)) matchCount++; }
             return { id, matchCount };
         }).filter(item => item.matchCount > 0);
-
         results.sort((a, b) => b.matchCount - a.matchCount);
         return results.map(item => item.id);
     }
-
     searchInput.addEventListener("input", function() {
         const keyword = this.value;
-        if (keyword.length < 2) {
-            suggestionsBox.classList.remove("active");
-            return;
-        }
-
+        if (keyword.length < 2) { suggestionsBox.classList.remove("active"); return; }
         const results = searchProducts(keyword);
-        if (results.length === 0) {
-            suggestionsBox.innerHTML = `<div class="suggestion-empty">Không tìm thấy sản phẩm phù hợp.</div>`;
-            suggestionsBox.classList.add("active");
-            return;
-        }
-
-        const limited = results.slice(0, 6);
-        let html = '';
+        if (results.length === 0) { suggestionsBox.innerHTML = `<div class="suggestion-empty">Không tìm thấy sản phẩm phù hợp.</div>`; suggestionsBox.classList.add("active"); return; }
+        const limited = results.slice(0, 6); let html = '';
         limited.forEach(id => {
             const prod = productsDB[id];
             const demoPrice = prod.prices ? prod.prices[Object.keys(prod.prices)[0]] : 0;
-            html += `
-                <div class="suggestion-item" data-id="${id}">
-                    <img src="${prod.img}" alt="${prod.name}" width="40" height="40" loading="lazy">
-                    <div class="suggestion-info">
-                        <div class="suggestion-name">${prod.name}</div>
-                        <div class="suggestion-meta">${prod.category.replace(/-/g, ' ')} ${demoPrice ? '• ' + formatPrice(demoPrice) : ''}</div>
-                    </div>
-                </div>
-            `;
+            html += `<div class="suggestion-item" data-id="${id}"><img src="${prod.img}" alt="${prod.name}" width="40" height="40" loading="lazy"><div class="suggestion-info"><div class="suggestion-name">${prod.name}</div><div class="suggestion-meta">${prod.category.replace(/-/g, ' ')} ${demoPrice ? '• ' + formatPrice(demoPrice) : ''}</div></div></div>`;
         });
-        suggestionsBox.innerHTML = html;
-        suggestionsBox.classList.add("active");
+        suggestionsBox.innerHTML = html; suggestionsBox.classList.add("active");
     });
-
     suggestionsBox.addEventListener("click", function(e) {
-        const item = e.target.closest(".suggestion-item");
-        if (!item) return;
+        const item = e.target.closest(".suggestion-item"); if (!item) return;
         const id = item.dataset.id;
-        if (id && productsDB[id]) {
-            const prod = productsDB[id];
-            searchInput.value = prod.name;
-            suggestionsBox.classList.remove("active");
-            const newUrl = `/${prod.category}/${prod.slug}`;
-            navigateTo(newUrl, `Nệm Lê Gia - ${prod.name}`, { type: 'product', productId: id });
-        }
+        if (id && productsDB[id]) { const prod = productsDB[id]; searchInput.value = prod.name; suggestionsBox.classList.remove("active"); const newUrl = `/${prod.category}/${prod.slug}`; navigateTo(newUrl, `Nệm Lê Gia - ${prod.name}`, { type: 'product', productId: id }); }
     });
-
-    document.addEventListener("click", function(e) {
-        if (!searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
-            suggestionsBox.classList.remove("active");
-        }
-    });
-
+    document.addEventListener("click", function(e) { if (!searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) { suggestionsBox.classList.remove("active"); } });
     document.getElementById("searchBtn").addEventListener("click", function() {
         const keyword = searchInput.value.trim();
-        if (!keyword) {
-            showToast("Vui lòng nhập từ khóa tìm kiếm.", true);
-            return;
-        }
+        if (!keyword) { showToast("Vui lòng nhập từ khóa tìm kiếm.", true); return; }
         const results = searchProducts(keyword);
-        if (results.length > 0) {
-            const firstId = results[0];
-            const prod = productsDB[firstId];
-            const newUrl = `/${prod.category}/${prod.slug}`;
-            navigateTo(newUrl, `Nệm Lê Gia - ${prod.name}`, { type: 'product', productId: firstId });
-            suggestionsBox.classList.remove("active");
-        } else {
-            showToast("Không tìm thấy sản phẩm phù hợp. Thử từ khóa khác nhé!", true);
-        }
+        if (results.length > 0) { const firstId = results[0]; const prod = productsDB[firstId]; const newUrl = `/${prod.category}/${prod.slug}`; navigateTo(newUrl, `Nệm Lê Gia - ${prod.name}`, { type: 'product', productId: firstId }); suggestionsBox.classList.remove("active"); }
+        else { showToast("Không tìm thấy sản phẩm phù hợp. Thử từ khóa khác nhé!", true); }
     });
 
-    // ==================== NAVIGATION & EVENTS ====================
     document.getElementById("stickyCartBtn")?.addEventListener("click", () => navigateTo('/gio-hang', 'Giỏ hàng - Nệm Lê Gia', { type: 'cart' }));
     document.getElementById("cartIcon")?.addEventListener("click", () => navigateTo('/gio-hang', 'Giỏ hàng - Nệm Lê Gia', { type: 'cart' }));
     document.getElementById("stickyZaloBtn")?.addEventListener("click", () => window.open(`https://zalo.me/${PHONE_NUMBER}`, '_blank'));
     document.getElementById("stickyMessengerBtn")?.addEventListener("click", () => window.open('https://m.me/nemlegia', '_blank'));
     document.getElementById("stickyCallBtn")?.addEventListener("click", () => window.location.href = `tel:${PHONE_NUMBER}`);
-    document.getElementById("mobileMenuBtn")?.addEventListener("click", function() {
-        const nav = document.getElementById("mobileNav");
-        nav.classList.toggle("open");
-        this.setAttribute('aria-expanded', nav.classList.contains('open'));
-    });
+    document.getElementById("mobileMenuBtn")?.addEventListener("click", function() { const nav = document.getElementById("mobileNav"); nav.classList.toggle("open"); this.setAttribute('aria-expanded', nav.classList.contains('open')); });
     document.querySelectorAll(".accordion-header").forEach(h => h.addEventListener("click", function() {
-        const content = this.nextElementSibling;
-        content.classList.toggle("show");
+        const content = this.nextElementSibling; content.classList.toggle("show");
         const icon = this.querySelector("i");
-        if (icon) {
-            icon.classList.toggle("fa-angle-down");
-            icon.classList.toggle("fa-angle-up");
-        }
+        if (icon) { icon.classList.toggle("fa-angle-down"); icon.classList.toggle("fa-angle-up"); }
         this.setAttribute('aria-expanded', content.classList.contains('show'));
     }));
     document.getElementById("logoHome").addEventListener("click", () => navigateTo('/', 'Trang chủ - Nệm Lê Gia', { type: 'home' }));
@@ -2000,44 +1616,29 @@
     document.getElementById("heroCta").addEventListener("click", () => {
         const featuredIdsArr = ["platinum", "elan", "celina", "thang-loi", "csn-thang-loi", "diamond", "everon", "seoul"];
         const randomId = featuredIdsArr[Math.floor(Math.random() * featuredIdsArr.length)];
-        const prod = productsDB[randomId];
-        const newUrl = `/${prod.category}/${prod.slug}`;
+        const prod = productsDB[randomId]; const newUrl = `/${prod.category}/${prod.slug}`;
         navigateTo(newUrl, `Nệm Lê Gia - ${prod.name}`, { type: 'product', productId: randomId });
     });
-
     document.querySelectorAll('.mega-col a, .mobile-category-items a, .promo-mega-dropdown a, .du-an-mega-dropdown a, .phu-kien-mega-dropdown a, .mobile-accordion-item .accordion-content a').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const id = this.getAttribute('data-product');
-            if (id && productsDB[id]) {
-                const prod = productsDB[id];
-                const newUrl = `/${prod.category}/${prod.slug}`;
-                navigateTo(newUrl, `Nệm Lê Gia - ${prod.name}`, { type: 'product', productId: id });
-            }
+            if (id && productsDB[id]) { const prod = productsDB[id]; const newUrl = `/${prod.category}/${prod.slug}`; navigateTo(newUrl, `Nệm Lê Gia - ${prod.name}`, { type: 'product', productId: id }); }
             if (window.innerWidth < 992) document.getElementById('mobileNav').classList.remove('open');
         });
     });
 
-    // ==================== QUICK BUY MODAL ====================
     let quickBuyProduct = null, quickBuySize = null, quickBuyQuantity = 1;
     function openQuickBuyModal() {
         const prod = productsDB[currentProductId];
-        if (prod.category === 'du-an') {
-            showToast("Sản phẩm này vui lòng liên hệ để được tư vấn.", true);
-            return;
-        }
-        quickBuyProduct = currentProductId;
-        quickBuySize = currentSize;
-        quickBuyQuantity = currentQuantity;
-        document.getElementById('quickName').value = '';
-        document.getElementById('quickPhone').value = '';
-        document.getElementById('quickAddress').value = '';
-        document.getElementById('quickNotes').value = '';
+        if (prod.category === 'du-an') { showToast("Sản phẩm này vui lòng liên hệ để được tư vấn.", true); return; }
+        quickBuyProduct = currentProductId; quickBuySize = currentSize; quickBuyQuantity = currentQuantity;
+        document.getElementById('quickName').value = ''; document.getElementById('quickPhone').value = '';
+        document.getElementById('quickAddress').value = ''; document.getElementById('quickNotes').value = '';
         document.getElementById('quickBuyModal').style.display = 'flex';
     }
     document.getElementById('closeModalBtn').addEventListener('click', () => document.getElementById('quickBuyModal').style.display = 'none');
     window.addEventListener('click', (e) => { if (e.target === document.getElementById('quickBuyModal')) document.getElementById('quickBuyModal').style.display = 'none'; });
-
     async function submitQuickOrder(e) {
         e.preventDefault();
         const name = document.getElementById('quickName').value.trim();
@@ -2047,25 +1648,19 @@
         const notes = document.getElementById('quickNotes').value.trim();
         if (!name || !phone || !addr) { showToast("Vui lòng nhập đầy đủ thông tin.", true); return; }
         if (!/^\d{10,11}$/.test(phone)) { showToast("Số điện thoại không hợp lệ.", true); return; }
-        const prod = productsDB[quickBuyProduct];
-        const price = prod.prices[quickBuySize];
-        const total = price * quickBuyQuantity;
+        const prod = productsDB[quickBuyProduct]; const price = prod.prices[quickBuySize]; const total = price * quickBuyQuantity;
         const orderData = { name, phone, address: addr, payment: payment === 'COD' ? 'Thanh toán khi nhận hàng' : 'Chuyển khoản', notes, items: `${prod.name} (${quickBuySize}) x ${quickBuyQuantity} = ${formatPrice(total)}`, total: formatPrice(total), _subject: `Đơn hàng nhanh từ ${name}` };
         const btn = document.getElementById('quickSubmitBtn');
         btn.disabled = true; btn.innerHTML = '<span class="spinner"></span> Đang xử lý...';
         try {
             const res = await fetch(FORMSPREE_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(orderData) });
-            if (res.ok) {
-                showToast(`✅ Đặt hàng thành công! Cảm ơn ${name}.`);
-                document.getElementById('quickBuyModal').style.display = 'none';
-                trackPurchase(Date.now().toString(), total, [{ id: quickBuyProduct, name: prod.name, price: price, quantity: quickBuyQuantity }]);
-            } else showToast("Lỗi gửi đơn, thử lại.", true);
+            if (res.ok) { showToast(`✅ Đặt hàng thành công! Cảm ơn ${name}.`); document.getElementById('quickBuyModal').style.display = 'none'; trackPurchase(Date.now().toString(), total, [{ id: quickBuyProduct, name: prod.name, price: price, quantity: quickBuyQuantity }]); }
+            else showToast("Lỗi gửi đơn, thử lại.", true);
         } catch (err) { showToast("Lỗi kết nối.", true); }
         finally { btn.disabled = false; btn.innerHTML = 'Xác nhận đặt hàng'; }
     }
     document.getElementById('quickOrderForm').addEventListener('submit', submitQuickOrder);
 
-    // ==================== ORDER FORM ====================
     document.getElementById("orderForm").addEventListener("submit", async (e) => {
         e.preventDefault();
         const name = document.getElementById("fullName").value.trim();
@@ -2084,33 +1679,22 @@
             const res = await fetch(FORMSPREE_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(orderData) });
             if (res.ok) {
                 showToast(`✅ Đặt hàng thành công! Cảm ơn ${name}.`);
-                const cartCopy = [...cart];
-                cart = []; saveCart(); renderCartViewFunc();
-                document.getElementById("orderForm").reset();
-                document.getElementById("checkoutFormContainer").style.display = "none";
+                const cartCopy = [...cart]; cart = []; saveCart(); renderCartViewFunc();
+                document.getElementById("orderForm").reset(); document.getElementById("checkoutFormContainer").style.display = "none";
                 navigateTo('/', 'Trang chủ - Nệm Lê Gia', { type: 'home' });
                 trackPurchase(Date.now().toString(), total, cartCopy);
             } else showToast("Có lỗi xảy ra, thử lại.", true);
         } catch (err) { showToast("Lỗi kết nối.", true); }
         finally { btn.disabled = false; btn.innerHTML = 'XÁC NHẬN ĐẶT HÀNG'; }
     });
-
     document.getElementById("proceedToCheckoutBtn").addEventListener("click", function() {
         if (cart.length === 0) showToast("Giỏ hàng trống.", true);
         else document.getElementById("checkoutFormContainer").style.display = "block";
     });
-
-    // ==================== BACK TO TOP ====================
-    window.addEventListener('scroll', function() {
-        document.getElementById('backToTopBtn').classList.toggle('show', window.scrollY > 300);
-    });
+    window.addEventListener('scroll', function() { document.getElementById('backToTopBtn').classList.toggle('show', window.scrollY > 300); });
     document.getElementById('backToTopBtn').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    // ==================== INIT ====================
-    renderFilteredProducts();
-    renderFlashSale();
-    loadRouteFromPath();
-    updateCartCount();
+    renderFilteredProducts(); renderFlashSale(); loadRouteFromPath(); updateCartCount();
 </script>
 </body>
 </html>
