@@ -248,11 +248,11 @@
         .checkout-section .btn-checkout:disabled { opacity: 0.7; cursor: not-allowed; transform: none; box-shadow: none; }
         @media (max-width: 600px) { .checkout-section { padding: 24px 16px; } .checkout-section h3 { font-size: 1.3rem; } .checkout-section .form-group input, .checkout-section .form-group textarea { font-size: 15px; padding: 12px 16px; } .checkout-section .payment-methods label { padding: 10px 14px; font-size: 0.9rem; } .checkout-section .btn-checkout { font-size: 1rem; padding: 14px; } }
         .sticky-buttons { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: white; padding: 8px 12px; gap: 8px; box-shadow: 0 -4px 12px rgba(0,0,0,0.1); z-index: 1000; border-top: 1px solid #e2e8f0; }
-        .btn-sticky { flex: 1; text-align: center; padding: 10px 0; border-radius: 40px; font-weight: 600; font-size: 0.75rem; cursor: pointer; transition: 0.2s; display: flex; align-items: center; justify-content: center; gap: 4px; white-space: nowrap; }
-        .btn-cart { background: #d63384; color: white; }
-        .btn-zalo { background: #0068ff; color: white; }
-        .btn-messenger { background: #0084ff; color: white; }
-        .btn-call { background: #1e3a5f; color: white; }
+        .btn-sticky { flex: 1; text-align: center; padding: 10px 0; border-radius: 40px; font-weight: 600; font-size: 0.75rem; cursor: pointer; transition: 0.2s; display: flex; align-items: center; justify-content: center; gap: 4px; white-space: nowrap; text-decoration: none; color: white; border: none; }
+        .btn-cart { background: #d63384; }
+        .btn-zalo { background: #0068ff; }
+        .btn-messenger { background: #0084ff; }
+        .btn-call { background: #1e3a5f; }
         .back-to-top { position: fixed; bottom: 80px; right: 20px; background: #1e3a5f; color: white; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transition: 0.3s; z-index: 999; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
         .back-to-top.show { opacity: 1; visibility: visible; }
         .floating-buttons { position: fixed; right: 20px; bottom: 140px; z-index: 999; display: flex; flex-direction: column; gap: 12px; align-items: center; }
@@ -260,6 +260,7 @@
         .floating-btn:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
         .floating-btn.zalo { background: #0068ff; }
         .floating-btn.messenger { background: #0084ff; }
+        .floating-btn svg { width: 26px; height: 26px; fill: #fff; }
         @media (max-width: 768px) { .floating-buttons { display: none; } }
         @media (max-width: 768px) {
             .sticky-buttons { display: flex; padding: 8px 10px; gap: 6px; }
@@ -341,11 +342,24 @@
             .lightbox-close { font-size: 30px; top: 10px; right: 20px; }
             .lightbox-caption { font-size: 0.8rem; bottom: 20px; padding: 8px 16px; }
         }
+        .btn-sticky.btn-zalo svg { width: 14px; height: 14px; fill: #fff; margin-right: 2px; }
     </style>
 </head>
 <body>
 <div id="toast" class="toast-message"></div>
 <div class="back-to-top" id="backToTopBtn" aria-label="Lên đầu trang"><i class="fas fa-arrow-up"></i></div>
+
+<!-- ========== NÚT NỔI DESKTOP: ZALO + MESSENGER ========== -->
+<div class="floating-buttons" aria-label="Liên hệ nhanh">
+    <a href="https://zalo.me/0905513984" target="_blank" rel="noopener" class="floating-btn zalo" id="floatingZalo" aria-label="Chat Zalo" title="Chat Zalo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 5.94 2 10.8c0 2.72 1.4 5.14 3.6 6.78V22l3.66-2.02c.88.24 1.8.36 2.74.36 5.52 0 10-3.94 10-8.8S17.52 2 12 2zm1.24 11.62l-2.4-2.56-4.68 2.56L11.6 8.4l2.46 2.56 4.62-2.56-5.44 5.22z"/>
+        </svg>
+    </a>
+    <a href="https://m.me/nemlegia" target="_blank" rel="noopener" class="floating-btn messenger" id="floatingMessenger" aria-label="Chat Messenger" title="Chat Messenger">
+        <i class="fab fa-facebook-messenger"></i>
+    </a>
+</div>
 
 <!-- Quick Buy Modal -->
 <div id="quickBuyModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
@@ -562,7 +576,6 @@
     </div>
 </main>
 
-<!-- FOOTER MỚI -->
 <footer role="contentinfo">
     <div class="footer-line"><i class="fas fa-store" aria-hidden="true"></i> <span><span class="pink">HỘ KINH DOANH NỆM LÊ GIA</span></span></div>
     <div class="footer-line"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span>123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng</span></div>
@@ -587,8 +600,6 @@
     </div>
 </footer>
 
-<!-- ============ CÁC MODAL CHÍNH SÁCH ============ -->
-
 <!-- 1. Chính sách bảo mật -->
 <div id="policy-bao-mat" class="policy-modal">
     <div class="policy-content">
@@ -598,44 +609,21 @@
         <h3>1. THÔNG TIN CHỦ SỞ HỮU</h3>
         <p><strong>HỘ KINH DOANH NỆM LÊ GIA</strong><br>Mã số thuế: 049088001414<br>Địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng<br>Hotline: 0905 513 984<br>Email: nemlegia9288@gmail.com</p>
         <h3>2. MỤC ĐÍCH THU THẬP THÔNG TIN</h3>
-        <ul>
-            <li>Xử lý và giao hàng các đơn hàng.</li>
-            <li>Liên hệ xác nhận đơn hàng và thông báo tình trạng giao hàng.</li>
-            <li>Hỗ trợ khách hàng giải đáp thắc mắc, khiếu nại.</li>
-            <li>Gửi thông tin khuyến mãi, ưu đãi (nếu khách đồng ý).</li>
-            <li>Cải thiện chất lượng dịch vụ và trải nghiệm mua sắm.</li>
-        </ul>
+        <ul><li>Xử lý và giao hàng các đơn hàng.</li><li>Liên hệ xác nhận đơn hàng và thông báo tình trạng giao hàng.</li><li>Hỗ trợ khách hàng giải đáp thắc mắc, khiếu nại.</li><li>Gửi thông tin khuyến mãi, ưu đãi (nếu khách đồng ý).</li><li>Cải thiện chất lượng dịch vụ và trải nghiệm mua sắm.</li></ul>
         <h3>3. PHẠM VI THU THẬP THÔNG TIN</h3>
-        <ul>
-            <li>Họ và tên</li>
-            <li>Số điện thoại</li>
-            <li>Địa chỉ giao hàng</li>
-            <li>Email (nếu có)</li>
-            <li>Lịch sử mua hàng</li>
-        </ul>
+        <ul><li>Họ và tên</li><li>Số điện thoại</li><li>Địa chỉ giao hàng</li><li>Email (nếu có)</li><li>Lịch sử mua hàng</li></ul>
         <h3>4. PHẠM VI SỬ DỤNG THÔNG TIN</h3>
         <p>Chúng tôi cam kết <strong>không bán, trao đổi hoặc cho thuê</strong> thông tin cá nhân của quý khách cho bên thứ ba. Chỉ cung cấp khi có yêu cầu từ cơ quan pháp luật.</p>
         <h3>5. THỜI GIAN LƯU TRỮ</h3>
         <p>Thông tin được lưu trữ trong suốt quá trình hoạt động hoặc đến khi khách hàng yêu cầu xóa.</p>
         <h3>6. QUYỀN CỦA KHÁCH HÀNG</h3>
-        <ul>
-            <li>Yêu cầu cung cấp bản sao thông tin đang lưu trữ.</li>
-            <li>Yêu cầu chỉnh sửa, cập nhật thông tin.</li>
-            <li>Yêu cầu xóa thông tin (trừ khi pháp luật yêu cầu).</li>
-        </ul>
+        <ul><li>Yêu cầu cung cấp bản sao thông tin đang lưu trữ.</li><li>Yêu cầu chỉnh sửa, cập nhật thông tin.</li><li>Yêu cầu xóa thông tin (trừ khi pháp luật yêu cầu).</li></ul>
         <p>Liên hệ qua hotline 0905 513 984 hoặc email: <strong>nemlegia9288@gmail.com</strong> để thực hiện các quyền trên.</p>
         <h3>7. CAM KẾT BẢO MẬT</h3>
-        <ul>
-            <li>Áp dụng biện pháp kỹ thuật và quản lý để bảo vệ thông tin.</li>
-            <li>Mọi thông tin thanh toán qua cổng trung gian đều được mã hóa SSL.</li>
-        </ul>
+        <ul><li>Áp dụng biện pháp kỹ thuật và quản lý để bảo vệ thông tin.</li><li>Mọi thông tin thanh toán qua cổng trung gian đều được mã hóa SSL.</li></ul>
         <h3>8. LIÊN HỆ</h3>
         <p>Nếu có thắc mắc hoặc khiếu nại về bảo mật, vui lòng liên hệ:</p>
-        <ul>
-            <li><strong>Hotline:</strong> 0905 513 984</li>
-            <li><strong>Email:</strong> nemlegia9288@gmail.com</li>
-            <li><strong>Địa chỉ:</strong> 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng</li>
-        </ul>
+        <ul><li><strong>Hotline:</strong> 0905 513 984</li><li><strong>Email:</strong> nemlegia9288@gmail.com</li><li><strong>Địa chỉ:</strong> 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng</li></ul>
     </div>
 </div>
 
@@ -648,42 +636,18 @@
         <h3>1. THÔNG TIN CHỦ SỞ HỮU</h3>
         <p><strong>HỘ KINH DOANH NỆM LÊ GIA</strong><br>Mã số thuế: 049088001414<br>Địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng</p>
         <h3>2. NGUYÊN TẮC NIÊM YẾT GIÁ</h3>
-        <ul>
-            <li>Giá niêm yết trên website là giá bán lẻ chính thức, đã bao gồm thuế giá trị gia tăng (VAT) theo quy định.</li>
-            <li>Giá được hiển thị rõ ràng bằng đơn vị tiền tệ Việt Nam Đồng (VNĐ) bên cạnh từng sản phẩm.</li>
-            <li>Giá gạch ngang (nếu có) là giá niêm yết trước khi áp dụng khuyến mãi.</li>
-            <li>Giá khuyến mãi được hiển thị bằng màu nổi bật và có badge phần trăm giảm giá rõ ràng.</li>
-        </ul>
+        <ul><li>Giá niêm yết trên website là giá bán lẻ chính thức, đã bao gồm thuế giá trị gia tăng (VAT) theo quy định.</li><li>Giá được hiển thị rõ ràng bằng đơn vị tiền tệ Việt Nam Đồng (VNĐ) bên cạnh từng sản phẩm.</li><li>Giá gạch ngang (nếu có) là giá niêm yết trước khi áp dụng khuyến mãi.</li><li>Giá khuyến mãi được hiển thị bằng màu nổi bật và có badge phần trăm giảm giá rõ ràng.</li></ul>
         <h3>3. CÁC YẾU TỐ ẢNH HƯỞNG ĐẾN GIÁ</h3>
-        <ul>
-            <li><strong>Kích thước sản phẩm:</strong> Mỗi kích thước (1m0x2m, 1m2x2m, ...) có mức giá khác nhau.</li>
-            <li><strong>Độ dày sản phẩm:</strong> Nệm có độ dày 10cm, 15cm, 20cm có giá khác nhau.</li>
-            <li><strong>Chất liệu:</strong> Nệm cao su thiên nhiên, cao su tổng hợp, bông ép, lò xo túi có mức giá khác nhau.</li>
-            <li><strong>Chương trình khuyến mãi:</strong> Các chương trình flash sale, khuyến mãi theo mùa có thể làm thay đổi giá bán.</li>
-        </ul>
+        <ul><li><strong>Kích thước sản phẩm:</strong> Mỗi kích thước (1m0x2m, 1m2x2m, ...) có mức giá khác nhau.</li><li><strong>Độ dày sản phẩm:</strong> Nệm có độ dày 10cm, 15cm, 20cm có giá khác nhau.</li><li><strong>Chất liệu:</strong> Nệm cao su thiên nhiên, cao su tổng hợp, bông ép, lò xo túi có mức giá khác nhau.</li><li><strong>Chương trình khuyến mãi:</strong> Các chương trình flash sale, khuyến mãi theo mùa có thể làm thay đổi giá bán.</li></ul>
         <h3>4. PHÍ VẬN CHUYỂN</h3>
-        <ul>
-            <li><strong>Miễn phí giao hàng</strong> đối với đơn hàng trong nội thành Đà Nẵng.</li>
-            <li>Các tỉnh/thành khác: Phí vận chuyển được tính theo bảng giá của đơn vị vận chuyển và sẽ thông báo cụ thể khi xác nhận đơn hàng.</li>
-            <li>Phí vận chuyển sẽ được thông báo trước khi quý khách xác nhận đặt hàng.</li>
-        </ul>
+        <ul><li><strong>Miễn phí giao hàng</strong> đối với đơn hàng trong nội thành Đà Nẵng.</li><li>Các tỉnh/thành khác: Phí vận chuyển được tính theo bảng giá của đơn vị vận chuyển và sẽ thông báo cụ thể khi xác nhận đơn hàng.</li><li>Phí vận chuyển sẽ được thông báo trước khi quý khách xác nhận đặt hàng.</li></ul>
         <h3>5. CHÍNH SÁCH ĐIỀU CHỈNH GIÁ</h3>
-        <ul>
-            <li>Nệm Lê Gia có quyền thay đổi giá sản phẩm mà không cần báo trước.</li>
-            <li>Mọi thay đổi giá đều được cập nhật trực tiếp trên website.</li>
-            <li>Đối với đơn hàng đã được xác nhận trước thời điểm thay đổi giá, chúng tôi giữ nguyên giá đã xác nhận.</li>
-        </ul>
+        <ul><li>Nệm Lê Gia có quyền thay đổi giá sản phẩm mà không cần báo trước.</li><li>Mọi thay đổi giá đều được cập nhật trực tiếp trên website.</li><li>Đối với đơn hàng đã được xác nhận trước thời điểm thay đổi giá, chúng tôi giữ nguyên giá đã xác nhận.</li></ul>
         <h3>6. HÓA ĐƠN VÀ CHỨNG TỪ</h3>
-        <ul>
-            <li>Chúng tôi cung cấp hóa đơn bán hàng cho tất cả các đơn hàng.</li>
-            <li>Nếu quý khách có nhu cầu xuất hóa đơn VAT, vui lòng thông báo khi đặt hàng hoặc liên hệ hotline.</li>
-        </ul>
+        <ul><li>Chúng tôi cung cấp hóa đơn bán hàng cho tất cả các đơn hàng.</li><li>Nếu quý khách có nhu cầu xuất hóa đơn VAT, vui lòng thông báo khi đặt hàng hoặc liên hệ hotline.</li></ul>
         <h3>7. LIÊN HỆ</h3>
         <p>Mọi thắc mắc về giá, vui lòng liên hệ:</p>
-        <ul>
-            <li><strong>Hotline:</strong> 0905 513 984</li>
-            <li><strong>Email:</strong> nemlegia9288@gmail.com</li>
-        </ul>
+        <ul><li><strong>Hotline:</strong> 0905 513 984</li><li><strong>Email:</strong> nemlegia9288@gmail.com</li></ul>
     </div>
 </div>
 
@@ -697,37 +661,19 @@
         <p><strong>HỘ KINH DOANH NỆM LÊ GIA</strong><br>Mã số thuế: 049088001414<br>Địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng</p>
         <h3>2. CÁC PHƯƠNG THỨC THANH TOÁN</h3>
         <p>Nệm Lê Gia hiện hỗ trợ 2 hình thức thanh toán:</p>
-        <ul>
-            <li><strong>Thanh toán khi nhận hàng (COD):</strong> Quý khách thanh toán tiền mặt cho nhân viên giao hàng khi nhận được sản phẩm. Áp dụng cho tất cả đơn hàng trên toàn quốc.</li>
-            <li><strong>Chuyển khoản ngân hàng:</strong> Quý khách chuyển khoản trước theo thông tin tài khoản được cung cấp khi xác nhận đơn hàng. Sau khi chuyển khoản, vui lòng gửi ảnh giao dịch qua Zalo 0905 513 984 để xác nhận.</li>
-        </ul>
+        <ul><li><strong>Thanh toán khi nhận hàng (COD):</strong> Quý khách thanh toán tiền mặt cho nhân viên giao hàng khi nhận được sản phẩm. Áp dụng cho tất cả đơn hàng trên toàn quốc.</li><li><strong>Chuyển khoản ngân hàng:</strong> Quý khách chuyển khoản trước theo thông tin tài khoản được cung cấp khi xác nhận đơn hàng. Sau khi chuyển khoản, vui lòng gửi ảnh giao dịch qua Zalo 0905 513 984 để xác nhận.</li></ul>
         <h3>3. THỜI ĐIỂM THANH TOÁN</h3>
-        <ul>
-            <li><strong>Đối với COD:</strong> Thanh toán ngay khi nhận hàng và kiểm tra sản phẩm.</li>
-            <li><strong>Đối với chuyển khoản:</strong> Thanh toán trong vòng 24 giờ kể từ khi xác nhận đơn hàng.</li>
-        </ul>
+        <ul><li><strong>Đối với COD:</strong> Thanh toán ngay khi nhận hàng và kiểm tra sản phẩm.</li><li><strong>Đối với chuyển khoản:</strong> Thanh toán trong vòng 24 giờ kể từ khi xác nhận đơn hàng.</li></ul>
         <h3>4. XÁC NHẬN THANH TOÁN</h3>
-        <ul>
-            <li>Sau khi nhận được thanh toán, chúng tôi sẽ gửi xác nhận qua điện thoại, Zalo hoặc email.</li>
-            <li>Đối với chuyển khoản, thời gian xác nhận tối đa là 2 giờ làm việc.</li>
-        </ul>
+        <ul><li>Sau khi nhận được thanh toán, chúng tôi sẽ gửi xác nhận qua điện thoại, Zalo hoặc email.</li><li>Đối với chuyển khoản, thời gian xác nhận tối đa là 2 giờ làm việc.</li></ul>
         <h3>5. HÓA ĐƠN</h3>
-        <ul>
-            <li>Hóa đơn bán hàng được cung cấp cho tất cả đơn hàng.</li>
-            <li>Nếu cần hóa đơn VAT, vui lòng thông báo khi đặt hàng.</li>
-        </ul>
+        <ul><li>Hóa đơn bán hàng được cung cấp cho tất cả đơn hàng.</li><li>Nếu cần hóa đơn VAT, vui lòng thông báo khi đặt hàng.</li></ul>
         <h3>6. CHÍNH SÁCH HOÀN TIỀN</h3>
         <p>Trong trường hợp hủy đơn hàng hoặc đổi trả sản phẩm, tiền sẽ được hoàn lại theo phương thức:</p>
-        <ul>
-            <li>Chuyển khoản ngân hàng trong vòng 5-7 ngày làm việc.</li>
-            <li>Hoặc hoàn bằng mã giảm giá cho đơn hàng kế tiếp (nếu khách hàng đồng ý).</li>
-        </ul>
+        <ul><li>Chuyển khoản ngân hàng trong vòng 5-7 ngày làm việc.</li><li>Hoặc hoàn bằng mã giảm giá cho đơn hàng kế tiếp (nếu khách hàng đồng ý).</li></ul>
         <h3>7. LIÊN HỆ</h3>
         <p>Mọi thắc mắc về thanh toán, vui lòng liên hệ:</p>
-        <ul>
-            <li><strong>Hotline:</strong> 0905 513 984</li>
-            <li><strong>Email:</strong> nemlegia9288@gmail.com</li>
-        </ul>
+        <ul><li><strong>Hotline:</strong> 0905 513 984</li><li><strong>Email:</strong> nemlegia9288@gmail.com</li></ul>
     </div>
 </div>
 
@@ -739,54 +685,22 @@
         <p><em>Cập nhật lần cuối: 15/09/2024</em></p>
         <h3>1. THÔNG TIN CHỦ SỞ HỮU</h3>
         <p><strong>HỘ KINH DOANH NỆM LÊ GIA</strong><br>Mã số thuế: 049088001414<br>Địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng</p>
-
         <h3>2. CHÍNH SÁCH GIAO HÀNG</h3>
         <p><strong>Khu vực giao hàng:</strong></p>
-        <ul>
-            <li>Giao hàng toàn quốc.</li>
-            <li>Miễn phí giao hàng nội thành Đà Nẵng.</li>
-            <li>Các tỉnh/thành khác: phí vận chuyển tính theo bảng giá của đơn vị vận chuyển.</li>
-        </ul>
+        <ul><li>Giao hàng toàn quốc.</li><li>Miễn phí giao hàng nội thành Đà Nẵng.</li><li>Các tỉnh/thành khác: phí vận chuyển tính theo bảng giá của đơn vị vận chuyển.</li></ul>
         <p><strong>Thời gian giao hàng:</strong></p>
-        <ul>
-            <li>Đà Nẵng: 1-2 ngày làm việc.</li>
-            <li>Các tỉnh lân cận: 2-4 ngày làm việc.</li>
-            <li>Các tỉnh xa: 4-7 ngày làm việc.</li>
-        </ul>
+        <ul><li>Đà Nẵng: 1-2 ngày làm việc.</li><li>Các tỉnh lân cận: 2-4 ngày làm việc.</li><li>Các tỉnh xa: 4-7 ngày làm việc.</li></ul>
         <p><strong>Trách nhiệm khi giao hàng:</strong></p>
-        <ul>
-            <li>Quý khách vui lòng kiểm tra sản phẩm trước khi thanh toán (đối với COD).</li>
-            <li>Nếu sản phẩm có dấu hiệu hư hỏng, quý khách có quyền từ chối nhận hàng.</li>
-        </ul>
-
+        <ul><li>Quý khách vui lòng kiểm tra sản phẩm trước khi thanh toán (đối với COD).</li><li>Nếu sản phẩm có dấu hiệu hư hỏng, quý khách có quyền từ chối nhận hàng.</li></ul>
         <h3>3. ĐIỀU KIỆN ĐỔI TRẢ</h3>
         <p>Quý khách có thể yêu cầu đổi trả trong các trường hợp sau:</p>
-        <ul>
-            <li>Sản phẩm bị lỗi kỹ thuật do nhà sản xuất.</li>
-            <li>Sản phẩm sai kích thước, sai mẫu mã so với đơn hàng.</li>
-            <li>Sản phẩm bị hư hỏng trong quá trình vận chuyển.</li>
-        </ul>
+        <ul><li>Sản phẩm bị lỗi kỹ thuật do nhà sản xuất.</li><li>Sản phẩm sai kích thước, sai mẫu mã so với đơn hàng.</li><li>Sản phẩm bị hư hỏng trong quá trình vận chuyển.</li></ul>
         <p><strong>Điều kiện áp dụng:</strong></p>
-        <ul>
-            <li>Thông báo trong vòng 7 ngày kể từ ngày nhận hàng.</li>
-            <li>Sản phẩm còn nguyên vẹn, chưa qua sử dụng, còn tem mác.</li>
-            <li>Có kèm hóa đơn hoặc xác nhận đơn hàng.</li>
-        </ul>
-
+        <ul><li>Thông báo trong vòng 7 ngày kể từ ngày nhận hàng.</li><li>Sản phẩm còn nguyên vẹn, chưa qua sử dụng, còn tem mác.</li><li>Có kèm hóa đơn hoặc xác nhận đơn hàng.</li></ul>
         <h3>4. QUY TRÌNH ĐỔI TRẢ</h3>
-        <ol>
-            <li>Liên hệ hotline 0905 513 984 hoặc Zalo 0905 513 984.</li>
-            <li>Cung cấp thông tin đơn hàng và hình ảnh/video sản phẩm lỗi.</li>
-            <li>Chúng tôi xác nhận và hướng dẫn gửi hàng về địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng.</li>
-            <li>Kiểm tra và xử lý đổi trả trong 3-5 ngày làm việc.</li>
-        </ol>
-
+        <ol><li>Liên hệ hotline 0905 513 984 hoặc Zalo 0905 513 984.</li><li>Cung cấp thông tin đơn hàng và hình ảnh/video sản phẩm lỗi.</li><li>Chúng tôi xác nhận và hướng dẫn gửi hàng về địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng.</li><li>Kiểm tra và xử lý đổi trả trong 3-5 ngày làm việc.</li></ol>
         <h3>5. CHI PHÍ ĐỔI TRẢ</h3>
-        <ul>
-            <li>Lỗi từ phía Nệm Lê Gia → <strong>Miễn phí</strong> đổi trả và vận chuyển.</li>
-            <li>Khách hàng đổi trả do không ưng ý → Khách chịu chi phí vận chuyển cả 2 chiều.</li>
-        </ul>
-
+        <ul><li>Lỗi từ phía Nệm Lê Gia → <strong>Miễn phí</strong> đổi trả và vận chuyển.</li><li>Khách hàng đổi trả do không ưng ý → Khách chịu chi phí vận chuyển cả 2 chiều.</li></ul>
         <h3>6. CHÍNH SÁCH BẢO HÀNH</h3>
         <table>
             <tr><th>Sản phẩm</th><th>Thời gian bảo hành</th></tr>
@@ -796,12 +710,8 @@
             <tr><td>Nệm bông ép (Everon, Seoul)</td><td>5 - 10 năm</td></tr>
             <tr><td>Phụ kiện (Bảo vệ nệm, Topper)</td><td>1 tháng</td></tr>
         </table>
-
         <h3>7. CHÍNH SÁCH HOÀN TIỀN</h3>
-        <ul>
-            <li>Hoàn tiền qua chuyển khoản ngân hàng trong 5-7 ngày làm việc.</li>
-            <li>Hoặc hoàn bằng mã giảm giá cho đơn hàng kế tiếp (nếu khách chọn).</li>
-        </ul>
+        <ul><li>Hoàn tiền qua chuyển khoản ngân hàng trong 5-7 ngày làm việc.</li><li>Hoặc hoàn bằng mã giảm giá cho đơn hàng kế tiếp (nếu khách chọn).</li></ul>
     </div>
 </div>
 
@@ -813,48 +723,20 @@
         <p><em>Cập nhật lần cuối: 15/09/2024</em></p>
         <h3>1. THÔNG TIN CHỦ SỞ HỮU</h3>
         <p><strong>HỘ KINH DOANH NỆM LÊ GIA</strong><br>Mã số thuế: 049088001414<br>Địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng</p>
-
         <h3>2. CÁC KÊNH TIẾP NHẬN KHIẾU NẠI</h3>
         <p>Quý khách có thể gửi phản ánh, yêu cầu, khiếu nại qua các kênh sau:</p>
-        <ul>
-            <li><strong>Hotline:</strong> 0905 513 984 (Thời gian: 8h00 - 21h00 hàng ngày)</li>
-            <li><strong>Email:</strong> nemlegia9288@gmail.com</li>
-            <li><strong>Zalo:</strong> 0905 513 984</li>
-            <li><strong>Facebook Messenger:</strong> m.me/nemlegia</li>
-            <li><strong>Địa chỉ trực tiếp:</strong> 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng</li>
-        </ul>
-
+        <ul><li><strong>Hotline:</strong> 0905 513 984 (Thời gian: 8h00 - 21h00 hàng ngày)</li><li><strong>Email:</strong> nemlegia9288@gmail.com</li><li><strong>Zalo:</strong> 0905 513 984</li><li><strong>Facebook Messenger:</strong> m.me/nemlegia</li><li><strong>Địa chỉ trực tiếp:</strong> 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng</li></ul>
         <h3>3. QUY TRÌNH TIẾP NHẬN VÀ GIẢI QUYẾT KHIẾU NẠI</h3>
-        <ol>
-            <li><strong>Bước 1 - Tiếp nhận:</strong> Quý khách gửi khiếu nại qua một trong các kênh trên, cung cấp thông tin đơn hàng, nội dung khiếu nại và bằng chứng liên quan (hình ảnh, video nếu có).</li>
-            <li><strong>Bước 2 - Xác nhận:</strong> Nệm Lê Gia tiếp nhận và xác nhận khiếu nại trong vòng 24 giờ làm việc.</li>
-            <li><strong>Bước 3 - Xác minh:</strong> Tiến hành xác minh thông tin, trao đổi với khách hàng để làm rõ vấn đề.</li>
-            <li><strong>Bước 4 - Giải quyết:</strong> Đưa ra phương án giải quyết (đổi trả, bồi thường, hoàn tiền) trong vòng 3 ngày làm việc kể từ khi xác minh xong.</li>
-            <li><strong>Bước 5 - Thông báo kết quả:</strong> Thông báo kết quả cho quý khách và thực hiện phương án đã thống nhất.</li>
-        </ol>
-
+        <ol><li><strong>Bước 1 - Tiếp nhận:</strong> Quý khách gửi khiếu nại qua một trong các kênh trên, cung cấp thông tin đơn hàng, nội dung khiếu nại và bằng chứng liên quan (hình ảnh, video nếu có).</li><li><strong>Bước 2 - Xác nhận:</strong> Nệm Lê Gia tiếp nhận và xác nhận khiếu nại trong vòng 24 giờ làm việc.</li><li><strong>Bước 3 - Xác minh:</strong> Tiến hành xác minh thông tin, trao đổi với khách hàng để làm rõ vấn đề.</li><li><strong>Bước 4 - Giải quyết:</strong> Đưa ra phương án giải quyết (đổi trả, bồi thường, hoàn tiền) trong vòng 3 ngày làm việc kể từ khi xác minh xong.</li><li><strong>Bước 5 - Thông báo kết quả:</strong> Thông báo kết quả cho quý khách và thực hiện phương án đã thống nhất.</li></ol>
         <h3>4. THỜI GIAN GIẢI QUYẾT</h3>
-        <ul>
-            <li>Thời gian giải quyết tối đa: <strong>5 ngày làm việc</strong> kể từ khi nhận được khiếu nại hợp lệ.</li>
-            <li>Trường hợp phức tạp cần thêm thời gian xác minh, chúng tôi sẽ thông báo cụ thể cho quý khách.</li>
-        </ul>
-
+        <ul><li>Thời gian giải quyết tối đa: <strong>5 ngày làm việc</strong> kể từ khi nhận được khiếu nại hợp lệ.</li><li>Trường hợp phức tạp cần thêm thời gian xác minh, chúng tôi sẽ thông báo cụ thể cho quý khách.</li></ul>
         <h3>5. TRÁCH NHIỆM CỦA KHÁCH HÀNG</h3>
-        <ul>
-            <li>Cung cấp thông tin trung thực, đầy đủ, chính xác.</li>
-            <li>Hợp tác với chúng tôi trong quá trình giải quyết khiếu nại.</li>
-            <li>Không sử dụng các biện pháp gây ảnh hưởng đến uy tín của Nệm Lê Gia khi chưa có kết luận chính thức.</li>
-        </ul>
-
+        <ul><li>Cung cấp thông tin trung thực, đầy đủ, chính xác.</li><li>Hợp tác với chúng tôi trong quá trình giải quyết khiếu nại.</li><li>Không sử dụng các biện pháp gây ảnh hưởng đến uy tín của Nệm Lê Gia khi chưa có kết luận chính thức.</li></ul>
         <h3>6. CAM KẾT</h3>
         <p>Nệm Lê Gia cam kết giải quyết mọi khiếu nại của khách hàng một cách công bằng, minh bạch, đúng quy định pháp luật. Mọi thông tin khiếu nại của khách hàng đều được bảo mật.</p>
-
         <h3>7. LIÊN HỆ</h3>
         <p>Nếu cần hỗ trợ thêm, vui lòng liên hệ:</p>
-        <ul>
-            <li><strong>Hotline:</strong> 0905 513 984</li>
-            <li><strong>Email:</strong> nemlegia9288@gmail.com</li>
-        </ul>
+        <ul><li><strong>Hotline:</strong> 0905 513 984</li><li><strong>Email:</strong> nemlegia9288@gmail.com</li></ul>
     </div>
 </div>
 
@@ -866,83 +748,36 @@
         <p><em>Cập nhật lần cuối: 15/09/2024</em></p>
         <h3>1. THÔNG TIN CHỦ SỞ HỮU</h3>
         <p><strong>HỘ KINH DOANH NỆM LÊ GIA</strong><br>Mã số thuế: 049088001414<br>Địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng</p>
-
         <h3>2. ĐIỀU KIỆN VÀ HẠN CHẾ TRONG VIỆC CUNG CẤP HÀNG HÓA</h3>
         <p><strong>2.1. Độ tuổi mua hàng:</strong></p>
-        <ul>
-            <li>Khách hàng phải từ 18 tuổi trở lên hoặc có người giám hộ hợp pháp khi thực hiện giao dịch.</li>
-            <li>Khách hàng chịu trách nhiệm về tính chính xác của thông tin cá nhân cung cấp.</li>
-        </ul>
+        <ul><li>Khách hàng phải từ 18 tuổi trở lên hoặc có người giám hộ hợp pháp khi thực hiện giao dịch.</li><li>Khách hàng chịu trách nhiệm về tính chính xác của thông tin cá nhân cung cấp.</li></ul>
         <p><strong>2.2. Giới hạn số lượng:</strong></p>
-        <ul>
-            <li>Đối với các sản phẩm khuyến mãi, mỗi khách hàng chỉ được mua tối đa 5 sản phẩm/đơn hàng (trừ khi có thỏa thuận khác).</li>
-            <li>Đơn hàng dự án số lượng lớn, vui lòng liên hệ hotline để được tư vấn và báo giá riêng.</li>
-        </ul>
+        <ul><li>Đối với các sản phẩm khuyến mãi, mỗi khách hàng chỉ được mua tối đa 5 sản phẩm/đơn hàng (trừ khi có thỏa thuận khác).</li><li>Đơn hàng dự án số lượng lớn, vui lòng liên hệ hotline để được tư vấn và báo giá riêng.</li></ul>
         <p><strong>2.3. Khu vực giao hàng:</strong></p>
-        <ul>
-            <li>Chúng tôi giao hàng trên toàn quốc.</li>
-            <li>Miễn phí vận chuyển cho đơn hàng nội thành Đà Nẵng.</li>
-            <li>Các tỉnh/thành khác: phí vận chuyển tính theo bảng giá của đơn vị vận chuyển.</li>
-        </ul>
+        <ul><li>Chúng tôi giao hàng trên toàn quốc.</li><li>Miễn phí vận chuyển cho đơn hàng nội thành Đà Nẵng.</li><li>Các tỉnh/thành khác: phí vận chuyển tính theo bảng giá của đơn vị vận chuyển.</li></ul>
         <p><strong>2.4. Điều kiện thanh toán:</strong></p>
-        <ul>
-            <li>COD: áp dụng cho đơn hàng có tổng giá trị dưới 50.000.000 VNĐ.</li>
-            <li>Chuyển khoản ngân hàng: áp dụng cho mọi đơn hàng.</li>
-        </ul>
+        <ul><li>COD: áp dụng cho đơn hàng có tổng giá trị dưới 50.000.000 VNĐ.</li><li>Chuyển khoản ngân hàng: áp dụng cho mọi đơn hàng.</li></ul>
         <p><strong>2.5. Các trường hợp từ chối cung cấp hàng hóa:</strong></p>
-        <ul>
-            <li>Khách hàng cung cấp thông tin giả mạo, không chính xác.</li>
-            <li>Khách hàng có dấu hiệu lừa đảo hoặc vi phạm pháp luật.</li>
-            <li>Đơn hàng có dấu hiệu bất thường (số lượng lớn, địa chỉ không rõ ràng).</li>
-        </ul>
-
+        <ul><li>Khách hàng cung cấp thông tin giả mạo, không chính xác.</li><li>Khách hàng có dấu hiệu lừa đảo hoặc vi phạm pháp luật.</li><li>Đơn hàng có dấu hiệu bất thường (số lượng lớn, địa chỉ không rõ ràng).</li></ul>
         <h3>3. ĐIỀU KHOẢN SỬ DỤNG WEBSITE</h3>
         <p><strong>3.1. Chấp nhận điều khoản:</strong></p>
-        <ul>
-            <li>Bằng việc sử dụng website legia.pro.vn và đặt hàng, quý khách đồng ý với tất cả điều khoản được nêu ở đây.</li>
-        </ul>
+        <ul><li>Bằng việc sử dụng website legia.pro.vn và đặt hàng, quý khách đồng ý với tất cả điều khoản được nêu ở đây.</li></ul>
         <p><strong>3.2. Thông tin chính xác:</strong></p>
-        <ul>
-            <li>Quý khách cam kết cung cấp thông tin cá nhân và địa chỉ giao hàng chính xác, trung thực.</li>
-            <li>Nếu thông tin sai dẫn đến giao hàng thất bại, quý khách sẽ chịu chi phí phát sinh.</li>
-        </ul>
+        <ul><li>Quý khách cam kết cung cấp thông tin cá nhân và địa chỉ giao hàng chính xác, trung thực.</li><li>Nếu thông tin sai dẫn đến giao hàng thất bại, quý khách sẽ chịu chi phí phát sinh.</li></ul>
         <p><strong>3.3. Bảo mật tài khoản:</strong></p>
-        <ul>
-            <li>Quý khách tự chịu trách nhiệm bảo mật thông tin tài khoản (nếu có) khi sử dụng website.</li>
-        </ul>
+        <ul><li>Quý khách tự chịu trách nhiệm bảo mật thông tin tài khoản (nếu có) khi sử dụng website.</li></ul>
         <p><strong>3.4. Thay đổi đơn hàng:</strong></p>
-        <ul>
-            <li>Nếu muốn thay đổi hoặc hủy đơn hàng, quý khách vui lòng liên hệ với chúng tôi trong vòng 1 giờ sau khi đặt hàng.</li>
-            <li>Sau thời gian này, đơn hàng có thể đã được xử lý và sẽ áp dụng chính sách đổi trả thông thường.</li>
-        </ul>
-
+        <ul><li>Nếu muốn thay đổi hoặc hủy đơn hàng, quý khách vui lòng liên hệ với chúng tôi trong vòng 1 giờ sau khi đặt hàng.</li><li>Sau thời gian này, đơn hàng có thể đã được xử lý và sẽ áp dụng chính sách đổi trả thông thường.</li></ul>
         <h3>4. QUYỀN VÀ NGHĨA VỤ CỦA NỆM LÊ GIA</h3>
-        <ul>
-            <li>Cung cấp hàng hóa đúng chất lượng, số lượng, chủng loại đã thỏa thuận.</li>
-            <li>Bảo mật thông tin khách hàng theo chính sách bảo mật.</li>
-            <li>Giải quyết khiếu nại của khách hàng theo đúng quy định.</li>
-            <li>Có quyền từ chối cung cấp hàng hóa trong các trường hợp nêu tại Mục 2.5.</li>
-        </ul>
-
+        <ul><li>Cung cấp hàng hóa đúng chất lượng, số lượng, chủng loại đã thỏa thuận.</li><li>Bảo mật thông tin khách hàng theo chính sách bảo mật.</li><li>Giải quyết khiếu nại của khách hàng theo đúng quy định.</li><li>Có quyền từ chối cung cấp hàng hóa trong các trường hợp nêu tại Mục 2.5.</li></ul>
         <h3>5. QUYỀN VÀ NGHĨA VỤ CỦA KHÁCH HÀNG</h3>
-        <ul>
-            <li>Được cung cấp hàng hóa đúng chất lượng, số lượng đã thỏa thuận.</li>
-            <li>Được bảo vệ thông tin cá nhân theo chính sách bảo mật.</li>
-            <li>Thanh toán đầy đủ và đúng hạn.</li>
-            <li>Tuân thủ các điều khoản sử dụng website.</li>
-        </ul>
-
+        <ul><li>Được cung cấp hàng hóa đúng chất lượng, số lượng đã thỏa thuận.</li><li>Được bảo vệ thông tin cá nhân theo chính sách bảo mật.</li><li>Thanh toán đầy đủ và đúng hạn.</li><li>Tuân thủ các điều khoản sử dụng website.</li></ul>
         <h3>6. GIẢI QUYẾT TRANH CHẤP</h3>
         <p>Mọi tranh chấp phát sinh sẽ được giải quyết trên tinh thần thỏa thuận. Nếu không thể thỏa thuận, vụ việc sẽ được đưa ra Tòa án nhân dân có thẩm quyền tại Đà Nẵng để giải quyết theo quy định của pháp luật Việt Nam.</p>
-
         <h3>7. HIỆU LỰC</h3>
         <p>Điều khoản sử dụng này có hiệu lực kể từ ngày 15/09/2024 và có thể được sửa đổi, bổ sung bất kỳ lúc nào. Mọi thay đổi sẽ được thông báo trên website.</p>
-
         <h3>8. LIÊN HỆ</h3>
-        <ul>
-            <li><strong>Hotline:</strong> 0905 513 984</li>
-            <li><strong>Email:</strong> nemlegia9288@gmail.com</li>
-        </ul>
+        <ul><li><strong>Hotline:</strong> 0905 513 984</li><li><strong>Email:</strong> nemlegia9288@gmail.com</li></ul>
     </div>
 </div>
 
@@ -955,28 +790,13 @@
         <h3>1. THÔNG TIN CHỦ SỞ HỮU</h3>
         <p><strong>HỘ KINH DOANH NỆM LÊ GIA</strong><br>Mã số thuế: 049088001414<br>Địa chỉ: 123 Bùi Trang Chước, Phường Hòa Xuân, TP. Đà Nẵng</p>
         <h3>2. HƯỚNG DẪN ĐẶT HÀNG</h3>
-        <ol>
-            <li><strong>Chọn sản phẩm:</strong> Truy cập website legia.pro.vn, chọn sản phẩm mong muốn.</li>
-            <li><strong>Chọn kích thước và số lượng:</strong> Tại trang chi tiết, chọn kích thước và số lượng, nhấn "Thêm vào giỏ".</li>
-            <li><strong>Xem giỏ hàng:</strong> Click biểu tượng giỏ hàng để kiểm tra, có thể điều chỉnh số lượng hoặc xóa.</li>
-            <li><strong>Tiến hành đặt hàng:</strong> Nhấn "Tiến hành đặt hàng", điền đầy đủ thông tin: họ tên, số điện thoại, địa chỉ, ghi chú.</li>
-            <li><strong>Xác nhận đơn hàng:</strong> Nhấn "XÁC NHẬN ĐẶT HÀNG". Chúng tôi sẽ xử lý đơn hàng của bạn.</li>
-        </ol>
+        <ol><li><strong>Chọn sản phẩm:</strong> Truy cập website legia.pro.vn, chọn sản phẩm mong muốn.</li><li><strong>Chọn kích thước và số lượng:</strong> Tại trang chi tiết, chọn kích thước và số lượng, nhấn "Thêm vào giỏ".</li><li><strong>Xem giỏ hàng:</strong> Click biểu tượng giỏ hàng để kiểm tra, có thể điều chỉnh số lượng hoặc xóa.</li><li><strong>Tiến hành đặt hàng:</strong> Nhấn "Tiến hành đặt hàng", điền đầy đủ thông tin: họ tên, số điện thoại, địa chỉ, ghi chú.</li><li><strong>Xác nhận đơn hàng:</strong> Nhấn "XÁC NHẬN ĐẶT HÀNG". Chúng tôi sẽ xử lý đơn hàng của bạn.</li></ol>
         <h3>3. PHƯƠNG THỨC THANH TOÁN</h3>
-        <ul>
-            <li><strong>COD:</strong> Thanh toán tiền mặt khi nhận hàng.</li>
-            <li><strong>Chuyển khoản ngân hàng:</strong> Chuyển khoản trước và gửi ảnh giao dịch qua Zalo để xác nhận.</li>
-        </ul>
+        <ul><li><strong>COD:</strong> Thanh toán tiền mặt khi nhận hàng.</li><li><strong>Chuyển khoản ngân hàng:</strong> Chuyển khoản trước và gửi ảnh giao dịch qua Zalo để xác nhận.</li></ul>
         <h3>4. PHƯƠNG THỨC GIAO NHẬN</h3>
-        <ul>
-            <li><strong>Khu vực:</strong> Miễn phí nội thành Đà Nẵng. Các tỉnh khác liên hệ để được báo giá.</li>
-            <li><strong>Thời gian:</strong> Đà Nẵng 1-2 ngày; các tỉnh lân cận 2-4 ngày; các tỉnh xa 4-7 ngày.</li>
-        </ul>
+        <ul><li><strong>Khu vực:</strong> Miễn phí nội thành Đà Nẵng. Các tỉnh khác liên hệ để được báo giá.</li><li><strong>Thời gian:</strong> Đà Nẵng 1-2 ngày; các tỉnh lân cận 2-4 ngày; các tỉnh xa 4-7 ngày.</li></ul>
         <h3>5. LIÊN HỆ</h3>
-        <ul>
-            <li><strong>Hotline:</strong> 0905 513 984</li>
-            <li><strong>Email:</strong> nemlegia9288@gmail.com</li>
-        </ul>
+        <ul><li><strong>Hotline:</strong> 0905 513 984</li><li><strong>Email:</strong> nemlegia9288@gmail.com</li></ul>
     </div>
 </div>
 
@@ -991,8 +811,25 @@
     <div class="lightbox-caption" id="lightboxCaption"></div>
 </div>
 
+<!-- ========== THANH NÚT CỐ ĐỊNH DƯỚI - MOBILE ========== -->
+<div class="sticky-buttons" aria-label="Liên hệ nhanh">
+    <button class="btn-sticky btn-cart" id="stickyCartBtn" aria-label="Giỏ hàng">
+        <i class="fas fa-shopping-cart"></i> Giỏ hàng
+    </button>
+    <a href="https://zalo.me/0905513984" target="_blank" rel="noopener" class="btn-sticky btn-zalo" id="stickyZaloBtn" aria-label="Chat Zalo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 5.94 2 10.8c0 2.72 1.4 5.14 3.6 6.78V22l3.66-2.02c.88.24 1.8.36 2.74.36 5.52 0 10-3.94 10-8.8S17.52 2 12 2zm1.24 11.62l-2.4-2.56-4.68 2.56L11.6 8.4l2.46 2.56 4.62-2.56-5.44 5.22z"/>
+        </svg> Zalo
+    </a>
+    <a href="https://m.me/nemlegia" target="_blank" rel="noopener" class="btn-sticky btn-messenger" id="stickyMessengerBtn" aria-label="Chat Messenger">
+        <i class="fab fa-facebook-messenger"></i> Messenger
+    </a>
+    <a href="tel:0905513984" class="btn-sticky btn-call" id="stickyCallBtn" aria-label="Gọi điện">
+        <i class="fas fa-phone-alt"></i> Gọi
+    </a>
+</div>
+
 <script>
-    // ====== MỞ/ĐÓNG MODAL CHÍNH SÁCH ======
     function openPolicy(type) {
         const modal = document.getElementById('policy-' + type);
         if (modal) {
@@ -1024,7 +861,6 @@
         }
     });
 
-    // ====== TOÀN BỘ JAVASCRIPT CỦA WEBSITE ======
     const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xwvwzorl';
     const PHONE_NUMBER = "0905513984";
     function discountedPrice(original, percent) { return Math.round(original * (100 - percent) / 100 / 1000) * 1000; }
@@ -1141,7 +977,8 @@
         },
         "premium": {
             name: "NỆM LÒ XO TÚI CAO CẤP PREMIUM",
-desc: "Nệm lò xo túi cao cấp Premium sử dụng công nghệ lò xo túi độc lập, từng lò xo được bọc túi vải riêng, giúp chống ồn và chống rung lắc tối đa. Nhờ đó, giấc ngủ của bạn và người thân không bị gián đoạn. Sản phẩm dày 24cm, nâng đỡ cột sống tối ưu, giảm áp lực lên các khớp xương.<br><br><strong>Cấu tạo 9 lớp</strong> (nằm được 2 mặt):<br><ul style=\"margin:8px 0 12px 20px;list-style:disc;\"><li><strong>Lớp 1:</strong> Vải gấm cao cấp – Mềm mại, sang trọng</li><li><strong>Lớp 2:</strong> Lớp foam – Êm ái, đàn hồi tốt</li><li><strong>Lớp 3:</strong> Lớp bông – Tạo cảm giác dễ chịu, tách lớp thoáng đệt</li><li><strong>Lớp 4:</strong> Vải không dệt – Cách ly, thoáng khí</li><li><strong>Lớp 5:</strong> Khung lò xo túi – Nâng đỡ độc lập, giảm rung lắc</li><li><strong>Lớp 6:</strong> Vải không dệt – Cách ly, bảo vệ lõi</li><li><strong>Lớp 7:</strong> Lớp bông – Gia tăng độ êm, êm ái tối đa</li><li><strong>Lớp 8:</strong> Lớp foam – Đàn hồi, cân bằng cơ thể</li><li><strong>Lớp 9:</strong> Vải gấm cao cấp – Bền đẹp, an toàn cho da</li></ul><br>✅ <strong>Bảo hành 10 năm</strong> – cam kết chất lượng bền vững.<br>✅ <strong>Nằm thử 30 ngày</strong> – thoải mái trải nghiệm tại nhà.<br>✅ <strong>Đổi trả miễn phí</strong> nếu chưa ưng ý – hoàn toàn không lo lắng.<br><br>Giá bán đã bao gồm phí giao hàng tận nơi tại nội thành Đà Nẵng. Với mức giảm sốc 38%, đây là cơ hội tuyệt vời để sở hữu chiếc nệm lò xo túi cao cấp với giá cực kỳ ưu đãi.",            img: "https://i.ibb.co/Pzj7G7NL/4f7ef563ece16dbf34f0.jpg",
+            desc: "Nệm lò xo túi cao cấp Premium sử dụng công nghệ lò xo túi độc lập, từng lò xo được bọc túi vải riêng, giúp chống ồn và chống rung lắc tối đa. Nhờ đó, giấc ngủ của bạn và người thân không bị gián đoạn. Sản phẩm dày 24cm, nâng đỡ cột sống tối ưu, giảm áp lực lên các khớp xương.<br><br><strong>Cấu tạo 9 lớp</strong> (nằm được 2 mặt):<br><ul style=\"margin:8px 0 12px 20px;list-style:disc;\"><li><strong>Lớp 1:</strong> Vải gấm cao cấp – Mềm mại, sang trọng</li><li><strong>Lớp 2:</strong> Lớp foam – Êm ái, đàn hồi tốt</li><li><strong>Lớp 3:</strong> Lớp bông – Tạo cảm giác dễ chịu, tách lớp thoáng đệt</li><li><strong>Lớp 4:</strong> Vải không dệt – Cách ly, thoáng khí</li><li><strong>Lớp 5:</strong> Khung lò xo túi – Nâng đỡ độc lập, giảm rung lắc</li><li><strong>Lớp 6:</strong> Vải không dệt – Cách ly, bảo vệ lõi</li><li><strong>Lớp 7:</strong> Lớp bông – Gia tăng độ êm, êm ái tối đa</li><li><strong>Lớp 8:</strong> Lớp foam – Đàn hồi, cân bằng cơ thể</li><li><strong>Lớp 9:</strong> Vải gấm cao cấp – Bền đẹp, an toàn cho da</li></ul><br>✅ <strong>Bảo hành 10 năm</strong> – cam kết chất lượng bền vững.<br>✅ <strong>Nằm thử 30 ngày</strong> – thoải mái trải nghiệm tại nhà.<br>✅ <strong>Đổi trả miễn phí</strong> nếu chưa ưng ý – hoàn toàn không lo lắng.<br><br>Giá bán đã bao gồm phí giao hàng tận nơi tại nội thành Đà Nẵng. Với mức giảm sốc 38%, đây là cơ hội tuyệt vời để sở hữu chiếc nệm lò xo túi cao cấp với giá cực kỳ ưu đãi.",
+            img: "https://i.ibb.co/Pzj7G7NL/4f7ef563ece16dbf34f0.jpg",
             images: ["https://i.ibb.co/Pzj7G7NL/4f7ef563ece16dbf34f0.jpg","https://i.ibb.co/m5LJs5B9/7a2a4fc5-9eda-4f13-8a18-bad94a016a67.jpg"],
             oldPrices: {
                 "1m0 x 2m x 24cm": 5806000,"1m2 x 2m x 24cm": 6048000,"1m4 x 2m x 24cm": 6290000,"1m6 x 2m x 24cm": 6532000,"1m8 x 2m x 24cm": 6935000,"2m0 x 2m x 24cm": 7339000
@@ -1599,9 +1436,22 @@ desc: "Nệm lò xo túi cao cấp Premium sử dụng công nghệ lò xo túi 
 
     document.getElementById("stickyCartBtn")?.addEventListener("click", () => navigateTo('/gio-hang', 'Giỏ hàng - Nệm Lê Gia', { type: 'cart' }));
     document.getElementById("cartIcon")?.addEventListener("click", () => navigateTo('/gio-hang', 'Giỏ hàng - Nệm Lê Gia', { type: 'cart' }));
-    document.getElementById("stickyZaloBtn")?.addEventListener("click", () => window.open(`https://zalo.me/${PHONE_NUMBER}`, '_blank'));
-    document.getElementById("stickyMessengerBtn")?.addEventListener("click", () => window.open('https://m.me/nemlegia', '_blank'));
-    document.getElementById("stickyCallBtn")?.addEventListener("click", () => window.location.href = `tel:${PHONE_NUMBER}`);
+    document.getElementById("stickyZaloBtn")?.addEventListener("click", function(e) {
+        if (typeof fbq !== 'undefined') { fbq('track', 'Contact', { content_name: 'Zalo', content_category: 'contact' }); }
+    });
+    document.getElementById("stickyMessengerBtn")?.addEventListener("click", function(e) {
+        if (typeof fbq !== 'undefined') { fbq('track', 'Contact', { content_name: 'Messenger', content_category: 'contact' }); }
+    });
+    document.getElementById("stickyCallBtn")?.addEventListener("click", function(e) {
+        if (typeof fbq !== 'undefined') { fbq('track', 'Contact', { content_name: 'Call', content_category: 'contact' }); }
+    });
+    document.getElementById("floatingZalo")?.addEventListener("click", function() {
+        if (typeof fbq !== 'undefined') { fbq('track', 'Contact', { content_name: 'Zalo', content_category: 'contact' }); }
+    });
+    document.getElementById("floatingMessenger")?.addEventListener("click", function() {
+        if (typeof fbq !== 'undefined') { fbq('track', 'Contact', { content_name: 'Messenger', content_category: 'contact' }); }
+    });
+
     document.getElementById("mobileMenuBtn")?.addEventListener("click", function() { const nav = document.getElementById("mobileNav"); nav.classList.toggle("open"); this.setAttribute('aria-expanded', nav.classList.contains('open')); });
     document.querySelectorAll(".accordion-header").forEach(h => h.addEventListener("click", function() {
         const content = this.nextElementSibling; content.classList.toggle("show");
@@ -1696,15 +1546,4 @@ desc: "Nệm lò xo túi cao cấp Premium sử dụng công nghệ lò xo túi 
     renderFilteredProducts(); renderFlashSale(); loadRouteFromPath(); updateCartCount();
 </script>
 </body>
-</html><!DOCTYPE html>
-<html>
-  <head>
-    <title>Hello, World!</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-      <h1 class="title">Hello World!</h1>
-      <p id="currentTime"></p>
-      <script src="script.js"></script>
-  </body>
 </html>
