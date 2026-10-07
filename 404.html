@@ -258,7 +258,7 @@
         .floating-buttons { position: fixed; right: 20px; bottom: 140px; z-index: 999; display: flex; flex-direction: column; gap: 12px; align-items: center; }
         .floating-btn { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 24px; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: all 0.3s ease; cursor: pointer; border: none; }
         .floating-btn:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
-        .floating-btn.zalo { background: #0068ff; }
+        .floating-btn.zalo { background: #0068ff; font-weight: 800; font-size: 13px; font-family: Arial, sans-serif; letter-spacing: 0.5px; }
         .floating-btn.messenger { background: #0084ff; }
         .floating-btn svg { width: 26px; height: 26px; fill: #fff; }
         @media (max-width: 768px) { .floating-buttons { display: none; } }
@@ -349,19 +349,13 @@
 <div id="toast" class="toast-message"></div>
 <div class="back-to-top" id="backToTopBtn" aria-label="Lên đầu trang"><i class="fas fa-arrow-up"></i></div>
 
-<!-- ========== NÚT NỔI DESKTOP: ZALO + MESSENGER ========== -->
 <div class="floating-buttons" aria-label="Liên hệ nhanh">
-    <a href="https://zalo.me/0905513984" target="_blank" rel="noopener" class="floating-btn zalo" id="floatingZalo" aria-label="Chat Zalo" title="Chat Zalo">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M12 2C6.48 2 2 5.94 2 10.8c0 2.72 1.4 5.14 3.6 6.78V22l3.66-2.02c.88.24 1.8.36 2.74.36 5.52 0 10-3.94 10-8.8S17.52 2 12 2zm1.24 11.62l-2.4-2.56-4.68 2.56L11.6 8.4l2.46 2.56 4.62-2.56-5.44 5.22z"/>
-        </svg>
-    </a>
+    <a href="https://zalo.me/0905513984" target="_blank" rel="noopener" class="floating-btn zalo" id="floatingZalo" aria-label="Chat Zalo" title="Chat Zalo">Zalo</a>
     <a href="https://m.me/nemlegia" target="_blank" rel="noopener" class="floating-btn messenger" id="floatingMessenger" aria-label="Chat Messenger" title="Chat Messenger">
         <i class="fab fa-facebook-messenger"></i>
     </a>
 </div>
 
-<!-- Quick Buy Modal -->
 <div id="quickBuyModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-content">
         <button class="modal-close" id="closeModalBtn" aria-label="Đóng">&times;</button>
@@ -600,7 +594,6 @@
     </div>
 </footer>
 
-<!-- 1. Chính sách bảo mật -->
 <div id="policy-bao-mat" class="policy-modal">
     <div class="policy-content">
         <button class="policy-close" onclick="closePolicy('bao-mat')">&times;</button>
@@ -627,7 +620,6 @@
     </div>
 </div>
 
-<!-- 2. Chính sách giá -->
 <div id="policy-gia" class="policy-modal">
     <div class="policy-content">
         <button class="policy-close" onclick="closePolicy('gia')">&times;</button>
@@ -651,7 +643,6 @@
     </div>
 </div>
 
-<!-- 3. Chính sách thanh toán -->
 <div id="policy-thanh-toan" class="policy-modal">
     <div class="policy-content">
         <button class="policy-close" onclick="closePolicy('thanh-toan')">&times;</button>
@@ -677,7 +668,6 @@
     </div>
 </div>
 
-<!-- 4. Chính sách giao hàng & đổi trả -->
 <div id="policy-giao-hang" class="policy-modal">
     <div class="policy-content">
         <button class="policy-close" onclick="closePolicy('giao-hang')">&times;</button>
@@ -715,7 +705,6 @@
     </div>
 </div>
 
-<!-- 5. Phương thức khiếu nại -->
 <div id="policy-khieu-nai" class="policy-modal">
     <div class="policy-content">
         <button class="policy-close" onclick="closePolicy('khieu-nai')">&times;</button>
@@ -740,7 +729,6 @@
     </div>
 </div>
 
-<!-- 6. Điều khoản sử dụng -->
 <div id="policy-dieu-khoan" class="policy-modal">
     <div class="policy-content">
         <button class="policy-close" onclick="closePolicy('dieu-khoan')">&times;</button>
@@ -781,7 +769,6 @@
     </div>
 </div>
 
-<!-- 7. Hướng dẫn mua hàng -->
 <div id="policy-huong-dan" class="policy-modal">
     <div class="policy-content">
         <button class="policy-close" onclick="closePolicy('huong-dan')">&times;</button>
@@ -800,7 +787,6 @@
     </div>
 </div>
 
-<!-- Lightbox -->
 <div id="lightboxModal" class="lightbox">
     <span class="lightbox-close" id="lightboxClose">&times;</span>
     <span class="lightbox-prev" id="lightboxPrev">&#10094;</span>
@@ -811,16 +797,11 @@
     <div class="lightbox-caption" id="lightboxCaption"></div>
 </div>
 
-<!-- ========== THANH NÚT CỐ ĐỊNH DƯỚI - MOBILE ========== -->
 <div class="sticky-buttons" aria-label="Liên hệ nhanh">
     <button class="btn-sticky btn-cart" id="stickyCartBtn" aria-label="Giỏ hàng">
         <i class="fas fa-shopping-cart"></i> Giỏ hàng
     </button>
-    <a href="https://zalo.me/0905513984" target="_blank" rel="noopener" class="btn-sticky btn-zalo" id="stickyZaloBtn" aria-label="Chat Zalo">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M12 2C6.48 2 2 5.94 2 10.8c0 2.72 1.4 5.14 3.6 6.78V22l3.66-2.02c.88.24 1.8.36 2.74.36 5.52 0 10-3.94 10-8.8S17.52 2 12 2zm1.24 11.62l-2.4-2.56-4.68 2.56L11.6 8.4l2.46 2.56 4.62-2.56-5.44 5.22z"/>
-        </svg> Zalo
-    </a>
+    <a href="https://zalo.me/0905513984" target="_blank" rel="noopener" class="btn-sticky btn-zalo" id="stickyZaloBtn" aria-label="Chat Zalo" style="font-weight:800; letter-spacing:0.5px;">Zalo</a>
     <a href="https://m.me/nemlegia" target="_blank" rel="noopener" class="btn-sticky btn-messenger" id="stickyMessengerBtn" aria-label="Chat Messenger">
         <i class="fab fa-facebook-messenger"></i> Messenger
     </a>
@@ -878,7 +859,7 @@
             name: "NỆM CSTN ĐỒNG PHÚ",
             desc: "Nệm cao su thiên nhiên Đồng Phú dòng Friendly được chiết xuất từ mủ cao su tự nhiên tinh khiết, mang lại sự êm ái, mềm mại nhưng vẫn đảm bảo độ nâng đỡ cần thiết. Bề mặt nệm thoáng khí, không gây bí nhiệt, giúp bạn duy trì giấc ngủ liên tục và sâu giấc. Đặc biệt, sản phẩm có độ bền cao, ít bị xẹp lún theo thời gian. Ưu đãi giảm 28% – quá hời để sở hữu.",
             img: "https://i.ibb.co/Q7sZgRNQ/nem-cao-su-thien-nhien-friendly-dong-phu-1-1.jpg",
-            oldPrices: { "1m x 2m x 10cm":8700000,"1m2 x 2m x 10cm":9700000,"1m4 x 2m x 10cm":11250000,"1m6 x 2m x 10cm":12750000,"1m8 x 2m x 10cm":14450000,"2m x 2m x 10cm":16450000,"2m2 x 2m x 10cm":17950000 },
+            oldPrices: { "1m x 2m x 10cm":9250000,"1m2 x 2m x 10cm":10300000,"1m4 x 2m x 10cm":11950000,"1m6 x 2m x 10cm":13550000,"1m8 x 2m x 10cm":15350000,"2m x 2m x 10cm":17450000,"2m2 x 2m x 10cm":19050000 },
             discountPercent: 28, category: "cao-su-thien-nhien", slug: "dong-phu",
             keywords: ["cao su thiên nhiên", "friendly", "êm ái", "bền bỉ", "thoáng khí"]
         },
@@ -886,7 +867,7 @@
             name: "NỆM CSTN LIÊN Á",
             desc: "Nệm cao su thiên nhiên Liên Á Classic là lựa chọn hoàn hảo cho những ai yêu thích sự nguyên chất và an toàn. Với 100% mủ cao su tự nhiên, nệm có độ đàn hồi lý tưởng, hỗ trợ cột sống và các khớp xương, giảm áp lực khi nằm. Đặc tính không gây dị ứng, không mùi hóa chất, rất thân thiện với làn da nhạy cảm. Được giảm 16%, đây là cơ hội tốt để nâng cấp giấc ngủ của bạn.",
             img: "https://i.ibb.co/zW9TWT9v/Nem-CSTN-Lien-A-Classic-1.jpg",
-            oldPrices: { "1m0 x 2m x 10cm":9490000,"1m2 x 2m x 10cm":10690000,"1m4 x 2m x 10cm":12290000,"1m6 x 2m x 10cm":13690000,"1m8 x 2m x 10cm":15690000 },
+            oldPrices: { "1m0 x 2m x 10cm":9990000,"1m2 x 2m x 10cm":11190000,"1m4 x 2m x 10cm":12890000,"1m6 x 2m x 10cm":14290000,"1m8 x 2m x 10cm":16390000,"2m x 2m x 10cm":20490000,"2m x 2m2 x 10cm":24290000 },
             discountPercent: 16, category: "cao-su-thien-nhien", slug: "lien-a",
             keywords: ["cao su thiên nhiên", "nguyên chất", "đàn hồi", "không dị ứng"]
         },
