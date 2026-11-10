@@ -14,6 +14,49 @@
     <meta property="og:type" content="website" />
     <link rel="canonical" href="https://legia.pro.vn/" />
 
+    <!-- ========================================== -->
+    <!-- BẮT ĐẦU: CẤU HÌNH SEO & TRACKING (MỤC 1 & 2) -->
+    <!-- ========================================== -->
+    
+    <!-- 1. MÃ XÁC MINH GOOGLE SEARCH CONSOLE -->
+    <meta name="google-site-verification" content="kCiG0NiM87_Xs3mBnO-tWczZwOq0j3JMQdvhXKNDXFU" />
+
+    <!-- 2. MÃ GOOGLE ANALYTICS 4 (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRND94JRXD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KRND94JRXD');
+    </script>
+
+    <!-- 3. SCHEMA TỔ CHỨC (ORGANIZATION) - Giúp Google hiểu về Shop của bạn -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Nệm Lê Gia",
+      "url": "https://legia.pro.vn/",
+      "logo": "https://i.ibb.co/pjgp9Wbt/Untitled.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+84905513984",
+        "contactType": "customer service",
+        "areaServed": "VN",
+        "availableLanguage": "Vietnamese"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Bùi Trang Chước, Phường Hòa Xuân",
+        "addressLocality": "Đà Nẵng",
+        "addressCountry": "VN"
+      }
+    }
+    </script>
+    <!-- ========================================== -->
+    <!-- KẾT THÚC: CẤU HÌNH SEO & TRACKING -->
+    <!-- ========================================== -->
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
@@ -578,13 +621,11 @@
     <div class="footer-line"><i class="fas fa-envelope" aria-hidden="true"></i> <span>Email: nemlegia9288@gmail.com</span></div>
     <div class="footer-line"><i class="fas fa-globe" aria-hidden="true"></i> <span>Website: legia.pro.vn</span></div>
 
-    <!-- BẮT ĐẦU: MÃ BỘ CÔNG THƯƠNG -->
     <div class="footer-line" style="margin: 15px 0;">
         <a href="https://online.gov.vn/nen-tang/5a98af9b-5366-450f-9d83-3addd22673f5" target="_blank" title="Đã xác nhận với Bộ Công Thương">
             <img src="https://fileserver.online.gov.vn/uploads/Resources/iconxacnhan/DaThongBao.png" alt="Đã xác nhận" style="height: 44px; background: #fff; padding: 4px 8px; border-radius: 6px;" />
         </a>
     </div>
-    <!-- KẾT THÚC: MÃ BỘ CÔNG THƯƠNG -->
 
     <div class="footer-line" style="margin-top:12px; border-top:1px solid rgba(255,255,255,0.15); padding-top:12px; flex-wrap:wrap;">
         <span class="footer-link" onclick="openPolicy('bao-mat')">Chính sách bảo mật</span>
@@ -1110,12 +1151,26 @@
     function navigateTo(url, title, state) {
         const fullUrl = basePath + url;
         history.pushState(state, title, fullUrl);
+        
+        // Update Canonical Link dynamically
+        const canonicalLink = document.querySelector('link[rel="canonical"]');
+        if (canonicalLink) {
+            canonicalLink.href = 'https://legia.pro.vn' + (fullUrl === '/' ? '/' : fullUrl);
+        }
+
         if (state.type === 'home') renderHomeView();
         else if (state.type === 'product') renderProductDetailView(state.productId, state.size);
         else if (state.type === 'cart') renderCartView();
     }
     function loadRouteFromPath() {
         const path = getCleanPath();
+        
+        // Update Canonical Link dynamically on load
+        const canonicalLink = document.querySelector('link[rel="canonical"]');
+        if (canonicalLink) {
+            canonicalLink.href = 'https://legia.pro.vn' + (path === '/' ? '/' : path);
+        }
+
         if (path === '/' || path === '') { renderHomeView(); }
         else if (path === '/gio-hang') { renderCartView(); }
         else {
@@ -1277,6 +1332,49 @@
             document.getElementById("addToCartBtn")?.addEventListener('click', function() { addToCart(currentProductId, currentSize, currentQuantity); });
             document.getElementById("quickBuyBtn")?.addEventListener('click', function() { openQuickBuyModal(); });
         }
+        
+        // INJECT PRODUCT SCHEMA MARKUP (SEO)
+        if (!isProject && hasPrice) {
+            const schemaId = 'dynamic-product-schema';
+            const oldSchema = document.getElementById(schemaId);
+            if (oldSchema) oldSchema.remove();
+
+            const plainDesc = prod.desc.replace(/<[^>]*>?/gm, '');
+            const priceValue = prod.prices[currentSize];
+            
+            const schemaData = {
+                "@context": "https://schema.org/",
+                "@type": "Product",
+                "name": prod.name,
+                "image": imageList,
+                "description": plainDesc,
+                "brand": { "@type": "Brand", "name": "Nệm Lê Gia" },
+                "offers": {
+                    "@type": "Offer",
+                    "url": "https://legia.pro.vn/" + prod.category + "/" + prod.slug,
+                    "priceCurrency": "VND",
+                    "price": priceValue,
+                    "availability": "https://schema.org/InStock",
+                    "itemCondition": "https://schema.org/NewCondition"
+                }
+            };
+            
+            const rvs = reviewsDB[currentProductId] || [];
+            if (rvs.length > 0) {
+                schemaData.aggregateRating = {
+                    "@type": "AggregateRating",
+                    "ratingValue": "5",
+                    "reviewCount": rvs.length
+                };
+            }
+
+            const script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.id = schemaId;
+            script.textContent = JSON.stringify(schemaData);
+            document.head.appendChild(script);
+        }
+
         bindLightboxEvents();
         renderReviews(currentProductId);
         renderRelatedProducts(prod.category, currentProductId);
