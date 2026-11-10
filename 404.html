@@ -551,7 +551,6 @@
                 <a href="#" data-product="premium">Nệm Lò Xo Túi Cao Cấp</a>
             </div>
         </div>
-        <!-- SỬA LỖI 2: MENU GIỚI THIỆU TRÊN MOBILE -->
         <div class="mobile-accordion-item">
             <a href="#" onclick="navigateTo('/gioi-thieu', 'Giới thiệu - Nệm Lê Gia', { type: 'about' }); document.getElementById('mobileNav').classList.remove('open'); return false;" style="display:block; padding: 16px 20px; font-weight:700; color:#0d1b2a; text-decoration:none; border-bottom: 1px solid #e2e8f0;">GIỚI THIỆU</a>
         </div>
@@ -648,7 +647,6 @@
         </div>
         <div class="about-map">
             <h3 style="text-align: center; margin-bottom: 15px; color: #1e3a5f;">📍 Ghé thăm Showroom của chúng tôi</h3>
-            <!-- SỬA LỖI 3: ĐỊNH VỊ GOOGLE MAPS ĐÚNG ĐỊA CHỈ -->
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.525308686038!2d108.22292787457225!3d16.02016998463897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219cdff1b2d65%3A0x64712e11f9ec2503!2s123%20B%C3%B9i%20Trang%20Ch%C6%B0%E1%BB%9Bc%2C%20H%C3%B2a%20Xu%C3%A2n%2C%20C%E1%BA%A9m%20L%E1%BB%87%2C%20%C4%90%C3%A0%20N%E1%BA%B5ng%2C%20Vietnam!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
@@ -1301,6 +1299,7 @@
         trackAddToCart(productId, size, quantity, price);
     }
     function formatPrice(p) { return p.toLocaleString('vi-VN') + 'đ'; }
+    
     function renderCartViewFunc() {
         const container = document.getElementById('cartItemsList'), totalContainer = document.getElementById('cartTotal');
         if (!cart.length) { container.innerHTML = '<div class="empty-cart">🛒 Giỏ hàng trống!</div>'; totalContainer.innerHTML = ''; return; }
@@ -1311,29 +1310,72 @@
         });
         container.innerHTML = html;
         totalContainer.innerHTML = `<span>Tổng: ${formatPrice(total)}</span><button id="clearCartBtn" class="btn-clear-cart">Xóa tất cả</button>`;
-        container.addEventListener('click', function(e) {
-            const target = e.target.closest('button');
-            if (!target) return;
-            const idx = target.dataset.index;
-            if (idx === undefined) return;
-            const index = parseInt(idx);
-            if (target.classList.contains('qty-down')) {
-                if (cart[index].quantity > 1) cart[index].quantity--;
-                else if (confirm('Xóa sản phẩm này?')) cart.splice(index, 1);
-                else return;
-                saveCart(); renderCartViewFunc();
-            } else if (target.classList.contains('qty-up')) {
-                cart[index].quantity++; saveCart(); renderCartViewFunc();
-            } else if (target.classList.contains('remove-item')) {
-                if (confirm('Xóa sản phẩm này?')) { cart.splice(index, 1); saveCart(); renderCartViewFunc(); }
-            }
-        });
-        document.getElementById('clearCartBtn').addEventListener('click', () => {
-            if (cart.length && confirm('Xóa toàn bộ giỏ?')) { cart = []; saveCart(); renderCartViewFunc(); showToast('Đã xóa giỏ hàng.'); }
-        });
     }
 
-    // SỬA LỖI 2: HÀM LẤY KÍCH THƯỚC PHỤ KIỆN TƯƠNG ỨNG
+    // --- SỬA LỖI 5: CHUYỂN TOÀN BỘ EVENT LISTENER RA NGOÀI, CHỈ GẮN 1 LẦN DUY NHẤT ---
+    
+    // 1. Xử lý sự kiện trong Giỏ hàng
+    document.getElementById('cartItemsList').addEventListener('click', function(e) {
+        const target = e.target.closest('button');
+        if (!target) return;
+        const idx = target.dataset.index;
+        if (idx === undefined) return;
+        const index = parseInt(idx);
+        
+        if (target.classList.contains('qty-down')) {
+            if (cart[index].quantity > 1) {
+                cart[index].quantity--;
+            } else if (confirm('Xóa sản phẩm này?')) {
+                cart.splice(index, 1);
+            } else {
+                return;
+            }
+            saveCart(); renderCartViewFunc();
+        } else if (target.classList.contains('qty-up')) {
+            cart[index].quantity++; saveCart(); renderCartViewFunc();
+        } else if (target.classList.contains('remove-item')) {
+            if (confirm('Xóa sản phẩm này?')) { 
+                cart.splice(index, 1); 
+                saveCart(); 
+                renderCartViewFunc(); 
+            }
+        }
+    });
+
+    // 2. Xử lý nút Xóa tất cả
+    document.getElementById('cartTotal').addEventListener('click', function(e) {
+        if (e.target && e.target.id === 'clearCartBtn') {
+            if (cart.length && confirm('Xóa toàn bộ giỏ?')) { 
+                cart = []; 
+                saveCart(); 
+                renderCartViewFunc(); 
+                showToast('Đã xóa giỏ hàng.'); 
+            }
+        }
+    });
+
+    // 3. Xử lý click vào Grid Sản phẩm nổi bật
+    document.getElementById('productGrid').addEventListener('click', function(e) {
+        const card = e.target.closest('.product-card'); if (!card) return;
+        const id = card.dataset.id;
+        if (id) { const prod = productsDB[id]; const newUrl = `/${prod.category}/${prod.slug}`; navigateTo(newUrl, `Nệm Lê Gia - ${prod.name}`, { type: 'product', productId: id }); }
+    });
+
+    // 4. Xử lý click vào Grid Flash Sale
+    document.getElementById('flashGrid').addEventListener('click', function(e) {
+        const card = e.target.closest('.flash-card'); if (!card) return;
+        const id = card.dataset.id;
+        if (id) { const prod = productsDB[id]; const newUrl = `/${prod.category}/${prod.slug}`; navigateTo(newUrl, `Nệm Lê Gia - ${prod.name}`, { type: 'product', productId: id }); }
+    });
+
+    // 5. Xử lý click vào Grid Sản phẩm liên quan
+    document.getElementById('relatedContainer').addEventListener('click', function(e) {
+        const card = e.target.closest('.related-card');
+        if (!card) return;
+        const id = card.dataset.id; const slug = card.dataset.slug; const category = card.dataset.category;
+        if (id) { const newUrl = `/${category}/${slug}`; navigateTo(newUrl, `Nệm Lê Gia - ${productsDB[id].name}`, { type: 'product', productId: id }); }
+    });
+
     function getAccessorySize(size) {
         if (!size) return "1m6 x 2m";
         let base = size.replace(/x\s*\d+cm/g, '').trim();
@@ -1343,7 +1385,6 @@
         if (base === "2m x 2m2" || base === "2m2 x 2m") return "2m2 x 2m";
         
         if (productsDB['bao-ve-nem'].prices[base] !== undefined) return base;
-        
         return "1m6 x 2m";
     }
 
@@ -1359,12 +1400,6 @@
         });
         html += `</div>`;
         document.getElementById('relatedContainer').innerHTML = html;
-        document.getElementById('relatedContainer').addEventListener('click', function(e) {
-            const card = e.target.closest('.related-card');
-            if (!card) return;
-            const id = card.dataset.id; const slug = card.dataset.slug; const category = card.dataset.category;
-            if (id) { const newUrl = `/${category}/${slug}`; navigateTo(newUrl, `Nệm Lê Gia - ${productsDB[id].name}`, { type: 'product', productId: id }); }
-        });
     }
 
     const reviewsDB = {
@@ -1415,7 +1450,6 @@
                 detailHtml += `<div class="quantity-selector"><button id="qtyMinus" aria-label="Giảm số lượng">-</button><span id="qtyValue">${currentQuantity}</span><button id="qtyPlus" aria-label="Tăng số lượng">+</button></div>`;
                 detailHtml += `<button class="btn-add-to-cart" id="addToCartBtn"><i class="fas fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</button><button class="btn-buy-now" id="quickBuyBtn">Mua nhanh</button>`;
                 
-                // SỬA LỖI 2: LOGIC COMBO GỢI Ý
                 if (prod.category !== 'phu-kien' && prod.category !== 'du-an') {
                     const accSize = getAccessorySize(currentSize);
                     const protectorPrice = productsDB['bao-ve-nem'].prices[accSize] || 0;
@@ -1590,11 +1624,6 @@
             const demoPrice = p.prices ? p.prices[Object.keys(p.prices)[0]] : 0;
             return `<div class="product-card" data-id="${id}" data-slug="${p.slug}" data-category="${p.category}"><div class="discount-badge">-${p.discountPercent}%</div><img class="card-img" src="${p.img}" alt="${p.name}" width="400" height="400" loading="lazy"><div class="card-info"><div class="card-title">${p.name}</div><div class="card-price">${demoPrice ? formatPrice(demoPrice) : ''}</div><button class="btn-hero" style="background:#d63384; width:100%;">Xem chi tiết</button></div></div>`;
         }).join('');
-        grid.addEventListener('click', function(e) {
-            const card = e.target.closest('.product-card'); if (!card) return;
-            const id = card.dataset.id;
-            if (id) { const prod = productsDB[id]; const newUrl = `/${prod.category}/${prod.slug}`; navigateTo(newUrl, `Nệm Lê Gia - ${prod.name}`, { type: 'product', productId: id }); }
-        });
     }
 
     function renderFlashSale() {
@@ -1608,11 +1637,6 @@
             const oldPrice = p.oldPrices ? p.oldPrices[Object.keys(p.oldPrices)[0]] : 0;
             return `<div class="flash-card" data-id="${id}" data-slug="${p.slug}" data-category="${p.category}"><div class="flash-badge">🔥 -${p.discountPercent}%</div><img class="flash-img" src="${p.img}" alt="${p.name}" width="300" height="300" loading="lazy"><div class="flash-info"><div class="flash-name">${p.name}</div><div class="flash-price">${formatPrice(demoPrice)} <span class="flash-old-price">${formatPrice(oldPrice)}</span></div></div></div>`;
         }).join('');
-        grid.addEventListener('click', function(e) {
-            const card = e.target.closest('.flash-card'); if (!card) return;
-            const id = card.dataset.id;
-            if (id) { const prod = productsDB[id]; const newUrl = `/${prod.category}/${prod.slug}`; navigateTo(newUrl, `Nệm Lê Gia - ${prod.name}`, { type: 'product', productId: id }); }
-        });
     }
 
     document.querySelectorAll('.filter-btn').forEach(btn => {
