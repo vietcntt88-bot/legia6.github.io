@@ -551,10 +551,9 @@
                 <a href="#" data-product="premium">Nệm Lò Xo Túi Cao Cấp</a>
             </div>
         </div>
+        <!-- SỬA LỖI 2: MENU GIỚI THIỆU TRÊN MOBILE -->
         <div class="mobile-accordion-item">
-            <div class="accordion-content" style="padding:0;">
-                <a href="#" onclick="navigateTo('/gioi-thieu', 'Giới thiệu - Nệm Lê Gia', { type: 'about' }); return false;" style="border:none; font-weight:700; color:#0d1b2a;">GIỚI THIỆU</a>
-            </div>
+            <a href="#" onclick="navigateTo('/gioi-thieu', 'Giới thiệu - Nệm Lê Gia', { type: 'about' }); document.getElementById('mobileNav').classList.remove('open'); return false;" style="display:block; padding: 16px 20px; font-weight:700; color:#0d1b2a; text-decoration:none; border-bottom: 1px solid #e2e8f0;">GIỚI THIỆU</a>
         </div>
     </div>
 </header>
@@ -649,7 +648,8 @@
         </div>
         <div class="about-map">
             <h3 style="text-align: center; margin-bottom: 15px; color: #1e3a5f;">📍 Ghé thăm Showroom của chúng tôi</h3>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3835.633194289635!2d108.2162738!3d16.0361417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219d0d2f40f9b%3A0xc3b85e3f7b8f1f0!2zMTIzIELDoGkgVHJhbmcgQ2jGsOG7m2MsIEhvw6AgWMO1biwgQ-G6qW0gTMOqLCBEw6AgTuG6tW5n!5e0!3m2!1svi!2s!4v1690000000000!5m2!1svi!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- SỬA LỖI 3: ĐỊNH VỊ GOOGLE MAPS ĐÚNG ĐỊA CHỈ -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.525308686038!2d108.22292787457225!3d16.02016998463897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219cdff1b2d65%3A0x64712e11f9ec2503!2s123%20B%C3%B9i%20Trang%20Ch%C6%B0%E1%BB%9Bc%2C%20H%C3%B2a%20Xu%C3%A2n%2C%20C%E1%BA%A9m%20L%E1%BB%87%2C%20%C4%90%C3%A0%20N%E1%BA%B5ng%2C%20Vietnam!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
 
@@ -1027,7 +1027,7 @@
         },
         "diamond": {
             name: "NỆM CAO SU TỔNG HỢP DIAMOND",
-            desc: "Nệm cao su tổng hợp Diamond được sản xuất từ công nghệ hiện đại, kết hợp giữa độ đàn hồi và độ cứng lý tưởng. Sản phẩm mang lại cảm giác êm ái nhưng vẫn có khả năng nâng đỡ tốt, giúp giảm đau mỏi và căng thẳng sau ngày dài. Với nhiều kích thước và độ dày đa dạng (10cm, 15cm, 20cm), Diamond phù hợp với mọi không gian phòng ngủ. Chất liệu cao su tổng hợp cao cấp giúp sản phẩm bền bỉ, chống mối mọt và ít bị biến dạng. Giảm giá 50% – cơ hội vàng để nâng cấp giấc ngủ của bạn.",
+            desc: "Nệm cao su tổng hợp Diamond được sản xuất từ công nghệ hiện đại, kết hợp giữa độ đàn hồi và độ cứng lý tưởng. Sản phẩm mang lại cảm giác êm ái nhưng vẫn có khả năng nâng đỡ tốt, giúp giảm đau mỏi và căng thẳng sau ngày dài. Với nhiều kích thước và độ dày đa dạng (10cm, 15cm, 20cm), Diamond phù hợp với mọi không gian phòng ngủ. Chất liệu cao su tổng hợp cao cấp giúp sản phẩm bền bỉ, chống ẩm mốc và ít bị biến dạng. Giảm giá 50% – cơ hội vàng để nâng cấp giấc ngủ của bạn.",
             img: "https://i.ibb.co/nqHhmggT/diamond.jpg",
             oldPrices: { "1m0 x 2m x 10cm":3560000,"1m2 x 2m x 10cm":3760000,"1m4 x 2m x 10cm":3960000,"1m6 x 2m x 10cm":4160000,"1m8 x 2m x 10cm":4360000, "1m0 x 2m x 15cm":4140000,"1m2 x 2m x 15cm":4480000,"1m4 x 2m x 15cm":4820000,"1m6 x 2m x 15cm":5160000,"1m8 x 2m x 15cm":5640000, "1m0 x 2m x 20cm":5160000,"1m2 x 2m x 20cm":5560000,"1m4 x 2m x 20cm":5960000,"1m6 x 2m x 20cm":6360000,"1m8 x 2m x 20cm":6900000 },
             discountPercent: 50, category: "cao-su-tong-hop", slug: "diamond",
@@ -1292,6 +1292,7 @@
             return;
         }
         const price = prod.prices[size];
+        if (!price) { showToast("Kích thước này chưa có giá. Vui lòng chọn kích thước khác.", true); return; }
         const existing = cart.find(item => item.id === productId && item.size === size);
         if (existing) existing.quantity += quantity;
         else cart.push({ id: productId, size, quantity, price, name: prod.name, img: prod.img });
@@ -1332,6 +1333,20 @@
         });
     }
 
+    // SỬA LỖI 2: HÀM LẤY KÍCH THƯỚC PHỤ KIỆN TƯƠNG ỨNG
+    function getAccessorySize(size) {
+        if (!size) return "1m6 x 2m";
+        let base = size.replace(/x\s*\d+cm/g, '').trim();
+        if (base.endsWith('x')) base = base.slice(0, -1).trim();
+        
+        if (base === "2m x 2m") return "2m0 x 2m";
+        if (base === "2m x 2m2" || base === "2m2 x 2m") return "2m2 x 2m";
+        
+        if (productsDB['bao-ve-nem'].prices[base] !== undefined) return base;
+        
+        return "1m6 x 2m";
+    }
+
     function renderRelatedProducts(category, currentId) {
         if (category === 'khuyen-mai' || category === 'du-an' || category === 'phu-kien') { document.getElementById('relatedContainer').innerHTML = ''; return; }
         const related = Object.keys(productsDB).filter(id => productsDB[id].category === category && id !== currentId).slice(0, 4);
@@ -1364,7 +1379,7 @@
         "lien-a": [{ stars: 5, name: "Chị Ngọc (Bắc Ninh)", content: "Hàng chính hãng, tem mác đầy đủ. Nằm cứng vừa phải, tốt cho cột sống." }, { stars: 5, name: "Anh Cường (Hà Nội)", content: "Độ đàn hồi cực tốt, nằm rất êm. Xứng đáng 5 sao." }],
         "png": [{ stars: 5, name: "Chị Hương (Hải Dương)", content: "Nệm cao su xịn, mình mua 2 chiếc cho cả nhà. Giao hàng miễn phí tận nơi Đà Nẵng." }, { stars: 5, name: "Anh Phát (Đồng Nai)", content: "Thoáng khí, nằm không bị nóng lưng. Chất lượng tốt so với tầm giá." }],
         "csn-thang-loi": [{ stars: 5, name: "Chị Mai (Hà Nội)", content: "Giá sinh viên mà êm hơn mong đợi. Mua cho con nhỏ nằm, rất ok." }, { stars: 5, name: "Anh Lợi (Bình Dương)", content: "Chất liệu tốt, dày dặn, giao hàng chuẩn chỉnh." }],
-        "diamond": [{ stars: 5, name: "Chị Thu (HCM)", content: "Cứng vừa phải, phù hợp người thích nằm phẳng lưng. Giá 50% quá thơm." }, { stars: 5, name: "Anh Hùng (Quảng Ninh)", content: "Chống mối mọt tốt, bề mặt dễ vệ sinh. Rất ưng." }],
+        "diamond": [{ stars: 5, name: "Chị Thu (HCM)", content: "Cứng vừa phải, phù hợp người thích nằm phẳng lưng. Giá 50% quá thơm." }, { stars: 5, name: "Anh Hùng (Quảng Ninh)", content: "Bề mặt vải dễ vệ sinh, nằm không bị nóng lưng. Rất ưng." }],
         "everon": [{ stars: 5, name: "Chị Bích (Hà Nội)", content: "Bông ép chắc chắn, mùa hè nằm không bị nóng lưng." }, { stars: 5, name: "Anh Sơn (Thanh Hóa)", content: "Nệm gấp gọn tiện lợi, giá rẻ mà chất lượng tốt." }],
         "seoul": [{ stars: 5, name: "Chị Linh (HCM)", content: "Mua cho phòng trọ, gấp gọn tiện mang đi, nằm cũng êm không kém gì nệm đắt tiền." }, { stars: 5, name: "Anh Khang (Cần Thơ)", content: "Giữ form tốt, không bị xẹp. Rất đáng mua." }],
         "lotus": [{ stars: 5, name: "Chị Mai (Đà Nẵng)", content: "Nệm cấu tạo 5 lớp, nằm êm, được bảo hành 10 năm nên rất yên tâm." }, { stars: 5, name: "Anh Tuấn (HCM)", content: "Giá siêu rẻ so với chất lượng. Bề mặt vải mát mẻ." }],
@@ -1400,34 +1415,38 @@
                 detailHtml += `<div class="quantity-selector"><button id="qtyMinus" aria-label="Giảm số lượng">-</button><span id="qtyValue">${currentQuantity}</span><button id="qtyPlus" aria-label="Tăng số lượng">+</button></div>`;
                 detailHtml += `<button class="btn-add-to-cart" id="addToCartBtn"><i class="fas fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</button><button class="btn-buy-now" id="quickBuyBtn">Mua nhanh</button>`;
                 
-                // THÊM COMBO GỢI Ý
+                // SỬA LỖI 2: LOGIC COMBO GỢI Ý
                 if (prod.category !== 'phu-kien' && prod.category !== 'du-an') {
-                    const protectorPrice = productsDB['bao-ve-nem'].prices[currentSize] || 0;
-                    const topperPrice = productsDB['topper'].prices[currentSize] || 0;
-                    detailHtml += `
-                    <div class="combo-section">
-                        <div class="combo-title"><i class="fas fa-gift" style="color:#d63384"></i> Khách hàng thường mua kèm:</div>
-                        <div class="combo-item">
-                            <div class="combo-info">
-                                <img src="${productsDB['bao-ve-nem'].img}">
-                                <div>
-                                    <div class="combo-name">Bảo vệ nệm (chống bẩn)</div>
-                                    <div class="combo-price">${formatPrice(protectorPrice)}</div>
+                    const accSize = getAccessorySize(currentSize);
+                    const protectorPrice = productsDB['bao-ve-nem'].prices[accSize] || 0;
+                    const topperPrice = productsDB['topper'].prices[accSize] || 0;
+                    
+                    if(protectorPrice > 0 && topperPrice > 0) {
+                        detailHtml += `
+                        <div class="combo-section">
+                            <div class="combo-title"><i class="fas fa-gift" style="color:#d63384"></i> Khách hàng thường mua kèm:</div>
+                            <div class="combo-item">
+                                <div class="combo-info">
+                                    <img src="${productsDB['bao-ve-nem'].img}">
+                                    <div>
+                                        <div class="combo-name">Bảo vệ nệm (chống bẩn)</div>
+                                        <div class="combo-price">${formatPrice(protectorPrice)}</div>
+                                    </div>
                                 </div>
+                                <button class="btn-add-combo" onclick="addToCart('bao-ve-nem', '${accSize}', 1)">Thêm</button>
                             </div>
-                            <button class="btn-add-combo" onclick="addToCart('bao-ve-nem', '${currentSize}', 1)">Thêm</button>
-                        </div>
-                        <div class="combo-item">
-                            <div class="combo-info">
-                                <img src="${productsDB['topper'].img}">
-                                <div>
-                                    <div class="combo-name">Topper nệm cao cấp</div>
-                                    <div class="combo-price">${formatPrice(topperPrice)}</div>
+                            <div class="combo-item">
+                                <div class="combo-info">
+                                    <img src="${productsDB['topper'].img}">
+                                    <div>
+                                        <div class="combo-name">Topper nệm cao cấp</div>
+                                        <div class="combo-price">${formatPrice(topperPrice)}</div>
+                                    </div>
                                 </div>
+                                <button class="btn-add-combo" onclick="addToCart('topper', '${accSize}', 1)">Thêm</button>
                             </div>
-                            <button class="btn-add-combo" onclick="addToCart('topper', '${currentSize}', 1)">Thêm</button>
-                        </div>
-                    </div>`;
+                        </div>`;
+                    }
                 }
             } else {
                 detailHtml += `<p style="color:#c73e1d; font-weight:600; margin-top:20px;">Vui lòng liên hệ để được báo giá và tư vấn dự án.</p><button class="btn-hero" onclick="window.location.href='tel:0905513984'" style="margin-top:16px;">📞 Gọi tư vấn ngay</button>`;
@@ -1725,7 +1744,6 @@
         e.preventDefault();
         const name = document.getElementById('quickName').value.trim();
         const phone = document.getElementById('quickPhone').value.trim();
-        // Đã lược bỏ địa chỉ trong form mua nhanh
         const addr = "Sẽ gọi xác nhận"; 
         const payment = document.querySelector('input[name="quickPayment"]:checked').value;
         const notes = document.getElementById('quickNotes').value.trim();
@@ -1798,10 +1816,9 @@
 
         setTimeout(() => {
             notif.classList.remove('show');
-        }, 6000); // Hiện 6 giây rồi ẩn
+        }, 6000); 
     }
 
-    // Bắt đầu chạy FOMO sau 5 giây (để web tải xong), sau đó cứ 25 giây hiện 1 lần
     setTimeout(() => {
         showFomoNotification();
         setInterval(showFomoNotification, 25000); 
