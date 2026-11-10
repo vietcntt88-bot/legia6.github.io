@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://legia.pro.vn/sitemap.xml
