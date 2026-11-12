@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
+
+# Chặn trang giỏ hàng (không có giá trị SEO)
+Disallow: /gio-hang
+Disallow: /gio-hang/
+
 Sitemap: https://legia.pro.vn/sitemap.xml
