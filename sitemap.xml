@@ -1,21 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://legia.pro.vn/</loc><priority>1.0</priority></url>
-  <url><loc>https://legia.pro.vn/gioi-thieu</loc><priority>0.8</priority></url>
-  <url><loc>https://legia.pro.vn/cao-su-thien-nhien/van-thanh</loc><priority>0.9</priority></url>
-  <url><loc>https://legia.pro.vn/cao-su-thien-nhien/dong-phu</loc><priority>0.9</priority></url>
-  <url><loc>https://legia.pro.vn/cao-su-thien-nhien/lien-a</loc><priority>0.9</priority></url>
-  <url><loc>https://legia.pro.vn/cao-su-thien-nhien/thang-loi</loc><priority>0.9</priority></url>
-  <url><loc>https://legia.pro.vn/cao-su-thien-nhien/png</loc><priority>0.9</priority></url>
-  <url><loc>https://legia.pro.vn/cao-su-tong-hop/csn-thang-loi</loc><priority>0.9</priority></url>
-  <url><loc>https://legia.pro.vn/cao-su-tong-hop/diamond</loc><priority>0.9</priority></url>
-  <url><loc>https://legia.pro.vn/cao-su-tong-hop/comfort</loc><priority>0.9</priority></url>
-  <url><loc>https://legia.pro.vn/bong-ep/everon</loc><priority>0.9</priority></url>
-  <url><loc>https://legia.pro.vn/bong-ep/seoul</loc><priority>0.9</priority></url>
-  <url><loc>https://legia.pro.vn/lo-xo-tui/karina</loc><priority>0.9</priority></url>
-  <url><loc>https://legia.pro.vn/lo-xo-tui/platinum</loc><priority>0.9</priority></url>
-  <url><loc>https://legia.pro.vn/lo-xo-tui/elan</loc><priority>0.9</priority></url>
-  <url><loc>https://legia.pro.vn/lo-xo-tui/celina</loc><priority>0.9</priority></url>
-  <url><loc>https://legia.pro.vn/khuyen-mai/lotus</loc><priority>0.8</priority></url>
-  <url><loc>https://legia.pro.vn/khuyen-mai/premium</loc><priority>0.8</priority></url>
+  <!-- Trang chủ & Trang tĩnh -->
+  <url><loc>https://legia.pro.vn/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://legia.pro.vn/gioi-thieu</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://legia.pro.vn/tin-tuc</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://legia.pro.vn/hoi-dap</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Bài viết Blog -->
+  <url><loc>https://legia.pro.vn/tin-tuc/nam-nem-cung-hay-mem-tot-cho-cot-song</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://legia.pro.vn/tin-tuc/bi-quyet-ve-sinh-nem-cao-su-luon-nhu-moi</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Sản phẩm: Cao su thiên nhiên -->
+  <url><loc>https://legia.pro.vn/cao-su-thien-nhien/van-thanh</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://legia.pro.vn/cao-su-thien-nhien/dong-phu</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://legia.pro.vn/cao-su-thien-nhien/lien-a</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://legia.pro.vn/cao-su-thien-nhien/thang-loi</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://legia.pro.vn/cao-su-thien-nhien/png</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <!-- Sản phẩm: Cao su tổng hợp -->
+  <url><loc>https://legia.pro.vn/cao-su-tong-hop/csn-thang-loi</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://legia.pro.vn/cao-su-tong-hop/diamond</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://legia.pro.vn/cao-su-tong-hop/comfort</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <!-- Sản phẩm: Bông ép -->
+  <url><loc>https://legia.pro.vn/bong-ep/everon</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://legia.pro.vn/bong-ep/seoul</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <!-- Sản phẩm: Lò xo túi -->
+  <url><loc>https://legia.pro.vn/lo-xo-tui/karina</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://legia.pro.vn/lo-xo-tui/platinum</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://legia.pro.vn/lo-xo-tui/elan</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://legia.pro.vn/lo-xo-tui/celina</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <!-- Sản phẩm: Khuyến mãi -->
+  <url><loc>https://legia.pro.vn/khuyen-mai/lotus</loc><changefreq>weekly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://legia.pro.vn/khuyen-mai/premium</loc><changefreq>weekly</changefreq><priority>0.95</priority></url>
+
+  <!-- Trang Dự án -->
+  <url><loc>https://legia.pro.vn/du-an/du-an-nem</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://legia.pro.vn/du-an/du-an-changagoi</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Phụ kiện -->
+  <url><loc>https://legia.pro.vn/phu-kien/bao-ve-nem</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://legia.pro.vn/phu-kien/bao-ve-nem-chong-tham</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://legia.pro.vn/phu-kien/topper</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
